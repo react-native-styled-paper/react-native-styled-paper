@@ -1,6 +1,6 @@
 import color from "color";
 import { DefaultTheme } from "styled-components";
-import MyDefaultTheme from "./DefaultTheme";
+import MyDefaultTheme from "./LightTheme";
 import { black, white, pinkA100 } from "./colors";
 
 const DarkTheme: DefaultTheme = {

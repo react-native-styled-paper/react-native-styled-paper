@@ -3,7 +3,7 @@ import { DefaultTheme } from "styled-components";
 import { black, white, pinkA400 } from "./colors";
 import configureFonts from "./fonts";
 
-const DefaultTheme: DefaultTheme = {
+const LightTheme: DefaultTheme = {
     dark: false,
     roundness: 4,
     colors: {
@@ -26,4 +26,4 @@ const DefaultTheme: DefaultTheme = {
     },
 };
 
-export default DefaultTheme;
+export default LightTheme;
