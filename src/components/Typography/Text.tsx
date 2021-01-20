@@ -9,6 +9,7 @@ const DefaultText = styled.Text`
 `;
 
 type Props = React.ComponentProps<typeof NativeText> & {
+    children: React.ReactNode,
     style?: StyleProp<TextStyle>;
     /**
      * @optional
@@ -23,37 +24,22 @@ type Props = React.ComponentProps<typeof NativeText> & {
  *
  * @extends Text props https://facebook.github.io/react-native/docs/text.html#props
  */
-class Text extends React.Component<Props> {
+const Text = (props: Props) => {
 
-    private root: NativeText | undefined | null;
+    const { style, children, ...rest } = props;
 
-    /**
-     * @internal
-     */
-    setNativeProps(args: Record<string, unknown>) {
-        return this.root && this.root.setNativeProps(args);
-    }
-
-    render() {
-        const { style, theme, ...rest } = this.props;
-
-        return (
-            <DefaultText
-                {...rest}
-                ref={(c) => {
-                    this.root = c;
-                }}
-                style={[
-                    {
-                        ...theme.fonts.regular,
-                        color: theme.colors.text,
-                        textAlign: "left",
-                    },
-                    style,
-                ]}
-            />
-        );
-    }
+    return (
+        <DefaultText
+            {...rest}
+            // style={[
+            //     {
+            //         ...theme.fonts.regular,
+            //     },
+            // ]}
+        >
+            {children}
+        </DefaultText>
+    );
 }
 
 export default Text;
