@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Text } from "react-native-styled-paper";
+import { LightTheme, Text } from "react-native-styled-paper";
 
 const Title = styled.h1`
   color: red;
@@ -10,7 +10,7 @@ export default function Home() {
   return (
       <div>
     <Title>My page</Title>
-    <Text>Text</Text>
+    <Text theme={LightTheme}>Text</Text>
     </div>
   )
 }

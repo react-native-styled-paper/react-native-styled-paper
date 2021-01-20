@@ -2,6 +2,7 @@ import * as React from "react";
 import { Platform } from "react-native";
 // import { I18nManager, Platform } from "react-native";
 import {ThemeProvider} from "styled-components";
+import { LightTheme } from "react-native-styled-paper";
 import Head from "next/head";
 
 // const PERSISTENCE_KEY = "NAVIGATION_STATE";
@@ -73,7 +74,7 @@ export default function App({ Component, pageProps }) {
                     `}</style>
                 ) : null}
             </Head>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={LightTheme}>
                 <Component {...pageProps} />
             </ThemeProvider>
         </>
