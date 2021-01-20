@@ -7,7 +7,7 @@ export default function App() {
     return (
         <ThemeProvider theme={LightTheme}>
             <View style={styles.container}>
-                <Text>Open up App.tsx to start working on your app!</Text>
+                <Text theme={LightTheme}>Open up App.tsx to start working on your app! H</Text>
             </View>
         </ThemeProvider>
     );
