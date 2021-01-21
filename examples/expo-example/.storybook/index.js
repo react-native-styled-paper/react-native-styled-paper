@@ -9,11 +9,11 @@ import './rn-addons';
 
 configure(() => {
     addDecorator((storyFn) => (
-        <LocaleProvider locale={'EN-gb'}>
+        // <LocaleProvider locale={'EN-gb'}>
             <ThemeProvider theme={LightTheme}>
                 {storyFn()}
             </ThemeProvider>
-        </LocaleProvider>
+        // </LocaleProvider>
     ));
 
     loadStories()

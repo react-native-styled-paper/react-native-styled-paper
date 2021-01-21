@@ -13,7 +13,7 @@ function bumpVersion(newVersion) {
 }
 
 var myArgs = process.argv.slice(2);
-console.log('myArgs: ', myArgs);
+// console.log("myArgs: ", myArgs);
 
 const version = myArgs[0];
 bumpVersion(version);
