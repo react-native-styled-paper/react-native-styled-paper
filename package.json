@@ -16,14 +16,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://hoangnguyen1247@github.com/hoangnguyen1247/react-native-styled-paper.git"
+        "url": "git+https://github.com/react-native-styled-paper/react-native-styled-paper.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/hoangnguyen1247/react-native-styled-paper/issues"
+        "url": "https://github.com/react-native-styled-paper/react-native-styled-paper/issues"
     },
-    "homepage": "https://github.com/hoangnguyen1247/react-native-styled-paper#readme",
+    "homepage": "https://github.com/react-native-styled-paper/react-native-styled-paper#readme",
     "devDependencies": {
         "@babel/cli": "^7.12.10",
         "@babel/core": "^7.12.10",
