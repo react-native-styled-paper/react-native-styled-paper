@@ -1,7 +1,6 @@
 examples
 node_modules
 
-src
 tsconfig.json
 buildScripts
 .editorconfig
