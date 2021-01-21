@@ -6,6 +6,8 @@
         },
         "target": "es5",
         "lib": ["dom", "dom.iterable", "esnext"],
+        "rootDir": ".",
+        "outDir": "./dist/",
         "allowJs": true,
         "skipLibCheck": true,
         "strict": false,
@@ -21,6 +23,6 @@
         "jsx": "preserve",
         "allowSyntheticDefaultImports": true
     },
-    "exclude": ["node_modules", ".next", "out"],
+    "exclude": ["node_modules", ".next", "out", "examples"],
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"]
 }

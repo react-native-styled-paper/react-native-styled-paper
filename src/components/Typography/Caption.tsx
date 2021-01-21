@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, TextStyle, StyleSheet, StyleProp } from "react-native";
+import { Text, TextStyle, StyleProp } from "react-native";
 import styled from "styled-components/native";
 import StyledText from "./StyledText";
 

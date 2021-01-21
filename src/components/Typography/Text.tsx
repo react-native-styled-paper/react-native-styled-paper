@@ -40,6 +40,6 @@ const Text = (props: Props) => {
             {children}
         </DefaultText>
     );
-}
+};
 
 export default Text;

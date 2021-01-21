@@ -25,22 +25,22 @@ import Head from "next/head";
 //     },
 // };
 
-const CustomDefaultTheme = {
-    colors: {
-        customColor: "#BADA55",
-    },
-    fonts: {
-    },
-    userDefinedThemeProperty: "",
-    animation: {
-        customProperty: 1,
-    },
-};
+// const CustomDefaultTheme = {
+//     colors: {
+//         customColor: "#BADA55",
+//     },
+//     fonts: {
+//     },
+//     userDefinedThemeProperty: "",
+//     animation: {
+//         customProperty: 1,
+//     },
+// };
 
 // const PreferencesContext = React.createContext(null);
 
 export default function App({ Component, pageProps }) {
-    const [theme] = React.useState(CustomDefaultTheme);
+    // const [theme] = React.useState(CustomDefaultTheme);
     // const [rtl, setRtl] = React.useState(I18nManager.isRTL);
 
     // const preferences = React.useMemo(

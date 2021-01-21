@@ -4,6 +4,10 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "build": "yarn format && rimraf -rf dist && tsc",
+        "compile": "rimraf dist && babel src/ --out-dir dist --extensions \".ts,.tsx\"",
+        "postcompile": "node buildScripts/postCompile.js",
+        "type-check": "tsc --noEmit",
         "format": "eslint . --ext ts --ext tsx --ext js --fix",
         "lint": "eslint . --ext ts --ext tsx --ext js",
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +23,11 @@
     },
     "homepage": "https://github.com/hoangnguyen1247/react-native-styled-paper#readme",
     "devDependencies": {
+        "@babel/cli": "^7.12.10",
+        "@babel/core": "^7.12.10",
+        "@babel/plugin-proposal-class-properties": "^7.12.1",
+        "@babel/preset-env": "^7.12.11",
+        "@babel/preset-typescript": "^7.12.7",
         "@types/color": "^3.0.1",
         "@types/react": "^16.13.1",
         "@types/react-native": "^0.63.45",
@@ -26,6 +35,7 @@
         "@types/styled-components-react-native": "^5.1.0",
         "@typescript-eslint/eslint-plugin": "^4.14.0",
         "@typescript-eslint/parser": "^4.14.0",
+        "babel-plugin-module-resolver": "^4.1.0",
         "customize-cra": "^1.0.0",
         "eslint": "^7.18.0",
         "eslint-plugin-react": "^7.22.0",
@@ -33,8 +43,9 @@
         "react-app-rewired": "^2.1.8",
         "react-dom": "16.13.1",
         "react-native": "0.63.2",
+        "react-scripts": "^4.0.1",
         "styled-components": "^5.2.1",
-        "typescript": "^4.1.3"
+        "typescript": "^3.9.3"
     },
     "peerDependencies": {
         "react": "16.13.1",
