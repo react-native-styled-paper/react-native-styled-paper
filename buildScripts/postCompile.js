@@ -4,8 +4,8 @@ const libName = "";
 
 (async function build() {
     const pkg = require("../package.json");
-    pkg["peerDependencies"] = pkg["dependencies"];
-    delete pkg["dependencies"];
+    // pkg["peerDependencies"] = pkg["dependencies"];
+    // delete pkg["dependencies"];
 
     // If standalone build required from Phoenix for Widgets and Components
     if (libName) {

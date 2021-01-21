@@ -33,6 +33,7 @@
         "babel-plugin-module-resolver": "^4.1.0",
         "babel-plugin-react-native-web": "^0.14.10",
         "babel-plugin-styled-components": "^1.10.0",
+        "chrome-launcher": "^0.13.4",
         "file-loader": "^6.2.0",
         "next-compose-plugins": "^2.2.1",
         "next-transpile-modules": "^6.0.0",
