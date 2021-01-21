@@ -1,6 +1,6 @@
 {
     "name": "react-native-styled-paper",
-    "version": "1.0.0-develop.1",
+    "version": "1.0.0-develop.2",
     "description": "",
     "main": "dist/index.js",
     "scripts": {
@@ -47,6 +47,7 @@
         "cz-conventional-changelog": "^3.3.0",
         "eslint": "^7.18.0",
         "eslint-plugin-react": "^7.22.0",
+        "husky": "^4.3.8",
         "react": "16.13.1",
         "react-app-rewired": "^2.1.8",
         "react-dom": "16.13.1",
@@ -62,6 +63,13 @@
         "styled-components": "^5.2.1"
     },
     "dependencies": {
-        "color": "3.1.2"
+        "@commitlint/config-conventional": "^11.0.0",
+        "color": "3.1.2",
+        "commitlint": "^11.0.0"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
     }
 }
