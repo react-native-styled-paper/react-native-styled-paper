@@ -10,3 +10,5 @@ node_modules
 .npmrc
 .githubtoken
 .env
+
+README-BK.md
