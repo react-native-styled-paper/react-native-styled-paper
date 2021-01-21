@@ -4,6 +4,7 @@ const withTM = require("next-transpile-modules")([
     // "react-native-safe-area-view",
     "react-native-vector-icons",
     "react-native-styled-paper",
+    "styled-components",
 ]);
 const nextEnv = require("next-env");
 const dotenvLoad = require("dotenv-load");
