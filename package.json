@@ -4,8 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "yarn format && rimraf -rf dist && tsc",
-        "compile": "rimraf dist && babel src/ --out-dir dist --extensions \".ts,.tsx\"",
+        "build": "yarn format && rimraf -rf dist && yarn compile",
+        "compile": "babel src/ --out-dir dist --extensions \".ts,.tsx\"",
         "postcompile": "node buildScripts/postCompile.js",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
         "release": "semantic-release",
