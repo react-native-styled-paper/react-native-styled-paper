@@ -2,7 +2,7 @@
     "name": "react-native-styled-paper",
     "version": "0.0.1",
     "description": "",
-    "main": "index.js",
+    "main": "dist/index.js",
     "scripts": {
         "build": "yarn format && rimraf -rf dist && yarn compile",
         "compile": "babel src/ --out-dir dist --extensions \".ts,.tsx\"",
