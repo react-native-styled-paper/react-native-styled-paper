@@ -14,7 +14,7 @@
         "next-env": "^1.1.1",
         "react": "^16.13.0",
         "react-dom": "^16.13.0",
-        "react-native-styled-paper": "file:../../dist/",
+        "react-native-styled-paper": "file:../../dist",
         "react-native-vector-icons": "^8.0.0",
         "react-native-web": "^0.14.10",
         "styled-components": "^5.0.0"

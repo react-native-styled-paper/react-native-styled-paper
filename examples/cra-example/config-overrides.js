@@ -1,5 +1,5 @@
 const path = require("path");
-const { addWebpackModuleRule, addWebpackResolve, override, babelInclude } = require('customize-cra');
+const { addWebpackModuleRule, addWebpackResolve, override, babelInclude, addBabelPlugin, addWebpackExternals } = require('customize-cra');
 
 // override
 module.exports = {
@@ -43,10 +43,15 @@ module.exports = {
         addWebpackResolve({alias: {
             'react-native$': require.resolve('react-native-web'),
         }}),
+        // addWebpackExternals({
+        //     react: "React",
+        //     "react-dom": "ReactDom"
+        // }),
         babelInclude([
             path.resolve("."), // make sure you link your own source
             path.resolve("node_modules/react-native-styled-paper"),
         ]),
+        addBabelPlugin('@babel/plugin-transform-modules-commonjs'),
         (config) => {
             return config;
         },

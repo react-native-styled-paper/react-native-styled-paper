@@ -21,9 +21,12 @@ const libName = "";
         fs.removeSync("dist/widgets");
     }
 
+    pkg["main"] = "index.js";
+
     // Prepare the package.json for release
     fs.writeFileSync("dist/package.json", JSON.stringify(pkg, null, 2));
 
     // Prepare .npmrc for release
     fs.copyFileSync(".npmrc", "dist/.npmrc");
+    fs.copySync("types", "dist/types");
 })();
