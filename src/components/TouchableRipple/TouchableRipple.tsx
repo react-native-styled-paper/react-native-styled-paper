@@ -1,9 +1,7 @@
 import React from 'react';
 import {
     TouchableWithoutFeedback,
-    View,
     ViewStyle,
-    StyleSheet,
     StyleProp,
     GestureResponderEvent,
 } from 'react-native';
