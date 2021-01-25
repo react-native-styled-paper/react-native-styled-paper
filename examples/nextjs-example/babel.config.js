@@ -1,5 +1,9 @@
 module.exports = {
-    presets: ["next/babel", "@babel/preset-flow", "@babel/preset-typescript"],
+    presets: [
+        "next/babel",
+        "@babel/preset-react",
+        "@babel/preset-typescript",
+    ],
     plugins: [
         ["react-native-web", { commonjs: true }],
         ["styled-components", { "ssr": true }],

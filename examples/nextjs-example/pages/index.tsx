@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import { LightTheme, Text } from "react-native-styled-paper";
 

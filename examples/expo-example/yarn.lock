@@ -9732,7 +9732,7 @@ react-native-storybook-loader@^2.0.2:
     prettier "^2.0.5"
     yargs "^15.4.1"
 
-"react-native-styled-paper@file:../..":
+"react-native-styled-paper@file:../../dist":
   version "1.0.0-develop.2"
   dependencies:
     "@commitlint/config-conventional" "^11.0.0"

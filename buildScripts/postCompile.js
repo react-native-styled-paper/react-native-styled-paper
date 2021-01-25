@@ -21,7 +21,8 @@ const libName = "";
         fs.removeSync("dist/widgets");
     }
 
-    pkg["main"] = "index.js";
+    pkg["main"] = "module/index.js";
+    pkg["types"] = "types/index.d.ts";
 
     // Prepare the package.json for release
     fs.writeFileSync("dist/package.json", JSON.stringify(pkg, null, 2));
