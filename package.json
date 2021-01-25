@@ -57,6 +57,7 @@
         "react": "16.13.1",
         "react-app-rewired": "^2.1.8",
         "react-native": "0.63.2",
+        "react-native-builder-bob": "^0.17.1",
         "react-scripts": "^4.0.1",
         "semantic-release": "^17.3.6",
         "styled-components": "^5.2.1",
