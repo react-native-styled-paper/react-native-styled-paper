@@ -15,6 +15,10 @@ const StyledView = styled.View<{ borderless: boolean }>`
 `;
 
 type Props = React.ComponentPropsWithRef<typeof TouchableWithoutFeedback> & {
+    accessibilityTraits?: string[] | string;
+
+    accessibilityComponentType?: string;
+
     /**
      * Whether to render the ripple outside the view bounds.
      */
@@ -56,7 +60,7 @@ type Props = React.ComponentPropsWithRef<typeof TouchableWithoutFeedback> & {
     /**
      * @optional
      */
-    theme: DefaultTheme;
+    theme?: DefaultTheme;
 };
 
 /**

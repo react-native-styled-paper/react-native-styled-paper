@@ -37,7 +37,7 @@ type Props = React.ComponentPropsWithRef<typeof View> & {
     /**
      * @optional
      */
-    theme: DefaultTheme;
+    theme?: DefaultTheme;
 };
 
 const DURATION = 2400;
