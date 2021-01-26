@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Animated, StyleSheet, View, StyleProp, ViewStyle } from 'react-native';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, ThemeContext } from 'styled-components';
 import shadow from '../../theme/shadow';
 import overlay from '../../theme/overlay';
 
@@ -59,7 +59,9 @@ type Props = React.ComponentPropsWithRef<typeof View> & {
  * });
  * ```
  */
-const Surface = ({ style, theme, ...rest }: Props) => {
+const Surface = ({ style, ...rest }: Props) => {
+    const theme = useContext(ThemeContext);
+
     const flattenedStyles = StyleSheet.flatten(style) || {};
     const { elevation = 4 }: ViewStyle = flattenedStyles;
     const { dark: isDarkTheme, mode, colors } = theme;

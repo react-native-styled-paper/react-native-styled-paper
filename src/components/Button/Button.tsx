@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
     Animated,
     ViewStyle,
@@ -14,7 +14,7 @@ import Surface from '../Surface/Surface';
 import Text from '../Typography/Text';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
 import { black, white } from '../../theme/colors';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, ThemeContext } from 'styled-components';
 import styled from "styled-components/native";
 
 const ButtonSurface = styled(Surface)<{
@@ -178,12 +178,13 @@ const Button = ({
     accessibilityLabel,
     onPress,
     style,
-    theme,
     contentStyle,
     labelStyle,
     testID,
     ...rest
 }: Props) => {
+    const theme = useContext(ThemeContext);
+
     const { current: elevation } = React.useRef<Animated.Value>(
         new Animated.Value(mode === 'contained' ? 2 : 0)
     );
