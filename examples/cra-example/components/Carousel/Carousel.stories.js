@@ -34,8 +34,10 @@ storiesOf('Carousel', module)
                             <Image
                                 key={index}
                                 source={{ uri: "https://via.placeholder.com/350x150" }}
-                                width={350}
-                                height={150}
+                                style={{
+                                    width: 250,
+                                    height: 150,
+                                }}
                             />
                         );
                     }}
