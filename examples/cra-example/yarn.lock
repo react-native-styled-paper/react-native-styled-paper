@@ -12026,6 +12026,13 @@ raw-loader@^3.1.0:
     loader-utils "^1.1.0"
     schema-utils "^2.0.1"
 
+react-addons-shallow-compare@^15.6.3:
+  version "15.6.3"
+  resolved "https://registry.yarnpkg.com/react-addons-shallow-compare/-/react-addons-shallow-compare-15.6.3.tgz#28a94b0dfee71530852c66a69053d59a1baf04cb"
+  integrity sha512-EDJbgKTtGRLhr3wiGDXK/+AEJ59yqGS+tKE6mue0aNXT6ZMR7VJbbzIiT6akotmHg1BLj46ElJSb+NBMp80XBg==
+  dependencies:
+    object-assign "^4.1.0"
+
 react-app-polyfill@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-2.0.0.tgz#a0bea50f078b8a082970a9d853dc34b6dcc6a3cf"
@@ -12259,6 +12266,7 @@ react-lifecycles-compat@^3.0.4:
     "@commitlint/config-conventional" "^11.0.0"
     color "3.1.2"
     commitlint "^11.0.0"
+    react-addons-shallow-compare "^15.6.3"
 
 react-native-web@^0.14.10:
   version "0.14.10"

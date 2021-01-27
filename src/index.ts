@@ -3,8 +3,9 @@ import LightTheme from "./theme/LightTheme";
 import DarkTheme from "./theme/DarkTheme";
 import ActionButton from "./components/ActionButton/ActionButton";
 import ActivityIndicator from "./components/ActivityIndicator/ActivityIndicator";
-// import BottomSheet from "./components/BottomSheet/BottomSheet";
+import BottomSheet from "./components/BottomSheet/BottomSheet";
 import Button from "./components/Button/Button";
+import Carousel, { LeftArrow as CarouselLeftArrow, RightArrow as CarouselRightArrow } from "./components/Carousel";
 import Divider from "./components/Divider/Divider";
 import Surface from "./components/Surface/Surface";
 import SvgIcon from "./components/SvgIcon/SvgIcon";
@@ -18,8 +19,11 @@ export {
 
     ActionButton,
     ActivityIndicator,
-    // BottomSheet,
+    BottomSheet,
     Button,
+    Carousel,
+    CarouselLeftArrow,
+    CarouselRightArrow,
     Divider,
     Surface,
     SvgIcon,

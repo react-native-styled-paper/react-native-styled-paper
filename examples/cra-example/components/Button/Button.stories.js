@@ -20,7 +20,7 @@ storiesOf('Button', module)
     })
     .add('Primary', () => {
         const title = text("title", "Text");
-        const mode = select('theme', ['text', 'outlined', 'contained'], "text");
+        const mode = select('mode', ['text', 'outlined', 'contained'], "text");
         const dark = boolean('dark', false);
 
         return (

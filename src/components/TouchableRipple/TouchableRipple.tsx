@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
     TouchableWithoutFeedback,
     ViewStyle,
@@ -6,7 +6,7 @@ import {
     GestureResponderEvent,
 } from 'react-native';
 import color from 'color';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, ThemeContext } from 'styled-components';
 import styled from "styled-components/native";
 
 const StyledView = styled.View<{ borderless: boolean }>`
@@ -102,9 +102,11 @@ const TouchableRipple = ({
     rippleColor,
     underlayColor: _underlayColor,
     children,
-    theme,
     ...rest
 }: Props) => {
+
+    const theme = useContext(ThemeContext);
+
     const handlePressIn = (e: any) => {
         const { centered, onPressIn } = rest;
 
