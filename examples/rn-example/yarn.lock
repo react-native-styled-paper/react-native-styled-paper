@@ -1734,6 +1734,16 @@
     qs "^6.6.0"
     ts-dedent "^1.1.0"
 
+"@storybook/addon-ondevice-actions@^5.3.23":
+  version "5.3.23"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-ondevice-actions/-/addon-ondevice-actions-5.3.23.tgz#0c7c7403cb7c6cb30e492b83b0e9d616f02c4b12"
+  integrity sha512-GntACUPYGSh2d5fWIFMO6iXuGLKaJPVXNb5EsAJRj6UaIjeq0yWQNANowBbv0yXjJwooHiIITTNcYSzh/1AvWg==
+  dependencies:
+    "@storybook/addons" "5.3.21"
+    "@storybook/core-events" "5.3.21"
+    core-js "^3.0.1"
+    fast-deep-equal "^2.0.1"
+
 "@storybook/addon-ondevice-knobs@~5.3.14":
   version "5.3.23"
   resolved "https://registry.yarnpkg.com/@storybook/addon-ondevice-knobs/-/addon-ondevice-knobs-5.3.23.tgz#82b8888187705980fe4683c90cc6f4e23c4ae112"
@@ -6149,12 +6159,12 @@ getpass@^0.1.1:
     assert-plus "^1.0.0"
 
 git-raw-commits@^2.0.0:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/git-raw-commits/-/git-raw-commits-2.0.9.tgz#5cbc707a615cb77b71e687f8a1ee54af46208b22"
-  integrity sha512-hSpNpxprVno7IOd4PZ93RQ+gNdzPAIrW0x8av6JQDJGV4k1mR9fE01dl8sEqi2P7aKmmwiGUn1BCPuf16Ae0Qw==
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/git-raw-commits/-/git-raw-commits-2.0.10.tgz#e2255ed9563b1c9c3ea6bd05806410290297bbc1"
+  integrity sha512-sHhX5lsbG9SOO6yXdlwgEMQ/ljIn7qMpAbJZCGfXX2fq5T8M5SrDnpYk9/4HswTildcIqatsWa91vty6VhWSaQ==
   dependencies:
     dargs "^7.0.0"
-    lodash.template "^4.0.2"
+    lodash "^4.17.15"
     meow "^8.0.0"
     split2 "^3.0.0"
     through2 "^4.0.0"
@@ -8017,11 +8027,6 @@ lodash-es@^4.17.15:
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.20.tgz#29f6332eefc60e849f869c264bc71126ad61e8f7"
   integrity sha512-JD1COMZsq8maT6mnuz1UMV0jvYD0E0aUsSOdrr1/nAG3dhqQXwRRgeW0cSqH1U43INKcqxaiVIQNOUDld7gRDA==
 
-lodash._reinterpolate@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
-  integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
-
 lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
@@ -8036,21 +8041,6 @@ lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
-
-lodash.template@^4.0.2:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/lodash.template/-/lodash.template-4.5.0.tgz#f976195cf3f347d0d5f52483569fe8031ccce8ab"
-  integrity sha512-84vYFxIkmidUiFxidA/KjjH9pAycqW+h980j7Fuz5qxRtO9pgB7MDFTdys1N7A5mcucRiDyEq4fusljItR1T/A==
-  dependencies:
-    lodash._reinterpolate "^3.0.0"
-    lodash.templatesettings "^4.0.0"
-
-lodash.templatesettings@^4.0.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/lodash.templatesettings/-/lodash.templatesettings-4.2.0.tgz#e481310f049d3cf6d47e912ad09313b154f0fb33"
-  integrity sha512-stgLz+i3Aa9mZgnjr/O+v9ruKZsPsndy7qPZOchbqk2cnTU1ZaldKK+v7m54WoKIyxiuMZTKT2H81F8BeAc3ZQ==
-  dependencies:
-    lodash._reinterpolate "^3.0.0"
 
 lodash.throttle@^4.1.1:
   version "4.1.1"
@@ -9979,6 +9969,13 @@ raw-loader@^3.1.0:
     loader-utils "^1.1.0"
     schema-utils "^2.0.1"
 
+react-addons-shallow-compare@^15.6.3:
+  version "15.6.3"
+  resolved "https://registry.yarnpkg.com/react-addons-shallow-compare/-/react-addons-shallow-compare-15.6.3.tgz#28a94b0dfee71530852c66a69053d59a1baf04cb"
+  integrity sha512-EDJbgKTtGRLhr3wiGDXK/+AEJ59yqGS+tKE6mue0aNXT6ZMR7VJbbzIiT6akotmHg1BLj46ElJSb+NBMp80XBg==
+  dependencies:
+    object-assign "^4.1.0"
+
 react-clientside-effect@^1.2.2:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/react-clientside-effect/-/react-clientside-effect-1.2.3.tgz#95c95f520addfb71743608b990bfe01eb002012b"
@@ -10177,6 +10174,7 @@ react-native-storybook-loader@^2.0.2:
     "@commitlint/config-conventional" "^11.0.0"
     color "3.1.2"
     commitlint "^11.0.0"
+    react-addons-shallow-compare "^15.6.3"
 
 react-native-swipe-gestures@^1.0.4:
   version "1.0.5"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
     BackgroundPropType,
     StyleProp,
@@ -10,7 +10,7 @@ import {
     ViewStyle,
 } from 'react-native';
 import color from 'color';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, ThemeContext } from 'styled-components';
 
 const ANDROID_VERSION_LOLLIPOP = 21;
 const ANDROID_VERSION_PIE = 28;
@@ -35,9 +35,9 @@ const TouchableRipple = ({
     rippleColor,
     underlayColor,
     children,
-    theme,
     ...rest
 }: Props) => {
+    const theme = useContext(ThemeContext);
     const { dark, colors } = theme;
     const disabled = disabledProp || !rest.onPress;
     const calculatedRippleColor =

@@ -56,13 +56,13 @@ const ButtonLabel = styled(Text)<{
     uppercase: boolean,
     compact: boolean,
 }>`
-    text-color: ${props => props.textColor};
+    color: ${props => props.textColor};
     text-align: center;
     letter-spacing: 1;
     margin-vertical: 9;
 
     margin-horizontal: ${props => props.compact ? 8 : 16};
-    text-transform: 'uppercase'
+    text-transform: uppercase;
 `;
 
 type Props = React.ComponentProps<typeof Surface> & {
