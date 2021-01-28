@@ -14,7 +14,7 @@ type Props = React.ComponentProps<typeof NativeText> & {
     /**
      * @optional
      */
-    theme: DefaultTheme;
+    theme?: DefaultTheme;
 };
 
 // @component-group Typography
