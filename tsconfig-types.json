@@ -6,7 +6,7 @@
         },
         "target": "es5",
         "lib": ["dom", "dom.iterable", "esnext"],
-        "rootDir": "./src/",
+        "rootDir": "./components/",
         "outDir": "./types/",
         "allowJs": true,
         "declaration": true,

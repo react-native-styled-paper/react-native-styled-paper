@@ -80,7 +80,7 @@
         }
     },
     "react-native-builder-bob": {
-        "source": "src",
+        "source": "components",
         "output": "dist",
         "targets": [
             "commonjs",
@@ -93,7 +93,7 @@
             ]
         ],
         "files": [
-            "src/"
+            "components/"
         ]
     }
 }

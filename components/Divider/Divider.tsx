@@ -3,8 +3,8 @@ import color from 'color';
 import { StyleSheet, View, ViewStyle, StyleProp } from 'react-native';
 import styled from "styled-components/native";
 import { DefaultTheme } from 'styled-components';
-import { black, white } from '../../theme/colors';
-import type { $RemoveChildren } from '../../types';
+import { black, white } from '../theme/colors';
+import type { $RemoveChildren } from '../types';
 
 const DividerView = styled.View<{ inset: boolean, isDarkTheme: boolean }>`
     background-color: ${props => props.isDarkTheme ? color(white).alpha(0.12).rgb().string() : color(black).alpha(0.12).rgb().string()};

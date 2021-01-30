@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Animated, StyleSheet, View, StyleProp, ViewStyle } from 'react-native';
 import { DefaultTheme, ThemeContext } from 'styled-components';
-import shadow from '../../theme/shadow';
-import overlay from '../../theme/overlay';
+import shadow from '../theme/shadow';
+import overlay from '../theme/overlay';
 
 type Props = React.ComponentPropsWithRef<typeof View> & {
     /**

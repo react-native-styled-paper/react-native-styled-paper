@@ -30,7 +30,7 @@ module.exports = {
                             "root": ["."],
                             "alias": {
                                 "^react-native$": "react-native-web",
-                                "src": "./src",
+                                "components": "./components",
                             }
                         }]
                     ]

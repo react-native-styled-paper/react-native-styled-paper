@@ -13,7 +13,7 @@ import SvgIcon from '../SvgIcon/SvgIcon';
 import Surface from '../Surface/Surface';
 import Text from '../Typography/Text';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import { black, white } from '../../theme/colors';
+import { black, white } from '../theme/colors';
 import { DefaultTheme, ThemeContext } from 'styled-components';
 import styled from "styled-components/native";
 
