@@ -1,6 +1,10 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
+        "paths": {
+            "react-native": ["react-native-web"],
+            "react-native-styled-paper": ["../../"],
+        },
         "target": "es5",
         "lib": [
             "dom",

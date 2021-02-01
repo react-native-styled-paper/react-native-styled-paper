@@ -18,6 +18,7 @@ module.exports = {
             // Transform all direct `react-native` imports to `react-native-web`
             "react-native$": "react-native-web",
             "react-native-vector-icons": "@ovaeasy/react-native-vector-icons",
+            "react-native-styled-paper": "../../../",
         };
 
         const nodeConfig = config.node || {};

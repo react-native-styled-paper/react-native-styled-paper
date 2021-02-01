@@ -5,6 +5,8 @@
     "main": "dist/module/index.js",
     "types": "dist/types/index.d.ts",
     "scripts": {
+        "start:cra": "cd examples/cra-example && yarn storybook",
+        "install:cra": "cd examples/cra-example && yarn install",
         "build": "yarn build:types && yarn compile",
         "build:types": "rimraf -rf types && tsc --emitDeclarationOnly -p tsconfig-types.json",
         "compile": "rimraf -rf dist && bob build",

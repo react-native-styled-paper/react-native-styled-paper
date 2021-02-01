@@ -2,8 +2,8 @@ import React, { createRef } from 'react';
 import { Image, Dimensions, View, StyleSheet } from "react-native";
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, withKnobs } from '@storybook/addon-knobs';
-import { Carousel, CarouselLeftArrow, CarouselRightArrow } from 'react-native-styled-paper';
+import { withKnobs } from '@storybook/addon-knobs';
+import { Carousel, CarouselLeftArrow, CarouselRightArrow } from 'react-native-styled-paper/components/Carousel';
 
 const onPressFn = action("onPress");
 
