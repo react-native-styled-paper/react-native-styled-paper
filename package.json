@@ -6,6 +6,8 @@
     "types": "dist/types/index.d.ts",
     "scripts": {
         "cra-example": "cd examples/cra-example && yarn",
+        "nextjs-example": "cd examples/nextjs-example && yarn",
+        "rn-example": "cd examples/rn-example && yarn",
         "build": "yarn build:types && yarn compile && yarn copy:src",
         "build:types": "rimraf -rf types && tsc --emitDeclarationOnly -p tsconfig-types.json",
         "compile": "rimraf -rf dist && bob build",

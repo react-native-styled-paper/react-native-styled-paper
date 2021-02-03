@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { ThemeProvider } from "styled-components";
 import LightTheme from "react-native-styled-paper/components/theme/LightTheme";
 import { Text } from "react-native-styled-paper/components/Typography";

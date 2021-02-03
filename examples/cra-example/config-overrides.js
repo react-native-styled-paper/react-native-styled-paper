@@ -31,7 +31,6 @@ module.exports = {
                             "alias": {
                                 "^react-native$": "react-native-web",
                                 "components": "./components",
-                                "react-native-styled-paper": "../../",
                             }
                         }]
                     ]
@@ -44,7 +43,6 @@ module.exports = {
         // }),
         addWebpackResolve({alias: {
             'react-native$': require.resolve('react-native-web'),
-            'react-native-styled-paper': require.resolve('../../'),
         }}),
         // addWebpackExternals({
         //     react: "React",
