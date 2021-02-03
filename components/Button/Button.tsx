@@ -31,7 +31,7 @@ const ButtonSurface = styled(Surface)<{
     border-radius: ${props => props.buttonStyle.borderRadius};
 
     margin-horizontal: ${props => props.compact ? 8 : 0};
-    elevation: ${props => +props.elevation};
+    elevation: ${props => +props.elevation || 0};
 `;
 
 const ButtonContent = styled.View`

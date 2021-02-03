@@ -2,7 +2,7 @@ import React from 'react';
 import { AppRegistry } from 'react-native';
 import { getStorybookUI, configure, addDecorator } from '@storybook/react-native';
 import { ThemeProvider } from 'styled-components';
-import { LightTheme } from 'react-native-styled-paper';
+import LightTheme from 'react-native-styled-paper/components/theme/LightTheme';
 import { loadStories } from './storyLoader';
 
 import './rn-addons';

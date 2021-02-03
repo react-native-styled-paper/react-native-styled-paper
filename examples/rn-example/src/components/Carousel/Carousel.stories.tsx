@@ -1,16 +1,16 @@
-import React, { createRef } from 'react';
+import * as React from 'react';
 import { Image, Dimensions, View, StyleSheet } from "react-native";
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
-import { text, withKnobs } from '@storybook/addon-knobs';
-import { Carousel, CarouselLeftArrow, CarouselRightArrow } from 'react-native-styled-paper';
+import { withKnobs } from '@storybook/addon-knobs';
+import Carousel, { LeftArrow as CarouselLeftArrow, RightArrow as CarouselRightArrow } from 'react-native-styled-paper/components/Carousel';
 
 const onPressFn = action("onPress");
 
 storiesOf('Carousel', module)
     .addDecorator(withKnobs)
     .add('Default', () => {
-        const _imageCarouselRef = createRef();
+        const _imageCarouselRef = React.createRef<Carousel>();
 
         const { width: viewportWidth } = Dimensions.get('window');
         const sliderWidth = viewportWidth - 32;
@@ -23,7 +23,7 @@ storiesOf('Carousel', module)
                 }}
             >
                 <CarouselLeftArrow
-                    onPress={e => _imageCarouselRef.current.snapToPrev()}
+                    onPress={e => _imageCarouselRef.current?.snapToPrev()}
                 />
                 <Carousel
                     sliderWidth={sliderWidth}
@@ -45,7 +45,7 @@ storiesOf('Carousel', module)
                     loop={true}
                 />
                 <CarouselRightArrow
-                    onPress={e => _imageCarouselRef.current.snapToNext()}
+                    onPress={e => _imageCarouselRef.current?.snapToNext()}
                 />
             </View>
         )

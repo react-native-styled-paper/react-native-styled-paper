@@ -121,7 +121,7 @@ class RBSheet extends React.Component<Props, State> {
         });
     }
 
-    open(props) {
+    open(props?) {
         this.setModalVisible(true, props);
     }
 

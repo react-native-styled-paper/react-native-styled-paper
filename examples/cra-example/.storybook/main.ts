@@ -9,7 +9,7 @@ module.exports = {
     webpackFinal: async (config) => {
         config.module.rules.push({
             test: /\.(js|ts|tsx)$/,
-            exclude: /(node_modules\/(?!(@airasia-common)\/).*|dist|.storybook)/,
+            exclude: /(node_modules\/(?!(react-native-styled-paper)\/).*|dist|.storybook)/,
             use: ['babel-loader'],
         });
 

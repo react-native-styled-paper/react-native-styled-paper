@@ -17,9 +17,9 @@ const LeftArrowButton = styled(Button)`
 `;
 
 type Props = {
-    title: string,
-    CenterComponent: React.ReactNode,
-    onPress: () => void,
+    title?: string,
+    CenterComponent?: React.ReactNode,
+    onPress?: (evt?) => void,
 }
 
 class LeftArrow extends React.Component<Props> {

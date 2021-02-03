@@ -10,9 +10,12 @@
         "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
     },
     "dependencies": {
+        "@mdi/svg": "^5.9.55",
         "react": "16.13.1",
         "react-native": "0.63.4",
         "react-native-styled-paper": "file:../../dist",
+        "react-native-svg": "^12.1.0",
+        "react-native-svg-transformer": "^0.14.3",
         "styled-components": "^5.2.1"
     },
     "devDependencies": {
@@ -43,9 +46,9 @@
     "config": {
         "react-native-storybook-loader": {
             "searchDir": [
-                "./components"
+                "./src/components"
             ],
-            "pattern": "**/*.stories.js",
+            "pattern": "**/*.stories.tsx",
             "outputFile": "./storybook/storyLoader.js"
         }
     },

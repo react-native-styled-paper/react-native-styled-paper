@@ -1,4 +1,5 @@
 {
+    "exclude": "/(node_modules\/(?!(react-native-styled-paper)\/).*|dist|.storybook)/",
     "presets": [
         "@babel/preset-env",
         "@babel/preset-react",
