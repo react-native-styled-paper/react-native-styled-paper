@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from "react";
 import styled from "styled-components/native";
 
-import Button from '../../Button/Button';
+import Button from "../../Button/Button";
 
 const LeftArrowView = styled.View`
     position: absolute;
@@ -25,7 +25,7 @@ type Props = {
 class LeftArrow extends React.Component<Props> {
 
     static defaultProps = {
-        title: 'Left',
+        title: "Left",
     };
 
     render() {
@@ -34,12 +34,12 @@ class LeftArrow extends React.Component<Props> {
         const comps = CenterComponent ? (
             CenterComponent
         ) : (
-                <LeftArrowButton
-                    onPress={onPress}
-                >
+            <LeftArrowButton
+                onPress={onPress}
+            >
                     Left
-                </LeftArrowButton>
-            );
+            </LeftArrowButton>
+        );
 
         return (
             <LeftArrowView pointerEvents="box-none">

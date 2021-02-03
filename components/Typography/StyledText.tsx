@@ -1,5 +1,5 @@
 import color from "color";
-import React from "react";
+import * as React from "react";
 import { I18nManager, StyleProp, TextStyle } from "react-native";
 import { DefaultTheme } from "styled-components";
 import styled from "styled-components/native";

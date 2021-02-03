@@ -1,14 +1,14 @@
-import React, { PureComponent } from 'react';
+import * as React from "react";
 import {
     Animated,
     Easing,
     TouchableOpacity,
     StyleProp,
     ViewStyle,
-} from 'react-native';
+} from "react-native";
 
 const DEFAULT_DOT_SIZE = 7;
-const DEFAULT_DOT_COLOR = 'rgba(0, 0, 0, 0.75)';
+const DEFAULT_DOT_COLOR = "rgba(0, 0, 0, 0.75)";
 
 type Props = {
     inactiveOpacity: number,
@@ -35,7 +35,7 @@ type State = {
     animTransform: Animated.Value,
 }
 
-export default class PaginationDot extends PureComponent<Props, State> {
+export default class PaginationDot extends React.PureComponent<Props, State> {
 
     state: State = {
         animColor: new Animated.Value(0),
@@ -66,7 +66,7 @@ export default class PaginationDot extends PureComponent<Props, State> {
             useNativeDriver: !this._shouldAnimateColor,
         };
 
-        let animations = [
+        const animations = [
             Animated.timing(animOpacity, {
                 easing: Easing.linear,
                 ...commonProperties,
@@ -138,8 +138,8 @@ export default class PaginationDot extends PureComponent<Props, State> {
 
         const dotContainerStyle = [
             {
-                alignItems: 'center',
-                justifyContent: 'center',
+                alignItems: "center",
+                justifyContent: "center",
                 marginHorizontal: 8,
             },
             containerStyle || {},
@@ -166,8 +166,8 @@ export default class PaginationDot extends PureComponent<Props, State> {
                     currentRef._snapToItem(currentRef._getPositionIndex(index));
                 } catch (error) {
                     console.warn(
-                        'react-native-snap-carousel | Pagination: ' +
-                        '`carouselRef` has to be a Carousel ref.\n' +
+                        "react-native-snap-carousel | Pagination: " +
+                        "`carouselRef` has to be a Carousel ref.\n" +
                         error
                     );
                 }

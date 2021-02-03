@@ -3,10 +3,13 @@ import LightTheme from "./theme/LightTheme";
 import DarkTheme from "./theme/DarkTheme";
 import ActionButton from "./ActionButton/ActionButton";
 import ActivityIndicator from "./ActivityIndicator/ActivityIndicator";
+import Appbar from "./Appbar/Appbar";
 import BottomSheet from "./BottomSheet/BottomSheet";
 import Button from "./Button/Button";
 import Carousel, { LeftArrow as CarouselLeftArrow, RightArrow as CarouselRightArrow } from "./Carousel";
 import Divider from "./Divider/Divider";
+import Icon from "./Icon/Icon";
+import IconButton from "./IconButton/IconButton";
 import Surface from "./Surface/Surface";
 import SvgIcon from "./SvgIcon/SvgIcon";
 import TouchableRipple from "./TouchableRipple/TouchableRipple";
@@ -19,12 +22,15 @@ export {
 
     ActionButton,
     ActivityIndicator,
+    Appbar,
     BottomSheet,
     Button,
     Carousel,
     CarouselLeftArrow,
     CarouselRightArrow,
     Divider,
+    Icon,
+    IconButton,
     Surface,
     SvgIcon,
     TouchableRipple,

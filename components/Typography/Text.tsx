@@ -1,6 +1,6 @@
-import React from "react";
+import * as React from "react";
 import { Text as NativeText, TextStyle, StyleProp } from "react-native";
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme, ThemeContext } from "styled-components";
 import styled from "styled-components/native";
 
 const DefaultText = styled.Text`
@@ -27,6 +27,7 @@ type Props = React.ComponentProps<typeof NativeText> & {
 const Text = (props: Props) => {
 
     const { style, children, ...rest } = props;
+    const theme = React.useContext(ThemeContext);
 
     return (
         <DefaultText
@@ -36,6 +37,7 @@ const Text = (props: Props) => {
             //         ...theme.fonts.regular,
             //     },
             // ]}
+            theme={theme}
         >
             {children}
         </DefaultText>

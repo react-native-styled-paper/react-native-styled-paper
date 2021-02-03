@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import * as React from "react";
 import {
     TouchableWithoutFeedback,
     ViewStyle,
     StyleProp,
     GestureResponderEvent,
-} from 'react-native';
-import color from 'color';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+} from "react-native";
+import color from "color";
+import { DefaultTheme, ThemeContext } from "styled-components";
 import styled from "styled-components/native";
 
 const StyledView = styled.View<{ borderless: boolean }>`
@@ -27,7 +27,7 @@ type Props = React.ComponentPropsWithRef<typeof TouchableWithoutFeedback> & {
      * Type of background drawabale to display the feedback (Android).
      * https://facebook.github.io/react-native/docs/touchablenativefeedback.html#background
      */
-    background?: Object;
+    background?: Record<string, unknown>;
     /**
      * Whether to start the ripple at the center (Web).
      */
@@ -105,7 +105,7 @@ const TouchableRipple = ({
     ...rest
 }: Props) => {
 
-    const theme = useContext(ThemeContext);
+    const theme = React.useContext(ThemeContext);
 
     const handlePressIn = (e: any) => {
         const { centered, onPressIn } = rest;
@@ -147,42 +147,42 @@ const TouchableRipple = ({
             Math.max(dimensions.width, dimensions.height) * 2;
 
         // Create a container for our ripple effect so we don't need to change the parent's style
-        const container = document.createElement('span');
+        const container = document.createElement("span");
 
-        container.setAttribute('data-paper-ripple', '');
+        container.setAttribute("data-paper-ripple", "");
 
         Object.assign(container.style, {
-            position: 'absolute',
-            pointerEvents: 'none',
-            top: '0',
-            left: '0',
-            right: '0',
-            bottom: '0',
+            position: "absolute",
+            pointerEvents: "none",
+            top: "0",
+            left: "0",
+            right: "0",
+            bottom: "0",
             borderTopLeftRadius: style.borderTopLeftRadius,
             borderTopRightRadius: style.borderTopRightRadius,
             borderBottomRightRadius: style.borderBottomRightRadius,
             borderBottomLeftRadius: style.borderBottomLeftRadius,
-            overflow: centered ? 'visible' : 'hidden',
+            overflow: centered ? "visible" : "hidden",
         });
 
         // Create span to show the ripple effect
-        const ripple = document.createElement('span');
+        const ripple = document.createElement("span");
 
         Object.assign(ripple.style, {
-            position: 'absolute',
-            pointerEvents: 'none',
+            position: "absolute",
+            pointerEvents: "none",
             backgroundColor: calculatedRippleColor,
-            borderRadius: '50%',
+            borderRadius: "50%",
 
             /* Transition configuration */
-            transitionProperty: 'transform opacity',
+            transitionProperty: "transform opacity",
             transitionDuration: `${Math.min(size * 1.5, 350)}ms`,
-            transitionTimingFunction: 'linear',
-            transformOrigin: 'center',
+            transitionTimingFunction: "linear",
+            transformOrigin: "center",
 
             /* We'll animate these properties */
-            transform: 'translate3d(-50%, -50%, 0) scale3d(0.1, 0.1, 0.1)',
-            opacity: '0.5',
+            transform: "translate3d(-50%, -50%, 0) scale3d(0.1, 0.1, 0.1)",
+            opacity: "0.5",
 
             // Position the ripple where cursor was
             left: `${touchX}px`,
@@ -201,8 +201,8 @@ const TouchableRipple = ({
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
                 Object.assign(ripple.style, {
-                    transform: 'translate3d(-50%, -50%, 0) scale3d(1, 1, 1)',
-                    opacity: '1',
+                    transform: "translate3d(-50%, -50%, 0) scale3d(1, 1, 1)",
+                    opacity: "1",
                 });
             });
         });
@@ -212,7 +212,7 @@ const TouchableRipple = ({
         rest.onPressOut?.(e);
 
         const containers = e.currentTarget.querySelectorAll(
-            '[data-paper-ripple]'
+            "[data-paper-ripple]"
         ) as HTMLElement[];
 
         requestAnimationFrame(() => {
@@ -222,7 +222,7 @@ const TouchableRipple = ({
 
                     // @ts-ignore
                     Object.assign(ripple.style, {
-                        transitionDuration: '250ms',
+                        transitionDuration: "250ms",
                         opacity: 0,
                     });
 
@@ -260,7 +260,7 @@ const TouchableRipple = ({
 
 TouchableRipple.defaultProps = {
     borderless: false,
-}
+};
 
 /**
  * Whether ripple effect is supported.

@@ -1,6 +1,6 @@
 // Parallax effect inspired by https://github.com/oblador/react-native-parallax/
 
-import React, { Component } from 'react';
+import * as React from "react";
 import {
     Animated,
     Easing,
@@ -8,7 +8,7 @@ import {
     findNodeHandle,
     StyleProp,
     ViewStyle,
-} from 'react-native';
+} from "react-native";
 import styled from "styled-components/native";
 
 const ParallaxContainer = styled.View`
@@ -29,7 +29,7 @@ const ParallaxLoaderContainer = styled.View`
 
 type Props = {
     // ...StyleProp<ImageStyle>,
-    carouselRef: object, // passed from <Carousel />
+    carouselRef: Record<string, unknown>, // passed from <Carousel />
     itemHeight: number, // passed from <Carousel />
     itemWidth: number, // passed from <Carousel />
     scrollPosition: Record<string, unknown>, // passed from <Carousel />
@@ -59,14 +59,14 @@ type State = {
     animOpacity: Animated.Value,
 }
 
-export default class ParallaxImage extends Component<Props, State> {
+export default class ParallaxImage extends React.Component<Props, State> {
 
     static defaultProps = {
         containerStyle: {},
         fadeDuration: 500,
         parallaxFactor: 0.3,
         showSpinner: true,
-        spinnerColor: 'rgba(0, 0, 0, 0.4)',
+        spinnerColor: "rgba(0, 0, 0, 0.4)",
         AnimatedImageComponent: Animated.Image,
     };
 
@@ -192,7 +192,7 @@ export default class ParallaxImage extends Component<Props, State> {
         } = this.props;
 
         const parallaxPadding = (vertical ? height : width) * parallaxFactor;
-        const requiredStyles = { position: 'relative' };
+        const requiredStyles = { position: "relative" };
         const dynamicStyles = {
             width: vertical ? width : width + parallaxPadding * 2,
             height: vertical ? height + parallaxPadding * 2 : height,
@@ -205,7 +205,7 @@ export default class ParallaxImage extends Component<Props, State> {
                             ? scrollPosition.interpolate({
                                 inputRange: [offset - sliderWidth, offset + sliderWidth],
                                 outputRange: [-parallaxPadding, parallaxPadding],
-                                extrapolate: 'clamp',
+                                extrapolate: "clamp",
                             })
                             : 0,
                     },
@@ -215,7 +215,7 @@ export default class ParallaxImage extends Component<Props, State> {
                             ? scrollPosition.interpolate({
                                 inputRange: [offset - sliderHeight, offset + sliderHeight],
                                 outputRange: [-parallaxPadding, parallaxPadding],
-                                extrapolate: 'clamp',
+                                extrapolate: "clamp",
                             })
                             : 0,
                     },
@@ -229,8 +229,8 @@ export default class ParallaxImage extends Component<Props, State> {
                 {...other}
                 style={[
                     {
-                        position: 'relative',
-                        resizeMode: 'cover',
+                        position: "relative",
+                        resizeMode: "cover",
                         width: null,
                         height: null,
                     },
@@ -250,14 +250,14 @@ export default class ParallaxImage extends Component<Props, State> {
         return status === 1 && showSpinner ? (
             <ParallaxLoaderContainer>
                 <ActivityIndicator
-                    size={'small'}
+                    size={"small"}
                     color={spinnerColor}
                     animating={true}
                 />
             </ParallaxLoaderContainer>
         ) : (
-                false
-            );
+            false
+        );
     }
 
     render() {
@@ -267,7 +267,7 @@ export default class ParallaxImage extends Component<Props, State> {
                 ref={c => {
                     this._container = c;
                 }}
-                pointerEvents={'none'}
+                pointerEvents={"none"}
                 onLayout={this._measureLayout}
             >
                 {this.image}

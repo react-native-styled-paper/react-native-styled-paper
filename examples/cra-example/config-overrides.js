@@ -1,5 +1,5 @@
 const path = require("path");
-const { addWebpackModuleRule, addWebpackResolve, override, babelInclude, addBabelPlugin, addWebpackExternals } = require('customize-cra');
+const { addWebpackModuleRule, addWebpackResolve, override, babelInclude, addBabelPlugin } = require('customize-cra');
 
 // override
 module.exports = {

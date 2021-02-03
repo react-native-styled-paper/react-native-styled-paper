@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
+import * as ReactJS from "react";
 import { Platform } from "react-native";
 // import { I18nManager, Platform } from "react-native";
 import {ThemeProvider} from "styled-components";
-import { LightTheme } from "react-native-styled-paper";
+import LightTheme from "react-native-styled-paper/components/theme/LightTheme";
 import Head from "next/head";
 import type { AppProps /*, AppContext */ } from 'next/app';
 
@@ -61,7 +61,7 @@ const App =({ Component, pageProps }: AppProps) => {
     // );
 
     return (
-        <Fragment>
+        <ReactJS.Fragment>
             <Head>
                 <meta
                     name="viewport"
@@ -79,7 +79,7 @@ const App =({ Component, pageProps }: AppProps) => {
             <ThemeProvider theme={LightTheme}>
                 <Component {...pageProps} />
             </ThemeProvider>
-        </Fragment>
+        </ReactJS.Fragment>
     );
 }
 

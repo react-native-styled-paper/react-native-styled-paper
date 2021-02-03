@@ -1,11 +1,10 @@
 import React from 'react';
 import { Text } from "react-native";
 import { storiesOf } from '@storybook/react';
-import { LightTheme, Surface } from 'react-native-styled-paper';
+import { Surface } from 'react-native-styled-paper/components/Surface';
 
 storiesOf('Surface', module).add('Default', () => (
     <Surface
-        theme={LightTheme}
     >
         <Text>Text</Text>
     </Surface>

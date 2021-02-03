@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from "react";
 import {
     Animated,
     Easing,
@@ -7,9 +7,9 @@ import {
     StyleSheet,
     View,
     ViewStyle,
-} from 'react-native';
-import { DefaultTheme } from 'styled-components';
-import styled from 'styled-components/native';
+} from "react-native";
+import { DefaultTheme } from "styled-components";
+import styled from "styled-components/native";
 
 const ActivityIndicatorContainer = styled.View`
     justify-content: center;
@@ -28,7 +28,7 @@ type Props = React.ComponentPropsWithRef<typeof View> & {
     /**
      * Size of the indicator.
      */
-    size?: 'small' | 'large' | number;
+    size?: "small" | "large" | number;
     /**
      * Whether the indicator should hide when not animating.
      */
@@ -66,7 +66,7 @@ const ActivityIndicator = ({
     animating = true,
     color: indicatorColor,
     hidesWhenStopped = true,
-    size: indicatorSize = 'small',
+    size: indicatorSize = "small",
     style,
     theme,
     ...rest
@@ -116,7 +116,7 @@ const ActivityIndicator = ({
                 duration: DURATION,
                 easing: Easing.linear,
                 // Animated.loop does not work if useNativeDriver is true on web
-                useNativeDriver: Platform.OS !== 'web',
+                useNativeDriver: Platform.OS !== "web",
                 toValue: 1,
                 isInteraction: false,
             });
@@ -139,8 +139,8 @@ const ActivityIndicator = ({
 
     const color = indicatorColor || theme.colors.primary;
     const size =
-        typeof indicatorSize === 'string'
-            ? indicatorSize === 'small'
+        typeof indicatorSize === "string"
+            ? indicatorSize === "small"
                 ? 24
                 : 48
             : indicatorSize
@@ -151,13 +151,13 @@ const ActivityIndicator = ({
     const easing = Easing.bezier(0.4, 0.0, 0.7, 1.0);
     const layerStyle0 = {
         ...StyleSheet.absoluteFillObject,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
     } as any;
     const containerStyle = {
         width: size,
         height: size / 2,
-        overflow: 'hidden',
+        overflow: "hidden",
     } as any;
 
     return (

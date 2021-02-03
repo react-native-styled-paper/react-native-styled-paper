@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Text as NativeText, TextStyle, StyleProp } from "react-native";
 import { DefaultTheme } from "styled-components";
 

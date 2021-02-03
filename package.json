@@ -1,15 +1,17 @@
 {
     "name": "react-native-styled-paper",
-    "version": "1.0.0-develop.2",
+    "version": "1.0.0-develop.3",
     "description": "",
-    "main": "dist/module/index.js",
+    "main": "dist/components/index.ts",
     "types": "dist/types/index.d.ts",
     "scripts": {
-        "build": "yarn build:types && yarn compile",
+        "cra-example": "cd examples/cra-example && yarn",
+        "build": "yarn build:types && yarn compile && yarn copy:src",
         "build:types": "rimraf -rf types && tsc --emitDeclarationOnly -p tsconfig-types.json",
         "compile": "rimraf -rf dist && bob build",
         "compile:babel": "rimraf -rf dist && babel src/ --out-dir dist --extensions \".ts,.tsx\"",
-        "postcompile": "node buildScripts/postCompile.js",
+        "postcompile": "node --experimental-json-modules buildScripts/postCompile.js",
+        "copy:src": "node ./CopyAndSyncSrcFolder.js",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
         "release": "semantic-release",
         "type-check": "tsc --noEmit",
@@ -35,6 +37,7 @@
         "@babel/preset-env": "^7.12.11",
         "@babel/preset-react": "^7.12.10",
         "@babel/preset-typescript": "^7.12.7",
+        "@mdi/svg": "^5.9.55",
         "@semantic-release/exec": "^5.0.0",
         "@semantic-release/github": "^7.2.0",
         "@semantic-release/npm": "^7.0.10",
@@ -47,6 +50,7 @@
         "@typescript-eslint/parser": "^4.14.0",
         "babel-plugin-module-resolver": "^4.1.0",
         "conventional-changelog-cli": "^2.1.1",
+        "copy-dir": "^1.3.0",
         "customize-cra": "^1.0.0",
         "cz-conventional-changelog": "^3.3.0",
         "eslint": "^7.18.0",
@@ -64,6 +68,7 @@
         "typescript": "^3.9.3"
     },
     "peerDependencies": {
+        "@mdi/svg": "^5.9.55",
         "react": "16.13.1",
         "react-native": "0.63.2",
         "styled-components": "^5.2.1"

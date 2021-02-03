@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
     StyleSheet,
     TextPropTypes,
@@ -26,9 +26,9 @@ type Props = {
     zIndex: number,
 
     hideShadow: boolean,
-    shadowStyle: Object | any[] | number;
+    shadowStyle: Record<string, unknown> | any[] | number;
 
-    renderIcon: Function,
+    renderIcon: () => React.ReactNode,
 
     bgColor: string,
     bgOpacity: number,
@@ -41,10 +41,10 @@ type Props = {
     spacing: number,
     size: number,
     autoInactive: boolean,
-    onPress: Function,
-    onPressIn: Function,
-    onPressOut: Function,
-    backdrop: boolean | Object,
+    onPress: (evt) => React.ReactNode,
+    onPressIn: (evt) => React.ReactNode,
+    onPressOut: (evt) => React.ReactNode,
+    backdrop: boolean | Record<string, unknown>,
     degrees: number,
     verticalOrientation: "up" | "down",
     backgroundTappable: boolean,
@@ -425,9 +425,6 @@ ActionButton.defaultProps = {
     spacing: 20,
     outRangeScale: 1,
     autoInactive: true,
-    onPress: () => { },
-    onPressIn: () => { },
-    onPressOn: () => { },
     backdrop: false,
     degrees: 45,
     position: "right",

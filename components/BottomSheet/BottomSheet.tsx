@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 import {
     View,
     KeyboardAvoidingView,
@@ -40,8 +40,7 @@ type State = {
     modalVisible: boolean,
 }
 
-class RBSheet extends Component<Props, State> {
-
+class RBSheet extends React.Component<Props, State> {
 
     static defaultProps = {
         animationType: "none",

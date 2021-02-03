@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Text, TextStyle, StyleProp } from "react-native";
 import styled from "styled-components/native";
 import StyledText from "./StyledText";

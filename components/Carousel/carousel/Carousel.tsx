@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from "react";
 import {
     Animated,
     Easing,
@@ -10,8 +10,8 @@ import {
     View,
     ViewPropTypes,
     ViewStyle,
-} from 'react-native';
-import shallowCompare from 'react-addons-shallow-compare';
+} from "react-native";
+import shallowCompare from "react-addons-shallow-compare";
 import {
     defaultScrollInterpolator,
     stackScrollInterpolator,
@@ -20,9 +20,9 @@ import {
     shiftAnimatedStyles,
     stackAnimatedStyles,
     tinderAnimatedStyles,
-} from '../utils/animations';
+} from "../utils/animations";
 
-const IS_IOS = Platform.OS === 'ios';
+const IS_IOS = Platform.OS === "ios";
 
 // Native driver for scroll events
 // See: https://facebook.github.io/react-native/blog/2017/02/14/using-native-driver-for-animated.html
@@ -46,7 +46,7 @@ type Props = {
     sliderHeight?: number, // required for vertical carousel
     activeAnimationType?: string,
     activeAnimationOptions?: Record<string, unknown>,
-    activeSlideAlignment?: 'center' | 'end' | 'start',
+    activeSlideAlignment?: "center" | "end" | "start",
     activeSlideOffset?: number,
     apparitionDelay?: number,
     autoplay?: boolean,
@@ -62,7 +62,7 @@ type Props = {
     inactiveSlideOpacity?: number,
     inactiveSlideScale?: number,
     inactiveSlideShift?: number,
-    layout?: 'default' | 'stack' | 'tinder',
+    layout?: "default" | "stack" | "tinder",
     layoutCardOffset?: number,
     lockScrollTimeoutDuration?: number,
     lockScrollWhileSnapping?: boolean,
@@ -98,12 +98,12 @@ type State = {
     interpolators: any[],
 }
 
-export default class Carousel extends Component<Props, State> {
+export default class Carousel extends React.Component<Props, State> {
 
     static defaultProps = {
-        activeAnimationType: 'timing',
+        activeAnimationType: "timing",
         activeAnimationOptions: null,
-        activeSlideAlignment: 'center',
+        activeSlideAlignment: "center",
         activeSlideOffset: 20,
         apparitionDelay: 0,
         autoplay: false,
@@ -119,7 +119,7 @@ export default class Carousel extends Component<Props, State> {
         inactiveSlideOpacity: 0.7,
         inactiveSlideScale: 0.9,
         inactiveSlideShift: 0,
-        layout: 'default',
+        layout: "default",
         lockScrollTimeoutDuration: 1000,
         lockScrollWhileSnapping: false,
         loop: false,
@@ -241,32 +241,32 @@ export default class Carousel extends Component<Props, State> {
         // Warnings
         if (!ViewPropTypes) {
             console.warn(
-                'react-native-snap-carousel: It is recommended to use at least version 0.44 of React Native with the plugin'
+                "react-native-snap-carousel: It is recommended to use at least version 0.44 of React Native with the plugin"
             );
         }
         if (!props.vertical && (!props.sliderWidth || !props.itemWidth)) {
             console.error(
-                'react-native-snap-carousel: You need to specify both `sliderWidth` and `itemWidth` for horizontal carousels'
+                "react-native-snap-carousel: You need to specify both `sliderWidth` and `itemWidth` for horizontal carousels"
             );
         }
         if (props.vertical && (!props.sliderHeight || !props.itemHeight)) {
             console.error(
-                'react-native-snap-carousel: You need to specify both `sliderHeight` and `itemHeight` for vertical carousels'
+                "react-native-snap-carousel: You need to specify both `sliderHeight` and `itemHeight` for vertical carousels"
             );
         }
         if (props.apparitionDelay && !IS_IOS && !props.useScrollView) {
             console.warn(
-                'react-native-snap-carousel: Using `apparitionDelay` on Android is not recommended since it can lead to rendering issues'
+                "react-native-snap-carousel: Using `apparitionDelay` on Android is not recommended since it can lead to rendering issues"
             );
         }
         if (props.customAnimationType || props.customAnimationOptions) {
             console.warn(
-                'react-native-snap-carousel: Props `customAnimationType` and `customAnimationOptions` have been renamed to `activeAnimationType` and `activeAnimationOptions`'
+                "react-native-snap-carousel: Props `customAnimationType` and `customAnimationOptions` have been renamed to `activeAnimationType` and `activeAnimationOptions`"
             );
         }
         if (props.onScrollViewScroll) {
             console.error(
-                'react-native-snap-carousel: Prop `onScrollViewScroll` has been removed. Use `onScroll` instead'
+                "react-native-snap-carousel: Prop `onScrollViewScroll` has been removed. Use `onScroll` instead"
             );
         }
     }
@@ -291,7 +291,7 @@ export default class Carousel extends Component<Props, State> {
             }
 
             this._snapToItem(_firstItem, false, false, true, false);
-            this._hackActiveSlideAnimation(_firstItem, 'start', true);
+            this._hackActiveSlideAnimation(_firstItem, "start", true);
 
             if (apparitionDelay) {
                 this._apparitionTimeout = setTimeout(() => {
@@ -501,15 +501,15 @@ export default class Carousel extends Component<Props, State> {
 
     _shouldUseShiftLayout() {
         const { inactiveSlideShift, layout } = this.props;
-        return layout === 'default' && inactiveSlideShift !== 0;
+        return layout === "default" && inactiveSlideShift !== 0;
     }
 
     _shouldUseStackLayout() {
-        return this.props.layout === 'stack';
+        return this.props.layout === "stack";
     }
 
     _shouldUseTinderLayout() {
-        return this.props.layout === 'tinder';
+        return this.props.layout === "tinder";
     }
 
     _getCustomData(props = this.props) {
@@ -668,7 +668,7 @@ export default class Carousel extends Component<Props, State> {
             (event &&
                 event.nativeEvent &&
                 event.nativeEvent.contentOffset &&
-                event.nativeEvent.contentOffset[vertical ? 'y' : 'x']) ||
+                event.nativeEvent.contentOffset[vertical ? "y" : "x"]) ||
             0
         );
     }
@@ -684,13 +684,13 @@ export default class Carousel extends Component<Props, State> {
         } = this.props;
 
         if (
-            (activeSlideAlignment === 'start' && !opposite) ||
-            (activeSlideAlignment === 'end' && opposite)
+            (activeSlideAlignment === "start" && !opposite) ||
+            (activeSlideAlignment === "end" && opposite)
         ) {
             return 0;
         } else if (
-            (activeSlideAlignment === 'end' && !opposite) ||
-            (activeSlideAlignment === 'start' && opposite)
+            (activeSlideAlignment === "end" && !opposite) ||
+            (activeSlideAlignment === "start" && opposite)
         ) {
             return vertical ? sliderHeight - itemHeight : sliderWidth - itemWidth;
         } else {
@@ -710,9 +710,9 @@ export default class Carousel extends Component<Props, State> {
             activeSlideAlignment,
         } = this.props;
 
-        if (activeSlideAlignment === 'start') {
+        if (activeSlideAlignment === "start") {
             return vertical ? itemHeight / 2 : itemWidth / 2;
-        } else if (activeSlideAlignment === 'end') {
+        } else if (activeSlideAlignment === "end") {
             return vertical
                 ? sliderHeight - itemHeight / 2
                 : sliderWidth - itemWidth / 2;
@@ -756,7 +756,7 @@ export default class Carousel extends Component<Props, State> {
             return;
         }
 
-        let interpolators = [];
+        const interpolators = [];
         this._positions = [];
 
         this._getCustomData(props).forEach((itemData, index) => {
@@ -793,7 +793,7 @@ export default class Carousel extends Component<Props, State> {
 
                 animatedValue = this._scrollPos.interpolate({
                     ...interpolator,
-                    extrapolate: 'clamp',
+                    extrapolate: "clamp",
                 });
             }
 
@@ -821,7 +821,7 @@ export default class Carousel extends Component<Props, State> {
         };
 
         return Animated.parallel([
-            Animated['timing'](animatedValue, {
+            Animated["timing"](animatedValue, {
                 ...animationCommonOptions,
                 easing: Easing.linear,
             }),
@@ -838,7 +838,7 @@ export default class Carousel extends Component<Props, State> {
         const _currentDataIndex = this._getDataIndex(_currentIndex);
         const _nextIndex = this._getCustomIndex(next);
         const _nextDataIndex = this._getDataIndex(_nextIndex);
-        let animations = [];
+        const animations = [];
 
         // Keep animations in sync when looping
         if (this._enableLoop()) {
@@ -883,9 +883,9 @@ export default class Carousel extends Component<Props, State> {
         }
 
         const itemsLength = data && data.length;
-        const direction = goTo || itemsLength === 1 ? 'start' : 'end';
+        const direction = goTo || itemsLength === 1 ? "start" : "end";
 
-        this._scrollTo(offset + (direction === 'start' ? -1 : 1), false);
+        this._scrollTo(offset + (direction === "start" ? -1 : 1), false);
 
         clearTimeout(this._hackSlideAnimationTimeout);
         this._hackSlideAnimationTimeout = setTimeout(() => {
@@ -1022,7 +1022,7 @@ export default class Carousel extends Component<Props, State> {
             this._repositionScroll(nextActiveItem);
         }
 
-        if (typeof onScroll === 'function' && event) {
+        if (typeof onScroll === "function" && event) {
             onScroll(event);
         }
     }
@@ -1472,7 +1472,7 @@ export default class Carousel extends Component<Props, State> {
         return (
             <Component
                 style={[mainDimension, slideStyle, animatedStyle] as any}
-                pointerEvents={'box-none'}
+                pointerEvents={"box-none"}
                 {...specificProps}
             >
                 {renderItem({ item, index }, parallaxProps)}
@@ -1510,10 +1510,10 @@ export default class Carousel extends Component<Props, State> {
             : {};
 
         return {
-            decelerationRate: enableMomentum ? 0.9 : 'fast',
+            decelerationRate: enableMomentum ? 0.9 : "fast",
             showsHorizontalScrollIndicator: false,
             showsVerticalScrollIndicator: false,
-            overScrollMode: 'never',
+            overScrollMode: "never",
             automaticallyAdjustContentInsets: false,
             directionalLockEnabled: true,
             pinchGestureEnabled: false,
@@ -1541,12 +1541,12 @@ export default class Carousel extends Component<Props, State> {
             containerCustomStyle || style || {},
             hideCarousel ? { opacity: 0 } : {},
             vertical
-                ? { height: sliderHeight, flexDirection: 'column' }
+                ? { height: sliderHeight, flexDirection: "column" }
                 : // LTR hack; see https://github.com/facebook/react-native/issues/11960
                 // and https://github.com/facebook/react-native/issues/13100#issuecomment-328986423
                 {
                     width: sliderWidth,
-                    flexDirection: this._needsRTLAdaptations() ? 'row-reverse' : 'row',
+                    flexDirection: this._needsRTLAdaptations() ? "row-reverse" : "row",
                 },
         ];
         const contentContainerStyle = [
@@ -1605,7 +1605,7 @@ export default class Carousel extends Component<Props, State> {
         };
 
         const ScrollViewComponent =
-            typeof useScrollView === 'function' ? useScrollView : AnimatedScrollView;
+            typeof useScrollView === "function" ? useScrollView : AnimatedScrollView;
 
         return this._needsScrollView() ? (
             // @ts-ignore
@@ -1615,8 +1615,8 @@ export default class Carousel extends Component<Props, State> {
                 })}
             </ScrollViewComponent>
         ) : (
-                // @ts-ignore
-                <AnimatedFlatList {...props} />
-            );
+        // @ts-ignore
+            <AnimatedFlatList {...props} />
+        );
     }
 }

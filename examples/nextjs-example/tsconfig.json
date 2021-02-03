@@ -5,7 +5,11 @@
             "react-native": ["react-native-web"]
         },
         "target": "esnext",
-        "lib": ["dom", "dom.iterable", "esnext"],
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext",
+        ],
         "allowJs": true,
         "skipLibCheck": true,
         "strict": false,
@@ -20,8 +24,18 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "jsx": "preserve",
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": false
     },
-    "exclude": ["node_modules", ".next", "out"],
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"]
+    "exclude": [
+        "node_modules",
+        ".next",
+        "out",
+        "next.config.js"
+    ],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.js"
+    ]
 }

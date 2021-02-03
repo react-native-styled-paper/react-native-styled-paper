@@ -1,20 +1,20 @@
-import React, { useContext } from 'react';
+import * as React from "react";
 import {
     Animated,
     ViewStyle,
     StyleSheet,
     StyleProp,
     TextStyle,
-} from 'react-native';
-import color from 'color';
+} from "react-native";
+import color from "color";
 
-import ActivityIndicator from '../ActivityIndicator/ActivityIndicator';
-import SvgIcon from '../SvgIcon/SvgIcon';
-import Surface from '../Surface/Surface';
-import Text from '../Typography/Text';
-import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import { black, white } from '../theme/colors';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+import ActivityIndicator from "../ActivityIndicator/ActivityIndicator";
+import SvgIcon from "../SvgIcon/SvgIcon";
+import Surface from "../Surface/Surface";
+import Text from "../Typography/Text";
+import TouchableRipple from "../TouchableRipple/TouchableRipple";
+import { black, white } from "../theme/colors";
+import { DefaultTheme, ThemeContext } from "styled-components";
 import styled from "styled-components/native";
 
 const ButtonSurface = styled(Surface)<{
@@ -72,7 +72,7 @@ type Props = React.ComponentProps<typeof Surface> & {
      * - `outlined` - button with an outline (medium emphasis)
      * - `contained` - button with a background color and elevation shadow (high emphasis)
      */
-    mode?: 'text' | 'outlined' | 'contained';
+    mode?: "text" | "outlined" | "contained";
     /**
      * Whether the color is a dark color. A dark button will render light text and vice-versa. Only applicable for `contained` mode.
      */
@@ -126,7 +126,7 @@ type Props = React.ComponentProps<typeof Surface> & {
     /**
      * @optional
      */
-    theme: DefaultTheme;
+    theme?: DefaultTheme;
     /**
      * testID to be used on tests.
      */
@@ -168,7 +168,7 @@ type Props = React.ComponentProps<typeof Surface> & {
 const Button = ({
     disabled,
     compact,
-    mode = 'text',
+    mode = "text",
     dark,
     loading,
     icon,
@@ -183,14 +183,14 @@ const Button = ({
     testID,
     ...rest
 }: Props) => {
-    const theme = useContext(ThemeContext);
+    const theme = React.useContext(ThemeContext);
 
     const { current: elevation } = React.useRef<Animated.Value>(
-        new Animated.Value(mode === 'contained' ? 2 : 0)
+        new Animated.Value(mode === "contained" ? 2 : 0)
     );
 
     const handlePressIn = () => {
-        if (mode === 'contained') {
+        if (mode === "contained") {
             const { scale } = theme.animation;
             Animated.timing(elevation, {
                 toValue: 8,
@@ -201,7 +201,7 @@ const Button = ({
     };
 
     const handlePressOut = () => {
-        if (mode === 'contained') {
+        if (mode === "contained") {
             const { scale } = theme.animation;
             Animated.timing(elevation, {
                 toValue: 2,
@@ -216,7 +216,7 @@ const Button = ({
 
     let backgroundColor, borderColor, textColor, borderWidth;
 
-    if (mode === 'contained') {
+    if (mode === "contained") {
         if (disabled) {
             backgroundColor = color(theme.dark ? white : black)
                 .alpha(0.12)
@@ -228,17 +228,17 @@ const Button = ({
             backgroundColor = colors.primary;
         }
     } else {
-        backgroundColor = 'transparent';
+        backgroundColor = "transparent";
     }
 
-    if (mode === 'outlined') {
+    if (mode === "outlined") {
         borderColor = color(theme.dark ? white : black)
             .alpha(0.29)
             .rgb()
             .string();
         borderWidth = StyleSheet.hairlineWidth;
     } else {
-        borderColor = 'transparent';
+        borderColor = "transparent";
         borderWidth = 0;
     }
 
@@ -247,14 +247,14 @@ const Button = ({
             .alpha(0.32)
             .rgb()
             .string();
-    } else if (mode === 'contained') {
+    } else if (mode === "contained") {
         let isDark;
 
-        if (typeof dark === 'boolean') {
+        if (typeof dark === "boolean") {
             isDark = dark;
         } else {
             isDark =
-                backgroundColor === 'transparent'
+                backgroundColor === "transparent"
                     ? false
                     : !color(backgroundColor).isLight();
         }
@@ -282,7 +282,7 @@ const Button = ({
     const { color: customLabelColor, fontSize: customLabelSize } =
         StyleSheet.flatten(labelStyle) || {};
 
-    const elevationRes = disabled || mode !== 'contained' ? 0 : elevation;
+    const elevationRes = disabled || mode !== "contained" ? 0 : elevation;
 
     return (
         <ButtonSurface
@@ -299,7 +299,7 @@ const Button = ({
                 onPressIn={handlePressIn}
                 onPressOut={handlePressOut}
                 accessibilityLabel={accessibilityLabel}
-                accessibilityTraits={disabled ? ['button', 'disabled'] : 'button'}
+                accessibilityTraits={disabled ? ["button", "disabled"] : "button"}
                 accessibilityComponentType="button"
                 accessibilityRole="button"
                 accessibilityState={{ disabled }}

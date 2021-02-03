@@ -1,6 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from "styled-components";
-import { LightTheme, Text } from "react-native-styled-paper";
+import LightTheme from "react-native-styled-paper/components/theme/LightTheme";
+import { Text } from "react-native-styled-paper/components/Typography";
+import { Button } from "react-native-styled-paper/components/Button";
 import logo from './logo.svg';
 import './App.css';
 
@@ -21,7 +23,8 @@ function App() {
                     >
                         Learn React
                     </a>
-                    <Text theme={LightTheme}>Hello</Text>
+                    <Text>Hello</Text>
+                    <Button>Press</Button>
                 </header>
             </div>
         </ThemeProvider>

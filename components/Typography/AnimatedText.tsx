@@ -1,13 +1,13 @@
 import * as React from "react";
 import { Animated, TextStyle, I18nManager, StyleProp } from "react-native";
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = React.ComponentPropsWithRef<typeof Animated.Text> & {
     style?: StyleProp<TextStyle>;
     /**
      * @optional
      */
-    theme: DefaultTheme;
+    theme?: DefaultTheme;
 };
 
 /**
@@ -15,7 +15,8 @@ type Props = React.ComponentPropsWithRef<typeof Animated.Text> & {
  *
  * @extends Text props https://facebook.github.io/react-native/docs/text.html#props
  */
-function AnimatedText({ style, theme, ...rest }: Props) {
+function AnimatedText({ style, ...rest }: Props) {
+    const theme = React.useContext(ThemeContext);
     const writingDirection = I18nManager.isRTL ? "rtl" : "ltr";
 
     return (

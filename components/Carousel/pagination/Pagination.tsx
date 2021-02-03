@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
-import { I18nManager, Platform, StyleProp, ViewStyle } from 'react-native';
+import * as React from "react";
+import { I18nManager, Platform, StyleProp, ViewStyle } from "react-native";
 import styled from "styled-components/native";
-import PaginationDot from './PaginationDot';
+import PaginationDot from "./PaginationDot";
 
-const IS_IOS = Platform.OS === 'ios';
+const IS_IOS = Platform.OS === "ios";
 const IS_RTL = I18nManager.isRTL;
 
 const PaginationView = styled.View<{
@@ -20,7 +20,7 @@ type Props = {
     activeDotIndex: number,
     dotsLength: number,
     activeOpacity?: number,
-    carouselRef?: object,
+    carouselRef?: Record<string, unknown>,
     containerStyle?: StyleProp<ViewStyle>,
     dotColor?: string,
     dotContainerStyle?: StyleProp<ViewStyle>,
@@ -41,7 +41,7 @@ type Props = {
     delayPressInDot?: number,
 };
 
-export default class Pagination extends PureComponent<Props> {
+export default class Pagination extends React.PureComponent<Props> {
 
     static defaultProps = {
         inactiveDotOpacity: 0.5,
@@ -63,8 +63,8 @@ export default class Pagination extends PureComponent<Props> {
             (!props.dotColor && props.inactiveDotColor)
         ) {
             console.warn(
-                'react-native-snap-carousel | Pagination: ' +
-                'You need to specify both `dotColor` and `inactiveDotColor`'
+                "react-native-snap-carousel | Pagination: " +
+                "You need to specify both `dotColor` and `inactiveDotColor`"
             );
         }
         if (
@@ -72,14 +72,14 @@ export default class Pagination extends PureComponent<Props> {
             (!props.dotElement && props.inactiveDotElement)
         ) {
             console.warn(
-                'react-native-snap-carousel | Pagination: ' +
-                'You need to specify both `dotElement` and `inactiveDotElement`'
+                "react-native-snap-carousel | Pagination: " +
+                "You need to specify both `dotElement` and `inactiveDotElement`"
             );
         }
         if (props.tappableDots && props.carouselRef === undefined) {
             console.warn(
-                'react-native-snap-carousel | Pagination: ' +
-                'You must specify prop `carouselRef` when setting `tappableDots` to `true`'
+                "react-native-snap-carousel | Pagination: " +
+                "You must specify prop `carouselRef` when setting `tappableDots` to `true`"
             );
         }
     }
@@ -126,7 +126,7 @@ export default class Pagination extends PureComponent<Props> {
             <PaginationDot
                 // @ts-ignore
                 carouselRef={carouselRef}
-                tappable={Boolean(tappableDots && typeof carouselRef !== 'undefined')}
+                tappable={Boolean(tappableDots && typeof carouselRef !== "undefined")}
                 activeOpacity={activeOpacity}
                 color={dotColor}
                 containerStyle={dotContainerStyle}
@@ -171,12 +171,12 @@ export default class Pagination extends PureComponent<Props> {
 
         return (
             <PaginationView
-                pointerEvents={'box-none'}
+                pointerEvents={"box-none"}
                 flexDirection={vertical
-                    ? 'column'
+                    ? "column"
                     : this._needsRTLAdaptations()
-                        ? 'row-reverse'
-                        : 'row'
+                        ? "row-reverse"
+                        : "row"
                 }
                 accessible={!!accessibilityLabel}
                 accessibilityLabel={accessibilityLabel}

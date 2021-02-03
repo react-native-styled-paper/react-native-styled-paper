@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Button } from 'react-native-styled-paper';
+import { Button } from 'react-native-styled-paper/components/Button';
 
 const onPressFn = action("onPress");
 

@@ -18,17 +18,20 @@ module.exports = withPlugins([withTM, withNextEnv], {
             test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
             loader: "file-loader",
         });
+
+        // config.module.rules.push({
+        //     test: /\.(jsx|ts|tsx)$/, // Just `tsx?` file only
+        //     use: [
+        //         "babel-loader"
+        //     ],
+        // });
+
         // config.module.rules.push({
         //     test: /\.(ts|js)x?$/, // Just `tsx?` file only
+        //     exclude: /node_modules[/\\](?!react-native-styled-paper|react-native-safe-area-view)/,
         //     use: [
-        //         // options.defaultLoaders.babel, I don't think it's necessary to have this loader too
         //         {
-        //             loader: "ts-loader",
-        //             options: {
-        //                 transpileOnly: true,
-        //                 experimentalWatchApi: true,
-        //                 onlyCompileBundledFiles: true,
-        //             },
+        //             loader: "babel-loader",
         //         },
         //     ],
         // });
@@ -36,7 +39,7 @@ module.exports = withPlugins([withTM, withNextEnv], {
         config.resolve.alias = {
             ...(config.resolve.alias || {}),
             // Transform all direct `react-native` imports to `react-native-web`
-            "react-native$": "react-native-web",
+            "^react-native$": "react-native-web",
             "react-native-vector-icons": "@ovaeasy/react-native-vector-icons",
         };
         config.resolve.extensions = [

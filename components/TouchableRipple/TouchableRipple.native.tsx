@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import * as React from "react";
 import {
     BackgroundPropType,
     StyleProp,
@@ -8,9 +8,9 @@ import {
     TouchableWithoutFeedback,
     View,
     ViewStyle,
-} from 'react-native';
-import color from 'color';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+} from "react-native";
+import color from "color";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 const ANDROID_VERSION_LOLLIPOP = 21;
 const ANDROID_VERSION_PIE = 28;
@@ -37,7 +37,7 @@ const TouchableRipple = ({
     children,
     ...rest
 }: Props) => {
-    const theme = useContext(ThemeContext);
+    const theme = React.useContext(ThemeContext);
     const { dark, colors } = theme;
     const disabled = disabledProp || !rest.onPress;
     const calculatedRippleColor =
@@ -50,7 +50,7 @@ const TouchableRipple = ({
     // A workaround for ripple on Android P is to use useForeground + overflow: 'hidden'
     // https://github.com/facebook/react-native/issues/6480
     const useForeground =
-        Platform.OS === 'android' &&
+        Platform.OS === "android" &&
         Platform.Version >= ANDROID_VERSION_PIE &&
         borderless;
 
@@ -66,7 +66,7 @@ const TouchableRipple = ({
                         : TouchableNativeFeedback.Ripple(calculatedRippleColor, borderless)
                 }
             >
-                <View style={[borderless && { overflow: 'hidden' }, style]}>
+                <View style={[borderless && { overflow: "hidden" }, style]}>
                     {React.Children.only(children)}
                 </View>
             </TouchableNativeFeedback>
@@ -77,7 +77,7 @@ const TouchableRipple = ({
         <TouchableHighlight
             {...rest}
             disabled={disabled}
-            style={[borderless && { overflow: 'hidden' }, style]}
+            style={[borderless && { overflow: "hidden" }, style]}
             underlayColor={
                 underlayColor != null
                     ? underlayColor
@@ -90,6 +90,6 @@ const TouchableRipple = ({
 };
 
 TouchableRipple.supported =
-    Platform.OS === 'android' && Platform.Version >= ANDROID_VERSION_LOLLIPOP;
+    Platform.OS === "android" && Platform.Version >= ANDROID_VERSION_LOLLIPOP;
 
 export default TouchableRipple;

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { isValidElement, Component } from "react";
 import {
     StyleSheet,
     Text,
@@ -193,7 +193,7 @@ export default class ActionButtonItem extends Component<Props> {
         ];
 
         const title = (
-            React.isValidElement(this.props.title) ?
+            isValidElement(this.props.title) ?
                 this.props.title
                 : (
                     <Text
@@ -204,7 +204,7 @@ export default class ActionButtonItem extends Component<Props> {
                         {this.props.title}
                     </Text>
                 )
-        )
+        );
 
         return (
             <TextTouchable
