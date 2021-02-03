@@ -31,6 +31,7 @@ module.exports = {
                             "alias": {
                                 "^react-native$": "react-native-web",
                                 "components": "./components",
+                                "react-native-styled-paper": "../../",
                             }
                         }]
                     ]
@@ -43,6 +44,7 @@ module.exports = {
         // }),
         addWebpackResolve({alias: {
             'react-native$': require.resolve('react-native-web'),
+            'react-native-styled-paper': require.resolve('../../'),
         }}),
         // addWebpackExternals({
         //     react: "React",
@@ -50,7 +52,8 @@ module.exports = {
         // }),
         babelInclude([
             path.resolve("."), // make sure you link your own source
-            path.resolve("node_modules/react-native-styled-paper"),
+            // path.resolve("node_modules/react-native-styled-paper"),
+            path.resolve("../../"),
         ]),
         addBabelPlugin('@babel/plugin-transform-modules-commonjs'),
         (config) => {
