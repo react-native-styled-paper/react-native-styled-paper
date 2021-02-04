@@ -4,7 +4,9 @@ import { DefaultTheme, ThemeContext } from "styled-components";
 import styled from "styled-components/native";
 
 const DefaultText = styled.Text`
-    color: ${props => props.theme.colors.text}
+    font-family: ${props => props.theme.fonts.regular.fontFamily};
+    font-weight: ${props => props.theme.fonts.regular.fontWeight};
+    color: ${props => props.theme.colors.text};
     text-align: left;
 `;
 
@@ -26,7 +28,7 @@ type Props = React.ComponentProps<typeof NativeText> & {
  */
 const Text = (props: Props) => {
 
-    const { style, children, ...rest } = props;
+    const { children, ...rest } = props;
     const theme = React.useContext(ThemeContext);
 
     return (
