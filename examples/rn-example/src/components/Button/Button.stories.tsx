@@ -11,11 +11,11 @@ storiesOf('Button', module)
     .add('Default', () => {
         const title = text("title", "Text");
         return (
-        <Button
-            onPress={onPressFn}
-        >
-            {title}
-        </Button>
+            <Button
+                onPress={onPressFn}
+            >
+                {title}
+            </Button>
         )
     })
     .add('Primary', () => {
@@ -24,12 +24,12 @@ storiesOf('Button', module)
         const dark = boolean('dark', false);
 
         return (
-        <Button
-            dark={dark}
-            mode={mode}
-            onPress={onPressFn}
-        >
-            {title}
-        </Button>
+            <Button
+                dark={dark}
+                mode={mode}
+                onPress={onPressFn}
+            >
+                {title}
+            </Button>
         )
     })

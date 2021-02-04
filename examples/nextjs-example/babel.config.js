@@ -1,4 +1,4 @@
-{
+module.exports = {
     "presets": [
         "next/babel"
     ],
@@ -7,7 +7,6 @@
         ["styled-components", { "ssr": true }],
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-proposal-object-rest-spread",
-        "@babel/plugin-transform-modules-commonjs",
         "inline-react-svg",
         [
             "module-resolver",

@@ -8,6 +8,7 @@ function loadStories() {
   require('../src/components/Button/Button.stories');
   require('../src/components/Carousel/Carousel.stories');
   require('../src/components/Icon/Icon.stories');
+  require('../src/components/Toast/Toast.stories');
   require('../src/components/Typography/Text.stories');
 }
 
@@ -16,6 +17,7 @@ const stories = [
   '../src/components/Button/Button.stories',
   '../src/components/Carousel/Carousel.stories',
   '../src/components/Icon/Icon.stories',
+  '../src/components/Toast/Toast.stories',
   '../src/components/Typography/Text.stories',
 ];
 
