@@ -4,19 +4,23 @@ import { Fonts } from "../types";
 const fontConfig = {
     web: {
         regular: {
-            fontFamily: "Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+            // fontFamily: 'Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif',
+            fontFamily: 'sans-serif',
             fontWeight: "400" as const,
         },
         medium: {
-            fontFamily: "Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+            // fontFamily: 'Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif',
+            fontFamily: 'sans-serif-medium',
             fontWeight: "500" as const,
         },
         light: {
-            fontFamily: "Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+            // fontFamily: 'Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif',
+            fontFamily: 'sans-serif-light',
             fontWeight: "300" as const,
         },
         thin: {
-            fontFamily: "Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+            // fontFamily: 'Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif',
+            fontFamily: 'sans-serif-thin',
             fontWeight: "100" as const,
         },
     },
