@@ -8,7 +8,7 @@ import {
     View,
     ViewStyle,
 } from "react-native";
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme, ThemeContext } from "styled-components";
 import styled from "styled-components/native";
 
 const ActivityIndicatorContainer = styled.View`
@@ -68,9 +68,10 @@ const ActivityIndicator = ({
     hidesWhenStopped = true,
     size: indicatorSize = "small",
     style,
-    theme,
     ...rest
 }: Props) => {
+    const theme = React.useContext(ThemeContext);
+
     const { current: timer } = React.useRef<Animated.Value>(
         new Animated.Value(0)
     );

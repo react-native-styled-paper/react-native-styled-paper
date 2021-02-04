@@ -19,6 +19,12 @@ module.exports = withPlugins([withTM, withNextEnv], {
             loader: "file-loader",
         });
 
+        config.module.rules.push({
+            test: /\.(jsx|ts|tsx)$/,
+            use: ['babel-loader'],
+            exclude: /(node_modules\/(?!(react-native-styled-paper)\/).*|dist|.stoybook)/,
+        });
+
         // config.module.rules.push({
         //     test: /\.(jsx|ts|tsx)$/, // Just `tsx?` file only
         //     use: [

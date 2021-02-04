@@ -1,5 +1,5 @@
 module.exports = {
-    stories: ['../components/**/*.stories.js'],
+    stories: ['../components/**/*.stories.tsx'],
     addons: [
         '@storybook/preset-create-react-app',
         '@storybook/addon-actions/register',
@@ -8,9 +8,38 @@ module.exports = {
     ],
     webpackFinal: async (config) => {
         config.module.rules.push({
-            test: /\.js$/,
-            use: ['babel-loader'],
-            exclude: /(node_modules\/(?!(@yourapp-common)\/).*|dist|.stoybook)/,
+            test: /\.(js|ts|tsx)$/,
+            exclude: /(node_modules\/(?!(react-native-styled-paper)\/).*|dist|.stoybook)/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    "presets": [
+                        "@babel/preset-env",
+                        "@babel/preset-react",
+                        "@babel/preset-typescript",
+                    ],
+                    "plugins": [
+                        ["react-native-web", { "commonjs": true }],
+                        ["styled-components", { "ssr": true }],
+                        "@babel/plugin-proposal-class-properties",
+                        '@babel/plugin-transform-modules-commonjs',
+                        "@babel/plugin-proposal-optional-chaining",
+                        "@babel/plugin-proposal-nullish-coalescing-operator",
+                        // "@babel/plugin-transform-flow-strip-types",
+                        [
+                            "module-resolver",
+                            {
+                                "alias": {
+                                    "^react-native$": "react-native-web",
+                                    "react-native-vector-icons":
+                                        "@ovaeasy/react-native-vector-icons",
+                                    "components": "./components"
+                                }
+                            }
+                        ]
+                    ]
+                }
+            }
         });
 
         config.resolve.alias = {
@@ -18,7 +47,6 @@ module.exports = {
             // Transform all direct `react-native` imports to `react-native-web`
             "react-native$": "react-native-web",
             "react-native-vector-icons": "@ovaeasy/react-native-vector-icons",
-            "react-native-styled-paper": "../../../",
         };
 
         const nodeConfig = config.node || {};

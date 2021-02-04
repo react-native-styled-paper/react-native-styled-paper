@@ -1,14 +1,14 @@
-{
-    "exclude": "/(node_modules\/(?!(react-native-styled-paper)\/).*|dist|.storybook)/",
+module.exports = {
     "presets": [
         "@babel/preset-env",
         "@babel/preset-react",
         "@babel/preset-typescript",
     ],
     "plugins": [
+        ["react-native-web", { "commonjs": true }],
+        ["styled-components", { "ssr": true }],
         "@babel/plugin-proposal-class-properties",
-        "babel-plugin-styled-components",
-        "@babel/plugin-transform-modules-commonjs",
+        '@babel/plugin-transform-modules-commonjs',
         [
             "module-resolver",
             {
