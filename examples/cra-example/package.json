@@ -42,6 +42,7 @@
         "@storybook/react": "~5.3.14",
         "@svgr/webpack": "^5.5.0",
         "babel-loader": "8.1.0",
+        "babel-plugin-inline-react-svg": "^1.1.2",
         "babel-plugin-module-resolver": "^4.1.0",
         "babel-plugin-react-native-web": "^0.14.10",
         "babel-plugin-styled-components": "^1.12.0",

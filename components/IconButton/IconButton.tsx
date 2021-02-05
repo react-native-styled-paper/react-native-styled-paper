@@ -13,7 +13,7 @@ import Icon from "../Icon/Icon";
 import CrossFadeIcon from "../Icon/CrossFadeIcon";
 
 import type { $RemoveChildren } from "../types";
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = $RemoveChildren<typeof TouchableRipple> & {
     /**
@@ -49,7 +49,7 @@ type Props = $RemoveChildren<typeof TouchableRipple> & {
     /**
      * @optional
      */
-    theme: DefaultTheme;
+    theme?: DefaultTheme;
 };
 
 /**
@@ -94,10 +94,10 @@ const IconButton = ({
     disabled,
     onPress,
     animated = false,
-    theme,
     style,
     ...rest
 }: Props) => {
+    const theme = React.useContext(ThemeContext);
     const iconColor =
         typeof customColor !== "undefined" ? customColor : theme.colors.text;
     const rippleColor = color(iconColor).alpha(0.32).rgb().string();
