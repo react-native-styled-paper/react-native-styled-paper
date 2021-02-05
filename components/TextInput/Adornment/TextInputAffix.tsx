@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import color from 'color';
 import {
     Text,
@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import { AdornmentSide } from './enums';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, ThemeContext } from 'styled-components';
 
 const AFFIX_OFFSET = 12;
 
@@ -68,7 +68,7 @@ const AffixAdornment: React.FunctionComponent<{ affix: React.ReactNode; testID: 
     );
 };
 
-const TextInputAffix = ({ text, textStyle: labelStyle, theme }: Props) => {
+const TextInputAffix = ({ text, textStyle: labelStyle }: Props) => {
     const {
         textStyle,
         onLayout,
@@ -77,6 +77,7 @@ const TextInputAffix = ({ text, textStyle: labelStyle, theme }: Props) => {
         visible,
         paddingHorizontal,
     } = React.useContext(AffixContext);
+    const theme = React.useContext(ThemeContext);
     const textColor = color(theme.colors.text)
         .alpha(theme.dark ? 0.7 : 0.54)
         .rgb()

@@ -46,7 +46,7 @@ const INPUT_PADDING_HORIZONTAL = 14;
 
 class TextInputOutlined extends React.Component<ChildTextInputProps> {
 
-    static contextType = ThemeContext;
+    static contextType = ThemeContext as any;
     static defaultProps = {
         disabled: false,
         error: false,
@@ -82,9 +82,7 @@ class TextInputOutlined extends React.Component<ChildTextInputProps> {
             placeholderTextColor,
             ...rest
         } = this.props;
-        const {
-            theme,
-        } = this.context;
+        const theme = this.context;
 
         const adornmentConfig = getAdornmentConfig({ left, right });
 

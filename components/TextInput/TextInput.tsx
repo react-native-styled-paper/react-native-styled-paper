@@ -168,7 +168,7 @@ export type TextInputProps = React.ComponentPropsWithRef<
 
 class TextInput extends React.Component<TextInputProps, State> {
 
-    static contextType = ThemeContext;
+    static contextType = ThemeContext as any;
 
     // @component ./Adornment/TextInputIcon.tsx
     static Icon = TextInputIcon;
@@ -297,7 +297,7 @@ class TextInput extends React.Component<TextInputProps, State> {
     private root: NativeTextInput | undefined | null;
 
     private showError = () => {
-        const { theme } = this.context;
+        const theme = this.context;
         const { scale } = theme.animation;
         Animated.timing(this.state.error, {
             toValue: 1,
@@ -311,7 +311,7 @@ class TextInput extends React.Component<TextInputProps, State> {
     };
 
     private hideError = () => {
-        const { theme } = this.context;
+        const theme = this.context;
         const { scale } = theme.animation;
         Animated.timing(this.state.error, {
             toValue: 0,
@@ -325,7 +325,7 @@ class TextInput extends React.Component<TextInputProps, State> {
     };
 
     private restoreLabel = () => {
-        const { theme } = this.context;
+        const theme = this.context;
         const { scale } = theme.animation;
         Animated.timing(this.state.labeled, {
             toValue: 1,
@@ -339,7 +339,7 @@ class TextInput extends React.Component<TextInputProps, State> {
     };
 
     private minimizeLabel = () => {
-        const { theme } = this.context;
+        const theme = this.context;
         const { scale } = theme.animation;
         Animated.timing(this.state.labeled, {
             toValue: 0,
