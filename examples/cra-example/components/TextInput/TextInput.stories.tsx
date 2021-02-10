@@ -13,6 +13,12 @@ const TextInputExample = () => {
                 value={text}
                 onChangeText={text => setText(text)}
             />
+            <TextInput
+                mode="outlined"
+                label="Outline"
+                value={text}
+                onChangeText={text => setText(text)}
+            />
         </View>
     )
 }

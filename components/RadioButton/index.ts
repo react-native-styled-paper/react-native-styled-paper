@@ -19,4 +19,6 @@ const RadioButton = Object.assign(
     }
 );
 
-export default RadioButton;
+export {
+    RadioButton,
+}

@@ -16,7 +16,7 @@ type Props = React.ComponentPropsWithRef<typeof Image> & {
     /**
      * @optional
      */
-    theme: DefaultTheme;
+    theme?: DefaultTheme;
 };
 
 /**

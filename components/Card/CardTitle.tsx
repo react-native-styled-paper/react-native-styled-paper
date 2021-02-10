@@ -64,7 +64,7 @@ type Props = React.ComponentPropsWithRef<typeof View> & {
     /**
      * @optional
      */
-    theme: DefaultTheme;
+    theme?: DefaultTheme;
 };
 
 const LEFT_SIZE = 40;
