@@ -71,13 +71,16 @@ const SvgIcon = (props: Props) => {
     const theme = React.useContext(ThemeContext);
     const color = theme.colors.text;
 
-    return (
-        // @ts-ignore
-        <Icon
-            {...rest}
-            color={color}
-        />
-    );
+    return props.icon ?
+        (
+            // @ts-ignore
+            <Icon
+                {...rest}
+                color={color}
+            />
+        ) :
+        <NativeText>Icon</NativeText>
+
 };
 
 export default SvgIcon;

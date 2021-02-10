@@ -26,6 +26,7 @@ module.exports = {
                         "@babel/plugin-proposal-class-properties",
                         "@babel/plugin-proposal-object-rest-spread",
                         "@babel/plugin-transform-modules-commonjs",
+                        "inline-react-svg",
                         ['module-resolver', {
                             "root": ["."],
                             "alias": {
@@ -37,10 +38,10 @@ module.exports = {
                 }
             }
         }),
-        // addWebpackModuleRule({
-        //     test: /\.svg$/,
-        //     use: ['@svgr/webpack'],
-        // }),
+        addWebpackModuleRule({
+            test: /\.svg$/,
+            use: ['@svgr/webpack'],
+        }),
         addWebpackResolve({alias: {
             'react-native$': require.resolve('react-native-web'),
         }}),
@@ -49,9 +50,9 @@ module.exports = {
         //     "react-dom": "ReactDom"
         // }),
         babelInclude([
-            path.resolve("."), // make sure you link your own source
-            // path.resolve("node_modules/react-native-styled-paper"),
-            path.resolve("../../"),
+            path.resolve("./src"), // make sure you link your own source
+            path.resolve("./node_modules/react-native-styled-paper"),
+            // path.resolve("../../"),
         ]),
         addBabelPlugin('@babel/plugin-transform-modules-commonjs'),
         (config) => {

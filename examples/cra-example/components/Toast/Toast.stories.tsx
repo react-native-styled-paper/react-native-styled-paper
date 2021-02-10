@@ -3,7 +3,7 @@ import { Button } from "react-native";
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { ToastProvider, useToast } from 'react-native-styled-paper/components/Toast';
+import { useToast } from 'react-native-styled-paper/components/Toast';
 
 const onPressFn = action("onPress");
 
@@ -11,7 +11,7 @@ const ToastExample = () => {
     const { toast } = useToast();
 
     return (
-        <ToastProvider>
+        <>
             <Button
                 title="Toast"
                 onPress={() => {
@@ -19,7 +19,7 @@ const ToastExample = () => {
                     toast({ message: "Hello" })
                 }}
             />
-        </ToastProvider>
+        </>
     )
 }
 
