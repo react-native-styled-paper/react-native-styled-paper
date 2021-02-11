@@ -4,6 +4,7 @@ import { testProp } from '../../utils/UITestingHelper';
 
 type Props = {
     items?: any[],
+    [key: string]: any,
 };
 
 const PickerItems = ({ items, ...restProps }: Props) => (

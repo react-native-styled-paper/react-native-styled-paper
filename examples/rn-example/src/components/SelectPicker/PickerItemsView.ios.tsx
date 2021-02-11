@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { TouchableOpacity, Modal, StyleSheet } from 'react-native';
-import theme from '@airasia-common/libraries/theming/theme';
-import Styled from '../../utils/Styled';
-import { Wrapper } from '..';
+import { Wrapper } from 'react-native-styled-paper/components/Wrapper';
+import { ThemeContext } from 'styled-components';
+import { customStyled } from '../../utils/StyledUtils';
 import { testProp } from '../../utils/UITestingHelper';
 import InputAccessoryView from './InputAccessoryView';
 import PickerItems from './PickerItems';
 
-const ModalViewBottom = Styled(Wrapper, {
+const ModalViewBottom = customStyled(Wrapper, {
     justifyContent: 'center',
-    background: theme.colors.grey,
+    background: props => props.theme.colors.grey,
 });
 
 const styles = StyleSheet.create({
@@ -28,13 +28,10 @@ const ModalViewTop = props => (
 );
 
 type Props = {
-    onValueChange?: (value?) => void,
+    onValueChange?: (value?, index?) => void,
     items?: any[],
     selectedItem?: Record<string, unknown>,
-    inputAccessoryProps?: shape({
-        doneText: PropTypes.string.isRequired,
-        headerText: PropTypes.string,
-    }),
+    inputAccessoryProps?: any,
     showPicker?: boolean,
     onDonePress?: (evt?) => void,
 };
@@ -47,6 +44,7 @@ const PickerItemsView = ({
     onDonePress,
     selectedItem,
 }: Props) => {
+    const theme = React.useContext(ThemeContext);
     const getIndexFromItem = () =>
         items.indexOf(items.find(item => item.value === selectedItem.value));
 
@@ -78,7 +76,9 @@ const PickerItemsView = ({
                 onArrowUp={onArrowUp}
                 onArrowDown={onArrowDown}
             />
-            <ModalViewBottom>
+            <ModalViewBottom
+                theme={theme}
+            >
                 <PickerItems
                     items={items}
                     onValueChange={onValueChange}

@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from "styled-components/native";
 import { variant } from 'styled-system';
 import { Text, Wrapper, Row, CaptionText } from '..';
+import [ Caption ] from "react-native-styled-paper/components/Typography";
 import { testProp } from '../../utils/UITestingHelper';
 import { customStyled } from '../../utils/StyledUtils';
 

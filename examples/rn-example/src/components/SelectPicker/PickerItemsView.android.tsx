@@ -7,10 +7,13 @@ import {
     TouchableOpacity,
     Dimensions,
 } from 'react-native';
+import { Wrapper } from "react-native-styled-paper/components/Wrapper";
+import { Row } from "react-native-styled-paper/components/Container";
 import { Text } from "react-native-styled-paper/components/Typography";
 import { testProp } from '../../utils/UITestingHelper';
 import OptionItem, { ITEM_HEIGHT } from './OptionItem';
 import { customStyled } from '../../utils/StyledUtils';
+import { ThemeContext } from 'styled-components';
 
 const { height: windowHeight } = Dimensions.get('window');
 
@@ -66,6 +69,7 @@ const PickerItemsView = ({
     onDonePress,
     selectedItem = {} as any,
 }: Props) => {
+    const theme = React.useContext(ThemeContext);
     let currentSelectedRef;
     let currentSelectedItem: any = {};
     const handleRadioChange = (selected, index, setSelectedRef) => {
