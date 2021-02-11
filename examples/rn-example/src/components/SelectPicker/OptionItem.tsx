@@ -5,7 +5,7 @@ import { testProp, toSnakeCase } from '../../utils/UITestingHelper';
 export const ITEM_HEIGHT = 52;
 
 type Props = {
-    item?: Record<string, unknown>,
+    item?: Record<string, any>,
     index?: number,
     onValueChange?: (value?, index?, item?) => void,
     isSelected?: boolean,
@@ -37,8 +37,10 @@ const OptionItem = ({
         <RadioButton
             // isVertical={true}
             // id={item.value}
+            value={item.value}
             // text={item.label}
             // isSelected={selected}
+            status={selected ? "checked" : "unchecked"}
             // onChange={() => handleRadioChange(item)}
             // containerProps={{
             //     paddingY: 14,

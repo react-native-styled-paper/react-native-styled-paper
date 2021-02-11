@@ -1,7 +1,14 @@
 import * as React from 'react';
+import { Platform } from 'react-native';
 import { TouchableOpacity, Image, View } from 'react-native';
 import { testProp } from '../../utils/UITestingHelper';
-import PickerItemsView from './PickerItemsView';
+import PickerItemsViewAndroid from './PickerItemsView.android';
+import PickerItemsViewIOS from './PickerItemsView.ios';
+
+const PickerItemsView = Platform.select({
+    android: PickerItemsViewAndroid,
+    ios: PickerItemsViewIOS,
+});
 
 type Props = {
     items?: any[],
@@ -39,7 +46,7 @@ const IconPickerSelect = ({
         setSelectedItem(item);
     };
 
-    const selectedValue = items.find(item => item.value === value);
+    // const selectedValue = items.find(item => item.value === value);
 
     return (
         <View {...testProp('currency_picker')}>
@@ -47,7 +54,7 @@ const IconPickerSelect = ({
                 <Image source={{ uri: "" }} width={24} height={24} />
             </TouchableOpacity>
             <PickerItemsView
-                selectedValue={selectedValue}
+                // selectedValue={selectedValue}
                 items={items}
                 inputAccessoryProps={inputAccessoryProps}
                 onValueChange={onValueChange}

@@ -6,11 +6,13 @@
         "android": "rnstl && react-native run-android",
         "ios": "rnstl && react-native run-ios",
         "start": "react-native start",
+        "rnstl": "rnstl",
         "test": "jest",
         "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
     },
     "dependencies": {
         "@mdi/svg": "^5.9.55",
+        "@react-native-community/async-storage": "^1.12.1",
         "@react-native-community/datetimepicker": "^3.0.9",
         "@react-native-picker/picker": "react-native-picker/picker",
         "react": "16.13.1",

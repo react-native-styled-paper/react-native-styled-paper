@@ -1,10 +1,17 @@
 import * as React from 'react';
+import { Platform } from 'react-native';
 import { TouchableOpacity, Keyboard } from 'react-native';
-import { Wrapper } from '..';
+import { Wrapper } from 'react-native-styled-paper/components/Wrapper';
 import { testProp, toSnakeCase } from '../../utils/UITestingHelper';
 import InputTextBox from './InputTextView';
-import PickerItemsView from './PickerItemsView';
 import PickerItemsModal from './PickerItemsModal';
+import PickerItemsViewAndroid from './PickerItemsView.android';
+import PickerItemsViewIOS from './PickerItemsView.ios';
+
+const PickerItemsView = Platform.select({
+    android: PickerItemsViewAndroid,
+    ios: PickerItemsViewIOS,
+});
 
 type Props = {
     items?: any[],
@@ -14,7 +21,7 @@ type Props = {
     boxProps?: Record<string, unknown>,
     placeholder?: string,
     variant?: string,
-    onChange?: (value?) => void,
+    onChange?: (value?, index?) => void,
     renderLabel?: (props?) => React.ReactNode,
     renderValue?: (props?) => React.ReactNode,
     renderItemValue?: (props?) => React.ReactNode,
@@ -36,7 +43,7 @@ const PickerSelect = ({
     renderItemValue,
     showModalMobile,
     modalMobileProps,
-}) => {
+}: Props) => {
     const items = showModalMobile
         ? [...propItems]
         : [
@@ -96,8 +103,8 @@ const PickerSelect = ({
             </TouchableOpacity>
             {showModalMobile ? (
                 <PickerItemsModal
-                    testID="pickeritems_view"
-                    placeholder={placeholder}
+                    // testID="pickeritems_view"
+                    // placeholder={placeholder}
                     items={items}
                     onValueChange={onSelectItem}
                     selectedItem={selectedItem}
@@ -107,7 +114,7 @@ const PickerSelect = ({
                 />
             ) : (
                     <PickerItemsView
-                        testID="pickeritems_view"
+                        // testID="pickeritems_view"
                         placeholder={placeholder}
                         items={items}
                         inputAccessoryProps={inputAccessoryProps}

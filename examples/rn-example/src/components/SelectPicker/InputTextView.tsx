@@ -1,8 +1,11 @@
 import * as React from 'react';
-import styled from "styled-components/native";
+import { ThemeContext } from "styled-components";
 import { variant } from 'styled-system';
-import { Text, Wrapper, Row, CaptionText } from '..';
-import [ Caption ] from "react-native-styled-paper/components/Typography";
+import { Wrapper } from "react-native-styled-paper/components/Wrapper";
+import { Row } from "react-native-styled-paper/components/Container";
+import { Caption, Text } from "react-native-styled-paper/components/Typography";
+import { Icon } from "react-native-styled-paper/components/Icon";
+import ChevronDownIcon from "@mdi/svg/svg/chevron-down.svg";
 import { testProp } from '../../utils/UITestingHelper';
 import { customStyled } from '../../utils/StyledUtils';
 
@@ -56,14 +59,14 @@ const ValueText = customStyled(Text, {
     paddingTop: 1,
 });
 
-const LabelText = customStyled(CaptionText, {
+const LabelText = customStyled(Caption, {
     opacity: 0.5,
     ...truncatedStyle,
 });
 
-const Icon = () => (
+const IconChevron = ({ theme }) => (
     <IconBox>
-        <Ionicons name="ios-chevron-down" color={theme.colors.greyDark} size={20} />
+        <Icon icon={ChevronDownIcon} color={theme.colors.greyDark} size={20} />
     </IconBox>
 );
 
@@ -89,6 +92,7 @@ const InputTextView = ({
     renderValue,
     renderItemValue,
 }: Props) => {
+    const theme = React.useContext(ThemeContext);
     const selectedItem = propSelectedItem || {};
 
     return (
@@ -118,7 +122,9 @@ const InputTextView = ({
                         </PlaceHolderText>
                     </Wrapper>
                 )}
-            <Icon />
+            <IconChevron
+                theme={theme}
+            />
         </Box>
     );
 };

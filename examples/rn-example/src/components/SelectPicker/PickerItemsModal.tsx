@@ -9,18 +9,20 @@ import {
     StyleSheet,
 } from 'react-native';
 import styled from 'styled-components';
+import { Wrapper } from "react-native-styled-paper/components/Wrapper";
 import { Text } from "react-native-styled-paper/components/Typography";
+import CloseIconRaw from "@mdi/svg/svg/close.svg";
 import { customStyled } from '../../utils/StyledUtils';
 
 const styles = StyleSheet.create({
     divider: {
         borderTopWidth: 1,
         borderTopColor: '#D9DBE0',
-        backgroundColor: theme.colors.primaryWhite,
+        // backgroundColor: theme.colors.primaryWhite,
     },
     modalViewTop: {
         flex: 1,
-        backgroundColor: theme.colors.darkBlack,
+        // backgroundColor: theme.colors.darkBlack,
         opacity: 0.8,
     },
     selection: {
@@ -29,7 +31,7 @@ const styles = StyleSheet.create({
     },
     sectionList: {
         paddingTop: 14,
-        backgroundColor: theme.colors.primaryWhite,
+        // backgroundColor: theme.colors.primaryWhite,
     },
     itemText: {
         height: 48,
@@ -38,16 +40,16 @@ const styles = StyleSheet.create({
     },
     highlightItem: {
         fontWeight: '500',
-        color: theme.colors.secondary,
+        // color: theme.colors.secondary,
     },
     itemRightText: {
         height: 48,
         fontSize: 16,
         lineHeight: 20,
-        color: theme.colors.greyDark,
+        // color: theme.colors.greyDark,
     },
     keyboardAvoidingView: {
-        backgroundColor: theme.colors.greyDark,
+        // backgroundColor: theme.colors.greyDark,
     },
     title: {
         display: 'flex',
@@ -59,11 +61,11 @@ const styles = StyleSheet.create({
         paddingRight: 16,
         borderTopLeftRadius: 4,
         borderTopRightRadius: 4,
-        backgroundColor: theme.colors.primaryWhite,
+        // backgroundColor: theme.colors.primaryWhite,
     },
 });
 
-const CloseIcon = styled(MaterialIcons)`
+const CloseIcon = styled(CloseIconRaw)`
     width: 24px;
     height: 24px;
     color: ${({ theme }) => theme.colors.greyDark};
@@ -107,7 +109,7 @@ const renderItem = (onSelect, selectedValue, selectedIndex) => item => {
 
 type Props = {
     items?: any[],
-    onValueChange?: (value?) => void,
+    onValueChange?: (value?, index?) => void,
     onClose?: (value?) => void,
     selectedItem?: Record<string, unknown>,
     title?: string,
@@ -147,7 +149,7 @@ const PickerItemsModal = ({
             >
                 <View style={styles.selection}>
                     <View style={styles.title}>
-                        <BodyText>{title}</BodyText>
+                        <Text>{title}</Text>
                         <CloseIcon onPress={onClose} size={24} name="close" />
                     </View>
                     <View style={styles.divider} />

@@ -114,7 +114,7 @@ const PickerItemsView = ({
             {...testProp('modal')}
         >
             <SafeAreaView {...testProp('picker')}>
-                <Wrapper opacity={0.9} background={theme.colors.darkBlack} zIndex={1}>
+                <Wrapper opacity={0.9} background={theme.colors.background} zIndex={1}>
                     <Wrapper marginX={16} marginY={26} background="white">
                         <Header
                             padding={24}
