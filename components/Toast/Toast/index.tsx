@@ -78,13 +78,13 @@ const DEFAULT_PROPS: ToastConfig = {
     message: 'Toast message!',
     hideIcon: false,
     toastStyles: {
-        borderColor: 'border',
+        borderColor: 'black',
         bg: 'background'
     },
     closeButtonStyles: {
         p: 2,
         mx: 2,
-        bg: 'muted',
+        bg: 'black',
         borderRadius: 4,
         alignItems: 'center'
     }

@@ -10,7 +10,8 @@
         "allowJs": true,
         "skipLibCheck": true,
         "esModuleInterop": true,
-        "strict": true,
+        "strict": false,
+        "noImplicitAny": false,
         "forceConsistentCasingInFileNames": true,
         "noFallthroughCasesInSwitch": true,
         "module": "esnext",
@@ -23,6 +24,7 @@
     },
     "include": [
         "src",
+        "components",
         "**/*.ts",
         "**/*.tsx"
     ]

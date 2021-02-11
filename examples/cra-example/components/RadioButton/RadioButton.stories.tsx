@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View } from "react-native";
 import { storiesOf } from "@storybook/react";
-import RadioButton from 'react-native-styled-paper/components/RadioButton';
+import { RadioButton } from 'react-native-styled-paper/components/RadioButton';
 
 const RadioButtonExample = () => {
     const [checked, setChecked] = React.useState('first');

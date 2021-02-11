@@ -16,7 +16,6 @@ import {
     ViewStyle,
     ViewProps,
 } from 'react-native';
-import * as PropTypes from 'prop-types';
 import * as animatable from 'react-native-animatable';
 import { Animation, CustomAnimation } from 'react-native-animatable';
 
@@ -106,57 +105,6 @@ const extractAnimationFromProps = (props: ModalProps) => ({
 });
 
 export class ReactNativeModal extends React.Component<ModalProps, State> {
-    static propTypes = {
-        animationIn: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-        animationInTiming: PropTypes.number,
-        animationOut: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-        animationOutTiming: PropTypes.number,
-        avoidKeyboard: PropTypes.bool,
-        coverScreen: PropTypes.bool,
-        hasBackdrop: PropTypes.bool,
-        backdropColor: PropTypes.string,
-        backdropOpacity: PropTypes.number,
-        backdropTransitionInTiming: PropTypes.number,
-        backdropTransitionOutTiming: PropTypes.number,
-        customBackdrop: PropTypes.node,
-        children: PropTypes.node.isRequired,
-        deviceHeight: PropTypes.number,
-        deviceWidth: PropTypes.number,
-        isVisible: PropTypes.bool.isRequired,
-        hideModalContentWhileAnimating: PropTypes.bool,
-        propagateSwipe: PropTypes.bool,
-        onModalShow: PropTypes.func,
-        onModalWillShow: PropTypes.func,
-        onModalHide: PropTypes.func,
-        onModalWillHide: PropTypes.func,
-        onBackButtonPress: PropTypes.func,
-        onBackdropPress: PropTypes.func,
-        onSwipeStart: PropTypes.func,
-        onSwipeMove: PropTypes.func,
-        onSwipeComplete: PropTypes.func,
-        onSwipeCancel: PropTypes.func,
-        swipeThreshold: PropTypes.number,
-        swipeDirection: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.oneOf(['up', 'down', 'left', 'right'])),
-            PropTypes.oneOf(['up', 'down', 'left', 'right']),
-        ]),
-        useNativeDriver: PropTypes.bool,
-        useNativeDriverForBackdrop: PropTypes.bool,
-        style: PropTypes.any,
-        scrollTo: PropTypes.func,
-        scrollOffset: PropTypes.number,
-        scrollOffsetMax: PropTypes.number,
-        scrollHorizontal: PropTypes.bool,
-        supportedOrientations: PropTypes.arrayOf(
-            PropTypes.oneOf([
-                'portrait',
-                'portrait-upside-down',
-                'landscape',
-                'landscape-left',
-                'landscape-right',
-            ]),
-        ),
-    };
 
     public static defaultProps = {
         animationIn: 'slideInUp',

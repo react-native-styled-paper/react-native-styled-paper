@@ -451,6 +451,7 @@ class TextInput extends React.Component<TextInputProps, State> {
     blur() {
         return this.root && this.root.blur();
     }
+
     render() {
         const { mode, ...rest } = this.props as $Omit<TextInputProps, 'ref'>;
 

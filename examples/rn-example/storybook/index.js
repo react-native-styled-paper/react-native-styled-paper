@@ -3,6 +3,7 @@ import { AppRegistry } from 'react-native';
 import { getStorybookUI, configure, addDecorator } from '@storybook/react-native';
 import { ThemeProvider } from 'styled-components';
 import LightTheme from 'react-native-styled-paper/components/theme/LightTheme';
+import { ToastProvider } from 'react-native-styled-paper/components/Toast';
 import { loadStories } from './storyLoader';
 
 import './rn-addons';
@@ -11,7 +12,9 @@ configure(() => {
     addDecorator((storyFn) => (
         // <LocaleProvider locale={'EN-gb'}>
             <ThemeProvider theme={LightTheme}>
-                {storyFn()}
+                <ToastProvider>
+                    {storyFn()}
+                </ToastProvider>
             </ThemeProvider>
         // </LocaleProvider>
     ));

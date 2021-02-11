@@ -21,7 +21,7 @@ type Props = $RemoveChildren<typeof View> & {
     /**
      * @optional
      */
-    theme: DefaultTheme;
+    theme?: DefaultTheme;
 };
 
 /**

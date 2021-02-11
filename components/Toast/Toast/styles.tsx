@@ -62,9 +62,9 @@ StyledToast.defaultProps = {
     borderRadius: '4px',
     alignItems: 'center',
     flexDirection: 'row',
-    accentColor: 'success',
+    accentColor: 'green',
     justifyContent: 'center',
-    borderColor: 'border'
+    borderColor: 'black'
 }
 
 export const Accent = styled.View<ColorProps>`
