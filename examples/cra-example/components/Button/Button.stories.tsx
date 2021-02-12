@@ -1,4 +1,5 @@
-import React from 'react';
+import * as React from 'react';
+import { View } from "react-native";
 import { storiesOf } from '@storybook/react';
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
@@ -10,12 +11,41 @@ storiesOf('Button', module)
     .addDecorator(withKnobs)
     .add('Default', () => {
         const title = text("title", "Text");
+
         return (
-        <Button
-            onPress={onPressFn}
-        >
-            {title}
-        </Button>
+            <>
+                <View>
+                    <Button
+                        onPress={onPressFn}
+                    >
+                        {title}
+                    </Button>
+                </View>
+                <View>
+                    <Button
+                        mode="text"
+                        onPress={onPressFn}
+                    >
+                        {title}
+                    </Button>
+                </View>
+                <View>
+                    <Button
+                        mode="outlined"
+                        onPress={onPressFn}
+                    >
+                        {title}
+                    </Button>
+                </View>
+                <View>
+                    <Button
+                        mode="contained"
+                        onPress={onPressFn}
+                    >
+                        {title}
+                    </Button>
+                </View>
+            </>
         )
     })
     .add('Primary', () => {

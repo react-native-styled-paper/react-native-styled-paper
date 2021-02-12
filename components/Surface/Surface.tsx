@@ -9,7 +9,9 @@ type Props = React.ComponentPropsWithRef<typeof View> & {
      * Content of the `Surface`.
      */
     children: React.ReactNode;
+
     style?: StyleProp<ViewStyle>;
+
     /**
      * @optional
      */
@@ -65,6 +67,7 @@ const Surface = ({ style, ...rest }: Props) => {
     const flattenedStyles = StyleSheet.flatten(style) || {};
     const { elevation = 4 }: ViewStyle = flattenedStyles;
     const { dark: isDarkTheme, mode, colors } = theme;
+
     return (
         // @ts-ignore
         <Animated.View

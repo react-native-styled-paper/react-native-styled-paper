@@ -11,7 +11,7 @@ import { Icon } from '../Icon';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
 import Text from '../Typography/Text';
 import { black, white } from '../theme/colors';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, ThemeContext } from 'styled-components';
 
 type Props = {
     /**
@@ -72,73 +72,71 @@ type Props = {
  * ```
  */
 
-class MenuItem extends React.Component<Props> {
+const MenuItem = function(props: Props) {
 
-    static displayName = 'Menu.Item';
+    const {
+        icon,
+        title,
+        disabled,
+        onPress,
+        style,
+        contentStyle,
+        testID,
+        titleStyle,
+    } = props;
+    const theme = React.useContext(ThemeContext);
 
-    render() {
-        const {
-            icon,
-            title,
-            disabled,
-            onPress,
-            theme,
-            style,
-            contentStyle,
-            testID,
-            titleStyle,
-        } = this.props;
+    const disabledColor = color(theme.dark ? white : black)
+        .alpha(0.32)
+        .rgb()
+        .string();
 
-        const disabledColor = color(theme.dark ? white : black)
-            .alpha(0.32)
-            .rgb()
-            .string();
+    const titleColor = disabled
+        ? disabledColor
+        : color(theme.colors.text).alpha(0.87).rgb().string();
 
-        const titleColor = disabled
-            ? disabledColor
-            : color(theme.colors.text).alpha(0.87).rgb().string();
+    const iconColor = disabled
+        ? disabledColor
+        : color(theme.colors.text).alpha(0.54).rgb().string();
 
-        const iconColor = disabled
-            ? disabledColor
-            : color(theme.colors.text).alpha(0.54).rgb().string();
-
-        return (
-            <TouchableRipple
-                style={[styles.container, style]}
-                onPress={onPress}
-                disabled={disabled}
-                testID={testID}
-                accessibilityRole="menuitem"
-                accessibilityState={{ disabled }}
-            >
-                <View style={styles.row}>
-                    {icon ? (
-                        <View style={[styles.item, styles.icon]} pointerEvents="box-none">
-                            <Icon icon={icon} size={24} color={iconColor} />
-                        </View>
-                    ) : null}
-                    <View
-                        style={[
-                            styles.item,
-                            styles.content,
-                            icon ? styles.widthWithIcon : null,
-                            contentStyle,
-                        ]}
-                        pointerEvents="none"
-                    >
-                        <Text
-                            selectable={false}
-                            numberOfLines={1}
-                            style={[styles.title, { color: titleColor }, titleStyle]}
-                        >
-                            {title}
-                        </Text>
+    return (
+        <TouchableRipple
+            style={[styles.container, style]}
+            onPress={onPress}
+            disabled={disabled}
+            testID={testID}
+            accessibilityRole="menuitem"
+            accessibilityState={{ disabled }}
+        >
+            <View style={styles.row}>
+                {icon ? (
+                    <View style={[styles.item, styles.icon]} pointerEvents="box-none">
+                        <Icon icon={icon} size={24} color={iconColor} />
                     </View>
+                ) : null}
+                <View
+                    style={[
+                        styles.item,
+                        styles.content,
+                        icon ? styles.widthWithIcon : null,
+                        contentStyle,
+                    ]}
+                    pointerEvents="none"
+                >
+                    <Text
+                        selectable={false}
+                        numberOfLines={1}
+                        style={[styles.title, { color: titleColor }, titleStyle]}
+                    >
+                        {title}
+                    </Text>
                 </View>
-            </TouchableRipple>
-        );
-    }
+            </View>
+        </TouchableRipple>
+    );
 }
+
+MenuItem.displayName = 'Menu.Item';
 
 const minWidth = 112;
 const maxWidth = 280;

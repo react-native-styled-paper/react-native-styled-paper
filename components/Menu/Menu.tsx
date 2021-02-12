@@ -21,7 +21,7 @@ import Portal from '../Portal/Portal';
 import { Surface } from '../Surface';
 import MenuItem, { MenuItem as _MenuItem } from './MenuItem';
 import { APPROX_STATUSBAR_HEIGHT } from '../theme/constants';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, ThemeContext } from 'styled-components';
 
 type Props = {
     /**
@@ -135,6 +135,8 @@ class Menu extends React.Component<Props, State> {
         statusBarHeight: APPROX_STATUSBAR_HEIGHT,
         overlayAccessibilityLabel: 'Close menu',
     };
+
+    static contextType: any = ThemeContext;
 
     static getDerivedStateFromProps(nextProps: Props, prevState: State) {
         if (nextProps.visible && !prevState.rendered) {
@@ -252,6 +254,7 @@ class Menu extends React.Component<Props, State> {
     };
 
     private show = async () => {
+        const theme = this.context;
         const windowLayout = Dimensions.get('window');
         const [menuLayout, anchorLayout] = await Promise.all([
             this.measureMenuLayout(),
@@ -292,7 +295,7 @@ class Menu extends React.Component<Props, State> {
             () => {
                 this.attachListeners();
 
-                const { animation } = this.props.theme;
+                const { animation } = theme;
                 Animated.parallel([
                     Animated.timing(this.state.scaleAnimation, {
                         toValue: { x: menuLayout.width, y: menuLayout.height },
@@ -316,9 +319,10 @@ class Menu extends React.Component<Props, State> {
     };
 
     private hide = () => {
+        const theme = this.context;
         this.removeListeners();
 
-        const { animation } = this.props.theme;
+        const { animation } = theme;
         Animated.timing(this.state.opacityAnimation, {
             toValue: 0,
             duration: ANIMATION_DURATION * animation.scale,
@@ -340,11 +344,11 @@ class Menu extends React.Component<Props, State> {
             contentStyle,
             style,
             children,
-            theme,
             statusBarHeight,
             onDismiss,
             overlayAccessibilityLabel,
         } = this.props;
+        const theme = this.context;
 
         const {
             rendered,

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Text } from "react-native";
 import { storiesOf } from '@storybook/react';
 import { Surface } from 'react-native-styled-paper/components/Surface';

@@ -2,7 +2,7 @@ import * as React from "react";
 import color from "color";
 import { StyleSheet, View, ViewStyle, StyleProp } from "react-native";
 import styled from "styled-components/native";
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme, ThemeContext } from "styled-components";
 import { black, white } from "../theme/colors";
 import type { $RemoveChildren } from "../types";
 
@@ -51,7 +51,8 @@ type Props = $RemoveChildren<typeof View> & {
  * export default MyComponent;
  * ```
  */
-const Divider = ({ inset, theme, ...rest }: Props) => {
+const Divider = ({ inset, ...rest }: Props) => {
+    const theme = React.useContext(ThemeContext);
     const { dark: isDarkTheme } = theme;
     return (
         <DividerView
