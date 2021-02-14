@@ -28,13 +28,13 @@ const ToggleButtonRowExample = () => {
 
     return (
         <View>
-            <ToggleButton.Group
+            <ToggleButton.Row
                 value={value}
                 onValueChange={value => setValue(value)}
             >
                 <ToggleButton icon={FormatAlignLeftIcon} value="left" />
                 <ToggleButton icon={FormatAlignRightIcon} value="right" />
-            </ToggleButton.Group>
+            </ToggleButton.Row>
         </View>
     )
 }

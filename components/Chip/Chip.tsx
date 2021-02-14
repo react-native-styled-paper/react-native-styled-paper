@@ -8,7 +8,6 @@ import {
     StyleProp,
     StyleSheet,
     TouchableWithoutFeedback,
-    View,
     ViewStyle,
 } from 'react-native';
 import color from 'color';
@@ -19,8 +18,52 @@ import { TouchableRipple } from '../TouchableRipple';
 import { black, white } from '../theme/colors';
 import type { EllipsizeProp } from '../types';
 import { DefaultTheme, ThemeContext } from 'styled-components';
+import styled from "styled-components/native";
 import CheckIcon from "@mdi/svg/svg/check.svg";
 import CloseCircleIcon from "@mdi/svg/svg/close-circle.svg";
+
+const ChipSurface = styled(Surface)({
+    borderWidth: StyleSheet.hairlineWidth,
+    borderStyle: 'solid',
+    flexDirection: 'row',
+});
+
+const ChipContent = styled.View({
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 4,
+    position: 'relative',
+});
+
+const ChipAvatarWrapper = styled.View({
+    marginRight: 4,
+})
+
+const ChipIconWrapper = styled.View({
+    padding: 4,
+    alignSelf: 'center',
+})
+
+const ChipText = styled(Text)({
+    minHeight: 24,
+    lineHeight: 24,
+    textAlignVertical: 'center',
+    marginVertical: 4,
+})
+
+const ChipCloseButtonWrapper = styled.View({
+    position: 'absolute',
+    right: 0,
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+})
+
+const ChipCloseButtonIconWrapper = styled.View({
+    padding: 4,
+    alignSelf: 'center',
+    marginRight: 4,
+})
 
 type Props = React.ComponentProps<typeof Surface> & {
     /**
@@ -224,10 +267,9 @@ const Chip = ({
     }
 
     return (
-        <Surface
+        <ChipSurface
             style={
                 [
-                    styles.container,
                     {
                         elevation: Platform.OS === 'android' ? elevation : 0,
                         backgroundColor: selected
@@ -258,21 +300,23 @@ const Chip = ({
                 accessibilityState={accessibilityState}
                 testID={testID}
             >
-                <View style={[styles.content, { paddingRight: onClose ? 32 : 4 }]}>
+                <ChipContent style={[{ paddingRight: onClose ? 32 : 4 }]}>
                     {avatar && !icon ? (
-                        <View style={[styles.avatarWrapper, disabled && { opacity: 0.26 }]}>
+                        <ChipAvatarWrapper style={[disabled && { opacity: 0.26 }]}>
                             {React.isValidElement(avatar)
                                 ? React.cloneElement(avatar, {
                                     style: [styles.avatar, avatar.props.style],
                                 })
                                 : avatar}
-                        </View>
+                        </ChipAvatarWrapper>
                     ) : null}
                     {icon || selected ? (
-                        <View
+                        <ChipIconWrapper
                             style={[
-                                styles.icon,
-                                avatar ? [styles.avatar, styles.avatarSelected] : null,
+                                avatar ? [
+                                    styles.avatar,
+                                    styles.avatarSelected
+                                ] : null,
                             ]}
                         >
                             {icon ? (
@@ -288,15 +332,15 @@ const Chip = ({
                                         direction="ltr"
                                     />
                                 )}
-                        </View>
+                        </ChipIconWrapper>
                     ) : null}
-                    <Text
+                    <ChipText
                         selectable={false}
                         numberOfLines={1}
                         style={[
-                            styles.text,
                             {
-                                ...theme.fonts.regular,
+                                fontFamily: theme.fonts.regular.fontFamily,
+                                fontWeight: theme.fonts.regular.fontWeight,
                                 color: textColor,
                                 marginRight: onClose ? 0 : 8,
                                 marginLeft: avatar || icon || selected ? 4 : 8,
@@ -306,11 +350,11 @@ const Chip = ({
                         ellipsizeMode={ellipsizeMode}
                     >
                         {children}
-                    </Text>
-                </View>
+                    </ChipText>
+                </ChipContent>
             </TouchableRipple>
             {onClose ? (
-                <View style={styles.closeButtonStyle}>
+                <ChipCloseButtonWrapper>
                     <TouchableWithoutFeedback
                         onPress={onClose}
                         // accessibilityTraits="button"
@@ -318,45 +362,21 @@ const Chip = ({
                         accessibilityRole="button"
                         accessibilityLabel={closeIconAccessibilityLabel}
                     >
-                        <View style={[styles.icon, styles.closeIcon]}>
+                        <ChipCloseButtonIconWrapper>
                             <CloseCircleIcon
                                 size={16}
                                 color={iconColor}
                                 direction="ltr"
                             />
-                        </View>
+                        </ChipCloseButtonIconWrapper>
                     </TouchableWithoutFeedback>
-                </View>
+                </ChipCloseButtonWrapper>
             ) : null}
-        </Surface>
+        </ChipSurface>
     );
 };
 
 const styles = StyleSheet.create({
-    container: {
-        borderWidth: StyleSheet.hairlineWidth,
-        borderStyle: 'solid',
-        flexDirection: 'row',
-    },
-    content: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingLeft: 4,
-        position: 'relative',
-    },
-    icon: {
-        padding: 4,
-        alignSelf: 'center',
-    },
-    closeIcon: {
-        marginRight: 4,
-    },
-    text: {
-        minHeight: 24,
-        lineHeight: 24,
-        textAlignVertical: 'center',
-        marginVertical: 4,
-    },
     avatar: {
         width: 24,
         height: 24,
@@ -370,13 +390,6 @@ const styles = StyleSheet.create({
         top: 4,
         left: 4,
         backgroundColor: 'rgba(0, 0, 0, .29)',
-    },
-    closeButtonStyle: {
-        position: 'absolute',
-        right: 0,
-        height: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
     },
 });
 
