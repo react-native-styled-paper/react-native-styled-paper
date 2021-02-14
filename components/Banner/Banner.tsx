@@ -3,7 +3,7 @@ import { View, ViewStyle, StyleSheet, StyleProp, Animated } from 'react-native';
 import { Surface } from '../Surface';
 import { Text } from '../Typography';
 import { Button } from '../Button';
-import { Icon } from '../Icon';
+import { SvgIcon } from '../Icon';
 import type { $RemoveChildren } from '../types';
 import shadow from '../theme/shadow';
 import { DefaultTheme } from 'styled-components';
@@ -194,7 +194,7 @@ const Banner = ({
                     <View style={styles.content}>
                         {icon ? (
                             <View style={styles.icon}>
-                                <Icon icon={icon} size={40} />
+                                <SvgIcon icon={icon} size={40} />
                             </View>
                         ) : null}
                         <Text style={styles.message}>{children}</Text>

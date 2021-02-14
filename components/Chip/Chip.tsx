@@ -12,7 +12,7 @@ import {
     ViewStyle,
 } from 'react-native';
 import color from 'color';
-import { Icon } from '../Icon';
+import { SvgIcon } from '../Icon';
 import { Surface } from '../Surface';
 import { Text } from '../Typography';
 import { TouchableRipple } from '../TouchableRipple';
@@ -276,7 +276,7 @@ const Chip = ({
                             ]}
                         >
                             {icon ? (
-                                <Icon
+                                <SvgIcon
                                     icon={icon}
                                     color={avatar ? white : iconColor}
                                     size={18}

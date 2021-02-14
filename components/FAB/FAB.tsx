@@ -4,7 +4,7 @@ import { Animated, View, ViewStyle, StyleSheet, StyleProp } from 'react-native';
 import { ActivityIndicator } from '../ActivityIndicator';
 import { Surface } from '../Surface';
 import { CrossFadeIcon } from '../Icon';
-import { Icon } from '../Icon';
+import { SvgIcon } from '../Icon';
 import Text from '../Typography/Text';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
 import { black, white } from '../theme/colors';
@@ -150,7 +150,7 @@ const FAB = ({
         }
     }, [visible, scale, visibility]);
 
-    const IconComponent = animated ? CrossFadeIcon : Icon;
+    const IconComponent = animated ? CrossFadeIcon : SvgIcon;
 
     const disabledColor = color(theme.dark ? white : black)
         .alpha(0.12)

@@ -2,7 +2,7 @@ import * as React from "react";
 import { Animated } from "react-native";
 import { DefaultTheme } from "styled-components";
 import styled from "styled-components/native";
-import Icon, { isValidIcon, isEqualIcon } from "./Icon";
+import Icon, { isValidIcon, isEqualIcon } from "./SvgIcon";
 
 const CrossFadeIconWrapperView = styled.View<{
     width: number,

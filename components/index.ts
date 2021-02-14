@@ -8,10 +8,8 @@ import BottomSheet from "./BottomSheet/BottomSheet";
 import Button from "./Button/Button";
 import Carousel, { LeftArrow as CarouselLeftArrow, RightArrow as CarouselRightArrow } from "./Carousel";
 import Divider from "./Divider/Divider";
-import Icon from "./Icon/Icon";
 import IconButton from "./IconButton/IconButton";
 import Surface from "./Surface/Surface";
-import SvgIcon from "./SvgIcon/SvgIcon";
 import TouchableRipple from "./TouchableRipple/TouchableRipple";
 import Text from "./Typography/Text";
 
@@ -29,10 +27,8 @@ export {
     CarouselLeftArrow,
     CarouselRightArrow,
     Divider,
-    Icon,
     IconButton,
     Surface,
-    SvgIcon,
     TouchableRipple,
     Text,
 };

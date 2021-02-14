@@ -4,7 +4,7 @@ import { variant } from 'styled-system';
 import { Wrapper } from "react-native-styled-paper/components/Wrapper";
 import { Row } from "react-native-styled-paper/components/Container";
 import { Caption, Text } from "react-native-styled-paper/components/Typography";
-import { Icon } from "react-native-styled-paper/components/Icon";
+import { SvgIcon } from "react-native-styled-paper/components/Icon";
 import ChevronDownIcon from "@mdi/svg/svg/chevron-down.svg";
 import { testProp } from '../../utils/UITestingHelper';
 import { customStyled } from '../../utils/StyledUtils';
@@ -66,7 +66,7 @@ const LabelText = customStyled(Caption, {
 
 const IconChevron = ({ theme }) => (
     <IconBox>
-        <Icon icon={ChevronDownIcon} color={theme.colors.greyDark} size={20} />
+        <SvgIcon icon={ChevronDownIcon} color={theme.colors.greyDark} size={20} />
     </IconBox>
 );
 

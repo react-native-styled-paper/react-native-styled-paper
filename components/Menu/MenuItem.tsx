@@ -7,7 +7,7 @@ import {
     ViewStyle,
     StyleProp,
 } from 'react-native';
-import { Icon } from '../Icon';
+import { SvgIcon } from '../Icon';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
 import Text from '../Typography/Text';
 import { black, white } from '../theme/colors';
@@ -111,7 +111,7 @@ const MenuItem = function(props: Props) {
             <View style={styles.row}>
                 {icon ? (
                     <View style={[styles.item, styles.icon]} pointerEvents="box-none">
-                        <Icon icon={icon} size={24} color={iconColor} />
+                        <SvgIcon icon={icon} size={24} color={iconColor} />
                     </View>
                 ) : null}
                 <View

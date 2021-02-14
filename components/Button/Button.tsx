@@ -9,7 +9,7 @@ import {
 import color from "color";
 
 import ActivityIndicator from "../ActivityIndicator/ActivityIndicator";
-import SvgIcon from "../SvgIcon/SvgIcon";
+import { SvgIcon } from "../Icon";
 import Surface from "../Surface/Surface";
 import Text from "../Typography/Text";
 import TouchableRipple from "../TouchableRipple/TouchableRipple";

@@ -9,7 +9,7 @@ module.exports = {
     webpackFinal: async (config) => {
         config.module.rules.push({
             test: /\.(js|ts|tsx)$/,
-            exclude: /(node_modules\/(?!(react-native-styled-paper)\/).*|dist|.stoybook)/,
+            exclude: /(node_modules\/(?!(react-native-styled-paper|react-native-animatable)\/).*|dist|.stoybook)/,
             use: {
                 loader: 'babel-loader',
                 options: {
@@ -25,6 +25,7 @@ module.exports = {
                         '@babel/plugin-transform-modules-commonjs',
                         "@babel/plugin-proposal-optional-chaining",
                         "@babel/plugin-proposal-nullish-coalescing-operator",
+                        "@babel/plugin-transform-template-literals",
                         // "@babel/plugin-transform-flow-strip-types",
                         "inline-react-svg",
                         [

@@ -4,7 +4,7 @@ import color from 'color';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
 import { $RemoveChildren } from '../types';
 import { DefaultTheme, ThemeContext } from 'styled-components';
-import { Icon } from '../Icon';
+import { SvgIcon } from '../Icon';
 import MinusIcon from "@mdi/svg/svg/minus.svg";
 import CheckIcon from "@mdi/svg/svg/check.svg";
 
@@ -92,7 +92,7 @@ const CheckboxIOS = ({
             testID={testID}
         >
             <View style={{ opacity: indeterminate || checked ? 1 : 0 }}>
-                <Icon
+                <SvgIcon
                     icon={icon}
                     size={24}
                     color={checkedColor}

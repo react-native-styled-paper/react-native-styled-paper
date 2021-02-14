@@ -3,7 +3,7 @@ import { variant } from 'styled-system';
 import { Wrapper } from 'react-native-styled-paper/components/Wrapper';
 import { Row } from 'react-native-styled-paper/components/Container';
 import { Text, Caption } from 'react-native-styled-paper/components/Typography';
-import { Icon } from 'react-native-styled-paper/components/Icon';
+import { SvgIcon } from 'react-native-styled-paper/components/Icon';
 import DateRangeIcon from "@mdi/svg/svg/clock.svg";
 import { customStyled } from '../../utils/StyledUtils';
 import { testProp } from '../../utils/UITestingHelper';
@@ -97,7 +97,7 @@ const InputTextView = ({
                         </PlaceHolderText>
                     )}
             </Wrapper>
-            <Icon icon={postIcon ? postIcon : DateRangeIcon} />
+            <SvgIcon icon={postIcon ? postIcon : DateRangeIcon} />
         </Box>
     );
 };

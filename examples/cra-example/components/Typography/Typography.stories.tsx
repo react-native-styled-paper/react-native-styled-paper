@@ -9,7 +9,7 @@ import {
     Title,
 } from 'react-native-styled-paper/components/Typography';
 
-storiesOf('Text', module).add('Default', () => {
+storiesOf('Typography', module).add('Default', () => {
 
     return (
         <>

@@ -1,10 +1,28 @@
 import color from 'color';
 import * as React from 'react';
-import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
+import { View, StyleProp, ViewStyle } from 'react-native';
 import Text from '../Typography/Text';
-import { Icon } from '../Icon';
+import { SvgIcon } from '../Icon';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
 import { DefaultTheme } from 'styled-components';
+import styled from 'styled-components/native';
+
+const DrawerItemContainer = styled.View`
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 4px;
+    margin-left: 4px;
+`;
+
+const DrawerItemWrapper = styled.View`
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+`;
+
+const DrawerItemLabel = styled(Text)`
+    margin-right: 32px;
+`;
 
 type Props = React.ComponentPropsWithRef<typeof View> & {
     /**
@@ -80,10 +98,9 @@ const DrawerItem = ({
     const labelMargin = icon ? 32 : 0;
 
     return (
-        <View
+        <DrawerItemContainer
             {...rest}
             style={[
-                styles.container,
                 { backgroundColor, borderRadius: roundness },
                 style,
             ]}
@@ -99,13 +116,12 @@ const DrawerItem = ({
                 accessibilityState={{ selected: active }}
                 accessibilityLabel={accessibilityLabel}
             >
-                <View style={styles.wrapper}>
-                    {icon ? <Icon icon={icon} size={24} color={contentColor} /> : null}
-                    <Text
+                <DrawerItemWrapper>
+                    {icon ? <SvgIcon icon={icon} size={24} color={contentColor} /> : null}
+                    <DrawerItemLabel
                         selectable={false}
                         numberOfLines={1}
                         style={[
-                            styles.label,
                             {
                                 color: contentColor,
                                 ...font,
@@ -114,28 +130,13 @@ const DrawerItem = ({
                         ]}
                     >
                         {label}
-                    </Text>
-                </View>
+                    </DrawerItemLabel>
+                </DrawerItemWrapper>
             </TouchableRipple>
-        </View>
+        </DrawerItemContainer>
     );
 };
 
 DrawerItem.displayName = 'Drawer.Item';
-
-const styles = StyleSheet.create({
-    container: {
-        marginHorizontal: 10,
-        marginVertical: 4,
-    },
-    wrapper: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        padding: 8,
-    },
-    label: {
-        marginRight: 32,
-    },
-});
 
 export default DrawerItem;

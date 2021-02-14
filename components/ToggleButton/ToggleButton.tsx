@@ -6,7 +6,7 @@ import {
     GestureResponderEvent,
 } from 'react-native';
 import color from 'color';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, ThemeContext } from 'styled-components';
 import { IconButton } from '../IconButton';
 import { ToggleButtonGroupContext } from './ToggleButtonGroup';
 import { black, white } from '../theme/colors';
@@ -88,7 +88,6 @@ type Props = {
 const ToggleButton = ({
     icon,
     size,
-    theme,
     accessibilityLabel,
     disabled,
     style,
@@ -97,6 +96,7 @@ const ToggleButton = ({
     onPress,
     ...rest
 }: Props) => {
+    const theme = React.useContext(ThemeContext);
     const borderRadius = theme.roundness;
 
     return (

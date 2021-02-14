@@ -14,7 +14,7 @@ import { DefaultTheme, ThemeContext } from 'styled-components';
 import { getBottomSpace } from 'react-native-iphone-x-helper';
 import color from 'color';
 import overlay from '../theme/overlay';
-import { Icon } from '../Icon';
+import { SvgIcon } from '../Icon';
 import { Surface } from '../Surface';
 import { Badge } from '../Badge';
 import { TouchableRipple } from '../TouchableRipple';
@@ -774,7 +774,7 @@ const BottomNavigation = ({
                                                         color: activeTintColor,
                                                     })
                                                 ) : (
-                                                        <Icon
+                                                        <SvgIcon
                                                             icon={route.icon}
                                                             color={activeTintColor}
                                                             size={24}
@@ -794,7 +794,7 @@ const BottomNavigation = ({
                                                         color: inactiveTintColor,
                                                     })
                                                 ) : (
-                                                        <Icon
+                                                        <SvgIcon
                                                             icon={route.icon}
                                                             color={inactiveTintColor}
                                                             size={24}

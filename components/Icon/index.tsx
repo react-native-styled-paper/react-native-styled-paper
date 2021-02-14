@@ -1,7 +1,7 @@
-import Icon from "./Icon";
+import SvgIcon from "./SvgIcon";
 import CrossFadeIcon from "./CrossFadeIcon";
 
 export {
-    Icon,
+    SvgIcon,
     CrossFadeIcon,
 }

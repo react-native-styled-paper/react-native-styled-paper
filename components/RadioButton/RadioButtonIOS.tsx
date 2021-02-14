@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import color from 'color';
 import { RadioButtonContext, RadioButtonContextType } from './RadioButtonGroup';
 import { handlePress, isChecked } from './utils';
-import { Icon } from '../Icon';
+import { SvgIcon } from '../Icon';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
 import { $RemoveChildren } from '../types';
 import { DefaultTheme, ThemeContext } from 'styled-components';
@@ -114,7 +114,7 @@ const RadioButtonIOS = ({
                         testID={testID}
                     >
                         <View style={{ opacity: checked ? 1 : 0 }}>
-                            <Icon
+                            <SvgIcon
                                 icon={CheckIcon}
                                 size={24}
                                 color={checkedColor}

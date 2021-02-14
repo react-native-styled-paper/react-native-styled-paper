@@ -1,10 +1,24 @@
 
 import color from 'color';
 import * as React from 'react';
-import { View, ViewStyle, StyleSheet, StyleProp } from 'react-native';
+import { View, ViewStyle, StyleProp } from 'react-native';
 import Text from '../Typography/Text';
 import { Divider } from '../Divider';
 import { DefaultTheme } from 'styled-components';
+import styled from 'styled-components/native';
+
+const DrawerSectionContainer = styled.View`
+    margin-bottom: 4px;
+`;
+
+const DrawerSectionTitleContainer = styled.View`
+    height: 40px;
+    justify-content: center;
+`;
+
+const DrawerSectionDivider = styled(Divider)`
+    margin-top: 4px;
+`;
 
 type Props = React.ComponentPropsWithRef<typeof View> & {
     /**
@@ -65,36 +79,23 @@ const DrawerSection = ({ children, title, theme, style, ...rest }: Props) => {
     const font = fonts.medium;
 
     return (
-        <View style={[styles.container, style]} {...rest}>
+        <DrawerSectionContainer style={style} {...rest}>
             {title && (
-                <View style={styles.titleContainer}>
+                <DrawerSectionTitleContainer>
                     <Text
                         numberOfLines={1}
                         style={{ color: titleColor, ...font, marginLeft: 16 }}
                     >
                         {title}
                     </Text>
-                </View>
+                </DrawerSectionTitleContainer>
             )}
             {children}
-            <Divider style={styles.divider} />
-        </View>
+            <DrawerSectionDivider />
+        </DrawerSectionContainer>
     );
 };
 
 DrawerSection.displayName = 'Drawer.Section';
-
-const styles = StyleSheet.create({
-    container: {
-        marginBottom: 4,
-    },
-    titleContainer: {
-        height: 40,
-        justifyContent: 'center',
-    },
-    divider: {
-        marginTop: 4,
-    },
-});
 
 export default DrawerSection;

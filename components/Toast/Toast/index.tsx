@@ -8,7 +8,7 @@ import CloseIcon from "@mdi/svg/svg/account.svg";
 
 import Box from '../Box';
 import { BoxProps } from '../Box/index';
-import { Icon } from '../../Icon';
+import { SvgIcon } from '../../Icon';
 import { Accent, Heading, IconCont, StyledToast, StyledToastProps, SubText } from './styles';
 
 // type IconFamilies =
@@ -171,7 +171,7 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
 
             {!hideIcon && (
                 <IconCont px={4}>
-                    <Icon
+                    <SvgIcon
                         icon={!!iconName ? iconName : isSuccess ? CheckCircleIcon : isInfo ? AlertCircleIcon : XCircleIcon}
                         size={20}
                         color={!!iconColor ? iconColor : isSuccess ? 'success' : isInfo ? 'info' : 'error'}
@@ -192,7 +192,7 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
             </Box>
             <TouchableOpacity onPress={() => onClose && id && onClose(id)}>
                 <Box {...Object.assign({}, DEFAULT_PROPS.closeButtonStyles, closeButtonStyles)}>
-                    <Icon
+                    <SvgIcon
                         icon={CloseIcon}
                         size={closeIconSize || 20}
                         color={closeIconColor}

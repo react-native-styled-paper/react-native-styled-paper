@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, ViewStyle, StyleSheet, StyleProp } from 'react-native';
 import color from 'color';
-import { Icon } from '../Icon';
+import { SvgIcon } from '../Icon';
 import { white } from '../theme/colors';
 import { DefaultTheme, ThemeContext } from 'styled-components';
 
@@ -68,7 +68,7 @@ const Avatar = ({ icon, size = defaultSize, style, ...rest }: Props) => {
             ]}
             {...rest}
         >
-            <Icon icon={icon} color={textColor} size={size * 0.6} />
+            <SvgIcon icon={icon} color={textColor} size={size * 0.6} />
         </View>
     );
 };

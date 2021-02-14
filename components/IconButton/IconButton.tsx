@@ -9,7 +9,7 @@ import {
 import color from "color";
 
 import TouchableRipple from "../TouchableRipple/TouchableRipple";
-import Icon from "../Icon/Icon";
+import Icon from "../Icon/SvgIcon";
 import CrossFadeIcon from "../Icon/CrossFadeIcon";
 
 import type { $RemoveChildren } from "../types";

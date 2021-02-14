@@ -59,6 +59,8 @@ type Props = React.ComponentProps<typeof NativeText> & {
 
     color?: string,
 
+    outline?: boolean,
+
     style?: StyleProp<TextStyle>;
     /**
      * @optional
@@ -67,20 +69,29 @@ type Props = React.ComponentProps<typeof NativeText> & {
 };
 
 const SvgIcon = (props: Props) => {
-    const { icon: Icon, ...rest } = props;
+    const { icon: Icon, color, ...rest } = props;
     const theme = React.useContext(ThemeContext);
-    const color = theme.colors.text;
+    const iconColor = color || theme.colors.text;
+    const size = rest.size || 24;
+    const outline = rest.outline || false;
+
+    const colorStyle = outline ? {
+        stroke: iconColor,
+    } : {
+        fill: iconColor,
+    }
 
     return props.icon ?
         (
             // @ts-ignore
             <Icon
                 {...rest}
-                color={color}
+                {...colorStyle}
+                width={size}
+                height={size}
             />
         ) :
         <NativeText>Icon</NativeText>
-
 };
 
 export default SvgIcon;

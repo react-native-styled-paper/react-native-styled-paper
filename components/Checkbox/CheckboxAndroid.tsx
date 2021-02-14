@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Animated, View, StyleSheet } from 'react-native';
 import color from 'color';
-import { Icon } from '../Icon';
+import { SvgIcon } from '../Icon';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
 import { $RemoveChildren } from '../types';
 import { DefaultTheme, ThemeContext } from 'styled-components';
@@ -148,7 +148,7 @@ const CheckboxAndroid = ({
             testID={testID}
         >
             <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
-                <Icon
+                <SvgIcon
                     icon={icon}
                     size={24}
                     color={checkboxColor}

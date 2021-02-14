@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, ViewStyle, StyleSheet, StyleProp } from 'react-native';
-import { Icon } from '../Icon';
+import { SvgIcon } from '../Icon';
 
 type Props = {
     /**
@@ -44,7 +44,7 @@ const ICON_SIZE = 24;
  */
 const ListIcon = ({ icon, color: iconColor, style }: Props) => (
     <View style={[styles.item, style]} pointerEvents="box-none">
-        <Icon icon={icon} size={ICON_SIZE} color={iconColor} />
+        <SvgIcon icon={icon} size={ICON_SIZE} color={iconColor} />
     </View>
 );
 

@@ -1,4 +1,4 @@
-import React, { createRef } from 'react';
+import * as React from 'react';
 import { Image, Dimensions, View, StyleSheet } from "react-native";
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -10,7 +10,7 @@ const onPressFn = action("onPress");
 storiesOf('Carousel', module)
     .addDecorator(withKnobs)
     .add('Default', () => {
-        const _imageCarouselRef = createRef<Carousel>();
+        const _imageCarouselRef = React.createRef<Carousel>();
 
         const { width: viewportWidth } = Dimensions.get('window');
         const sliderWidth = viewportWidth - 32;
