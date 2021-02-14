@@ -151,8 +151,8 @@ const Searchbar = React.forwardRef<TextInputHandles, Props>(
                 ]}
             >
                 <IconButton
-                    accessibilityTraits="button"
-                    accessibilityComponentType="button"
+                    // accessibilityTraits="button"
+                    // accessibilityComponentType="button"
                     accessibilityRole="button"
                     borderless
                     rippleColor={rippleColor}
@@ -197,8 +197,8 @@ const Searchbar = React.forwardRef<TextInputHandles, Props>(
                             direction={I18nManager.isRTL ? 'rtl' : 'ltr'}
                         />
                     }
-                    accessibilityTraits="button"
-                    accessibilityComponentType="button"
+                    // accessibilityTraits="button"
+                    // accessibilityComponentType="button"
                     accessibilityRole="button"
                 />
             </Surface>

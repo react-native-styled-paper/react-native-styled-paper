@@ -183,8 +183,8 @@ const ListAccordion = ({
                 style={[styles.container, style]}
                 onPress={handlePress}
                 onLongPress={onLongPress}
-                accessibilityTraits="button"
-                accessibilityComponentType="button"
+                // accessibilityTraits="button"
+                // accessibilityComponentType="button"
                 accessibilityRole="button"
                 testID={testID}
             >

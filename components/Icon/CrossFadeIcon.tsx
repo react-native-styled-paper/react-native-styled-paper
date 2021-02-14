@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Animated } from "react-native";
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme, ThemeContext } from "styled-components";
 import styled from "styled-components/native";
 import Icon, { isValidIcon, isEqualIcon } from "./SvgIcon";
 
@@ -31,7 +31,8 @@ type Props = {
     theme?: DefaultTheme;
 };
 
-const CrossFadeIcon = ({ color, size, icon, theme }: Props) => {
+const CrossFadeIcon = ({ color, size, icon }: Props) => {
+    const theme = React.useContext(ThemeContext);
     const [currentIcon, setCurrentIcon] = React.useState<React.ReactElement>(
         () => icon
     );

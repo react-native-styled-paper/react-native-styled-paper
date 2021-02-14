@@ -15,7 +15,7 @@ import Text from "../Typography/Text";
 import { white } from "../theme/colors";
 
 import type { $RemoveChildren } from "../types";
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = $RemoveChildren<typeof View> & {
     /**
@@ -50,7 +50,7 @@ type Props = $RemoveChildren<typeof View> & {
     /**
      * @optional
      */
-    theme: DefaultTheme;
+    theme?: DefaultTheme;
 };
 
 /**
@@ -84,10 +84,10 @@ const AppbarContent = ({
     style,
     titleRef,
     titleStyle,
-    theme,
     title,
     ...rest
 }: Props) => {
+    const theme = React.useContext(ThemeContext);
     const { fonts } = theme;
 
     const subtitleColor = color(titleColor).alpha(0.7).rgb().string();

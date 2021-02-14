@@ -8,7 +8,7 @@ import AppbarBackAction from "./AppbarBackAction";
 import Surface from "../Surface/Surface";
 import { black, white } from "../theme/colors";
 import overlay from "../theme/overlay";
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = Partial<React.ComponentPropsWithRef<typeof View>> & {
     /**
@@ -74,7 +74,8 @@ export const DEFAULT_APPBAR_HEIGHT = 56;
  * });
  * ```
  */
-const Appbar = ({ children, dark, style, theme, ...rest }: Props) => {
+const Appbar = ({ children, dark, style, ...rest }: Props) => {
+    const theme = React.useContext(ThemeContext);
     const { colors, dark: isDarkTheme, mode } = theme;
     const {
         backgroundColor: customBackground,
