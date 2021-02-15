@@ -1,15 +1,46 @@
-import styled from "styled-components/native";
-import { layout, LayoutProps, flexbox, FlexboxProps } from "styled-system";
+import * as React from 'react';
+import { screenSize } from './utils/ScreenSize';
+import { isHidden } from './utils/helpers';
+import { View } from 'react-native';
 
-const Row = styled.View<LayoutProps & FlexboxProps>`
-    ${layout}
-    ${flexbox}
-`;
+const cloneElements = (props) => {
+    //if size doesn't exist or is 0 default to 12
+    const rowSize = props.size > 0 ? props.size : 12;
 
-Row.defaultProps = {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "nowrap",
+    return React.Children.map(props.children, (element) => {
+        return React.cloneElement(element, { rowSize: rowSize });
+    });
+}
+
+type Props = {
+    size?: number,
+    nowrap?: boolean,
+    smHidden?: boolean,
+    mdHidden?: boolean,
+    lgHidden?: boolean,
+    style?: any,
+    alignItems?: string,
+    justifyContent?: string,
+    children: React.ReactNode,
+};
+
+const Row = (props: Props) => {
+    if (isHidden(screenSize, props)) {
+        return null;
+    } else {
+        return (
+            <View {...props}
+                style={[props.style,
+                {
+                    flexDirection: 'row',
+                    flexWrap: props.nowrap ? 'nowrap' : 'wrap',
+                    alignItems: props.alignItems,
+                    justifyContent: props.justifyContent,
+                }]}>
+                {cloneElements(props)}
+            </View>
+        );
+    }
 }
 
 export default Row;

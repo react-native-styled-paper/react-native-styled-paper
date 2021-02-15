@@ -1,11 +1,11 @@
 import Viewport from "./Viewport";
+import Box from "./Box";
 import Row from "./Row";
-import Row2 from "./Row2";
 import Column from "./Column";
 
 export {
     Viewport,
+    Box,
     Row,
-    Row2,
     Column,
 }

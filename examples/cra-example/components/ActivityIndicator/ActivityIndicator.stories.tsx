@@ -1,5 +1,4 @@
-import React from 'react';
-import { Text } from "react-native";
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import * as Colors from 'react-native-styled-paper/components/theme/colors';
 import { ActivityIndicator } from 'react-native-styled-paper/components/ActivityIndicator';
