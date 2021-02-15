@@ -12417,7 +12417,7 @@ react-native-status-bar-height@^2.6.0:
   integrity sha512-z3SGLF0mHT+OlJDq7B7h/jXPjWcdBT3V14Le5L2PjntjjWM3+EJzq2BcXDwV+v67KFNJic5pgA26cCmseYek6w==
 
 "react-native-styled-paper@file:../../dist":
-  version "1.0.0-develop.3"
+  version "1.0.0-develop.4"
   dependencies:
     color "3.1.2"
     react-addons-shallow-compare "^15.6.3"
