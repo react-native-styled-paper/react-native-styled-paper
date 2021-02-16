@@ -15,7 +15,8 @@ const withNextEnv = nextEnv();
 module.exports = withPlugins([withTM, withNextEnv], {
     webpack: (config) => {
         config.module.rules.push({
-            test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
+            // test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
+            test: /\.(jpg|png|woff|woff2|eot|ttf)$/,
             loader: "file-loader",
         });
 
@@ -23,6 +24,11 @@ module.exports = withPlugins([withTM, withNextEnv], {
             test: /\.(jsx|ts|tsx)$/,
             use: ['babel-loader'],
             exclude: /(node_modules\/(?!(react-native-styled-paper)\/).*|dist|.stoybook)/,
+        });
+
+        config.module.rules.push({
+            test: /\.svg$/,
+            use: ['@svgr/webpack'],
         });
 
         // config.module.rules.push({

@@ -1,10 +1,13 @@
-import * as ReactJS from "react";
+import * as React from "react";
 import { Platform } from "react-native";
+import { Provider } from "react-redux";
 // import { I18nManager, Platform } from "react-native";
-import {ThemeProvider} from "styled-components";
+import { default as PaperProviver } from 'react-native-styled-paper/components/theme/Provider';
 import LightTheme from "react-native-styled-paper/components/theme/LightTheme";
 import Head from "next/head";
 import type { AppProps /*, AppContext */ } from 'next/app';
+import { Viewport } from "react-native-styled-paper/components/Container";
+import { useStore } from "../store";
 
 // const PERSISTENCE_KEY = "NAVIGATION_STATE";
 // const PREFERENCES_KEY = "APP_PREFERENCES";
@@ -41,7 +44,7 @@ import type { AppProps /*, AppContext */ } from 'next/app';
 // const PreferencesContext = React.createContext(null);
 
 const App =({ Component, pageProps }: AppProps) => {
-
+    const store = useStore(pageProps.initialReduxState);
     // const [theme] = React.useState(CustomDefaultTheme);
     // const [rtl, setRtl] = React.useState(I18nManager.isRTL);
 
@@ -61,7 +64,7 @@ const App =({ Component, pageProps }: AppProps) => {
     // );
 
     return (
-        <ReactJS.Fragment>
+        <Provider store={store}>
             <Head>
                 <meta
                     name="viewport"
@@ -76,10 +79,12 @@ const App =({ Component, pageProps }: AppProps) => {
                     `}</style>
                 ) : null}
             </Head>
-            <ThemeProvider theme={LightTheme}>
-                <Component {...pageProps} />
-            </ThemeProvider>
-        </ReactJS.Fragment>
+            <PaperProviver theme={LightTheme}>
+                <Viewport>
+                    <Component {...pageProps} />
+                </Viewport>
+            </PaperProviver>
+        </Provider>
     );
 }
 
