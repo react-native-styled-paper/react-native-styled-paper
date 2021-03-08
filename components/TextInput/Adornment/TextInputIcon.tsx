@@ -1,13 +1,13 @@
-import React from 'react';
-import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
+import React from "react";
+import { View, StyleSheet, StyleProp, ViewStyle } from "react-native";
 
-import { IconButton } from '../../IconButton';
-import { $Omit } from '../../types';
-import { DefaultTheme } from 'styled-components';
+import { IconButton } from "../../IconButton";
+import { $Omit } from "../../types";
+import { DefaultTheme } from "styled-components";
 
 type Props = $Omit<
     React.ComponentProps<typeof IconButton>,
-    'icon' | 'theme'
+    "icon" | "theme"
 > & {
     icon: React.ReactElement;
     onPress?: () => void;
@@ -28,7 +28,7 @@ type StyleContextType = {
 const StyleContext = React.createContext<StyleContextType>({
     style: {},
     isTextInputFocused: false,
-    forceFocus: () => { },
+    forceFocus: () => ({} as any),
 });
 
 const IconAdornment: React.FunctionComponent<
@@ -36,8 +36,8 @@ const IconAdornment: React.FunctionComponent<
         testID: string;
         icon: React.ReactNode;
         topPosition: number;
-        side: 'left' | 'right';
-    } & Omit<StyleContextType, 'style'>
+        side: "left" | "right";
+    } & Omit<StyleContextType, "style">
 > = ({ icon, topPosition, side, isTextInputFocused, forceFocus }) => {
     const style = {
         top: topPosition,
@@ -79,7 +79,7 @@ const TextInputIcon = ({
         </View>
     );
 };
-TextInputIcon.displayName = 'TextInput.Icon';
+TextInputIcon.displayName = "TextInput.Icon";
 
 TextInputIcon.defaultProps = {
     forceTextInputFocus: true,
@@ -87,11 +87,11 @@ TextInputIcon.defaultProps = {
 
 const styles = StyleSheet.create({
     container: {
-        position: 'absolute',
+        position: "absolute",
         width: ICON_SIZE,
         height: ICON_SIZE,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
     },
     iconButton: {
         margin: 0,

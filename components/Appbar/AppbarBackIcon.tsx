@@ -45,7 +45,7 @@ const AppbarBackIcon = ({ size, color }: { size: number; color: string }) => {
             size={size}
             direction={I18nManager.isRTL ? "rtl" : "ltr"}
         />
-    )
+    );
 };
 
 export default AppbarBackIcon;

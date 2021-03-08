@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 import {
     StyleProp,
@@ -6,20 +6,20 @@ import {
     TextStyle,
     View,
     ViewStyle,
-} from 'react-native';
+} from "react-native";
 
-import Checkbox from './Checkbox';
-import CheckboxAndroid from './CheckboxAndroid';
-import CheckboxIOS from './CheckboxIOS';
-import Text from '../Typography/Text';
-import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+import Checkbox from "./Checkbox";
+import CheckboxAndroid from "./CheckboxAndroid";
+import CheckboxIOS from "./CheckboxIOS";
+import Text from "../Typography/Text";
+import TouchableRipple from "../TouchableRipple/TouchableRipple";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = {
     /**
      * Status of checkbox.
      */
-    status: 'checked' | 'unchecked' | 'indeterminate';
+    status: "checked" | "unchecked" | "indeterminate";
     /**
      * Whether checkbox is disabled.
      */
@@ -60,7 +60,7 @@ type Props = {
      * Whether `<Checkbox.Android />` or `<Checkbox.IOS />` should be used.
      * Left undefined `<Checkbox />` will be used.
      */
-    mode?: 'android' | 'ios';
+    mode?: "android" | "ios";
 };
 
 /**
@@ -96,9 +96,9 @@ const CheckboxItem = ({
     const checkboxProps = { ...props, status, theme };
     let checkbox;
 
-    if (mode === 'android') {
+    if (mode === "android") {
         checkbox = <CheckboxAndroid {...checkboxProps} />;
-    } else if (mode === 'ios') {
+    } else if (mode === "ios") {
         checkbox = <CheckboxIOS {...checkboxProps} />;
     } else {
         checkbox = <Checkbox {...checkboxProps} />;
@@ -116,7 +116,7 @@ const CheckboxItem = ({
     );
 };
 
-CheckboxItem.displayName = 'Checkbox.Item';
+CheckboxItem.displayName = "Checkbox.Item";
 
 export default CheckboxItem;
 
@@ -127,9 +127,9 @@ export { CheckboxItemWithTheme as CheckboxItem };
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
         paddingVertical: 8,
         paddingHorizontal: 16,
     },

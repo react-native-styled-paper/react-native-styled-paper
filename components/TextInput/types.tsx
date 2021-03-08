@@ -3,9 +3,9 @@ import type {
     Animated,
     TextStyle,
     LayoutChangeEvent,
-} from 'react-native';
-import type { TextInputProps } from './TextInput';
-import { $Omit } from '../types';
+} from "react-native";
+import type { TextInputProps } from "./TextInput";
+import { $Omit } from "../types";
 
 export type RenderProps = {
     ref: (a: NativeTextInput | null | undefined) => void;
@@ -23,7 +23,7 @@ export type RenderProps = {
     value?: string;
     adjustsFontSizeToFit?: boolean;
 };
-type TextInputTypesWithoutMode = $Omit<TextInputProps, 'mode'>;
+type TextInputTypesWithoutMode = $Omit<TextInputProps, "mode">;
 export type State = {
     labeled: Animated.Value;
     error: Animated.Value;
@@ -46,7 +46,7 @@ export type ChildTextInputProps = {
     onRightAffixLayoutChange: (event: LayoutChangeEvent) => void;
 } & TextInputTypesWithoutMode;
 export type LabelProps = {
-    mode?: 'flat' | 'outlined';
+    mode?: "flat" | "outlined";
     placeholderStyle: any;
     placeholderOpacity: number | Animated.Value | Animated.AnimatedInterpolation;
     baseLabelTranslateX: number;
@@ -54,7 +54,7 @@ export type LabelProps = {
     wiggleOffsetX: number;
     labelScale: number;
     fontSize: number;
-    fontWeight: TextStyle['fontWeight'];
+    fontWeight: TextStyle["fontWeight"];
     font: any;
     topPosition: number;
     paddingOffset?:

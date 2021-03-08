@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     View,
     Animated,
@@ -7,13 +7,13 @@ import {
     I18nManager,
     Platform,
     TextStyle,
-} from 'react-native';
-import color from 'color';
-import InputLabel from './Label/InputLabel';
+} from "react-native";
+import color from "color";
+import InputLabel from "./Label/InputLabel";
 import TextInputAdornment, {
     TextInputAdornmentProps,
-} from './Adornment/TextInputAdornment';
-import type { RenderProps, ChildTextInputProps } from './types';
+} from "./Adornment/TextInputAdornment";
+import type { RenderProps, ChildTextInputProps } from "./types";
 
 import {
     MAXIMIZED_LABEL_FONT_SIZE,
@@ -21,7 +21,7 @@ import {
     LABEL_WIGGLE_X_OFFSET,
     ADORNMENT_SIZE,
     FLAT_INPUT_OFFSET,
-} from './constants';
+} from "./constants";
 
 import {
     calculateLabelTopPosition,
@@ -32,13 +32,13 @@ import {
     interpolatePlaceholder,
     calculateFlatAffixTopPosition,
     calculateFlatInputHorizontalPadding,
-} from './helpers';
+} from "./helpers";
 import {
     getAdornmentConfig,
     getAdornmentStyleAdjustmentForNativeInput,
-} from './Adornment/TextInputAdornment';
-import { AdornmentSide, AdornmentType, InputMode } from './Adornment/enums';
-import { ThemeContext } from 'styled-components';
+} from "./Adornment/TextInputAdornment";
+import { AdornmentSide, AdornmentType, InputMode } from "./Adornment/enums";
+import { ThemeContext } from "styled-components";
 
 const MINIMIZED_LABEL_Y_OFFSET = -18;
 
@@ -102,7 +102,7 @@ class TextInputFlat extends React.Component<ChildTextInputProps> {
         const fontSize = fontSizeStyle || MAXIMIZED_LABEL_FONT_SIZE;
 
         const isPaddingHorizontalPassed =
-            paddingHorizontal !== undefined && typeof paddingHorizontal === 'number';
+            paddingHorizontal !== undefined && typeof paddingHorizontal === "number";
 
         const adornmentConfig = getAdornmentConfig({
             left,
@@ -151,7 +151,7 @@ class TextInputFlat extends React.Component<ChildTextInputProps> {
                 .rgb()
                 .string();
             placeholderColor = colors.disabled;
-            underlineColorCustom = 'transparent';
+            underlineColorCustom = "transparent";
         } else {
             inputTextColor = colors.text;
             activeColor = error ? colors.error : colors.primary;
@@ -198,7 +198,7 @@ class TextInputFlat extends React.Component<ChildTextInputProps> {
             multiline && height ? 0 : !height ? minInputHeight / 2 : 0
         );
 
-        if (height && typeof height !== 'number') {
+        if (height && typeof height !== "number") {
             // eslint-disable-next-line
             console.warn('Currently we support only numbers in height prop');
         }
@@ -213,7 +213,7 @@ class TextInputFlat extends React.Component<ChildTextInputProps> {
             fontSize,
             label,
             scale: fontScale,
-            isAndroid: Platform.OS === 'android',
+            isAndroid: Platform.OS === "android",
             styles: StyleSheet.flatten(
                 dense ? styles.inputFlatDense : styles.inputFlat
             ) as Padding,
@@ -339,12 +339,12 @@ class TextInputFlat extends React.Component<ChildTextInputProps> {
                         placeholderTextColor: placeholderTextColor || placeholderColor,
                         editable: !disabled && editable,
                         selectionColor:
-                            typeof selectionColor === 'undefined'
+                            typeof selectionColor === "undefined"
                                 ? activeColor
                                 : selectionColor,
                         onFocus,
                         onBlur,
-                        underlineColorAndroid: 'transparent',
+                        underlineColorAndroid: "transparent",
                         multiline,
                         style: [
                             styles.input,
@@ -356,12 +356,12 @@ class TextInputFlat extends React.Component<ChildTextInputProps> {
                                 fontSize,
                                 fontWeight,
                                 color: inputTextColor,
-                                textAlignVertical: multiline ? 'top' : 'center',
+                                textAlignVertical: multiline ? "top" : "center",
                                 textAlign: textAlign
                                     ? textAlign
                                     : I18nManager.isRTL
-                                        ? 'right'
-                                        : 'left',
+                                        ? "right"
+                                        : "left",
                             },
                             adornmentStyleAdjustmentForNativeInput,
                         ],
@@ -414,11 +414,11 @@ const Underline = ({
 
 const styles = StyleSheet.create({
     placeholder: {
-        position: 'absolute',
+        position: "absolute",
         left: 0,
     },
     underline: {
-        position: 'absolute',
+        position: "absolute",
         left: 0,
         right: 0,
         bottom: 0,

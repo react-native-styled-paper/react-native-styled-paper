@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { View } from 'react-native';
+import styled from "styled-components";
+import { View } from "react-native";
 import {
     SpaceProps,
     ColorProps,
@@ -21,7 +21,7 @@ import {
     background,
     BackgroundProps,
     zIndex,
-} from 'styled-system';
+} from "styled-system";
 
 const Wrapper = styled(View)<SpaceProps & LayoutProps & PositionProps & ColorProps & BackgroundProps>`
   ${width};
@@ -42,7 +42,7 @@ const Wrapper = styled(View)<SpaceProps & LayoutProps & PositionProps & ColorPro
 `;
 
 Wrapper.defaultProps = {
-    background: 'white',
+    background: "white",
 };
 
 export default Wrapper;

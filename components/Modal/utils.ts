@@ -1,22 +1,22 @@
-import { Dimensions } from 'react-native';
-import * as animatable from 'react-native-animatable';
-import { CustomAnimation, Animation } from 'react-native-animatable';
-import { Animations } from './types';
+import { Dimensions } from "react-native";
+import * as animatable from "react-native-animatable";
+import { CustomAnimation, Animation } from "react-native-animatable";
+import { Animations } from "./types";
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get("window");
 
 export const initializeAnimations = () => {
     // Since react-native-animatable applies by default a margin of 100 to its
     // sliding animation, we reset them here overriding the margin to 0.
     const animationDefinitions: Record<string, CustomAnimation> = {
-        slideInDown: makeSlideTranslation('translateY', -height, 0),
-        slideInUp: makeSlideTranslation('translateY', height, 0),
-        slideInLeft: makeSlideTranslation('translateX', -width, 0),
-        slideInRight: makeSlideTranslation('translateX', width, 0),
-        slideOutDown: makeSlideTranslation('translateY', 0, height),
-        slideOutUp: makeSlideTranslation('translateY', 0, -height),
-        slideOutLeft: makeSlideTranslation('translateX', 0, -width),
-        slideOutRight: makeSlideTranslation('translateX', 0, width),
+        slideInDown: makeSlideTranslation("translateY", -height, 0),
+        slideInUp: makeSlideTranslation("translateY", height, 0),
+        slideInLeft: makeSlideTranslation("translateX", -width, 0),
+        slideInRight: makeSlideTranslation("translateX", width, 0),
+        slideOutDown: makeSlideTranslation("translateY", 0, height),
+        slideOutUp: makeSlideTranslation("translateY", 0, -height),
+        slideOutLeft: makeSlideTranslation("translateX", 0, -width),
+        slideOutRight: makeSlideTranslation("translateX", 0, width),
     };
 
     animatable.initializeRegistryWithDefinitions(animationDefinitions);
@@ -78,6 +78,6 @@ const makeAnimation = (name: string, obj: CustomAnimation): void => {
     );
 };
 
-const isObject = (obj: any): obj is Object => {
-    return obj !== null && typeof obj === 'object';
+const isObject = (obj: any): obj is Record<string, any> => {
+    return obj !== null && typeof obj === "object";
 };

@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { screenSize } from './utils/ScreenSize';
-import { isHidden } from './utils/helpers';
-import { View } from 'react-native';
+import * as React from "react";
+import { screenSize } from "./utils/ScreenSize";
+import { isHidden } from "./utils/helpers";
+import { View } from "react-native";
 
 const cloneElements = (props) => {
     //if size doesn't exist or is 0 default to 12
@@ -10,7 +10,7 @@ const cloneElements = (props) => {
     return React.Children.map(props.children, (element) => {
         return React.cloneElement(element, { rowSize: rowSize });
     });
-}
+};
 
 type Props = {
     size?: number,
@@ -31,16 +31,16 @@ const Row = (props: Props) => {
         return (
             <View {...props}
                 style={[props.style,
-                {
-                    flexDirection: 'row',
-                    flexWrap: props.nowrap ? 'nowrap' : 'wrap',
-                    alignItems: props.alignItems,
-                    justifyContent: props.justifyContent,
-                }]}>
+                    {
+                        flexDirection: "row",
+                        flexWrap: props.nowrap ? "nowrap" : "wrap",
+                        alignItems: props.alignItems,
+                        justifyContent: props.justifyContent,
+                    }]}>
                 {cloneElements(props)}
             </View>
         );
     }
-}
+};
 
 export default Row;

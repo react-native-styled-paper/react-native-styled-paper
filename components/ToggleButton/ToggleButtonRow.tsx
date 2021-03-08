@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { StyleSheet, View, StyleProp, ViewStyle } from 'react-native';
-import ToggleButtonGroup from './ToggleButtonGroup';
-import ToggleButton from './ToggleButton';
+import * as React from "react";
+import { StyleSheet, View, StyleProp, ViewStyle } from "react-native";
+import ToggleButtonGroup from "./ToggleButtonGroup";
+import ToggleButton from "./ToggleButton";
 
 type Props = {
     /**
@@ -79,11 +79,11 @@ const ToggleButtonRow = ({ value, onValueChange, children, style }: Props) => {
     );
 };
 
-ToggleButtonRow.displayName = 'ToggleButton.Row';
+ToggleButtonRow.displayName = "ToggleButton.Row";
 
 const styles = StyleSheet.create({
     row: {
-        flexDirection: 'row',
+        flexDirection: "row",
     },
     button: {
         borderWidth: StyleSheet.hairlineWidth,

@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { Animated, View, StyleSheet } from 'react-native';
-import color from 'color';
-import { RadioButtonContext, RadioButtonContextType } from './RadioButtonGroup';
-import { handlePress, isChecked } from './utils';
-import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import { $RemoveChildren } from '../types';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+import * as React from "react";
+import { Animated, View, StyleSheet } from "react-native";
+import color from "color";
+import { RadioButtonContext, RadioButtonContextType } from "./RadioButtonGroup";
+import { handlePress, isChecked } from "./utils";
+import TouchableRipple from "../TouchableRipple/TouchableRipple";
+import { $RemoveChildren } from "../types";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = $RemoveChildren<typeof TouchableRipple> & {
     /**
@@ -15,7 +15,7 @@ type Props = $RemoveChildren<typeof TouchableRipple> & {
     /**
      * Status of radio button.
      */
-    status?: 'checked' | 'unchecked';
+    status?: "checked" | "unchecked";
     /**
      * Whether radio is disabled.
      */
@@ -88,7 +88,7 @@ const RadioButtonAndroid = ({
             return;
         }
 
-        if (status === 'checked') {
+        if (status === "checked") {
             radioAnim.setValue(1.2);
 
             Animated.timing(radioAnim, {
@@ -125,7 +125,7 @@ const RadioButtonAndroid = ({
                         contextValue: context?.value,
                         status,
                         value,
-                    }) === 'checked';
+                    }) === "checked";
 
                 if (disabled) {
                     rippleColor = color(theme.colors.text).alpha(0.16).rgb().string();
@@ -191,15 +191,15 @@ const RadioButtonAndroid = ({
     );
 };
 
-RadioButtonAndroid.displayName = 'RadioButton.Android';
+RadioButtonAndroid.displayName = "RadioButton.Android";
 
 const styles = StyleSheet.create({
     container: {
         borderRadius: 18,
     },
     radioContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: "center",
+        justifyContent: "center",
     },
     radio: {
         height: 20,

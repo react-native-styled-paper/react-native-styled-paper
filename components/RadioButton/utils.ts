@@ -16,11 +16,11 @@ export const isChecked = ({
     contextValue,
 }: {
     value: string;
-    status?: 'checked' | 'unchecked';
+    status?: "checked" | "unchecked";
     contextValue?: string;
 }) => {
     if (contextValue !== undefined && contextValue !== null) {
-        return contextValue === value ? 'checked' : 'unchecked';
+        return contextValue === value ? "checked" : "unchecked";
     } else {
         return status;
     }

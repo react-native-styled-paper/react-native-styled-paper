@@ -1,6 +1,6 @@
-import ShimmerPlaceholder, { createShimmerPlaceholder } from './ShimmerPlaceholder';
+import ShimmerPlaceholder, { createShimmerPlaceholder } from "./ShimmerPlaceholder";
 
 export {
     ShimmerPlaceholder as default,
     createShimmerPlaceholder,
-}
+};

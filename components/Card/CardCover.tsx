@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { StyleSheet, View, ViewStyle, Image, StyleProp } from 'react-native';
-import { DefaultTheme, ThemeContext } from 'styled-components';
-import { grey200 } from '../theme/colors';
+import * as React from "react";
+import { StyleSheet, View, ViewStyle, Image, StyleProp } from "react-native";
+import { DefaultTheme, ThemeContext } from "styled-components";
+import { grey200 } from "../theme/colors";
 
 type Props = React.ComponentPropsWithRef<typeof Image> & {
     /**
@@ -61,7 +61,7 @@ const CardCover = ({ index, total, style, ...rest }: Props) => {
                 borderTopRightRadius: roundness,
             };
         }
-    } else if (typeof total === 'number' && index === total - 1) {
+    } else if (typeof total === "number" && index === total - 1) {
         coverStyle = {
             borderBottomLeftRadius: roundness,
         };
@@ -74,20 +74,20 @@ const CardCover = ({ index, total, style, ...rest }: Props) => {
     );
 };
 
-CardCover.displayName = 'Card.Cover';
+CardCover.displayName = "Card.Cover";
 const styles = StyleSheet.create({
     container: {
         height: 195,
         backgroundColor: grey200,
-        overflow: 'hidden',
+        overflow: "hidden",
     },
     image: {
         flex: 1,
         height: undefined,
         width: undefined,
         padding: 16,
-        justifyContent: 'flex-end',
-        resizeMode: 'cover',
+        justifyContent: "flex-end",
+        resizeMode: "cover",
     },
 });
 

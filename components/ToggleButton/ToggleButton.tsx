@@ -1,15 +1,15 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     StyleSheet,
     StyleProp,
     ViewStyle,
     GestureResponderEvent,
-} from 'react-native';
-import color from 'color';
-import { DefaultTheme, ThemeContext } from 'styled-components';
-import { IconButton } from '../IconButton';
-import { ToggleButtonGroupContext } from './ToggleButtonGroup';
-import { black, white } from '../theme/colors';
+} from "react-native";
+import color from "color";
+import { DefaultTheme, ThemeContext } from "styled-components";
+import { IconButton } from "../IconButton";
+import { ToggleButtonGroupContext } from "./ToggleButtonGroup";
+import { black, white } from "../theme/colors";
 
 type Props = {
     /**
@@ -43,7 +43,7 @@ type Props = {
     /**
      * Status of button.
      */
-    status?: 'checked' | 'unchecked';
+    status?: "checked" | "unchecked";
     style?: StyleProp<ViewStyle>;
     /**
      * @optional
@@ -101,18 +101,18 @@ const ToggleButton = ({
 
     return (
         <ToggleButtonGroupContext.Consumer>
-            {(context: { value: string; onValueChange: Function } | null) => {
+            {(context: { value: string; onValueChange: (evt?) => void } | null) => {
                 let backgroundColor;
 
                 const checked: boolean | null =
-                    (context && context.value === value) || status === 'checked';
+                    (context && context.value === value) || status === "checked";
 
                 if (checked) {
                     backgroundColor = theme.dark
-                        ? 'rgba(255, 255, 255, .12)'
-                        : 'rgba(0, 0, 0, .08)';
+                        ? "rgba(255, 255, 255, .12)"
+                        : "rgba(0, 0, 0, .08)";
                 } else {
-                    backgroundColor = 'transparent';
+                    backgroundColor = "transparent";
                 }
 
                 return (

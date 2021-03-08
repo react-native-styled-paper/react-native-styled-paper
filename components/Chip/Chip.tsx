@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     AccessibilityState,
     // AccessibilityTrait,
@@ -9,61 +9,61 @@ import {
     StyleSheet,
     TouchableWithoutFeedback,
     ViewStyle,
-} from 'react-native';
-import color from 'color';
-import { SvgIcon } from '../Icon';
-import { Surface } from '../Surface';
-import { Text } from '../Typography';
-import { TouchableRipple } from '../TouchableRipple';
-import { black, white } from '../theme/colors';
-import type { EllipsizeProp } from '../types';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+} from "react-native";
+import color from "color";
+import { SvgIcon } from "../Icon";
+import { Surface } from "../Surface";
+import { Text } from "../Typography";
+import { TouchableRipple } from "../TouchableRipple";
+import { black, white } from "../theme/colors";
+import type { EllipsizeProp } from "../types";
+import { DefaultTheme, ThemeContext } from "styled-components";
 import styled from "styled-components/native";
 import CheckIcon from "@mdi/svg/svg/check.svg";
 import CloseCircleIcon from "@mdi/svg/svg/close-circle.svg";
 
 const ChipSurface = styled(Surface)({
     borderWidth: StyleSheet.hairlineWidth,
-    borderStyle: 'solid',
-    flexDirection: 'row',
+    borderStyle: "solid",
+    flexDirection: "row",
 });
 
 const ChipContent = styled.View({
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     paddingLeft: 4,
-    position: 'relative',
+    position: "relative",
 });
 
 const ChipAvatarWrapper = styled.View({
     marginRight: 4,
-})
+});
 
 const ChipIconWrapper = styled.View({
     padding: 4,
-    alignSelf: 'center',
-})
+    alignSelf: "center",
+});
 
 const ChipText = styled(Text)({
     minHeight: 24,
     lineHeight: 24,
-    textAlignVertical: 'center',
+    textAlignVertical: "center",
     marginVertical: 4,
-})
+});
 
 const ChipCloseButtonWrapper = styled.View({
-    position: 'absolute',
+    position: "absolute",
     right: 0,
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-})
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+});
 
 const ChipCloseButtonIconWrapper = styled.View({
     padding: 4,
-    alignSelf: 'center',
+    alignSelf: "center",
     marginRight: 4,
-})
+});
 
 type Props = React.ComponentProps<typeof Surface> & {
     /**
@@ -71,7 +71,7 @@ type Props = React.ComponentProps<typeof Surface> & {
      * - `flat` - flat chip without outline.
      * - `outlined` - chip with an outline.
      */
-    mode?: 'flat' | 'outlined';
+    mode?: "flat" | "outlined";
     /**
      * Text content of the `Chip`.
      */
@@ -163,14 +163,14 @@ type Props = React.ComponentProps<typeof Surface> & {
  * ```
  */
 const Chip = ({
-    mode = 'flat',
+    mode = "flat",
     children,
     icon,
     avatar,
     selected = false,
     disabled = false,
     accessibilityLabel,
-    closeIconAccessibilityLabel = 'Close',
+    closeIconAccessibilityLabel = "Close",
     onPress,
     onLongPress,
     onClose,
@@ -207,16 +207,16 @@ const Chip = ({
     const { dark, colors } = theme;
 
     const {
-        backgroundColor = mode === 'outlined'
+        backgroundColor = mode === "outlined"
             ? colors.surface
             : dark
-                ? '#383838'
-                : '#ebebeb',
+                ? "#383838"
+                : "#ebebeb",
         borderRadius = 16,
     } = StyleSheet.flatten(style) || {};
 
     const borderColor =
-        mode === 'outlined'
+        mode === "outlined"
             ? color(
                 selectedColor !== undefined
                     ? selectedColor
@@ -240,8 +240,8 @@ const Chip = ({
             .string();
     const selectedBackgroundColor = (dark
         // TODO: please check types
-        ? color(backgroundColor as any).lighten(mode === 'outlined' ? 0.2 : 0.4)
-        : color(backgroundColor as any).darken(mode === 'outlined' ? 0.08 : 0.2)
+        ? color(backgroundColor as any).lighten(mode === "outlined" ? 0.2 : 0.4)
+        : color(backgroundColor as any).darken(mode === "outlined" ? 0.08 : 0.2)
     )
         .rgb()
         .string();
@@ -250,7 +250,7 @@ const Chip = ({
         ? color(selectedColor).fade(0.5).rgb().string()
         : selectedBackgroundColor;
 
-    const accessibilityTraits: any[] = ['button'];
+    const accessibilityTraits: any[] = ["button"];
     // const accessibilityTraits: AccessibilityRole[] = ['button'];
     // const accessibilityTraits: AccessibilityTrait[] = ['button'];
     const accessibilityState: AccessibilityState = {
@@ -259,11 +259,11 @@ const Chip = ({
     };
 
     if (selected) {
-        accessibilityTraits.push('selected');
+        accessibilityTraits.push("selected");
     }
 
     if (disabled) {
-        accessibilityTraits.push('disabled');
+        accessibilityTraits.push("disabled");
     }
 
     return (
@@ -271,7 +271,7 @@ const Chip = ({
             style={
                 [
                     {
-                        elevation: Platform.OS === 'android' ? elevation : 0,
+                        elevation: Platform.OS === "android" ? elevation : 0,
                         backgroundColor: selected
                             ? selectedBackgroundColor
                             : backgroundColor,
@@ -326,12 +326,12 @@ const Chip = ({
                                     size={18}
                                 />
                             ) : (
-                                    <CheckIcon
-                                        color={avatar ? white : iconColor}
-                                        size={18}
-                                        direction="ltr"
-                                    />
-                                )}
+                                <CheckIcon
+                                    color={avatar ? white : iconColor}
+                                    size={18}
+                                    direction="ltr"
+                                />
+                            )}
                         </ChipIconWrapper>
                     ) : null}
                     <ChipText
@@ -386,10 +386,10 @@ const styles = StyleSheet.create({
         marginRight: 4,
     },
     avatarSelected: {
-        position: 'absolute',
+        position: "absolute",
         top: 4,
         left: 4,
-        backgroundColor: 'rgba(0, 0, 0, .29)',
+        backgroundColor: "rgba(0, 0, 0, .29)",
     },
 });
 

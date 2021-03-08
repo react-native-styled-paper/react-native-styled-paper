@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     Animated,
     SafeAreaView,
@@ -6,11 +6,11 @@ import {
     StyleSheet,
     ViewStyle,
     View,
-} from 'react-native';
-import { DefaultTheme, ThemeContext } from 'styled-components';
-import { Button } from '../Button';
-import { Surface } from '../Surface';
-import { Text } from '../Typography';
+} from "react-native";
+import { DefaultTheme, ThemeContext } from "styled-components";
+import { Button } from "../Button";
+import { Surface } from "../Surface";
+import { Text } from "../Typography";
 
 type Props = React.ComponentProps<typeof Surface> & {
     /**
@@ -243,22 +243,22 @@ Snackbar.DURATION_LONG = DURATION_LONG;
 
 const styles = StyleSheet.create({
     wrapper: {
-        position: 'absolute',
+        position: "absolute",
         bottom: 0,
-        width: '100%',
+        width: "100%",
     },
     container: {
         elevation: 6,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
         margin: 8,
         borderRadius: 4,
     },
     content: {
         marginLeft: 16,
         marginVertical: 14,
-        flexWrap: 'wrap',
+        flexWrap: "wrap",
         flex: 1,
     },
     button: {

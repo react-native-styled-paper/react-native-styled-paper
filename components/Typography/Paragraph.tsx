@@ -26,6 +26,6 @@ const Paragraph = (props: Props) => {
             family="regular"
         />
     );
-}
+};
 
 export default Paragraph;

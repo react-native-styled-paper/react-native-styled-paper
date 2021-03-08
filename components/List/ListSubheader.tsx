@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { StyleSheet, StyleProp, TextStyle } from 'react-native';
-import color from 'color';
-import Text from '../Typography/Text';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+import * as React from "react";
+import { StyleSheet, StyleProp, TextStyle } from "react-native";
+import color from "color";
+import Text from "../Typography/Text";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = React.ComponentProps<typeof Text> & {
     /**
@@ -43,7 +43,7 @@ const ListSubheader = ({ style, ...rest }: Props) => {
     );
 };
 
-ListSubheader.displayName = 'List.Subheader';
+ListSubheader.displayName = "List.Subheader";
 
 const styles = StyleSheet.create({
     container: {

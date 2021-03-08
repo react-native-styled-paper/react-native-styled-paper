@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     View,
     Animated,
@@ -9,20 +9,20 @@ import {
     Platform,
     Keyboard,
     ViewStyle,
-} from 'react-native';
-import { DefaultTheme, ThemeContext } from 'styled-components';
-import { getBottomSpace } from 'react-native-iphone-x-helper';
-import color from 'color';
-import overlay from '../theme/overlay';
-import { SvgIcon } from '../Icon';
-import { Surface } from '../Surface';
-import { Badge } from '../Badge';
-import { TouchableRipple } from '../TouchableRipple';
-import { Text } from '../Typography';
-import { black, white } from '../theme/colors';
-import useAnimatedValue from '../utils/useAnimatedValue';
-import useAnimatedValueArray from '../utils/useAnimatedValueArray';
-import useLayout from '../utils/useLayout';
+} from "react-native";
+import { DefaultTheme, ThemeContext } from "styled-components";
+import { getBottomSpace } from "react-native-iphone-x-helper";
+import color from "color";
+import overlay from "../theme/overlay";
+import { SvgIcon } from "../Icon";
+import { Surface } from "../Surface";
+import { Badge } from "../Badge";
+import { TouchableRipple } from "../TouchableRipple";
+import { Text } from "../Typography";
+import { black, white } from "../theme/colors";
+import useAnimatedValue from "../utils/useAnimatedValue";
+import useAnimatedValueArray from "../utils/useAnimatedValueArray";
+import useLayout from "../utils/useLayout";
 
 type Route = {
     key: string;
@@ -233,7 +233,7 @@ const MIN_TAB_WIDTH = 96;
 const MAX_TAB_WIDTH = 168;
 const BAR_HEIGHT = 56;
 const BOTTOM_INSET = getBottomSpace();
-const FAR_FAR_AWAY = Platform.OS === 'web' ? 0 : 9999;
+const FAR_FAR_AWAY = Platform.OS === "web" ? 0 : 9999;
 
 const Touchable = ({
     route: _0,
@@ -255,10 +255,10 @@ const Touchable = ({
             {children}
         </TouchableRipple>
     ) : (
-            <TouchableWithoutFeedback {...rest}>
-                <View style={style}>{children}</View>
-            </TouchableWithoutFeedback>
-        );
+        <TouchableWithoutFeedback {...rest}>
+            <View style={style}>{children}</View>
+        </TouchableWithoutFeedback>
+    );
 
 const SceneComponent = React.memo(({ component, ...rest }: any) =>
     React.createElement(component, rest)
@@ -473,25 +473,24 @@ const BottomNavigation = ({
         // Workaround for native animated bug in react-native@^0.57
         // Context: https://github.com/callstack/react-native-paper/pull/637
         animateToIndex(navigationState.index);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [navigationState.index]);
 
     React.useEffect(() => {
-        if (Platform.OS === 'ios') {
-            Keyboard.addListener('keyboardWillShow', handleKeyboardShow);
-            Keyboard.addListener('keyboardWillHide', handleKeyboardHide);
+        if (Platform.OS === "ios") {
+            Keyboard.addListener("keyboardWillShow", handleKeyboardShow);
+            Keyboard.addListener("keyboardWillHide", handleKeyboardHide);
         } else {
-            Keyboard.addListener('keyboardDidShow', handleKeyboardShow);
-            Keyboard.addListener('keyboardDidHide', handleKeyboardHide);
+            Keyboard.addListener("keyboardDidShow", handleKeyboardShow);
+            Keyboard.addListener("keyboardDidHide", handleKeyboardHide);
         }
 
         return () => {
-            if (Platform.OS === 'ios') {
-                Keyboard.removeListener('keyboardWillShow', handleKeyboardShow);
-                Keyboard.removeListener('keyboardWillHide', handleKeyboardHide);
+            if (Platform.OS === "ios") {
+                Keyboard.removeListener("keyboardWillShow", handleKeyboardShow);
+                Keyboard.removeListener("keyboardWillHide", handleKeyboardHide);
             } else {
-                Keyboard.removeListener('keyboardDidShow', handleKeyboardShow);
-                Keyboard.removeListener('keyboardDidHide', handleKeyboardHide);
+                Keyboard.removeListener("keyboardDidShow", handleKeyboardShow);
+                Keyboard.removeListener("keyboardDidHide", handleKeyboardHide);
             }
         };
     }, [handleKeyboardHide, handleKeyboardShow]);
@@ -551,7 +550,7 @@ const BottomNavigation = ({
 
     const approxBackgroundColor = customBackground
         ? customBackground
-        : isDarkTheme && mode === 'adaptive'
+        : isDarkTheme && mode === "adaptive"
             ? overlay(elevation, colors.surface)
             : colors.primary;
 
@@ -569,9 +568,9 @@ const BottomNavigation = ({
 
     const textColor = isDark ? white : black;
     const activeTintColor =
-        typeof activeColor !== 'undefined' ? activeColor : textColor;
+        typeof activeColor !== "undefined" ? activeColor : textColor;
     const inactiveTintColor =
-        typeof inactiveColor !== 'undefined'
+        typeof inactiveColor !== "undefined"
             ? inactiveColor
             : color(textColor).alpha(0.5).rgb().string();
 
@@ -613,17 +612,17 @@ const BottomNavigation = ({
                     return (
                         <Animated.View
                             key={route.key}
-                            pointerEvents={focused ? 'auto' : 'none'}
+                            pointerEvents={focused ? "auto" : "none"}
                             accessibilityElementsHidden={!focused}
                             importantForAccessibility={
-                                focused ? 'auto' : 'no-hide-descendants'
+                                focused ? "auto" : "no-hide-descendants"
                             }
                             style={[StyleSheet.absoluteFill, { opacity }]}
                             collapsable={false}
                             removeClippedSubviews={
                                 // On iOS, set removeClippedSubviews to true only when not focused
                                 // This is an workaround for a bug where the clipped view never re-appears
-                                Platform.OS === 'ios' ? navigationState.index !== index : true
+                                Platform.OS === "ios" ? navigationState.index !== index : true
                             }
                         >
                             <Animated.View style={[styles.content, { top }]}>
@@ -650,7 +649,7 @@ const BottomNavigation = ({
                                 ],
                                 // Absolutely position the navigation bar so that the content is below it
                                 // This is needed to avoid gap at bottom when the navigation bar is hidden
-                                position: keyboardVisible ? 'absolute' : null,
+                                position: keyboardVisible ? "absolute" : null,
                             }
                             : null,
                         barStyle,
@@ -659,9 +658,9 @@ const BottomNavigation = ({
                 pointerEvents={
                     layout.measured
                         ? keyboardHidesNavigationBar && keyboardVisible
-                            ? 'none'
-                            : 'auto'
-                        : 'none'
+                            ? "none"
+                            : "auto"
+                        : "none"
                 }
                 onLayout={onLayout}
             >
@@ -753,7 +752,7 @@ const BottomNavigation = ({
                                 //     ? ['button', 'selected']
                                 //     : 'button',
                                 // accessibilityComponentType: 'button',
-                                accessibilityRole: 'button',
+                                accessibilityRole: "button",
                                 accessibilityState: { selected: true },
                                 style: styles.item,
                                 children: (
@@ -774,12 +773,12 @@ const BottomNavigation = ({
                                                         color: activeTintColor,
                                                     })
                                                 ) : (
-                                                        <SvgIcon
-                                                            icon={route.icon}
-                                                            color={activeTintColor}
-                                                            size={24}
-                                                        />
-                                                    )}
+                                                    <SvgIcon
+                                                        icon={route.icon}
+                                                        color={activeTintColor}
+                                                        size={24}
+                                                    />
+                                                )}
                                             </Animated.View>
                                             <Animated.View
                                                 style={[
@@ -794,31 +793,31 @@ const BottomNavigation = ({
                                                         color: inactiveTintColor,
                                                     })
                                                 ) : (
-                                                        <SvgIcon
-                                                            icon={route.icon}
-                                                            color={inactiveTintColor}
-                                                            size={24}
-                                                        />
-                                                    )}
+                                                    <SvgIcon
+                                                        icon={route.icon}
+                                                        color={inactiveTintColor}
+                                                        size={24}
+                                                    />
+                                                )}
                                             </Animated.View>
                                             <View
                                                 style={[
                                                     styles.badgeContainer,
                                                     {
                                                         right:
-                                                            (badge != null && typeof badge !== 'boolean'
+                                                            (badge != null && typeof badge !== "boolean"
                                                                 ? String(badge).length * -2
                                                                 : 0) - 2,
                                                     },
                                                 ]}
                                             >
-                                                {typeof badge === 'boolean' ? (
+                                                {typeof badge === "boolean" ? (
                                                     <Badge visible={badge} size={8} />
                                                 ) : (
-                                                        <Badge visible={badge != null} size={16}>
-                                                            {badge}
-                                                        </Badge>
-                                                    )}
+                                                    <Badge visible={badge != null} size={16}>
+                                                        {badge}
+                                                    </Badge>
+                                                )}
                                             </View>
                                         </Animated.View>
                                         {labeled ? (
@@ -841,12 +840,12 @@ const BottomNavigation = ({
                                                             color: activeTintColor,
                                                         })
                                                     ) : (
-                                                            <Text
-                                                                style={[styles.label, { color: activeTintColor }]}
-                                                            >
-                                                                {getLabelText({ route })}
-                                                            </Text>
-                                                        )}
+                                                        <Text
+                                                            style={[styles.label, { color: activeTintColor }]}
+                                                        >
+                                                            {getLabelText({ route })}
+                                                        </Text>
+                                                    )}
                                                 </Animated.View>
                                                 {shifting ? null : (
                                                     <Animated.View
@@ -862,22 +861,22 @@ const BottomNavigation = ({
                                                                 color: inactiveTintColor,
                                                             })
                                                         ) : (
-                                                                <Text
-                                                                    selectable={false}
-                                                                    style={[
-                                                                        styles.label,
-                                                                        { color: inactiveTintColor },
-                                                                    ]}
-                                                                >
-                                                                    {getLabelText({ route })}
-                                                                </Text>
-                                                            )}
+                                                            <Text
+                                                                selectable={false}
+                                                                style={[
+                                                                    styles.label,
+                                                                    { color: inactiveTintColor },
+                                                                ]}
+                                                            >
+                                                                {getLabelText({ route })}
+                                                            </Text>
+                                                        )}
                                                     </Animated.View>
                                                 )}
                                             </Animated.View>
                                         ) : (
-                                                <View style={styles.labelContainer} />
-                                            )}
+                                            <View style={styles.labelContainer} />
+                                        )}
                                     </View>
                                 ),
                             });
@@ -909,7 +908,7 @@ BottomNavigation.SceneMap = (scenes: {
     }) => (
         <SceneComponent
             key={route.key}
-            component={scenes[route.key ? route.key : '']}
+            component={scenes[route.key ? route.key : ""]}
             route={route}
             jumpTo={jumpTo}
         />
@@ -921,7 +920,7 @@ export default BottomNavigation;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        overflow: 'hidden',
+        overflow: "hidden",
     },
     content: {
         flex: 1,
@@ -933,12 +932,12 @@ const styles = StyleSheet.create({
         elevation: 4,
     },
     barContent: {
-        alignItems: 'center',
-        overflow: 'hidden',
+        alignItems: "center",
+        overflow: "hidden",
     },
     items: {
-        flexDirection: 'row',
-        width: '100%',
+        flexDirection: "row",
+        width: "100%",
     },
     item: {
         flex: 1,
@@ -947,18 +946,18 @@ const styles = StyleSheet.create({
         paddingVertical: 6,
     },
     ripple: {
-        position: 'absolute',
+        position: "absolute",
     },
     iconContainer: {
         height: 24,
         width: 24,
         marginTop: 2,
         marginHorizontal: 12,
-        alignSelf: 'center',
+        alignSelf: "center",
     },
     iconWrapper: {
         ...StyleSheet.absoluteFillObject,
-        alignItems: 'center',
+        alignItems: "center",
     },
     labelContainer: {
         height: 16,
@@ -967,20 +966,19 @@ const styles = StyleSheet.create({
     labelWrapper: {
         ...StyleSheet.absoluteFillObject,
     },
-    // eslint-disable-next-line react-native/no-color-literals
     label: {
         fontSize: 12,
-        textAlign: 'center',
-        backgroundColor: 'transparent',
-        ...(Platform.OS === 'web'
+        textAlign: "center",
+        backgroundColor: "transparent",
+        ...(Platform.OS === "web"
             ? {
-                whiteSpace: 'nowrap',
-                alignSelf: 'center',
+                whiteSpace: "nowrap",
+                alignSelf: "center",
             }
             : null),
     },
     badgeContainer: {
-        position: 'absolute',
+        position: "absolute",
         left: 0,
         top: -2,
     },

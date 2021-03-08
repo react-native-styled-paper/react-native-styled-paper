@@ -1,24 +1,24 @@
-import * as React from 'react';
-import color from 'color';
+import * as React from "react";
+import color from "color";
 import {
     Animated,
     StyleSheet,
     StyleProp,
     TextStyle,
     LayoutChangeEvent,
-} from 'react-native';
-import AnimatedText from '../Typography/AnimatedText';
-import type { $Omit } from '../types';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+} from "react-native";
+import AnimatedText from "../Typography/AnimatedText";
+import type { $Omit } from "../types";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = $Omit<
-    $Omit<React.ComponentPropsWithRef<typeof AnimatedText>, 'padding'>,
-    'type'
+    $Omit<React.ComponentPropsWithRef<typeof AnimatedText>, "padding">,
+    "type"
 > & {
     /**
      * Type of the helper text.
      */
-    type: 'error' | 'info';
+    type: "error" | "info";
     /**
      * Whether to display the helper text.
      */
@@ -26,7 +26,7 @@ type Props = $Omit<
     /**
      * Whether to apply padding to the helper text.
      */
-    padding?: 'none' | 'normal';
+    padding?: "none" | "normal";
     /**
      * Text content of the HelperText.
      */
@@ -79,10 +79,10 @@ type Props = $Omit<
  */
 const HelperText = ({
     style,
-    type = 'info',
+    type = "info",
     visible = true,
     onLayout,
-    padding = 'normal',
+    padding = "normal",
     ...rest
 }: Props) => {
     const theme = React.useContext(ThemeContext);
@@ -121,7 +121,7 @@ const HelperText = ({
     const { colors, dark } = theme;
 
     const textColor =
-        type === 'error'
+        type === "error"
             ? colors.error
             : color(colors.text)
                 .alpha(dark ? 0.7 : 0.54)
@@ -134,12 +134,12 @@ const HelperText = ({
             onLayout={handleTextLayout}
             style={[
                 styles.text,
-                padding !== 'none' ? styles.padding : {},
+                padding !== "none" ? styles.padding : {},
                 {
                     color: textColor,
                     opacity: shown,
                     transform:
-                        visible && type === 'error'
+                        visible && type === "error"
                             ? [
                                 {
                                     translateY: shown.interpolate({

@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { Animated, StyleSheet } from 'react-native';
+import * as React from "react";
+import { Animated, StyleSheet } from "react-native";
 
-import AnimatedText from '../../Typography/AnimatedText';
+import AnimatedText from "../../Typography/AnimatedText";
 
-import type { LabelBackgroundProps } from '../types';
+import type { LabelBackgroundProps } from "../types";
 
 const LabelBackground = ({
     parentState,
@@ -82,16 +82,16 @@ export default LabelBackground;
 
 const styles = StyleSheet.create({
     view: {
-        position: 'absolute',
+        position: "absolute",
         top: 6,
         left: 10,
         width: 8,
         height: 2,
     },
     outlinedLabel: {
-        position: 'absolute',
+        position: "absolute",
         left: 18,
         paddingHorizontal: 0,
-        color: 'transparent',
+        color: "transparent",
     },
 });

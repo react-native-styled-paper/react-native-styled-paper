@@ -79,7 +79,7 @@ const SvgIcon = (props: Props) => {
         stroke: iconColor,
     } : {
         fill: iconColor,
-    }
+    };
 
     return props.icon ?
         (
@@ -91,7 +91,7 @@ const SvgIcon = (props: Props) => {
                 height={size}
             />
         ) :
-        <NativeText>Icon</NativeText>
+        <NativeText>Icon</NativeText>;
 };
 
 export default SvgIcon;

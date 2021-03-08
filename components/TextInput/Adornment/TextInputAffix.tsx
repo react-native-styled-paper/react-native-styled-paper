@@ -1,5 +1,5 @@
-import * as React from 'react';
-import color from 'color';
+import * as React from "react";
+import color from "color";
 import {
     Text,
     StyleSheet,
@@ -7,10 +7,10 @@ import {
     TextStyle,
     LayoutChangeEvent,
     Animated,
-} from 'react-native';
+} from "react-native";
 
-import { AdornmentSide } from './enums';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+import { AdornmentSide } from "./enums";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 const AFFIX_OFFSET = 12;
 
@@ -35,8 +35,8 @@ type ContextState = {
 
 const AffixContext = React.createContext<ContextState>({
     textStyle: {
-        fontFamily: '',
-        color: '',
+        fontFamily: "",
+        color: "",
     },
     topPosition: null,
     side: AdornmentSide.Left,
@@ -84,7 +84,7 @@ const TextInputAffix = ({ text, textStyle: labelStyle }: Props) => {
         .string();
 
     const offset =
-        typeof paddingHorizontal === 'number' ? paddingHorizontal : AFFIX_OFFSET;
+        typeof paddingHorizontal === "number" ? paddingHorizontal : AFFIX_OFFSET;
 
     const style = {
         top: topPosition,
@@ -113,13 +113,13 @@ const TextInputAffix = ({ text, textStyle: labelStyle }: Props) => {
     );
 };
 
-TextInputAffix.displayName = 'TextInput.Affix';
+TextInputAffix.displayName = "TextInput.Affix";
 
 const styles = StyleSheet.create({
     container: {
-        position: 'absolute',
-        justifyContent: 'center',
-        alignItems: 'center',
+        position: "absolute",
+        justifyContent: "center",
+        alignItems: "center",
     },
 });
 

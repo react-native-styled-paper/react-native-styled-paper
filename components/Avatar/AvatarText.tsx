@@ -1,16 +1,16 @@
 
-import * as React from 'react';
+import * as React from "react";
 import {
     View,
     ViewStyle,
     StyleSheet,
     StyleProp,
     TextStyle,
-} from 'react-native';
-import Color from 'color';
-import Text from '../Typography/Text';
-import { white } from '../theme/colors';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+} from "react-native";
+import Color from "color";
+import Text from "../Typography/Text";
+import { white } from "../theme/colors";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 const defaultSize = 64;
 
@@ -72,7 +72,7 @@ const AvatarText = ({
     const { backgroundColor = theme.colors.primary, ...restStyle } =
         StyleSheet.flatten(style) || {};
     const textColor =
-        color || (Color(backgroundColor as any).isLight() ? 'rgba(0, 0, 0, .54)' : white);
+        color || (Color(backgroundColor as any).isLight() ? "rgba(0, 0, 0, .54)" : white);
 
     return (
         <View
@@ -106,16 +106,16 @@ const AvatarText = ({
     );
 };
 
-AvatarText.displayName = 'Avatar.Text';
+AvatarText.displayName = "Avatar.Text";
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
     },
     text: {
-        textAlign: 'center',
-        textAlignVertical: 'center',
+        textAlign: "center",
+        textAlignVertical: "center",
     },
 });
 

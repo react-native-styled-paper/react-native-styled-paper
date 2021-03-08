@@ -1,14 +1,14 @@
 
-import * as React from 'react';
-import { StyleProp, ViewStyle } from 'react-native';
-import { Modal } from '../Modal';
-import DialogContent from './DialogContent';
-import DialogActions from './DialogActions';
+import * as React from "react";
+import { StyleProp, ViewStyle } from "react-native";
+import { Modal } from "../Modal";
+import DialogContent from "./DialogContent";
+import DialogActions from "./DialogActions";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import DialogTitle, { DialogTitle as _DialogTitle } from './DialogTitle';
-import DialogScrollArea from './DialogScrollArea';
+import DialogTitle, { DialogTitle as _DialogTitle } from "./DialogTitle";
+import DialogScrollArea from "./DialogScrollArea";
 // import overlay from '../theme/overlay';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme } from "styled-components";
 
 type Props = {
     /**
@@ -106,7 +106,7 @@ const Dialog = ({
             // ]}
         >
             {React.Children.toArray(children)
-                .filter((child) => child != null && typeof child !== 'boolean')
+                .filter((child) => child != null && typeof child !== "boolean")
                 .map((child, i) => {
                     if (
                         i === 0 &&
@@ -123,7 +123,7 @@ const Dialog = ({
                 })}
         </Modal>
     );
-}
+};
 
 // @component ./DialogContent.tsx
 Dialog.Content = DialogContent;

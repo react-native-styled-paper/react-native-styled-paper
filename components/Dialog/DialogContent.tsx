@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { View, ViewStyle, StyleSheet, StyleProp } from 'react-native';
+import * as React from "react";
+import { View, ViewStyle, StyleSheet, StyleProp } from "react-native";
 
 type Props = React.ComponentPropsWithRef<typeof View> & {
   /**
@@ -44,18 +44,18 @@ type Props = React.ComponentPropsWithRef<typeof View> & {
  * ```
  */
 const DialogContent = (props: Props) => (
-  <View {...props} style={[styles.container, props.style]}>
-    {props.children}
-  </View>
+    <View {...props} style={[styles.container, props.style]}>
+        {props.children}
+    </View>
 );
 
-DialogContent.displayName = 'Dialog.Content';
+DialogContent.displayName = "Dialog.Content";
 
 const styles = StyleSheet.create({
-  container: {
-    paddingBottom: 24,
-    paddingHorizontal: 24,
-  },
+    container: {
+        paddingBottom: 24,
+        paddingHorizontal: 24,
+    },
 });
 
 export default DialogContent;

@@ -1,21 +1,21 @@
 import * as React from "react";
 import { Animated, StyleSheet, View } from "react-native";
 
-const getOutputRange = (width, isReversed) => isReversed ? [width, -width] : [-width, width]
+const getOutputRange = (width, isReversed) => isReversed ? [width, -width] : [-width, width];
 
 function ShimmerPlaceholder(props) {
     const [ beginShimmerPosition ] = React.useState(new Animated.Value(-1));
 
     const getAnimated = () => {
-        const { delay, duration, isInteraction } = this.props
+        const { delay, duration, isInteraction } = this.props;
         return Animated.loop(Animated.timing(this.state.beginShimmerPosition, {
             toValue: 1,
             delay,
             duration,
             useNativeDriver: true,
             isInteraction
-        }))
-    }
+        }));
+    };
 
     const animatedValue = getAnimated();
 
@@ -25,14 +25,14 @@ function ShimmerPlaceholder(props) {
             animatedValue={animatedValue}
             beginShimmerPosition={beginShimmerPosition}
         />
-    )
+    );
 }
 
 ShimmerPlaceholder.defaultProps = {
     delay: 0,
     duration: 1000,
     isInteraction: true
-}
+};
 
 const BasedShimmerPlaceholder = (props) => {
     const {
@@ -55,7 +55,7 @@ const BasedShimmerPlaceholder = (props) => {
         animatedValue,
         beginShimmerPosition,
         shimmerWidthPercent = 1,
-    } = props
+    } = props;
 
     const linearTranslate = beginShimmerPosition.interpolate({
         inputRange: [-1, 1],
@@ -64,21 +64,21 @@ const BasedShimmerPlaceholder = (props) => {
 
     React.useEffect(() => {
         if (!stopAutoRun) {
-            animatedValue.start()
+            animatedValue.start();
         }
         return () => {
-            animatedValue.stop()
-        }
-    }, [stopAutoRun])
+            animatedValue.stop();
+        };
+    }, [stopAutoRun]);
 
     React.useEffect(() => {
         if (visible) {
-            animatedValue.stop()
+            animatedValue.stop();
         }
         if (!visible && !stopAutoRun) {
-            animatedValue.start()
+            animatedValue.start();
         }
-    }, [visible, stopAutoRun])
+    }, [visible, stopAutoRun]);
 
     return (
         <View
@@ -111,8 +111,8 @@ const BasedShimmerPlaceholder = (props) => {
                 )
             }
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -137,6 +137,6 @@ const styles = StyleSheet.create({
  *
  * <ShimmerPlaceHolder />
  */
-export const createShimmerPlaceholder = (LinearGradient = View) => React.forwardRef((props, ref) => <ShimmerPlaceholder LinearGradient={LinearGradient} ref={ref} {...props} />)
+export const createShimmerPlaceholder = (LinearGradient = View) => React.forwardRef((props, ref) => <ShimmerPlaceholder LinearGradient={LinearGradient} ref={ref} {...props} />);
 
 export default ShimmerPlaceholder;

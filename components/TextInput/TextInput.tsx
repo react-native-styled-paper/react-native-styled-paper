@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     Animated,
     TextInput as NativeTextInput,
@@ -6,14 +6,14 @@ import {
     LayoutChangeEvent,
     StyleProp,
     TextStyle,
-} from 'react-native';
-import TextInputOutlined from './TextInputOutlined';
-import TextInputFlat from './TextInputFlat';
-import TextInputIcon from './Adornment/TextInputIcon';
-import TextInputAffix from './Adornment/TextInputAffix';
-import type { RenderProps, State } from './types';
-import { $Omit } from '../types';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+} from "react-native";
+import TextInputOutlined from "./TextInputOutlined";
+import TextInputFlat from "./TextInputFlat";
+import TextInputIcon from "./Adornment/TextInputIcon";
+import TextInputAffix from "./Adornment/TextInputAffix";
+import type { RenderProps, State } from "./types";
+import { $Omit } from "../types";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 const BLUR_ANIMATION_DURATION = 180;
 const FOCUS_ANIMATION_DURATION = 150;
@@ -29,7 +29,7 @@ export type TextInputProps = React.ComponentPropsWithRef<
      * In `outlined` mode, the background color of the label is derived from `colors.background` in theme or the `backgroundColor` style.
      * This component render TextInputOutlined or TextInputFlat based on that props
      */
-    mode?: 'flat' | 'outlined';
+    mode?: "flat" | "outlined";
     left?: React.ReactNode;
     right?: React.ReactNode;
     /**
@@ -51,7 +51,7 @@ export type TextInputProps = React.ComponentPropsWithRef<
     /**
      * Callback that is called when the text input's text changes. Changed text is passed as an argument to the callback handler.
      */
-    onChangeText?: Function;
+    onChangeText?: (val?) => void;
     /**
      * Selection color of the input
      */
@@ -177,7 +177,7 @@ class TextInput extends React.Component<TextInputProps, State> {
     static Affix = TextInputAffix;
 
     static defaultProps: Partial<TextInputProps> = {
-        mode: 'flat',
+        mode: "flat",
         dense: false,
         disabled: false,
         error: false,
@@ -189,7 +189,7 @@ class TextInput extends React.Component<TextInputProps, State> {
     static getDerivedStateFromProps(nextProps: TextInputProps, prevState: State) {
         return {
             value:
-                typeof nextProps.value !== 'undefined'
+                typeof nextProps.value !== "undefined"
                     ? nextProps.value
                     : prevState.value,
         };
@@ -201,7 +201,7 @@ class TextInput extends React.Component<TextInputProps, State> {
         labeled: new Animated.Value(this.validInputValue ? 0 : 1),
         error: new Animated.Value(this.props.error ? 1 : 0),
         focused: false,
-        placeholder: '',
+        placeholder: "",
         value: this.validInputValue,
         labelLayout: {
             measured: false,
@@ -290,7 +290,7 @@ class TextInput extends React.Component<TextInputProps, State> {
 
     private hidePlaceholder = () =>
         this.setState({
-            placeholder: '',
+            placeholder: "",
         });
 
     private timer?: number;
@@ -382,7 +382,7 @@ class TextInput extends React.Component<TextInputProps, State> {
         }
     };
 
-    private handleBlur = (args: Object) => {
+    private handleBlur = (args: Record<string, any>) => {
         if (!this.props.editable) {
             return;
         }
@@ -420,7 +420,7 @@ class TextInput extends React.Component<TextInputProps, State> {
     /**
      * @internal
      */
-    setNativeProps(args: Object) {
+    setNativeProps(args: Record<string, any>) {
         return this.root && this.root.setNativeProps(args);
     }
 
@@ -453,9 +453,9 @@ class TextInput extends React.Component<TextInputProps, State> {
     }
 
     render() {
-        const { mode, ...rest } = this.props as $Omit<TextInputProps, 'ref'>;
+        const { mode, ...rest } = this.props as $Omit<TextInputProps, "ref">;
 
-        return mode === 'outlined' ? (
+        return mode === "outlined" ? (
             <TextInputOutlined
                 {...rest}
                 value={this.state.value}
@@ -472,22 +472,22 @@ class TextInput extends React.Component<TextInputProps, State> {
                 onRightAffixLayoutChange={this.onRightAffixLayoutChange}
             />
         ) : (
-                <TextInputFlat
-                    {...rest}
-                    value={this.state.value}
-                    parentState={this.state}
-                    innerRef={(ref) => {
-                        this.root = ref;
-                    }}
-                    onFocus={this.handleFocus}
-                    forceFocus={this.forceFocus}
-                    onBlur={this.handleBlur}
-                    onChangeText={this.handleChangeText}
-                    onLayoutAnimatedText={this.handleLayoutAnimatedText}
-                    onLeftAffixLayoutChange={this.onLeftAffixLayoutChange}
-                    onRightAffixLayoutChange={this.onRightAffixLayoutChange}
-                />
-            );
+            <TextInputFlat
+                {...rest}
+                value={this.state.value}
+                parentState={this.state}
+                innerRef={(ref) => {
+                    this.root = ref;
+                }}
+                onFocus={this.handleFocus}
+                forceFocus={this.forceFocus}
+                onBlur={this.handleBlur}
+                onChangeText={this.handleChangeText}
+                onLayoutAnimatedText={this.handleLayoutAnimatedText}
+                onLeftAffixLayoutChange={this.onLeftAffixLayoutChange}
+                onRightAffixLayoutChange={this.onRightAffixLayoutChange}
+            />
+        );
     }
 }
 

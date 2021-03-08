@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { View, ViewStyle, StyleSheet, StyleProp, Animated } from 'react-native';
-import { Surface } from '../Surface';
-import { Text } from '../Typography';
-import { Button } from '../Button';
-import { SvgIcon } from '../Icon';
-import type { $RemoveChildren } from '../types';
-import shadow from '../theme/shadow';
-import { DefaultTheme } from 'styled-components';
+import * as React from "react";
+import { View, ViewStyle, StyleSheet, StyleProp, Animated } from "react-native";
+import { Surface } from "../Surface";
+import { Text } from "../Typography";
+import { Button } from "../Button";
+import { SvgIcon } from "../Icon";
+import type { $RemoveChildren } from "../types";
+import shadow from "../theme/shadow";
+import { DefaultTheme } from "styled-components";
 
 const ELEVATION = 1;
 const DEFAULT_MAX_WIDTH = 960;
@@ -223,19 +223,19 @@ const styles = StyleSheet.create({
         elevation: ELEVATION,
     },
     wrapper: {
-        overflow: 'hidden',
-        alignSelf: 'center',
-        width: '100%',
+        overflow: "hidden",
+        alignSelf: "center",
+        width: "100%",
         maxWidth: DEFAULT_MAX_WIDTH,
     },
     absolute: {
-        position: 'absolute',
+        position: "absolute",
         top: 0,
-        width: '100%',
+        width: "100%",
     },
     content: {
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
+        flexDirection: "row",
+        justifyContent: "flex-start",
         marginHorizontal: 8,
         marginTop: 16,
         marginBottom: 0,
@@ -248,8 +248,8 @@ const styles = StyleSheet.create({
         margin: 8,
     },
     actions: {
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
+        flexDirection: "row",
+        justifyContent: "flex-end",
         margin: 4,
     },
     button: {

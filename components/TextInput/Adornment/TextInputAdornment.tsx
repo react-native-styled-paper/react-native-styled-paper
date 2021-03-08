@@ -1,18 +1,18 @@
-import React from 'react';
-import TextInputIcon, { IconAdornment } from './TextInputIcon';
-import TextInputAffix, { AffixAdornment } from './TextInputAffix';
-import { ADORNMENT_OFFSET, OUTLINED_INPUT_OFFSET } from '../constants';
+import React from "react";
+import TextInputIcon, { IconAdornment } from "./TextInputIcon";
+import TextInputAffix, { AffixAdornment } from "./TextInputAffix";
+import { ADORNMENT_OFFSET, OUTLINED_INPUT_OFFSET } from "../constants";
 import type {
     LayoutChangeEvent,
     TextStyle,
     StyleProp,
     Animated,
-} from 'react-native';
+} from "react-native";
 import type {
     AdornmentConfig,
     AdornmentStyleAdjustmentForNativeInput,
-} from './types';
-import { AdornmentSide, AdornmentType, InputMode } from './enums';
+} from "./types";
+import { AdornmentSide, AdornmentType, InputMode } from "./enums";
 
 export function getAdornmentConfig({
     left,
@@ -21,7 +21,7 @@ export function getAdornmentConfig({
     left?: React.ReactNode;
     right?: React.ReactNode;
 }): Array<AdornmentConfig> {
-    let adornmentConfig: any[] = [];
+    const adornmentConfig: any[] = [];
     if (left || right) {
         [
             { side: AdornmentSide.Left, adornment: left },
@@ -57,9 +57,9 @@ export function getAdornmentStyleAdjustmentForNativeInput({
     adornmentConfig: AdornmentConfig[];
     leftAffixWidth: number;
     rightAffixWidth: number;
-    mode?: 'outlined' | 'flat';
+    mode?: "outlined" | "flat";
     paddingHorizontal?: number | string;
-}): AdornmentStyleAdjustmentForNativeInput | {} {
+}): AdornmentStyleAdjustmentForNativeInput | Record<string, any> {
     if (adornmentConfig.length) {
         const adornmentStyleAdjustmentForNativeInput = adornmentConfig.map(
             ({ type, side }: AdornmentConfig) => {
@@ -71,7 +71,7 @@ export function getAdornmentStyleAdjustmentForNativeInput({
                 const paddingKey = `padding${captalize(side)}`;
                 const affixWidth = isLeftSide ? leftAffixWidth : rightAffixWidth;
                 const padding =
-                    typeof paddingHorizontal === 'number'
+                    typeof paddingHorizontal === "number"
                         ? paddingHorizontal
                         : inputModeAdornemntOffset;
                 const offset = affixWidth + padding;

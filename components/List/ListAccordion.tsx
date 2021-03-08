@@ -1,5 +1,5 @@
-import color from 'color';
-import * as React from 'react';
+import color from "color";
+import * as React from "react";
 import {
     View,
     ViewStyle,
@@ -7,13 +7,13 @@ import {
     StyleProp,
     TextStyle,
     I18nManager,
-} from 'react-native';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+} from "react-native";
+import { DefaultTheme, ThemeContext } from "styled-components";
 import ChevronUpIcon from "@mdi/svg/svg/chevron-up.svg";
 import ChevronDownIcon from "@mdi/svg/svg/chevron-down.svg";
-import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import Text from '../Typography/Text';
-import { ListAccordionGroupContext } from './ListAccordionGroup';
+import TouchableRipple from "../TouchableRipple/TouchableRipple";
+import Text from "../Typography/Text";
+import { ListAccordionGroupContext } from "./ListAccordionGroup";
 
 type Props = {
     /**
@@ -164,7 +164,7 @@ const ListAccordion = ({
     const groupContext = React.useContext(ListAccordionGroupContext);
     if (groupContext !== null && !id) {
         throw new Error(
-            'List.Accordion is used inside a List.AccordionGroup without specifying an id prop.'
+            "List.Accordion is used inside a List.AccordionGroup without specifying an id prop."
         );
     }
     const isExpanded = groupContext
@@ -230,7 +230,7 @@ const ListAccordion = ({
                         <ChevronIcon
                             color={titleColor}
                             size={24}
-                            direction={I18nManager.isRTL ? 'rtl' : 'ltr'}
+                            direction={I18nManager.isRTL ? "rtl" : "ltr"}
                         />
                     </View>
                 </View>
@@ -255,20 +255,20 @@ const ListAccordion = ({
     );
 };
 
-ListAccordion.displayName = 'List.Accordion';
+ListAccordion.displayName = "List.Accordion";
 
 const styles = StyleSheet.create({
     container: {
         padding: 8,
     },
     row: {
-        flexDirection: 'row',
-        alignItems: 'center',
+        flexDirection: "row",
+        alignItems: "center",
     },
     multiline: {
         height: 40,
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: "center",
+        justifyContent: "center",
     },
     title: {
         fontSize: 16,
@@ -284,7 +284,7 @@ const styles = StyleSheet.create({
     },
     content: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: "center",
     },
 });
 

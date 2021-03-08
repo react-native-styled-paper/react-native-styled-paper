@@ -28,6 +28,6 @@ const Caption = (props: Props) => {
             family="regular"
         />
     );
-}
+};
 
 export default Caption;

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     StyleProp,
     StyleSheet,
@@ -6,15 +6,15 @@ import {
     TouchableWithoutFeedback,
     View,
     ViewStyle,
-} from 'react-native';
-import CardContent from './CardContent';
-import CardActions from './CardActions';
+} from "react-native";
+import CardContent from "./CardContent";
+import CardActions from "./CardActions";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import CardCover, { CardCover as _CardCover } from './CardCover';
+import CardCover, { CardCover as _CardCover } from "./CardCover";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import CardTitle, { CardTitle as _CardTitle } from './CardTitle';
-import { Surface } from '../Surface';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+import CardTitle, { CardTitle as _CardTitle } from "./CardTitle";
+import { Surface } from "../Surface";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = React.ComponentProps<typeof Surface> & {
     /**
@@ -106,7 +106,7 @@ const Card = ({
         Animated.timing(elevation, {
             toValue: 8,
             duration: 150 * scale,
-            useNativeDriver: !dark || mode === 'exact',
+            useNativeDriver: !dark || mode === "exact",
         }).start();
     };
 
@@ -119,7 +119,7 @@ const Card = ({
         Animated.timing(elevation, {
             toValue: cardElevation,
             duration: 150 * scale,
-            useNativeDriver: !dark || mode === 'exact',
+            useNativeDriver: !dark || mode === "exact",
         }).start();
     };
 

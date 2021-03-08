@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { View } from 'react-native';
+import * as React from "react";
+import { View } from "react-native";
 
 type Props = {
     /**
@@ -73,7 +73,7 @@ const RadioButtonGroup = ({ value, onValueChange, children }: Props) => (
     </RadioButtonContext.Provider>
 );
 
-RadioButtonGroup.displayName = 'RadioButton.Group';
+RadioButtonGroup.displayName = "RadioButton.Group";
 export default RadioButtonGroup;
 
 // @component-docs ignore-next-line

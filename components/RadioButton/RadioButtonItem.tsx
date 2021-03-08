@@ -1,19 +1,19 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     View,
     StyleSheet,
     StyleProp,
     ViewStyle,
     TextStyle,
-} from 'react-native';
-import { RadioButtonContext, RadioButtonContextType } from './RadioButtonGroup';
-import { handlePress } from './utils';
-import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import RadioButton from './RadioButton';
-import Text from '../Typography/Text';
-import RadioButtonAndroid from './RadioButtonAndroid';
-import RadioButtonIOS from './RadioButtonIOS';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+} from "react-native";
+import { RadioButtonContext, RadioButtonContextType } from "./RadioButtonGroup";
+import { handlePress } from "./utils";
+import TouchableRipple from "../TouchableRipple/TouchableRipple";
+import RadioButton from "./RadioButton";
+import Text from "../Typography/Text";
+import RadioButtonAndroid from "./RadioButtonAndroid";
+import RadioButtonIOS from "./RadioButtonIOS";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 export type Props = {
     /**
@@ -47,7 +47,7 @@ export type Props = {
     /**
      * Status of radio button.
      */
-    status?: 'checked' | 'unchecked';
+    status?: "checked" | "unchecked";
     /**
      * Additional styles for container View.
      */
@@ -68,7 +68,7 @@ export type Props = {
      * Whether `<RadioButton.Android />` or `<RadioButton.IOS />` should be used.
      * Left undefined `<RadioButton />` will be used.
      */
-    mode?: 'android' | 'ios';
+    mode?: "android" | "ios";
 };
 
 /**
@@ -119,9 +119,9 @@ const RadioButtonItem = ({
     const radioButtonProps = { value, disabled, status, color, uncheckedColor };
     let radioButton: any;
 
-    if (mode === 'android') {
+    if (mode === "android") {
         radioButton = <RadioButtonAndroid {...radioButtonProps} />;
-    } else if (mode === 'ios') {
+    } else if (mode === "ios") {
         radioButton = <RadioButtonIOS {...radioButtonProps} />;
     } else {
         radioButton = <RadioButton {...radioButtonProps} />;
@@ -158,7 +158,7 @@ const RadioButtonItem = ({
     );
 };
 
-RadioButtonItem.displayName = 'RadioButton.Item';
+RadioButtonItem.displayName = "RadioButton.Item";
 
 export default RadioButtonItem;
 
@@ -169,9 +169,9 @@ export { RadioButtonItemWithTheme as RadioButtonItem };
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
         paddingVertical: 8,
         paddingHorizontal: 16,
     },

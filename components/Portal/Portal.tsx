@@ -1,11 +1,11 @@
-import * as React from 'react';
-import PortalConsumer from './PortalConsumer';
-import PortalHost, { PortalContext, PortalMethods } from './PortalHost';
+import * as React from "react";
+import PortalConsumer from "./PortalConsumer";
+import PortalHost, { PortalContext, PortalMethods } from "./PortalHost";
 import {
     Provider as SettingsProvider,
     Consumer as SettingsConsumer,
-} from '../theme/settings';
-import { DefaultTheme, ThemeProvider } from 'styled-components';
+} from "../theme/settings";
+import { DefaultTheme, ThemeProvider } from "styled-components";
 
 type Props = {
     /**

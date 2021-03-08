@@ -7,7 +7,7 @@ import {
     Direction,
     PresentationStyle,
     OnOrientationChange,
-} from './types';
+} from "./types";
 
 export type {
     AnimationEvent,
@@ -20,8 +20,8 @@ export type {
 
     ModalProps,
     OnSwipeCompleteParams,
-}
+};
 
 export {
     Modal,
-}
+};

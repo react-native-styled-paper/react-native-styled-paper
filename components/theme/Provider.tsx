@@ -1,11 +1,11 @@
 
-import * as React from 'react';
-import { AccessibilityInfo, Appearance, ColorSchemeName } from 'react-native';
-import { DefaultTheme, ThemeProvider } from 'styled-components';
-import { Provider as SettingsProvider, Settings } from './settings';
-import PortalHost from '../Portal/PortalHost';
-import LightTheme from './LightTheme';
-import DarkTheme from './DarkTheme';
+import * as React from "react";
+import { AccessibilityInfo, Appearance, ColorSchemeName } from "react-native";
+import { DefaultTheme, ThemeProvider } from "styled-components";
+import { Provider as SettingsProvider, Settings } from "./settings";
+import PortalHost from "../Portal/PortalHost";
+import LightTheme from "./LightTheme";
+import DarkTheme from "./DarkTheme";
 
 type Props = {
     children: React.ReactNode;
@@ -15,7 +15,7 @@ type Props = {
 
 const Provider = ({ ...props }: Props) => {
     const colorSchemeName =
-        (!props.theme && Appearance?.getColorScheme()) || 'light';
+        (!props.theme && Appearance?.getColorScheme()) || "light";
 
     const [reduceMotionEnabled, setReduceMotionEnabled] = React.useState<boolean>(
         false
@@ -34,14 +34,14 @@ const Provider = ({ ...props }: Props) => {
     React.useEffect(() => {
         if (!props.theme) {
             AccessibilityInfo.addEventListener(
-                'reduceMotionChanged',
+                "reduceMotionChanged",
                 setReduceMotionEnabled
             );
         }
         return () => {
             if (!props.theme) {
                 AccessibilityInfo.removeEventListener(
-                    'reduceMotionChanged',
+                    "reduceMotionChanged",
                     setReduceMotionEnabled
                 );
             }
@@ -62,7 +62,7 @@ const Provider = ({ ...props }: Props) => {
         if (providedTheme) {
             return providedTheme;
         } else {
-            const theme = (colorScheme === 'dark'
+            const theme = (colorScheme === "dark"
                 ? DarkTheme
                 : LightTheme) as DefaultTheme;
 

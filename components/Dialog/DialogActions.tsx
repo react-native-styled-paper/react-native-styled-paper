@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { StyleSheet, StyleProp, View, ViewStyle } from 'react-native';
+import * as React from "react";
+import { StyleSheet, StyleProp, View, ViewStyle } from "react-native";
 
 type Props = React.ComponentPropsWithRef<typeof View> & {
   /**
@@ -44,26 +44,26 @@ type Props = React.ComponentPropsWithRef<typeof View> & {
  * ```
  */
 const DialogActions = (props: Props) => (
-  <View {...props} style={[styles.container, props.style]}>
-    {React.Children.map(props.children, (child) =>
-      React.isValidElement(child)
-        ? React.cloneElement(child, {
-            compact: true,
-          })
-        : child
-    )}
-  </View>
+    <View {...props} style={[styles.container, props.style]}>
+        {React.Children.map(props.children, (child) =>
+            React.isValidElement(child)
+                ? React.cloneElement(child, {
+                    compact: true,
+                })
+                : child
+        )}
+    </View>
 );
 
-DialogActions.displayName = 'Dialog.Actions';
+DialogActions.displayName = "Dialog.Actions";
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: 8,
-  },
+    container: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "flex-end",
+        padding: 8,
+    },
 });
 
 export default DialogActions;

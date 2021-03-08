@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
-import color from 'color';
-import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import { $RemoveChildren } from '../types';
-import { DefaultTheme, ThemeContext } from 'styled-components';
-import { SvgIcon } from '../Icon';
+import * as React from "react";
+import { StyleSheet, View } from "react-native";
+import color from "color";
+import TouchableRipple from "../TouchableRipple/TouchableRipple";
+import { $RemoveChildren } from "../types";
+import { DefaultTheme, ThemeContext } from "styled-components";
+import { SvgIcon } from "../Icon";
 import MinusIcon from "@mdi/svg/svg/minus.svg";
 import CheckIcon from "@mdi/svg/svg/check.svg";
 
@@ -12,7 +12,7 @@ type Props = $RemoveChildren<typeof TouchableRipple> & {
     /**
      * Status of checkbox.
      */
-    status: 'checked' | 'unchecked' | 'indeterminate';
+    status: "checked" | "unchecked" | "indeterminate";
     /**
      * Whether checkbox is disabled.
      */
@@ -59,8 +59,8 @@ const CheckboxIOS = ({
     ...rest
 }: Props) => {
     const theme = React.useContext(ThemeContext);
-    const checked = status === 'checked';
-    const indeterminate = status === 'indeterminate';
+    const checked = status === "checked";
+    const indeterminate = status === "indeterminate";
 
     const checkedColor = disabled
         ? theme.colors.disabled
@@ -103,7 +103,7 @@ const CheckboxIOS = ({
     );
 };
 
-CheckboxIOS.displayName = 'Checkbox.IOS';
+CheckboxIOS.displayName = "Checkbox.IOS";
 
 const styles = StyleSheet.create({
     container: {

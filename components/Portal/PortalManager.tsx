@@ -1,5 +1,9 @@
-import * as React from 'react';
-import { View, StyleSheet } from 'react-native';
+import * as React from "react";
+import { View, StyleSheet } from "react-native";
+
+type Props = {
+
+};
 
 type State = {
     portals: Array<{
@@ -11,7 +15,7 @@ type State = {
 /**
  * Portal host is the component which actually renders all Portals.
  */
-export default class PortalManager extends React.PureComponent<{}, State> {
+export default class PortalManager extends React.PureComponent<Props, State> {
     state: State = {
         portals: [],
     };

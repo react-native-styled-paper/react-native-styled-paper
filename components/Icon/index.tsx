@@ -4,4 +4,4 @@ import CrossFadeIcon from "./CrossFadeIcon";
 export {
     SvgIcon,
     CrossFadeIcon,
-}
+};

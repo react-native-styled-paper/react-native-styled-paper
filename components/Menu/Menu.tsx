@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     Platform,
     StyleProp,
@@ -14,14 +14,14 @@ import {
     ViewStyle,
     ScrollView,
     findNodeHandle,
-} from 'react-native';
+} from "react-native";
 
-import { $Omit } from '../types';
-import Portal from '../Portal/Portal';
-import { Surface } from '../Surface';
-import MenuItem, { MenuItem as _MenuItem } from './MenuItem';
-import { APPROX_STATUSBAR_HEIGHT } from '../theme/constants';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+import { $Omit } from "../types";
+import Portal from "../Portal/Portal";
+import { Surface } from "../Surface";
+import MenuItem, { MenuItem as _MenuItem } from "./MenuItem";
+import { APPROX_STATUSBAR_HEIGHT } from "../theme/constants";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = {
     /**
@@ -62,7 +62,7 @@ type Props = {
     theme?: DefaultTheme;
 };
 
-type Layout = $Omit<$Omit<LayoutRectangle, 'x'>, 'y'>;
+type Layout = $Omit<$Omit<LayoutRectangle, "x">, "y">;
 
 type State = {
     rendered: boolean;
@@ -133,7 +133,7 @@ class Menu extends React.Component<Props, State> {
 
     static defaultProps = {
         statusBarHeight: APPROX_STATUSBAR_HEIGHT,
-        overlayAccessibilityLabel: 'Close menu',
+        overlayAccessibilityLabel: "Close menu",
     };
 
     static contextType: any = ThemeContext;
@@ -208,7 +208,7 @@ class Menu extends React.Component<Props, State> {
         }
     };
 
-    private isBrowser = () => Platform.OS === 'web' && 'document' in global;
+    private isBrowser = () => Platform.OS === "web" && "document" in global;
 
     private focusFirstDOMNode = (el: View | null | undefined) => {
         if (el && this.isBrowser()) {
@@ -218,7 +218,7 @@ class Menu extends React.Component<Props, State> {
             const node: any = findNodeHandle(el);
             const focusableNode = node.querySelector(
                 // This is a rough list of selectors that can be focused
-                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                "button, [href], input, select, textarea, [tabindex]:not([tabindex=\"-1\"])"
             );
 
             focusableNode?.focus();
@@ -233,29 +233,29 @@ class Menu extends React.Component<Props, State> {
     };
 
     private handleKeypress = (e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
+        if (e.key === "Escape") {
             this.props.onDismiss();
         }
     };
 
     private attachListeners = () => {
-        BackHandler.addEventListener('hardwareBackPress', this.handleDismiss);
-        Dimensions.addEventListener('change', this.handleDismiss);
+        BackHandler.addEventListener("hardwareBackPress", this.handleDismiss);
+        Dimensions.addEventListener("change", this.handleDismiss);
 
-        this.isBrowser() && document.addEventListener('keyup', this.handleKeypress);
+        this.isBrowser() && document.addEventListener("keyup", this.handleKeypress);
     };
 
     private removeListeners = () => {
-        BackHandler.removeEventListener('hardwareBackPress', this.handleDismiss);
-        Dimensions.removeEventListener('change', this.handleDismiss);
+        BackHandler.removeEventListener("hardwareBackPress", this.handleDismiss);
+        Dimensions.removeEventListener("change", this.handleDismiss);
 
         this.isBrowser() &&
-            document.removeEventListener('keyup', this.handleKeypress);
+            document.removeEventListener("keyup", this.handleKeypress);
     };
 
     private show = async () => {
         const theme = this.context;
-        const windowLayout = Dimensions.get('window');
+        const windowLayout = Dimensions.get("window");
         const [menuLayout, anchorLayout] = await Promise.all([
             this.measureMenuLayout(),
             this.measureAnchorLayout(),
@@ -381,7 +381,7 @@ class Menu extends React.Component<Props, State> {
             },
         ];
 
-        const windowLayout = Dimensions.get('window');
+        const windowLayout = Dimensions.get("window");
 
         // We need to translate menu while animating scale to imitate transform origin for scale animation
         const positionTransforms = [];
@@ -555,7 +555,7 @@ class Menu extends React.Component<Props, State> {
                             collapsable={false}
                             accessibilityViewIsModal={visible}
                             style={[styles.wrapper, positionStyle, style]}
-                            pointerEvents={visible ? 'box-none' : 'none'}
+                            pointerEvents={visible ? "box-none" : "none"}
                             onAccessibilityEscape={onDismiss}
                         >
                             <Animated.View style={{ transform: positionTransforms }}>
@@ -583,7 +583,7 @@ class Menu extends React.Component<Props, State> {
 
 const styles = StyleSheet.create({
     wrapper: {
-        position: 'absolute',
+        position: "absolute",
     },
     shadowMenuContainer: {
         opacity: 0,

@@ -28,6 +28,6 @@ const Subheading = (props: Props) => {
             family="regular"
         />
     );
-}
+};
 
 export default Subheading;

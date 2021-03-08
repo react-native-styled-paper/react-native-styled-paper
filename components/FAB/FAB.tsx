@@ -1,16 +1,16 @@
-import color from 'color';
-import * as React from 'react';
-import { Animated, View, ViewStyle, StyleSheet, StyleProp } from 'react-native';
-import { ActivityIndicator } from '../ActivityIndicator';
-import { Surface } from '../Surface';
-import { CrossFadeIcon } from '../Icon';
-import { SvgIcon } from '../Icon';
-import Text from '../Typography/Text';
-import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import { black, white } from '../theme/colors';
-import type { $RemoveChildren } from '../types';
-import type { AccessibilityState } from 'react-native';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+import color from "color";
+import * as React from "react";
+import { Animated, View, ViewStyle, StyleSheet, StyleProp } from "react-native";
+import { ActivityIndicator } from "../ActivityIndicator";
+import { Surface } from "../Surface";
+import { CrossFadeIcon } from "../Icon";
+import { SvgIcon } from "../Icon";
+import Text from "../Typography/Text";
+import TouchableRipple from "../TouchableRipple/TouchableRipple";
+import { black, white } from "../theme/colors";
+import type { $RemoveChildren } from "../types";
+import type { AccessibilityState } from "react-native";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = $RemoveChildren<typeof Surface> & {
     /**
@@ -162,7 +162,7 @@ const FAB = ({
 
     let foregroundColor;
 
-    if (typeof customColor !== 'undefined') {
+    if (typeof customColor !== "undefined") {
         foregroundColor = customColor;
     } else if (disabled) {
         foregroundColor = color(theme.dark ? white : black)
@@ -172,7 +172,7 @@ const FAB = ({
     } else {
         foregroundColor = !color(backgroundColor as any).isLight()
             ? white
-            : 'rgba(0, 0, 0, .54)';
+            : "rgba(0, 0, 0, .54)";
     }
 
     const rippleColor = color(foregroundColor).alpha(0.32).rgb().string();
@@ -196,7 +196,7 @@ const FAB = ({
                     style,
                 ] as StyleProp<ViewStyle>
             }
-            pointerEvents={visible ? 'auto' : 'none'}
+            pointerEvents={visible ? "auto" : "none"}
         >
             <TouchableRipple
                 borderless
@@ -264,15 +264,15 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
     },
     content: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
     },
     label: {
         marginHorizontal: 8,
     },
     uppercaseLabel: {
-        textTransform: 'uppercase',
+        textTransform: "uppercase",
     },
     disabled: {
         elevation: 0,

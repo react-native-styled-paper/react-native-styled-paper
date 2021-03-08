@@ -10,4 +10,4 @@ export {
     CardContent,
     CardCover,
     CardTitle,
-}
+};

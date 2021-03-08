@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     Animated,
     DeviceEventEmitter,
@@ -15,16 +15,16 @@ import {
     View,
     ViewStyle,
     ViewProps,
-} from 'react-native';
-import * as animatable from 'react-native-animatable';
-import { Animation, CustomAnimation } from 'react-native-animatable';
+} from "react-native";
+import * as animatable from "react-native-animatable";
+import { Animation, CustomAnimation } from "react-native-animatable";
 
 import {
     initializeAnimations,
     buildAnimations,
     reversePercentage,
 } from "./utils";
-import styles from './modal.style';
+import styles from "./modal.style";
 import {
     Direction,
     Orientation,
@@ -107,14 +107,14 @@ const extractAnimationFromProps = (props: ModalProps) => ({
 export class ReactNativeModal extends React.Component<ModalProps, State> {
 
     public static defaultProps = {
-        animationIn: 'slideInUp',
+        animationIn: "slideInUp",
         animationInTiming: 300,
-        animationOut: 'slideOutDown',
+        animationOut: "slideOutDown",
         animationOutTiming: 300,
         avoidKeyboard: false,
         coverScreen: true,
         hasBackdrop: true,
-        backdropColor: 'black',
+        backdropColor: "black",
         backdropOpacity: 0.7,
         backdropTransitionInTiming: 300,
         backdropTransitionOutTiming: 300,
@@ -137,7 +137,7 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
         scrollOffset: 0,
         scrollOffsetMax: 0,
         scrollHorizontal: false,
-        supportedOrientations: ['portrait', 'landscape'],
+        supportedOrientations: ["portrait", "landscape"],
     };
 
     // We use an internal state for keeping track of the modal visibility: this allows us to keep
@@ -148,8 +148,8 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
     state: State = {
         showContent: true,
         isVisible: false,
-        deviceWidth: Dimensions.get('screen').width,
-        deviceHeight: Dimensions.get('screen').height,
+        deviceWidth: Dimensions.get("screen").width,
+        deviceHeight: Dimensions.get("screen").height,
         isSwipeable: !!this.props.swipeDirection,
         pan: null,
     };
@@ -199,11 +199,11 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
         // Show deprecation message
         if ((this.props as any).onSwipe) {
             console.warn(
-                '`<Modal onSwipe="..." />` is deprecated and will be removed starting from 13.0.0. Use `<Modal onSwipeComplete="..." />` instead.',
+                "`<Modal onSwipe=\"...\" />` is deprecated and will be removed starting from 13.0.0. Use `<Modal onSwipeComplete=\"...\" />` instead.",
             );
         }
         DeviceEventEmitter.addListener(
-            'didUpdateDimensions',
+            "didUpdateDimensions",
             this.handleDimensionsUpdate,
         );
         if (this.state.isVisible) {
@@ -213,7 +213,7 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
 
     componentWillUnmount() {
         DeviceEventEmitter.removeListener(
-            'didUpdateDimensions',
+            "didUpdateDimensions",
             this.handleDimensionsUpdate,
         );
     }
@@ -400,54 +400,54 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
 
     getAccDistancePerDirection = (gestureState: PanResponderGestureState) => {
         switch (this.currentSwipingDirection) {
-            case 'up':
-                return -gestureState.dy;
-            case 'down':
-                return gestureState.dy;
-            case 'right':
-                return gestureState.dx;
-            case 'left':
-                return -gestureState.dx;
-            default:
-                return 0;
+        case "up":
+            return -gestureState.dy;
+        case "down":
+            return gestureState.dy;
+        case "right":
+            return gestureState.dx;
+        case "left":
+            return -gestureState.dx;
+        default:
+            return 0;
         }
     };
 
     getSwipingDirection = (gestureState: PanResponderGestureState) => {
         if (Math.abs(gestureState.dx) > Math.abs(gestureState.dy)) {
-            return gestureState.dx > 0 ? 'right' : 'left';
+            return gestureState.dx > 0 ? "right" : "left";
         }
 
-        return gestureState.dy > 0 ? 'down' : 'up';
+        return gestureState.dy > 0 ? "down" : "up";
     };
 
     calcDistancePercentage = (gestureState: PanResponderGestureState) => {
         switch (this.currentSwipingDirection) {
-            case 'down':
-                return (
-                    (gestureState.moveY - gestureState.y0) /
+        case "down":
+            return (
+                (gestureState.moveY - gestureState.y0) /
                     ((this.props.deviceHeight || this.state.deviceHeight) -
                         gestureState.y0)
-                );
-            case 'up':
-                return reversePercentage(gestureState.moveY / gestureState.y0);
-            case 'left':
-                return reversePercentage(gestureState.moveX / gestureState.x0);
-            case 'right':
-                return (
-                    (gestureState.moveX - gestureState.x0) /
+            );
+        case "up":
+            return reversePercentage(gestureState.moveY / gestureState.y0);
+        case "left":
+            return reversePercentage(gestureState.moveX / gestureState.x0);
+        case "right":
+            return (
+                (gestureState.moveX - gestureState.x0) /
                     ((this.props.deviceWidth || this.state.deviceWidth) - gestureState.x0)
-                );
+            );
 
-            default:
-                return 0;
+        default:
+            return 0;
         }
     };
 
     createAnimationEventForSwipe = () => {
         if (
-            this.currentSwipingDirection === 'right' ||
-            this.currentSwipingDirection === 'left'
+            this.currentSwipingDirection === "right" ||
+            this.currentSwipingDirection === "left"
         ) {
             return Animated.event([null, { dx: this.state.pan!.x }], {
                 useNativeDriver: false,
@@ -472,26 +472,26 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
         const draggedRight = dx > 0;
 
         if (
-            this.currentSwipingDirection === 'up' &&
-            this.isDirectionIncluded('up') &&
+            this.currentSwipingDirection === "up" &&
+            this.isDirectionIncluded("up") &&
             draggedUp
         ) {
             return true;
         } else if (
-            this.currentSwipingDirection === 'down' &&
-            this.isDirectionIncluded('down') &&
+            this.currentSwipingDirection === "down" &&
+            this.isDirectionIncluded("down") &&
             draggedDown
         ) {
             return true;
         } else if (
-            this.currentSwipingDirection === 'right' &&
-            this.isDirectionIncluded('right') &&
+            this.currentSwipingDirection === "right" &&
+            this.isDirectionIncluded("right") &&
             draggedRight
         ) {
             return true;
         } else if (
-            this.currentSwipingDirection === 'left' &&
-            this.isDirectionIncluded('left') &&
+            this.currentSwipingDirection === "left" &&
+            this.isDirectionIncluded("left") &&
             draggedLeft
         ) {
             return true;
@@ -503,8 +503,8 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
         if (!this.props.deviceHeight && !this.props.deviceWidth) {
             // Here we update the device dimensions in the state if the layout changed
             // (triggering a render)
-            const deviceWidth = Dimensions.get('screen').width;
-            const deviceHeight = Dimensions.get('screen').height;
+            const deviceWidth = Dimensions.get("screen").width;
+            const deviceHeight = Dimensions.get("screen").height;
             if (
                 deviceWidth !== this.state.deviceWidth ||
                 deviceHeight !== this.state.deviceHeight
@@ -566,14 +566,14 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
 
         if (this.inSwipeClosingState) {
             this.inSwipeClosingState = false;
-            if (this.currentSwipingDirection === 'up') {
-                animationOut = 'slideOutUp';
-            } else if (this.currentSwipingDirection === 'down') {
-                animationOut = 'slideOutDown';
-            } else if (this.currentSwipingDirection === 'right') {
-                animationOut = 'slideOutRight';
-            } else if (this.currentSwipingDirection === 'left') {
-                animationOut = 'slideOutLeft';
+            if (this.currentSwipingDirection === "up") {
+                animationOut = "slideOutUp";
+            } else if (this.currentSwipingDirection === "down") {
+                animationOut = "slideOutDown";
+            } else if (this.currentSwipingDirection === "right") {
+                animationOut = "slideOutRight";
+            } else if (this.currentSwipingDirection === "left") {
+                animationOut = "slideOutLeft";
             }
         }
 
@@ -616,7 +616,7 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
             !React.isValidElement(this.props.customBackdrop)
         ) {
             console.warn(
-                'Invalid customBackdrop element passed to Modal. You must provide a valid React element.',
+                "Invalid customBackdrop element passed to Modal. You must provide a valid React element.",
             );
         }
         const {
@@ -635,7 +635,7 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
                 backgroundColor:
                     this.state.showContent && !hasCustomBackdrop
                         ? backdropColor
-                        : 'transparent',
+                        : "transparent",
             },
         ];
 
@@ -747,7 +747,7 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
         return (
             <Modal
                 transparent={true}
-                animationType={'none'}
+                animationType={"none"}
                 visible={this.state.isVisible}
                 onRequestClose={onBackButtonPress}
                 {...otherProps}>
@@ -755,14 +755,14 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
 
                 {avoidKeyboard ? (
                     <KeyboardAvoidingView
-                        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+                        behavior={Platform.OS === "ios" ? "padding" : undefined}
                         pointerEvents="box-none"
                         style={computedStyle.concat([{ margin: 0 }])}>
                         {containerView}
                     </KeyboardAvoidingView>
                 ) : (
-                        containerView
-                    )}
+                    containerView
+                )}
             </Modal>
         );
     }

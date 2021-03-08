@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     Animated,
     Platform,
@@ -8,9 +8,9 @@ import {
     StyleProp,
     LayoutChangeEvent,
     I18nManager,
-} from 'react-native';
-import setColor from 'color';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+} from "react-native";
+import setColor from "color";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = React.ComponentPropsWithRef<typeof View> & {
     /**
@@ -97,7 +97,7 @@ const ProgressBar = ({
                     duration: INDETERMINATE_DURATION,
                     toValue: 1,
                     // Animated.loop does not work if useNativeDriver is true on web
-                    useNativeDriver: Platform.OS !== 'web',
+                    useNativeDriver: Platform.OS !== "web",
                     isInteraction: false,
                 });
             }
@@ -221,7 +221,7 @@ const ProgressBar = ({
 const styles = StyleSheet.create({
     container: {
         height: 4,
-        overflow: 'hidden',
+        overflow: "hidden",
     },
 
     progressBar: {

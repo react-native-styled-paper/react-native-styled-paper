@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { Animated, View, StyleSheet } from 'react-native';
-import color from 'color';
-import { SvgIcon } from '../Icon';
-import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import { $RemoveChildren } from '../types';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+import * as React from "react";
+import { Animated, View, StyleSheet } from "react-native";
+import color from "color";
+import { SvgIcon } from "../Icon";
+import TouchableRipple from "../TouchableRipple/TouchableRipple";
+import { $RemoveChildren } from "../types";
+import { DefaultTheme, ThemeContext } from "styled-components";
 import MinusBoxIcon from "@mdi/svg/svg/minus-box.svg";
 import CheckboxMarkedIcon from "@mdi/svg/svg/checkbox-marked.svg";
 import CheckboxBlankOutlineIcon from "@mdi/svg/svg/checkbox-blank-outline.svg";
@@ -13,7 +13,7 @@ type Props = $RemoveChildren<typeof TouchableRipple> & {
     /**
      * Status of checkbox.
      */
-    status: 'checked' | 'unchecked' | 'indeterminate';
+    status: "checked" | "unchecked" | "indeterminate";
     /**
      * Whether checkbox is disabled.
      */
@@ -83,7 +83,7 @@ const CheckboxAndroid = ({
             return;
         }
 
-        const checked = status === 'checked';
+        const checked = status === "checked";
 
         Animated.sequence([
             Animated.timing(scaleAnim, {
@@ -101,8 +101,8 @@ const CheckboxAndroid = ({
         ]).start();
     }, [status, scaleAnim, scale]);
 
-    const checked = status === 'checked';
-    const indeterminate = status === 'indeterminate';
+    const checked = status === "checked";
+    const indeterminate = status === "indeterminate";
     const checkedColor = rest.color || theme.colors.accent;
     const uncheckedColor =
         rest.uncheckedColor ||
@@ -168,7 +168,7 @@ const CheckboxAndroid = ({
     );
 };
 
-CheckboxAndroid.displayName = 'Checkbox.Android';
+CheckboxAndroid.displayName = "Checkbox.Android";
 
 const styles = StyleSheet.create({
     container: {
@@ -178,8 +178,8 @@ const styles = StyleSheet.create({
         padding: 6,
     },
     fillContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: "center",
+        justifyContent: "center",
     },
     fill: {
         height: 14,

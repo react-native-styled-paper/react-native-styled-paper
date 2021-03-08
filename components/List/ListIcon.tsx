@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { View, ViewStyle, StyleSheet, StyleProp } from 'react-native';
-import { SvgIcon } from '../Icon';
+import * as React from "react";
+import { View, ViewStyle, StyleSheet, StyleProp } from "react-native";
+import { SvgIcon } from "../Icon";
 
 type Props = {
     /**
@@ -53,11 +53,11 @@ const styles = StyleSheet.create({
         margin: 8,
         height: 40,
         width: 40,
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: "center",
+        justifyContent: "center",
     },
 });
 
-ListIcon.displayName = 'List.Icon';
+ListIcon.displayName = "List.Icon";
 
 export default ListIcon;

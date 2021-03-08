@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     StyleProp,
     StyleSheet,
@@ -7,12 +7,12 @@ import {
     TouchableWithoutFeedback,
     View,
     ViewStyle,
-} from 'react-native';
-import color from 'color';
-import FAB from './FAB';
-import Text from '../Typography/Text';
-import Card from '../Card/Card';
-import { DefaultTheme } from 'styled-components';
+} from "react-native";
+import color from "color";
+import FAB from "./FAB";
+import Text from "../Typography/Text";
+import Card from "../Card/Card";
+import { DefaultTheme } from "styled-components";
 
 type Props = {
     /**
@@ -175,9 +175,9 @@ const FABGroup = ({
             style?: StyleProp<ViewStyle>;
             onPress: () => void;
             testID?: string;
-        }[]
-        | null
-    >(null);
+                }[]
+                | null
+                >(null);
 
     const { scale } = theme.animation;
 
@@ -257,7 +257,7 @@ const FABGroup = ({
         <View pointerEvents="box-none" style={[styles.container, style]}>
             <TouchableWithoutFeedback onPress={close}>
                 <Animated.View
-                    pointerEvents={open ? 'auto' : 'none'}
+                    pointerEvents={open ? "auto" : "none"}
                     style={[
                         styles.backdrop,
                         {
@@ -268,7 +268,7 @@ const FABGroup = ({
                 />
             </TouchableWithoutFeedback>
             <SafeAreaView pointerEvents="box-none" style={styles.safeArea}>
-                <View pointerEvents={open ? 'box-none' : 'none'}>
+                <View pointerEvents={open ? "box-none" : "none"}>
                     {actions.map((it, i) => (
                         <View
                             key={i} // eslint-disable-line react/no-array-index-key
@@ -276,10 +276,10 @@ const FABGroup = ({
                                 styles.item,
                                 {
                                     marginHorizontal:
-                                        typeof it.small === 'undefined' || it.small ? 24 : 16,
+                                        typeof it.small === "undefined" || it.small ? 24 : 16,
                                 },
                             ]}
-                            pointerEvents={open ? 'box-none' : 'none'}
+                            pointerEvents={open ? "box-none" : "none"}
                         >
                             {it.label && (
                                 <View>
@@ -298,7 +298,7 @@ const FABGroup = ({
                                             close();
                                         }}
                                         accessibilityLabel={
-                                            it.accessibilityLabel !== 'undefined'
+                                            it.accessibilityLabel !== "undefined"
                                                 ? it.accessibilityLabel
                                                 : it.label
                                         }
@@ -311,7 +311,7 @@ const FABGroup = ({
                                 </View>
                             )}
                             <FAB
-                                small={typeof it.small !== 'undefined' ? it.small : true}
+                                small={typeof it.small !== "undefined" ? it.small : true}
                                 icon={it.icon}
                                 color={it.color}
                                 style={
@@ -329,7 +329,7 @@ const FABGroup = ({
                                     close();
                                 }}
                                 accessibilityLabel={
-                                    typeof it.accessibilityLabel !== 'undefined'
+                                    typeof it.accessibilityLabel !== "undefined"
                                         ? it.accessibilityLabel
                                         : it.label
                                 }
@@ -363,7 +363,7 @@ const FABGroup = ({
     );
 };
 
-FABGroup.displayName = 'FAB.Group';
+FABGroup.displayName = "FAB.Group";
 
 export default FABGroup;
 
@@ -374,11 +374,11 @@ export { FABGroupWithTheme as FABGroup };
 
 const styles = StyleSheet.create({
     safeArea: {
-        alignItems: 'flex-end',
+        alignItems: "flex-end",
     },
     container: {
         ...StyleSheet.absoluteFillObject,
-        justifyContent: 'flex-end',
+        justifyContent: "flex-end",
     },
     fab: {
         marginHorizontal: 16,
@@ -398,8 +398,8 @@ const styles = StyleSheet.create({
     },
     item: {
         marginBottom: 16,
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-        alignItems: 'center',
+        flexDirection: "row",
+        justifyContent: "flex-end",
+        alignItems: "center",
     },
 });

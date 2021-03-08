@@ -1,17 +1,17 @@
-import color from 'color';
-import * as React from 'react';
+import color from "color";
+import * as React from "react";
 import {
     View,
     StyleSheet,
     TextStyle,
     ViewStyle,
     StyleProp,
-} from 'react-native';
-import { SvgIcon } from '../Icon';
-import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import Text from '../Typography/Text';
-import { black, white } from '../theme/colors';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+} from "react-native";
+import { SvgIcon } from "../Icon";
+import TouchableRipple from "../TouchableRipple/TouchableRipple";
+import Text from "../Typography/Text";
+import { black, white } from "../theme/colors";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = {
     /**
@@ -134,9 +134,9 @@ const MenuItem = function(props: Props) {
             </View>
         </TouchableRipple>
     );
-}
+};
 
-MenuItem.displayName = 'Menu.Item';
+MenuItem.displayName = "Menu.Item";
 
 const minWidth = 112;
 const maxWidth = 280;
@@ -148,10 +148,10 @@ const styles = StyleSheet.create({
         minWidth,
         maxWidth,
         height: 48,
-        justifyContent: 'center',
+        justifyContent: "center",
     },
     row: {
-        flexDirection: 'row',
+        flexDirection: "row",
     },
     icon: {
         width: iconWidth,
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 8,
     },
     content: {
-        justifyContent: 'center',
+        justifyContent: "center",
         minWidth: minWidth - 16,
         maxWidth: maxWidth - 16,
     },

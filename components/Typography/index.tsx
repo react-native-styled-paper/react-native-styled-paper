@@ -12,4 +12,4 @@ export {
     Subheading,
     Text,
     Title,
-}
+};

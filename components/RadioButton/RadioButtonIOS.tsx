@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
-import color from 'color';
-import { RadioButtonContext, RadioButtonContextType } from './RadioButtonGroup';
-import { handlePress, isChecked } from './utils';
-import { SvgIcon } from '../Icon';
-import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import { $RemoveChildren } from '../types';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+import * as React from "react";
+import { StyleSheet, View } from "react-native";
+import color from "color";
+import { RadioButtonContext, RadioButtonContextType } from "./RadioButtonGroup";
+import { handlePress, isChecked } from "./utils";
+import { SvgIcon } from "../Icon";
+import TouchableRipple from "../TouchableRipple/TouchableRipple";
+import { $RemoveChildren } from "../types";
+import { DefaultTheme, ThemeContext } from "styled-components";
 import CheckIcon from "@mdi/svg/svg/check.svg";
 
 type Props = $RemoveChildren<typeof TouchableRipple> & {
@@ -17,7 +17,7 @@ type Props = $RemoveChildren<typeof TouchableRipple> & {
     /**
      * Status of radio button.
      */
-    status?: 'checked' | 'unchecked';
+    status?: "checked" | "unchecked";
     /**
      * Whether radio is disabled.
      */
@@ -85,7 +85,7 @@ const RadioButtonIOS = ({
                         contextValue: context?.value,
                         status,
                         value,
-                    }) === 'checked';
+                    }) === "checked";
 
                 return (
                     <TouchableRipple
@@ -128,7 +128,7 @@ const RadioButtonIOS = ({
     );
 };
 
-RadioButtonIOS.displayName = 'RadioButton.IOS';
+RadioButtonIOS.displayName = "RadioButton.IOS";
 
 const styles = StyleSheet.create({
     container: {

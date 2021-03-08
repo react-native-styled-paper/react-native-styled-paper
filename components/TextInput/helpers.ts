@@ -1,12 +1,12 @@
-import type { Animated } from 'react-native';
-import type { AdornmentConfig } from './Adornment/types';
+import type { Animated } from "react-native";
+import type { AdornmentConfig } from "./Adornment/types";
 import {
     LABEL_PADDING_HORIZONTAL,
     ADORNMENT_OFFSET,
     ADORNMENT_SIZE,
     FLAT_INPUT_OFFSET,
-} from './constants';
-import { AdornmentType, AdornmentSide } from './Adornment/enums';
+} from "./constants";
+import { AdornmentType, AdornmentSide } from "./Adornment/enums";
 
 type PaddingProps = {
     height: number | null;
@@ -30,8 +30,8 @@ export type Padding = { paddingTop: number; paddingBottom: number };
 
 export const calculateLabelTopPosition = (
     labelHeight: number,
-    height: number = 0,
-    optionalPadding: number = 0
+    height = 0,
+    optionalPadding = 0
 ): number => {
     const customHeight = height > 0 ? height : 0;
 

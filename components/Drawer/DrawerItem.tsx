@@ -1,11 +1,11 @@
-import color from 'color';
-import * as React from 'react';
-import { View, StyleProp, ViewStyle } from 'react-native';
-import Text from '../Typography/Text';
-import { SvgIcon } from '../Icon';
-import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import { DefaultTheme } from 'styled-components';
-import styled from 'styled-components/native';
+import color from "color";
+import * as React from "react";
+import { View, StyleProp, ViewStyle } from "react-native";
+import Text from "../Typography/Text";
+import { SvgIcon } from "../Icon";
+import TouchableRipple from "../TouchableRipple/TouchableRipple";
+import { DefaultTheme } from "styled-components";
+import styled from "styled-components/native";
 
 const DrawerItemContainer = styled.View`
     margin-top: 10px;
@@ -90,7 +90,7 @@ const DrawerItem = ({
     const { colors, roundness } = theme;
     const backgroundColor = active
         ? color(colors.primary).alpha(0.12).rgb().string()
-        : 'transparent';
+        : "transparent";
     const contentColor = active
         ? colors.primary
         : color(colors.text).alpha(0.68).rgb().string();
@@ -137,6 +137,6 @@ const DrawerItem = ({
     );
 };
 
-DrawerItem.displayName = 'Drawer.Item';
+DrawerItem.displayName = "Drawer.Item";
 
 export default DrawerItem;

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     View,
     TextInput as NativeTextInput,
@@ -6,17 +6,17 @@ import {
     I18nManager,
     Platform,
     TextStyle,
-} from 'react-native';
-import color from 'color';
+} from "react-native";
+import color from "color";
 import TextInputAdornment, {
     getAdornmentConfig,
     getAdornmentStyleAdjustmentForNativeInput,
     TextInputAdornmentProps,
-} from './Adornment/TextInputAdornment';
+} from "./Adornment/TextInputAdornment";
 
-import InputLabel from './Label/InputLabel';
-import LabelBackground from './Label/LabelBackground';
-import type { RenderProps, ChildTextInputProps } from './types';
+import InputLabel from "./Label/InputLabel";
+import LabelBackground from "./Label/LabelBackground";
+import type { RenderProps, ChildTextInputProps } from "./types";
 
 import {
     MAXIMIZED_LABEL_FONT_SIZE,
@@ -24,7 +24,7 @@ import {
     LABEL_WIGGLE_X_OFFSET,
     ADORNMENT_SIZE,
     ADORNMENT_OFFSET,
-} from './constants';
+} from "./constants";
 
 import {
     calculateLabelTopPosition,
@@ -34,9 +34,9 @@ import {
     Padding,
     interpolatePlaceholder,
     calculateOutlinedIconAndAffixTopPosition,
-} from './helpers';
-import { AdornmentType, AdornmentSide } from './Adornment/enums';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+} from "./helpers";
+import { AdornmentType, AdornmentSide } from "./Adornment/enums";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 const OUTLINE_MINIMIZED_LABEL_Y_OFFSET = -6;
 const LABEL_PADDING_TOP = 8;
@@ -154,7 +154,7 @@ class TextInputOutlined extends React.Component<ChildTextInputProps> {
             LABEL_PADDING_TOP
         );
 
-        if (height && typeof height !== 'number') {
+        if (height && typeof height !== "number") {
             // eslint-disable-next-line
             console.warn('Currently we support only numbers in height prop');
         }
@@ -169,7 +169,7 @@ class TextInputOutlined extends React.Component<ChildTextInputProps> {
             fontSize,
             label,
             scale: fontScale,
-            isAndroid: Platform.OS === 'android',
+            isAndroid: Platform.OS === "android",
             styles: StyleSheet.flatten(
                 dense ? styles.inputOutlinedDense : styles.inputOutlined
             ) as Padding,
@@ -245,7 +245,7 @@ class TextInputOutlined extends React.Component<ChildTextInputProps> {
                 adornmentConfig,
                 rightAffixWidth,
                 leftAffixWidth,
-                mode: 'outlined',
+                mode: "outlined",
             }
         );
         const affixTopPosition = {
@@ -314,12 +314,12 @@ class TextInputOutlined extends React.Component<ChildTextInputProps> {
                             placeholderTextColor: placeholderTextColor || placeholderColor,
                             editable: !disabled && editable,
                             selectionColor:
-                                typeof selectionColor === 'undefined'
+                                typeof selectionColor === "undefined"
                                     ? activeColor
                                     : selectionColor,
                             onFocus,
                             onBlur,
-                            underlineColorAndroid: 'transparent',
+                            underlineColorAndroid: "transparent",
                             multiline,
                             style: [
                                 styles.input,
@@ -332,12 +332,12 @@ class TextInputOutlined extends React.Component<ChildTextInputProps> {
                                     fontSize,
                                     fontWeight,
                                     color: inputTextColor,
-                                    textAlignVertical: multiline ? 'top' : 'center',
+                                    textAlignVertical: multiline ? "top" : "center",
                                     textAlign: textAlign
                                         ? textAlign
                                         : I18nManager.isRTL
-                                            ? 'right'
-                                            : 'left',
+                                            ? "right"
+                                            : "left",
                                 },
                                 adornmentStyleAdjustmentForNativeInput,
                             ],
@@ -371,7 +371,6 @@ const Outline = ({
         pointerEvents="none"
         style={[
             styles.outline,
-            // eslint-disable-next-line react-native/no-inline-styles
             {
                 backgroundColor,
                 borderRadius: theme.roundness,
@@ -384,12 +383,12 @@ const Outline = ({
 
 const styles = StyleSheet.create({
     placeholder: {
-        position: 'absolute',
+        position: "absolute",
         left: 0,
         paddingHorizontal: INPUT_PADDING_HORIZONTAL,
     },
     outline: {
-        position: 'absolute',
+        position: "absolute",
         left: 0,
         right: 0,
         top: 6,

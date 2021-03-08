@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { View, ViewStyle, StyleSheet, StyleProp } from 'react-native';
+import * as React from "react";
+import { View, ViewStyle, StyleSheet, StyleProp } from "react-native";
 
 type Props = React.ComponentPropsWithRef<typeof View> & {
     /**
@@ -52,11 +52,11 @@ const DialogScrollArea = (props: Props) => (
     </View>
 );
 
-DialogScrollArea.displayName = 'Dialog.ScrollArea';
+DialogScrollArea.displayName = "Dialog.ScrollArea";
 
 const styles = StyleSheet.create({
     container: {
-        borderColor: 'rgba(0, 0, 0, .12)',
+        borderColor: "rgba(0, 0, 0, .12)",
         borderTopWidth: StyleSheet.hairlineWidth,
         borderBottomWidth: StyleSheet.hairlineWidth,
         paddingHorizontal: 24,

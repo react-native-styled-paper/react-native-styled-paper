@@ -1,13 +1,13 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     View,
     ViewStyle,
     StyleSheet,
     StyleProp,
     TextStyle,
-} from 'react-native';
-import ListSubheader from './ListSubheader';
-import { DefaultTheme } from 'styled-components';
+} from "react-native";
+import ListSubheader from "./ListSubheader";
+import { DefaultTheme } from "styled-components";
 
 type Props = React.ComponentPropsWithRef<typeof View> & {
     /**
@@ -68,7 +68,7 @@ const ListSection = ({
     </View>
 );
 
-ListSection.displayName = 'List.Section';
+ListSection.displayName = "List.Section";
 
 const styles = StyleSheet.create({
     container: {

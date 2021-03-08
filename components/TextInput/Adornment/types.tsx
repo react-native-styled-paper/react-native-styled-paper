@@ -1,4 +1,4 @@
-import type { AdornmentSide, AdornmentType } from './enums';
+import type { AdornmentSide, AdornmentType } from "./enums";
 
 export type AdornmentConfig = {
     side: AdornmentSide;
@@ -6,6 +6,6 @@ export type AdornmentConfig = {
 };
 export type AdornmentStyleAdjustmentForNativeInput = {
     adornmentStyleAdjustmentForNativeInput: Array<
-        { paddingRight: number; paddingLeft: number } | {}
+        { paddingRight: number; paddingLeft: number } | Record<string, any>
     >;
 };

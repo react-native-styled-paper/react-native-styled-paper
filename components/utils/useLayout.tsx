@@ -1,5 +1,5 @@
-import * as React from 'react';
-import type { LayoutChangeEvent } from 'react-native';
+import * as React from "react";
+import type { LayoutChangeEvent } from "react-native";
 
 export default function useLayout() {
     const [layout, setLayout] = React.useState<{

@@ -1,5 +1,5 @@
-import FABComponent from './FAB';
-import FABGroup from './FABGroup';
+import FABComponent from "./FAB";
+import FABGroup from "./FABGroup";
 
 const FAB = Object.assign(
     // @component ./FAB.tsx

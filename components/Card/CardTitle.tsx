@@ -1,15 +1,15 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     StyleProp,
     StyleSheet,
     TextStyle,
     View,
     ViewStyle,
-} from 'react-native';
-import { DefaultTheme } from 'styled-components';
+} from "react-native";
+import { DefaultTheme } from "styled-components";
 
-import Caption from './../Typography/Caption';
-import Title from './../Typography/Title';
+import Caption from "./../Typography/Caption";
+import Title from "./../Typography/Title";
 
 type Props = React.ComponentPropsWithRef<typeof View> & {
     /**
@@ -151,18 +151,18 @@ const CardTitle = ({
     );
 };
 
-CardTitle.displayName = 'Card.Title';
+CardTitle.displayName = "Card.Title";
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
         paddingLeft: 16,
     },
 
     left: {
-        justifyContent: 'center',
+        justifyContent: "center",
         marginRight: 16,
         height: LEFT_SIZE,
         width: LEFT_SIZE,
@@ -170,8 +170,8 @@ const styles = StyleSheet.create({
 
     titles: {
         flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
+        flexDirection: "column",
+        justifyContent: "center",
     },
 
     title: {

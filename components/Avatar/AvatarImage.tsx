@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     Image,
     ImageSourcePropType,
@@ -6,8 +6,8 @@ import {
     View,
     ViewStyle,
     StyleProp,
-} from 'react-native';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+} from "react-native";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 const defaultSize = 64;
 
@@ -78,8 +78,8 @@ const AvatarImage = ({
             ]}
             {...rest}
         >
-            {typeof source === 'function' && source({ size })}
-            {typeof source !== 'function' && (
+            {typeof source === "function" && source({ size })}
+            {typeof source !== "function" && (
                 <Image
                     source={source}
                     style={{ width: size, height: size, borderRadius: size / 2 }}
@@ -89,6 +89,6 @@ const AvatarImage = ({
     );
 };
 
-AvatarImage.displayName = 'Avatar.Image';
+AvatarImage.displayName = "Avatar.Image";
 
 export default AvatarImage;

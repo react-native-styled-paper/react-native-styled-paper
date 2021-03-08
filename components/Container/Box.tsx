@@ -10,6 +10,6 @@ Row.defaultProps = {
     display: "flex",
     flexDirection: "row",
     flexWrap: "nowrap",
-}
+};
 
 export default Row;

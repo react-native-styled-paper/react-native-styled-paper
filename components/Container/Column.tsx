@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { screenSize } from './utils/ScreenSize';
-import { isHidden, getComponentWidth, getComponentOffset } from './utils/helpers';
-import { View } from 'react-native';
+import * as React from "react";
+import { screenSize } from "./utils/ScreenSize";
+import { isHidden, getComponentWidth, getComponentOffset } from "./utils/helpers";
+import { View } from "react-native";
 
 type Props = {
     sm?: number,
@@ -55,7 +55,7 @@ const Column = (props: Props) => {
                 style={[
                     props.style, {
                         width: getComponentWidth(screenSize, gridProps),
-                        flexDirection: 'column',
+                        flexDirection: "column",
                         marginLeft: getComponentOffset(screenSize, gridProps)
                     }]}>
                 {rest.children}

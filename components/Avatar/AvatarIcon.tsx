@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { View, ViewStyle, StyleSheet, StyleProp } from 'react-native';
-import color from 'color';
-import { SvgIcon } from '../Icon';
-import { white } from '../theme/colors';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+import * as React from "react";
+import { View, ViewStyle, StyleSheet, StyleProp } from "react-native";
+import color from "color";
+import { SvgIcon } from "../Icon";
+import { white } from "../theme/colors";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 const defaultSize = 64;
 
@@ -52,7 +52,7 @@ const Avatar = ({ icon, size = defaultSize, style, ...rest }: Props) => {
         StyleSheet.flatten(style) || {};
     const textColor =
         rest.color ||
-        (color(backgroundColor as any).isLight() ? 'rgba(0, 0, 0, .54)' : white);
+        (color(backgroundColor as any).isLight() ? "rgba(0, 0, 0, .54)" : white);
 
     return (
         <View
@@ -73,12 +73,12 @@ const Avatar = ({ icon, size = defaultSize, style, ...rest }: Props) => {
     );
 };
 
-Avatar.displayName = 'Avatar.Icon';
+Avatar.displayName = "Avatar.Icon";
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
+        alignItems: "center",
     },
 });
 

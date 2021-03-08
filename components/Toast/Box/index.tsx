@@ -1,4 +1,4 @@
-import styled from 'styled-components/native'
+import styled from "styled-components/native";
 import {
     background,
     BackgroundProps,
@@ -17,7 +17,7 @@ import {
     ShadowProps,
     space,
     SpaceProps
-} from 'styled-system'
+} from "styled-system";
 
 export const systemProps = compose(
     space,
@@ -28,7 +28,7 @@ export const systemProps = compose(
     border,
     position,
     shadow
-)
+);
 
 export type BoxProps = SpaceProps &
     ColorProps &
@@ -41,11 +41,11 @@ export type BoxProps = SpaceProps &
         elevation?: number
     }
 
-const Box = styled.View<BoxProps>(systemProps)
+const Box = styled.View<BoxProps>(systemProps);
 
-export default Box
+export default Box;
 
 Box.defaultProps = {
-    justifyContent: 'center',
-    position: 'relative'
-}
+    justifyContent: "center",
+    position: "relative"
+};

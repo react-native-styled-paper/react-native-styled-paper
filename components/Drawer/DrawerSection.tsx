@@ -1,11 +1,11 @@
 
-import color from 'color';
-import * as React from 'react';
-import { View, ViewStyle, StyleProp } from 'react-native';
-import Text from '../Typography/Text';
-import { Divider } from '../Divider';
-import { DefaultTheme } from 'styled-components';
-import styled from 'styled-components/native';
+import color from "color";
+import * as React from "react";
+import { View, ViewStyle, StyleProp } from "react-native";
+import Text from "../Typography/Text";
+import { Divider } from "../Divider";
+import { DefaultTheme } from "styled-components";
+import styled from "styled-components/native";
 
 const DrawerSectionContainer = styled.View`
     margin-bottom: 4px;
@@ -96,6 +96,6 @@ const DrawerSection = ({ children, title, theme, style, ...rest }: Props) => {
     );
 };
 
-DrawerSection.displayName = 'Drawer.Section';
+DrawerSection.displayName = "Drawer.Section";
 
 export default DrawerSection;

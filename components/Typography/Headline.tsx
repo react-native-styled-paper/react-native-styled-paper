@@ -28,7 +28,7 @@ const Headline = (props: Props) => {
             alpha={0.87}
             family="regular"
         />
-    )
+    );
 };
 
 export default Headline;

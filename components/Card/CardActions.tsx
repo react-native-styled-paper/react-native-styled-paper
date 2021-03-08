@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { StyleSheet, StyleProp, View, ViewStyle } from 'react-native';
+import * as React from "react";
+import { StyleSheet, StyleProp, View, ViewStyle } from "react-native";
 
 type Props = React.ComponentPropsWithRef<typeof View> & {
     /**
@@ -47,13 +47,13 @@ const CardActions = (props: Props) => (
     </View>
 );
 
-CardActions.displayName = 'Card.Actions';
+CardActions.displayName = "Card.Actions";
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "flex-start",
         padding: 8,
     },
 });

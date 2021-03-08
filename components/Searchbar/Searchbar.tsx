@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
     StyleSheet,
     StyleProp,
@@ -6,11 +6,11 @@ import {
     I18nManager,
     ViewStyle,
     TextStyle,
-} from 'react-native';
-import color from 'color';
-import { IconButton } from '../IconButton';
-import { Surface } from '../Surface';
-import { DefaultTheme } from 'styled-components';
+} from "react-native";
+import color from "color";
+import { IconButton } from "../IconButton";
+import { Surface } from "../Surface";
+import { DefaultTheme } from "styled-components";
 import MagnifyIcon from "@mdi/svg/svg/magnify.svg";
 import CloseIcon from "@mdi/svg/svg/close.svg";
 
@@ -65,7 +65,7 @@ type Props = React.ComponentPropsWithRef<typeof TextInput> & {
 
 type TextInputHandles = Pick<
     TextInput,
-    'setNativeProps' | 'isFocused' | 'clear' | 'blur' | 'focus'
+    "setNativeProps" | "isFocused" | "clear" | "blur" | "focus"
 >;
 
 /**
@@ -100,14 +100,14 @@ type TextInputHandles = Pick<
 const Searchbar = React.forwardRef<TextInputHandles, Props>(
     (
         {
-            clearAccessibilityLabel = 'clear',
+            clearAccessibilityLabel = "clear",
             clearIcon,
             icon,
             iconColor: customIconColor,
             inputStyle,
             onIconPress,
             placeholder,
-            searchAccessibilityLabel = 'search',
+            searchAccessibilityLabel = "search",
             style,
             theme,
             value,
@@ -122,7 +122,7 @@ const Searchbar = React.forwardRef<TextInputHandles, Props>(
             focus: root.current?.focus,
             // @ts-ignore
             clear: root.current?.clear,
-            setNativeProps: (args: Object) => root.current?.setNativeProps(args),
+            setNativeProps: (args: Record<string, any>) => root.current?.setNativeProps(args),
             // @ts-ignore
             isFocused: root.current?.isFocused,
             // @ts-ignore
@@ -131,7 +131,7 @@ const Searchbar = React.forwardRef<TextInputHandles, Props>(
 
         const handleClearPress = () => {
             root.current?.clear();
-            rest.onChangeText?.('');
+            rest.onChangeText?.("");
         };
 
         const { colors, roundness, dark, fonts } = theme;
@@ -170,12 +170,12 @@ const Searchbar = React.forwardRef<TextInputHandles, Props>(
                 />
                 <TextInput
                     style={[styles.input, { color: textColor, ...font }, inputStyle]}
-                    placeholder={placeholder || ''}
+                    placeholder={placeholder || ""}
                     placeholderTextColor={colors.placeholder}
                     selectionColor={colors.primary}
                     underlineColorAndroid="transparent"
                     returnKeyType="search"
-                    keyboardAppearance={dark ? 'dark' : 'light'}
+                    keyboardAppearance={dark ? "dark" : "light"}
                     // accessibilityTraits="search"
                     accessibilityRole="search"
                     ref={root}
@@ -186,15 +186,15 @@ const Searchbar = React.forwardRef<TextInputHandles, Props>(
                     borderless
                     disabled={!value}
                     accessibilityLabel={clearAccessibilityLabel}
-                    color={value ? iconColor : 'rgba(255, 255, 255, 0)'}
+                    color={value ? iconColor : "rgba(255, 255, 255, 0)"}
                     rippleColor={rippleColor}
                     onPress={handleClearPress}
                     icon={
                         clearIcon ||
                         <CloseIcon
-                            color={value ? iconColor : 'rgba(255, 255, 255, 0)'}
+                            color={value ? iconColor : "rgba(255, 255, 255, 0)"}
                             size={24}
-                            direction={I18nManager.isRTL ? 'rtl' : 'ltr'}
+                            direction={I18nManager.isRTL ? "rtl" : "ltr"}
                         />
                     }
                     // accessibilityTraits="button"
@@ -208,15 +208,15 @@ const Searchbar = React.forwardRef<TextInputHandles, Props>(
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-        alignItems: 'center',
+        flexDirection: "row",
+        alignItems: "center",
     },
     input: {
         flex: 1,
         fontSize: 18,
         paddingLeft: 8,
-        alignSelf: 'stretch',
-        textAlign: I18nManager.isRTL ? 'right' : 'left',
+        alignSelf: "stretch",
+        textAlign: I18nManager.isRTL ? "right" : "left",
         minWidth: 0,
     },
 });

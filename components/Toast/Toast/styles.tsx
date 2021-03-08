@@ -1,5 +1,5 @@
-import { Animated, TouchableOpacity } from 'react-native'
-import styled from 'styled-components/native'
+import { Animated, TouchableOpacity } from "react-native";
+import styled from "styled-components/native";
 import {
     background,
     BackgroundProps,
@@ -22,7 +22,7 @@ import {
     SpaceProps,
     textAlign,
     TextAlignProps
-} from 'styled-system'
+} from "styled-system";
 
 export const systemProps = compose(
     space,
@@ -33,7 +33,7 @@ export const systemProps = compose(
     border,
     position,
     shadow
-)
+);
 
 export type StyledToastProps = SpaceProps &
     ColorProps &
@@ -47,25 +47,25 @@ export type StyledToastProps = SpaceProps &
         accentColor?: string
     }
 
-const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity)
+const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
-export const StyledToast = styled(AnimatedTouchable)<StyledToastProps>(systemProps)
+export const StyledToast = styled(AnimatedTouchable)<StyledToastProps>(systemProps);
 
 StyledToast.defaultProps = {
     py: 2,
     mb: 4,
     flex: 1,
     zIndex: 1000,
-    width: '100%',
-    bg: 'background',
-    borderWidth: '1px',
-    borderRadius: '4px',
-    alignItems: 'center',
-    flexDirection: 'row',
-    accentColor: 'green',
-    justifyContent: 'center',
-    borderColor: 'black'
-}
+    width: "100%",
+    bg: "background",
+    borderWidth: "1px",
+    borderRadius: "4px",
+    alignItems: "center",
+    flexDirection: "row",
+    accentColor: "green",
+    justifyContent: "center",
+    borderColor: "black"
+};
 
 export const Accent = styled.View<ColorProps>`
   ${color};
@@ -76,7 +76,7 @@ export const Accent = styled.View<ColorProps>`
   position: absolute;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-`
+`;
 
 export type TextProps = SpaceProps & ColorProps & TextAlignProps & FontSizeProps
 
@@ -87,12 +87,12 @@ export const Heading = styled.Text<TextProps>`
   ${textAlign};
   flex-wrap: wrap;
   font-weight: normal;
-`
+`;
 
 Heading.defaultProps = {
     fontSize: 2,
-    color: 'text'
-}
+    color: "text"
+};
 
 export const SubText = styled.Text<TextProps>`
   ${space};
@@ -101,21 +101,21 @@ export const SubText = styled.Text<TextProps>`
   ${textAlign};
   flex-wrap: wrap;
   font-weight: normal;
-`
+`;
 
 SubText.defaultProps = {
     fontSize: 1,
-    color: 'text'
-}
+    color: "text"
+};
 
 export const IconCont = styled.View<SpaceProps>`
   ${space};
   align-items: center;
   justify-content: center;
-`
+`;
 
 export const CloseButtonCont = styled.TouchableOpacity<SpaceProps>`
   ${space};
   align-items: center;
   justify-content: center;
-`
+`;

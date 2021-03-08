@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 type Props = {
     /**
@@ -88,6 +88,6 @@ const ListAccordionGroup = ({
     );
 };
 
-ListAccordionGroup.displayName = 'List.AccordionGroup';
+ListAccordionGroup.displayName = "List.AccordionGroup";
 
 export default ListAccordionGroup;

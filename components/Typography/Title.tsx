@@ -26,6 +26,6 @@ const Title = (props: Props) => {
             family="medium"
         />
     );
-}
+};
 
 export default Title;

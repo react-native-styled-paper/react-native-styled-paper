@@ -1,16 +1,16 @@
-import color from 'color';
-import * as React from 'react';
+import color from "color";
+import * as React from "react";
 import {
     StyleProp,
     StyleSheet,
     TextStyle,
     View,
     ViewStyle,
-} from 'react-native';
-import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import Text from '../Typography/Text';
-import { $RemoveChildren, EllipsizeProp } from '../types';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+} from "react-native";
+import TouchableRipple from "../TouchableRipple/TouchableRipple";
+import Text from "../Typography/Text";
+import { $RemoveChildren, EllipsizeProp } from "../types";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Description =
     | React.ReactNode
@@ -142,7 +142,7 @@ const ListItem = ({
         descriptionColor: string,
         description?: Description | null
     ) => {
-        return typeof description === 'function' ? (
+        return typeof description === "function" ? (
             description({
                 selectable: false,
                 ellipsizeMode: descriptionEllipsizeMode,
@@ -150,19 +150,19 @@ const ListItem = ({
                 fontSize: styles.description.fontSize,
             })
         ) : (
-                <Text
-                    selectable={false}
-                    numberOfLines={descriptionNumberOfLines}
-                    ellipsizeMode={descriptionEllipsizeMode}
-                    style={[
-                        styles.description,
-                        { color: descriptionColor },
-                        descriptionStyle,
-                    ]}
-                >
-                    {description}
-                </Text>
-            );
+            <Text
+                selectable={false}
+                numberOfLines={descriptionNumberOfLines}
+                ellipsizeMode={descriptionEllipsizeMode}
+                style={[
+                    styles.description,
+                    { color: descriptionColor },
+                    descriptionStyle,
+                ]}
+            >
+                {description}
+            </Text>
+        );
     };
 
     const titleColor = color(theme.colors.text).alpha(0.87).rgb().string();
@@ -215,14 +215,14 @@ const ListItem = ({
     );
 };
 
-ListItem.displayName = 'List.Item';
+ListItem.displayName = "List.Item";
 
 const styles = StyleSheet.create({
     container: {
         padding: 8,
     },
     row: {
-        flexDirection: 'row',
+        flexDirection: "row",
     },
     title: {
         fontSize: 16,
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
     },
     content: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: "center",
     },
 });
 

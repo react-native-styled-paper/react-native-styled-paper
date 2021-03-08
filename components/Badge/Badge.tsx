@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { Animated, StyleSheet, StyleProp, TextStyle } from 'react-native';
-import { DefaultTheme, ThemeContext } from 'styled-components';
-import color from 'color';
-import { black, white } from '../theme/colors';
+import * as React from "react";
+import { Animated, StyleSheet, StyleProp, TextStyle } from "react-native";
+import { DefaultTheme, ThemeContext } from "styled-components";
+import color from "color";
+import { black, white } from "../theme/colors";
 
 const defaultSize = 20;
 
@@ -112,11 +112,11 @@ const Badge = ({
                     borderRadius,
                 },
                 {
-                    alignSelf: 'flex-end',
-                    textAlign: 'center',
-                    textAlignVertical: 'center',
+                    alignSelf: "flex-end",
+                    textAlign: "center",
+                    textAlignVertical: "center",
                     paddingHorizontal: 4,
-                    overflow: 'hidden',
+                    overflow: "hidden",
                 },
                 restStyle,
             ]}

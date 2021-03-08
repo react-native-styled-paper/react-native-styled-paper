@@ -1,15 +1,15 @@
 
-import * as React from 'react';
-import { grey400, grey800, grey50, white, black } from '../theme/colors';
+import * as React from "react";
+import { grey400, grey800, grey50, white, black } from "../theme/colors";
 import {
     NativeModules,
     Platform,
     StyleProp,
     Switch as NativeSwitch,
     ViewStyle,
-} from 'react-native';
-import setColor from 'color';
-import { DefaultTheme, ThemeContext } from 'styled-components';
+} from "react-native";
+import setColor from "color";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 const version = NativeModules.PlatformConstants
     ? NativeModules.PlatformConstants.reactNativeVersion
@@ -31,7 +31,7 @@ type Props = React.ComponentPropsWithRef<typeof NativeSwitch> & {
     /**
      * Callback called with the new value when it changes.
      */
-    onValueChange?: Function;
+    onValueChange?: (val?) => void;
     style?: StyleProp<ViewStyle>;
     /**
      * @optional
@@ -88,7 +88,7 @@ const Switch = ({
     const checkedColor = color || theme.colors.accent;
 
     const onTintColor =
-        Platform.OS === 'ios'
+        Platform.OS === "ios"
             ? checkedColor
             : disabled
                 ? theme.dark
@@ -97,7 +97,7 @@ const Switch = ({
                 : setColor(checkedColor).alpha(0.5).rgb().string();
 
     const thumbTintColor =
-        Platform.OS === 'ios'
+        Platform.OS === "ios"
             ? undefined
             : disabled
                 ? theme.dark
@@ -115,7 +115,7 @@ const Switch = ({
                 onTintColor,
                 thumbTintColor,
             }
-            : Platform.OS === 'web'
+            : Platform.OS === "web"
                 ? {
                     activeTrackColor: onTintColor,
                     thumbColor: thumbTintColor,
@@ -125,7 +125,7 @@ const Switch = ({
                     thumbColor: thumbTintColor,
                     trackColor: {
                         true: onTintColor,
-                        false: '',
+                        false: "",
                     },
                 };
 

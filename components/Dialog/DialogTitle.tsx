@@ -1,8 +1,8 @@
 
-import * as React from 'react';
-import { StyleSheet, StyleProp, TextStyle } from 'react-native';
-import { DefaultTheme } from 'styled-components';
-import Title from '../Typography/Title';
+import * as React from "react";
+import { StyleSheet, StyleProp, TextStyle } from "react-native";
+import { DefaultTheme } from "styled-components";
+import Title from "../Typography/Title";
 
 type Props = React.ComponentPropsWithRef<typeof Title> & {
     /**
@@ -61,7 +61,7 @@ const DialogTitle = ({ children, theme, style, ...rest }: Props) => (
     </Title>
 );
 
-DialogTitle.displayName = 'Dialog.Title';
+DialogTitle.displayName = "Dialog.Title";
 
 const styles = StyleSheet.create({
     text: {

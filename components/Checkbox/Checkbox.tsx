@@ -1,14 +1,14 @@
-import * as React from 'react';
-import { Platform } from 'react-native';
-import CheckboxIOS from './CheckboxIOS';
-import CheckboxAndroid from './CheckboxAndroid';
-import { DefaultTheme } from 'styled-components';
+import * as React from "react";
+import { Platform } from "react-native";
+import CheckboxIOS from "./CheckboxIOS";
+import CheckboxAndroid from "./CheckboxAndroid";
+import { DefaultTheme } from "styled-components";
 
 type Props = {
     /**
      * Status of checkbox.
      */
-    status: 'checked' | 'unchecked' | 'indeterminate';
+    status: "checked" | "unchecked" | "indeterminate";
     /**
      * Whether checkbox is disabled.
      */
@@ -79,11 +79,11 @@ type Props = {
  * ```
  */
 const Checkbox = (props: Props) =>
-    Platform.OS === 'ios' ? (
+    Platform.OS === "ios" ? (
         <CheckboxIOS {...props} />
     ) : (
-            <CheckboxAndroid {...props} />
-        );
+        <CheckboxAndroid {...props} />
+    );
 
 export default Checkbox;
 
