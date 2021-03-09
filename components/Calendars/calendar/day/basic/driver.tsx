@@ -5,7 +5,7 @@ import { extractStyles } from "../../../test";
 type Props = {
 
 };
-export class BasicDayDriver extends ComponentDriver<Props> {
+export default class BasicDayDriver extends ComponentDriver<Props> {
 
     constructor() {
         super(Day);

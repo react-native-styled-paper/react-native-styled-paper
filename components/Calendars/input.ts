@@ -1,4 +1,4 @@
-export class VelocityTracker {
+export default class VelocityTracker {
 
     history;
     lastPosition;

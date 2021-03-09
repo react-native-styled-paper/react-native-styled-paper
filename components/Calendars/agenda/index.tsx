@@ -6,7 +6,7 @@ import { extractComponentProps } from "../component-updater";
 import { parseDate, xdateToData } from "../interface";
 import dateutils from "../dateutils";
 import { testIDs } from "../testIDs";
-import { VelocityTracker } from "../input";
+import VelocityTracker from "../input";
 import styleConstructor from "./style";
 import CalendarList from "../calendar-list";
 import ReservationList from "./reservation-list";

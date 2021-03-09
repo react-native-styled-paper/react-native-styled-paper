@@ -5,7 +5,7 @@ import XDate from "xdate";
 import moment from "moment";
 import dateutils from "../dateutils";
 import styleConstructor from "./style";
-import asCalendarConsumer from "./asCalendarConsumer";
+import AsCalendarConsumer from "./asCalendarConsumer";
 
 
 const commons = require("./commons");
@@ -24,7 +24,7 @@ type Props = StyleProp<SectionList> & {
     /** style passed to the section view */
     sectionStyle?: Record<string, any> | number | any[],
 
-    sections?: any[],
+    sections: any[],
 
     renderSectionHeader?: (evt?) => React.ReactElement,
     keyExtractor?: (evt?, idx?) => any,
@@ -227,4 +227,4 @@ class AgendaList extends Component<Props> {
     // }
 }
 
-export default asCalendarConsumer(AgendaList);
+export default AsCalendarConsumer(AgendaList);

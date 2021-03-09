@@ -182,6 +182,7 @@ class WeekCalendar extends Component<Props, State> {
         const { calendarWidth, style, onDayPress, ...others } = this.props;
 
         return (
+            // @ts-ignore
             <Week
                 {...others}
                 key={item}

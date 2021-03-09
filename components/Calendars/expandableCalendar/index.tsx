@@ -535,6 +535,7 @@ class ExpandableCalendar extends React.Component<Props, State> {
         return (
             <View testID={this.props.testID} style={[allowShadow && this.style.containerShadow, style]}>
                 {screenReaderEnabled ? (
+                    // @ts-ignore
                     <Calendar
                         testID="calendar"
                         {...others}
@@ -552,6 +553,7 @@ class ExpandableCalendar extends React.Component<Props, State> {
                         style={{ height: deltaY }}
                         {...this.panResponder.panHandlers}
                     >
+                        {/* @ts-ignore */}
                         <CalendarList
                             testID="calendar"
                             horizontal={horizontal}

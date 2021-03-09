@@ -31,6 +31,8 @@ type Props = StyleProp<Calendar> & {
     hideDayNames?: boolean,
     accessibilityElementsHidden?: any,
     importantForAccessibility?: any,
+
+    [key: string]: any,
 };
 
 class Week extends React.Component<Props> {

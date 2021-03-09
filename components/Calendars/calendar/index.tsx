@@ -62,6 +62,8 @@ type Props = StyleProp<CalendarHeader> & StyleProp<Day> & {
 
     accessibilityElementsHidden?: any,
     importantForAccessibility?: any,
+
+    [key: string]: any,
 };
 
 type State = {

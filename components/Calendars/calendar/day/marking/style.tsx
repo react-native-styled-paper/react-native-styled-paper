@@ -4,7 +4,7 @@ import * as defaultStyle from "../../style";
 const STYLESHEET_ID = "stylesheet.marking";
 
 export default function styleConstructor(theme = {}) {
-    const appStyle = {...defaultStyle, ...theme};
+    const appStyle: any = {...defaultStyle, ...theme};
     return StyleSheet.create({
         dots: {
             flexDirection: "row"
@@ -15,7 +15,7 @@ export default function styleConstructor(theme = {}) {
         period: {
             height: 4,
             marginVertical: 1,
-            // backgroundColor: appStyle.dotColor
+            backgroundColor: appStyle.dotColor
         },
         startingDay: {
             borderTopLeftRadius: 2,

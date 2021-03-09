@@ -8,7 +8,7 @@ type Props = {
 
 }
 
-export class CalendarHeaderDriver extends ComponentDriver<Props> {
+export default class CalendarHeaderDriver extends ComponentDriver<Props> {
 
     testID;
 

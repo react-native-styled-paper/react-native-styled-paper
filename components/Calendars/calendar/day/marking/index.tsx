@@ -27,7 +27,7 @@ const MARKING_TYPES = {
 type Props = typeof Dot & {
     // type?: oneOf(Object.values(MARKING_TYPES)),
     type?: any,
-    theme?: object,
+    theme?: Record<string, any>,
     selected?: boolean,
     marked?: boolean,
     today?: boolean,
