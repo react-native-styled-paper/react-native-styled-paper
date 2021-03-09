@@ -9,7 +9,7 @@ module.exports = {
     webpackFinal: async (config) => {
         config.module.rules.push({
             test: /\.(js|ts|tsx)$/,
-            exclude: /(node_modules\/(?!(react-native-styled-paper|react-native-animatable|react-native-swipe-gestures)\/).*|dist|.stoybook)/,
+            exclude: /(node_modules\/(?!(react-native-styled-paper|react-native-animatable|react-native-swipe-gestures|react-native-linear-gradient)\/).*|dist|.stoybook)/,
             use: {
                 loader: 'babel-loader',
                 options: {
@@ -49,6 +49,7 @@ module.exports = {
             // Transform all direct `react-native` imports to `react-native-web`
             "react-native$": "react-native-web",
             "react-native-vector-icons": "@ovaeasy/react-native-vector-icons",
+            'react-native-linear-gradient': 'react-native-web-linear-gradient'
         };
 
         const nodeConfig = config.node || {};

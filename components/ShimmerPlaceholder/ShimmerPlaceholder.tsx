@@ -7,8 +7,8 @@ function ShimmerPlaceholder(props) {
     const [ beginShimmerPosition ] = React.useState(new Animated.Value(-1));
 
     const getAnimated = () => {
-        const { delay, duration, isInteraction } = this.props;
-        return Animated.loop(Animated.timing(this.state.beginShimmerPosition, {
+        const { delay, duration, isInteraction } = props;
+        return Animated.loop(Animated.timing(beginShimmerPosition, {
             toValue: 1,
             delay,
             duration,

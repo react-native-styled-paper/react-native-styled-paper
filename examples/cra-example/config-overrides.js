@@ -31,6 +31,7 @@ module.exports = {
                             "root": ["."],
                             "alias": {
                                 "^react-native$": "react-native-web",
+                                'react-native-linear-gradient': 'react-native-web-linear-gradient',
                                 "components": "./components",
                             }
                         }]
