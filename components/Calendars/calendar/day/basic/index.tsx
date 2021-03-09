@@ -95,7 +95,7 @@ export default class BasicDay extends React.Component<Props> {
     }
 
     getContainerStyle() {
-        const { customStyles, selected, selectedColor } = this.props.marking;
+        const { customStyles, selected, selectedColor } = this.props.marking || {};
         const style = [this.style.base];
 
         if (selected) {
@@ -119,7 +119,7 @@ export default class BasicDay extends React.Component<Props> {
     }
 
     getTextStyle() {
-        const { customStyles, selected, selectedTextColor } = this.props.marking;
+        const { customStyles, selected, selectedTextColor } = this.props.marking || {};
         const style = [this.style.text];
 
         if (selected) {

@@ -9,7 +9,7 @@ module.exports = {
     webpackFinal: async (config) => {
         config.module.rules.push({
             test: /\.(js|ts|tsx)$/,
-            exclude: /(node_modules\/(?!(react-native-styled-paper|react-native-animatable)\/).*|dist|.stoybook)/,
+            exclude: /(node_modules\/(?!(react-native-styled-paper|react-native-animatable|react-native-swipe-gestures)\/).*|dist|.stoybook)/,
             use: {
                 loader: 'babel-loader',
                 options: {
