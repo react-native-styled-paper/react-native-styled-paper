@@ -4,6 +4,55 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from "src/types";
 import { ToastExample } from "src/components/Toast/ToastExample";
 import MinusBoxIcon from "@mdi/svg/svg/minus-box.svg";
+import { ScrollView } from "react-native";
+import { Card } from "react-native-styled-paper/components/Card";
+
+const testData = [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+];
 
 type ProfileScreenNavigationProp = StackNavigationProp<
     RootStackParamList,
@@ -21,7 +70,7 @@ export function HomePage(props: Props) {
     } = props;
 
     return (
-        <div>
+        <>
             <MinusBoxIcon />
             Hello from HomePage
             <Button
@@ -35,6 +84,27 @@ export function HomePage(props: Props) {
             </Button>
             <ToastExample
             />
-        </div>
+            <ScrollView
+                onScroll={(evt) => {
+                    console.log("Scroll: " + JSON.stringify(evt));
+                }}
+                style={{
+                    height: "700px"
+                }}
+                testID="scrollview_1"
+            >
+                {(Array.isArray(testData) && testData.length > 0) &&
+                    testData.map((item, index) => {
+                        return (
+                            <Card
+                                key={index}
+                            >
+                                {index}
+                            </Card>
+                        )
+                    })
+                }
+            </ScrollView>
+        </>
     )
 }

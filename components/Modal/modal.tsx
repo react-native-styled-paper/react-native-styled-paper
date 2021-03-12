@@ -322,7 +322,9 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
                             opacity: this.props.backdropOpacity * newOpacityFactor,
                         });
 
-                    animEvt!(evt, gestureState);
+                    if (typeof animEvt === "function") {
+                        animEvt(evt, gestureState);
+                    }
 
                     if (this.props.onSwipeMove) {
                         this.props.onSwipeMove(newOpacityFactor);
@@ -380,14 +382,16 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
                     });
                 }
 
-                Animated.spring(this.state.pan!, {
+                // Animated.spring(this.state.pan!, {
+                Animated.spring(this.state.pan, {
                     toValue: { x: 0, y: 0 },
                     bounciness: 0,
                     useNativeDriver: false,
                 }).start();
 
                 if (this.props.scrollTo) {
-                    if (this.props.scrollOffset > this.props.scrollOffsetMax!) {
+                    // if (this.props.scrollOffset > this.props.scrollOffsetMax!) {
+                    if (this.props.scrollOffset > this.props.scrollOffsetMax) {
                         this.props.scrollTo({
                             y: this.props.scrollOffsetMax,
                             animated: true,
@@ -449,11 +453,11 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
             this.currentSwipingDirection === "right" ||
             this.currentSwipingDirection === "left"
         ) {
-            return Animated.event([null, { dx: this.state.pan!.x }], {
+            return Animated.event([null, { dx: this.state.pan?.x }], {
                 useNativeDriver: false,
             });
         } else {
-            return Animated.event([null, { dy: this.state.pan!.y }], {
+            return Animated.event([null, { dy: this.state.pan?.y }], {
                 useNativeDriver: false,
             });
         }
@@ -530,7 +534,7 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
         // at the last released position when you try to open it.
         // TODO: Could certainly be improved - no idea for the moment.
         if (this.state.isSwipeable) {
-            this.state.pan!.setValue({ x: 0, y: 0 });
+            this.state.pan?.setValue({ x: 0, y: 0 });
         }
 
         if (this.contentRef) {
@@ -699,14 +703,14 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
         let panHandlers = {};
         let panPosition = {};
         if (this.state.isSwipeable) {
-            panHandlers = { ...this.panResponder!.panHandlers };
+            panHandlers = { ...this.panResponder?.panHandlers };
 
             if (useNativeDriver) {
                 panPosition = {
-                    transform: this.state.pan!.getTranslateTransform(),
+                    transform: this.state.pan?.getTranslateTransform(),
                 };
             } else {
-                panPosition = this.state.pan!.getLayout();
+                panPosition = this.state.pan?.getLayout();
             }
         }
 

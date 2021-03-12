@@ -1,6 +1,64 @@
 import * as React from "react";
+import { ScrollView } from "react-native";
 import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from "src/types";
+import { Card } from "react-native-styled-paper/components/Card";
+
+const testData = [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+];
 
 type ProfileScreenRouteProp = RouteProp<RootStackParamList, 'Profile'>;
 
@@ -18,8 +76,30 @@ export function ProfilePage(props: Props) {
     } = route;
 
     return (
-        <div>
+        <>
             Hello from ProfilePage {params.id}
-        </div>
+            <ScrollView
+                scrollEnabled={true}
+                onScroll={(evt) => {
+                    console.log(evt);
+                }}
+                testID="scrollview_1"
+                style={{
+                    height: "700px"
+                }}
+            >
+                {(Array.isArray(testData) && testData.length > 0) &&
+                    testData.map((item, index) => {
+                        return (
+                            <Card
+                                key={index}
+                            >
+                                {index}
+                            </Card>
+                        )
+                    })
+                }
+            </ScrollView>
+        </>
     )
 }

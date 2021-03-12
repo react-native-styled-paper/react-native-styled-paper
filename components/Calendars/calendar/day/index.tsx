@@ -1,4 +1,4 @@
-import _ from "lodash";
+// import _ from "lodash";
 import XDate from "xdate";
 import * as React from "react";
 import { shouldUpdate, extractComponentProps } from "../../component-updater";

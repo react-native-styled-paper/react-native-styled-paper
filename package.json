@@ -67,6 +67,7 @@
         "fs-extra": "^9.1.0",
         "husky": "^4.3.8",
         "jest": "26.6.0",
+        "jest-date-mock": "^1.0.8",
         "jest-watch-typeahead": "^0.6.1",
         "metro-react-native-babel-preset": "^0.64.0",
         "moment": "^2.29.1",

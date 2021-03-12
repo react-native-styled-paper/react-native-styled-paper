@@ -94,7 +94,7 @@ export const Toast: React.FC<ToastConfig & ToastInternalConfig> = ({
     accentColor,
     closeIconColor,
     // closeIconFamily,
-    closeIconName,
+    // closeIconName,
     closeIconSize,
     color,
     duration,

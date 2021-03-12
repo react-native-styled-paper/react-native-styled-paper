@@ -1,5 +1,5 @@
-const XDate = require("xdate");
-const dateutils = require("./dateutils");
+import XDate from "xdate";
+import dateutils from "./dateutils";
 
 describe("dateutils", function () {
     describe("sameMonth()", function () {

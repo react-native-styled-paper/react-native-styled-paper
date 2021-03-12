@@ -5,8 +5,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LightTheme from "react-native-styled-paper/components/theme/LightTheme";
 import { ToastProvider } from 'react-native-styled-paper/components/Toast';
 import { Viewport } from "react-native-styled-paper/components/Container";
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
+import { useWindowDimensions } from 'react-native';
 import { HomePage } from './pages/home/HomePage';
 import { ProfilePage } from './pages/profile/ProfilePage';
 import { SettingPage } from './pages/setting/SettingPage';
@@ -33,17 +35,18 @@ const linking = {
 const Stack = createStackNavigator();
 
 function App() {
+    const { height, scale, width } = useWindowDimensions();
+
     return (
         <ThemeProvider theme={LightTheme}>
             <ToastProvider>
-                <Viewport>
-                    <NavigationContainer linking={linking} fallback={<SplashScreen />}>
-                        <Stack.Navigator>
-                            <Stack.Screen name="Home" component={HomePage} />
-                            <Stack.Screen name="Profile" component={ProfilePage} />
-                            <Stack.Screen name="Setting" component={SettingPage} />
-                        </Stack.Navigator>
-                    </NavigationContainer>
+                <Viewport testID="viewport_1">
+                    <Switch>
+                        <Route path="/" component={HomePage} exact={true}/>
+                        <Route path="/home" component={HomePage} />
+                        <Route path="/profile" component={ProfilePage} />
+                        <Route path="/setting" component={SettingPage} />
+                    </Switch>
                 </Viewport>
             </ToastProvider>
         </ThemeProvider>

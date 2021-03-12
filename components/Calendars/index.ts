@@ -11,4 +11,4 @@ export { default as WeekCalendar } from "./expandableCalendar/weekCalendar";
 export { default as LocaleConfig } from "xdate";
 export {
     testIDs,
-}
+};

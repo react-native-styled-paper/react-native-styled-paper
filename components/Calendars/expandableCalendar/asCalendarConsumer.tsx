@@ -18,7 +18,7 @@ function asCalendarConsumer(WrappedComponent) {
                 )}
             </CalendarContext.Consumer>
         );
-    }
+    };
 
     hoistNonReactStatic(CalendarConsumer, WrappedComponent);
 

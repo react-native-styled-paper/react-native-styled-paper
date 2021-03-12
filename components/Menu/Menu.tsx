@@ -19,7 +19,7 @@ import {
 import { $Omit } from "../types";
 import Portal from "../Portal/Portal";
 import { Surface } from "../Surface";
-import MenuItem, { MenuItem as _MenuItem } from "./MenuItem";
+import MenuItem from "./MenuItem";
 import { APPROX_STATUSBAR_HEIGHT } from "../theme/constants";
 import { DefaultTheme, ThemeContext } from "styled-components";
 
