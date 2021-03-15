@@ -18,7 +18,7 @@ export class CalendarDriver extends ComponentDriver<Props> {
         this.testID = testID;
     }
 
-    withDefaultProps(props) {
+    withDefaultProps(props?) {
         return this.setProps({ testID: this.testID, ...props });
     }
 

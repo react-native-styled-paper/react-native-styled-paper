@@ -18,7 +18,7 @@ export function xdateToData(xdate) {
     };
 }
 
-export function parseDate(d) {
+export function parseDate(d?) {
     if (!d) {
         return;
     } else if (d.timestamp) { // conventional data timestamp

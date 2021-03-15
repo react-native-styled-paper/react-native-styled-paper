@@ -79,7 +79,7 @@ class Calendar extends React.Component<Props, State> {
 
     static defaultProps = {
         enableSwipeMonths: false
-    };
+    } as any;
 
     state: State = {
 
