@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useHistory } from "react-router-dom";
 import { Button } from "react-native-styled-paper/components/Button";
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from "src/types";
@@ -65,9 +66,7 @@ type Props = {
 
 export function HomePage(props: Props) {
 
-    const {
-        navigation,
-    } = props;
+    const history = useHistory();
 
     return (
         <>
@@ -75,7 +74,7 @@ export function HomePage(props: Props) {
             Hello from HomePage
             <Button
                 onPress={() => {
-                    navigation.navigate("Profile", {
+                    history.push("/profile", {
                         id: "123",
                     })
                 }}

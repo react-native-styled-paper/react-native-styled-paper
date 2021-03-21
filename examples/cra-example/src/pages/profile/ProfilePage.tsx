@@ -1,7 +1,8 @@
 import * as React from "react";
-import { ScrollView } from "react-native";
 import { RouteProp } from '@react-navigation/native';
+import { useParams } from "react-router-dom";
 import { RootStackParamList } from "src/types";
+import { ScrollviewViewport } from "react-native-styled-paper/components/Container";
 import { Card } from "react-native-styled-paper/components/Card";
 
 const testData = [
@@ -63,7 +64,7 @@ const testData = [
 type ProfileScreenRouteProp = RouteProp<RootStackParamList, 'Profile'>;
 
 type Props = {
-  route: ProfileScreenRouteProp;
+    route: ProfileScreenRouteProp;
 };
 
 export function ProfilePage(props: Props) {
@@ -73,20 +74,16 @@ export function ProfilePage(props: Props) {
     } = props;
     const {
         params,
-    } = route;
+    } = useParams();
 
     return (
         <>
-            Hello from ProfilePage {params.id}
-            <ScrollView
+            <ScrollviewViewport
                 scrollEnabled={true}
                 onScroll={(evt) => {
                     console.log(evt);
                 }}
                 testID="scrollview_1"
-                style={{
-                    height: "700px"
-                }}
             >
                 {(Array.isArray(testData) && testData.length > 0) &&
                     testData.map((item, index) => {
@@ -99,7 +96,7 @@ export function ProfilePage(props: Props) {
                         )
                     })
                 }
-            </ScrollView>
+            </ScrollviewViewport>
         </>
     )
 }
