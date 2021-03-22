@@ -34,7 +34,7 @@ jobs:
         yarn st-build
         git config --global user.name $user_name
         git config --global user.email $user_email
-        git remote set-url origin https://${github_token}:x-oauth-basic@github.com/${repository}
+        git remote set-url origin https://${github_token}@github.com/${repository}
         yarn deploy
       env:
         user_name: 'github-actions[bot]'
