@@ -25,6 +25,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+    - run: cp .npmrc.sample .npmrc
     - run: yarn install
     - run: yarn test
     - run: yarn build --if-present
@@ -34,7 +35,7 @@ jobs:
         yarn st-build
         git config --global user.name $user_name
         git config --global user.email $user_email
-        git remote set-url origin https://${github_token}@github.com/${repository}
+        git remote set-url origin https://deployer-token:${github_token}@github.com/${repository}
         yarn deploy
       env:
         user_name: 'github-actions[bot]'
