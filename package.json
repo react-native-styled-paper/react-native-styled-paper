@@ -20,7 +20,7 @@
         "type-check": "tsc --noEmit",
         "format": "eslint . --ext ts --ext tsx --ext js --fix",
         "lint": "eslint . --ext ts --ext tsx --ext js",
-        "test": "jest"
+        "test": "jest --passWithNoTests"
     },
     "repository": {
         "type": "git",
