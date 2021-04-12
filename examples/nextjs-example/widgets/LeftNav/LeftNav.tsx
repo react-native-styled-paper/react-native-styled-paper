@@ -1,6 +1,11 @@
 import * as React from "react";
+import styled from "styled-components";
 import { leftnavComponents } from "widgets/leftnavComponents";
 import { Section, Accordion, Item, Icon } from "react-native-styled-paper/components/List";
+
+const Container = styled.div({
+    width: "240px",
+});
 
 const LeftNav = (props) => {
 
@@ -53,13 +58,17 @@ const LeftNav = (props) => {
     }
 
     return (
-        <>
+        <Container>
             {Array.isArray(leftnavComponents) && leftnavComponents.length > 0 &&
                 leftnavComponents
                     .map((section, sIndex) => renderSection(section, sIndex))
             }
-        </>
+        </Container>
     )
 }
+
+LeftNav.propTypes = {
+
+};
 
 export default LeftNav;

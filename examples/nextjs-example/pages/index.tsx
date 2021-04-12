@@ -1,5 +1,4 @@
 import * as React from "react";
-import { ScrollView } from "react-native";
 import styled from "styled-components";
 import { Text } from "react-native-styled-paper/components/Typography";
 import { Appbar } from "widgets/Appbar/Appbar";
@@ -8,6 +7,7 @@ import FolderIcon from "@mdi/svg/svg/folder.svg";
 import { Button } from "react-native-styled-paper/components/Button";
 import { useRouter } from 'next/router';
 import { LeftNav } from "widgets/LeftNav";
+import CustomViewport from "widgets/CustomViewport/CustomViewport";
 
 const Title = styled.h1`
   color: red;
@@ -23,11 +23,7 @@ export default function Home() {
             </Appbar>
             <LeftNav
             />
-            <ScrollView
-                style={{
-                    height: "800px"
-                }}
-            >
+            <CustomViewport>
                 <Title>My page</Title>
                 <Text>Text</Text>
                 <Avatar.Icon size={24} icon={FolderIcon} />
@@ -47,7 +43,7 @@ export default function Home() {
                 >
                     Go to profile
                 </Button>
-            </ScrollView>
+            </CustomViewport>
         </>
     );
 }

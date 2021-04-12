@@ -1,3 +1,4 @@
+const fs = require("fs-extra");
 const copyDir = require("copy-dir");
 const defaultOption = {
     utimes: true,
@@ -15,6 +16,8 @@ const copyDirSync = (srcFolders, rootSrc, rootDest, option = {}) => {
 };
 
 const snapCoreFolders = [""];
+
+fs.ensureDirSync("./examples/nextjs-example/react-native-styled-paper/components");
 copyDirSync(
     snapCoreFolders,
     "./components",
@@ -39,6 +42,7 @@ copyDirSync(
     }
 );
 
+fs.ensureDirSync("./examples/rn-example/react-native-styled-paper/components");
 copyDirSync(
     snapCoreFolders,
     "./components",

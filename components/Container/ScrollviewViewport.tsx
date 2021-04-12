@@ -16,10 +16,9 @@ function ScrollviewViewport(props) {
     } = props;
 
     return (
-        <Viewport>
+        <Viewport {...rest}>
             <DefaultScrollview
                 height={height}
-                {...rest}
             >
                 {children}
             </DefaultScrollview>
