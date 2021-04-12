@@ -7,6 +7,7 @@ import * as Avatar from "react-native-styled-paper/components/Avatar";
 import FolderIcon from "@mdi/svg/svg/folder.svg";
 import { Button } from "react-native-styled-paper/components/Button";
 import { useRouter } from 'next/router';
+import { LeftNav } from "widgets/LeftNav";
 
 const Title = styled.h1`
   color: red;
@@ -20,6 +21,8 @@ export default function Home() {
         <>
             <Appbar>
             </Appbar>
+            <LeftNav
+            />
             <ScrollView
                 style={{
                     height: "800px"
