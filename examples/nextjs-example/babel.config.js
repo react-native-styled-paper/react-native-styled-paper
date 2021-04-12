@@ -15,7 +15,8 @@ module.exports = {
                     "^react-native$": "react-native-web",
                     "react-native-vector-icons":
                         "@ovaeasy/react-native-vector-icons",
-                    "components": "./components"
+                    "react-native-styled-paper": "./react-native-styled-paper",
+                    "widgets": "./widgets",
                 }
             }
         ]

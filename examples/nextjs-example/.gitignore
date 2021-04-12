@@ -11,6 +11,8 @@
 # next.js
 /.next/
 /out/
+/components/
+/react-native-styled-paper/
 
 # production
 /build

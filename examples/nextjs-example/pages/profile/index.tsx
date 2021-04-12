@@ -1,6 +1,7 @@
 import * as React from "react";
 import { ScrollView } from "react-native"
-import { Button, Text } from "react-native-styled-paper";
+import { Button } from "react-native-styled-paper/components/Button";
+import { Text } from "react-native-styled-paper/components/Typography";
 import { useRouter } from "next/router";
 
 export default function ProfilePage(props) {

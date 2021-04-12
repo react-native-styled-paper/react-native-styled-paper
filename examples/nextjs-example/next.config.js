@@ -3,7 +3,7 @@ const withTM = require("next-transpile-modules")([
     // "react-native-paper",
     // "react-native-safe-area-view",
     "react-native-vector-icons",
-    "react-native-styled-paper",
+    // "react-native-styled-paper",
     "styled-components",
 ]);
 const nextEnv = require("next-env");
@@ -53,6 +53,8 @@ module.exports = withPlugins([withTM, withNextEnv], {
             // Transform all direct `react-native` imports to `react-native-web`
             "^react-native$": "react-native-web",
             "react-native-vector-icons": "@ovaeasy/react-native-vector-icons",
+            "react-native-styled-paper": "./react-native-styled-paper",
+            "widgets": "./widgets",
         };
         config.resolve.extensions = [
             ".web.js",

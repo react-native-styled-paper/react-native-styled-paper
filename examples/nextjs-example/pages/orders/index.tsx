@@ -1,9 +1,10 @@
 import * as React from "react";
 import { ScrollView } from "react-native"
-import { Button, Text } from "react-native-styled-paper";
+import { Button } from "react-native-styled-paper/components/Button";
+import { Text } from "react-native-styled-paper/components/Typography";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-import { OrderCard } from "components/OrderCard/OrderCard";
+import { OrderCard } from "widgets/OrderCard/OrderCard";
 
 export default function OrderListPage(props) {
 

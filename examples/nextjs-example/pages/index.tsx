@@ -2,10 +2,10 @@ import * as React from "react";
 import { ScrollView } from "react-native";
 import styled from "styled-components";
 import { Text } from "react-native-styled-paper/components/Typography";
-import { Appbar } from "components/Appbar/Appbar";
+import { Appbar } from "widgets/Appbar/Appbar";
 import * as Avatar from "react-native-styled-paper/components/Avatar";
 import FolderIcon from "@mdi/svg/svg/folder.svg";
-import { Button } from "react-native-styled-paper";
+import { Button } from "react-native-styled-paper/components/Button";
 import { useRouter } from 'next/router';
 
 const Title = styled.h1`
