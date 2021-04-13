@@ -81,7 +81,7 @@ const Provider = ({ ...props }: Props) => {
         <PortalHost>
             <SettingsProvider value={settings || { }}>
                 {/* <ThemeProvider theme={getTheme()}> */}
-                    {children}
+                {children}
                 {/* </ThemeProvider> */}
             </SettingsProvider>
         </PortalHost>

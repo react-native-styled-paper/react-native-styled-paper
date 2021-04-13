@@ -1,14 +1,15 @@
 import * as React from "react";
 import styled from "styled-components";
+import { space, SpaceProps } from "styled-system";
 import { leftnavComponents } from "widgets/leftnavComponents";
 import { Section, Accordion, Item, Icon } from "react-native-styled-paper/components/List";
 import { useRouter } from "next/router";
 
-const Container = styled.div({
+const Container = styled.div<SpaceProps>({
     position: "absolute",
     width: "240px",
     zIndex: 2,
-});
+}, space);
 
 const LeftNav = (props) => {
 
@@ -72,7 +73,7 @@ const LeftNav = (props) => {
     }
 
     return (
-        <Container>
+        <Container paddingTop={[ "0", "56px" ]}>
             {Array.isArray(leftnavComponents) && leftnavComponents.length > 0 &&
                 leftnavComponents
                     .map((section, sIndex) => renderSection(section, sIndex))

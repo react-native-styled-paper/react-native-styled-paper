@@ -10,8 +10,8 @@ const DefaultScrollview = styled.ScrollView<LayoutProps & SpaceProps>(
 );
 
 DefaultScrollview.defaultProps = {
-    overflowY: 'scroll',
-}
+    overflowY: "scroll",
+};
 
 function ScrollviewViewport(props) {
     const { height } = useWindowDimensions();
@@ -35,6 +35,6 @@ function ScrollviewViewport(props) {
 
 ScrollviewViewport.defaultProps = {
     paddingTop: 0,
-}
+};
 
 export default ScrollviewViewport;
