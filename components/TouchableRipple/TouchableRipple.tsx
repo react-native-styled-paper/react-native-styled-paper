@@ -241,7 +241,7 @@ const TouchableRipple = ({
             onPressOut={handlePressOut}
             disabled={disabled}
         >
-            <View style={[styles.touchable, borderless && styles.borderless, style]}>
+            <View style={[styles.touchable, borderless && styles.borderless, style]} testID="touchable_view">
                 {React.Children.only(children)}
             </View>
         </TouchableWithoutFeedback>

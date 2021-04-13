@@ -1,15 +1,17 @@
 import * as React from "react";
 import { Animated } from "react-native";
 import { DefaultTheme, ThemeContext } from "styled-components";
+import { layout, LayoutProps } from "styled-system";
 import styled from "styled-components/native";
 import Icon, { isValidIcon, isEqualIcon } from "./SvgIcon";
 
-const CrossFadeIconWrapperView = styled.View<{
+const CrossFadeIconWrapperView = styled.View<LayoutProps & {
     width: number,
     height: number,
 }>`
     align-items: center;
     justify-content: center;
+    ${layout},
 `;
 
 type Props = {
@@ -84,6 +86,7 @@ const CrossFadeIcon = ({ color, size, icon }: Props) => {
         <CrossFadeIconWrapperView
             width={size}
             height={size}
+            testID="icon_fade_view"
         >
             {previousIcon ? (
                 <Animated.View
@@ -100,6 +103,7 @@ const CrossFadeIcon = ({ color, size, icon }: Props) => {
                             transform: [{ rotate: rotatePrev }],
                         },
                     ]}
+                    testID="icon_fade_animated_view"
                 >
                     <Icon icon={previousIcon} size={size} color={color} />
                 </Animated.View>
@@ -118,6 +122,7 @@ const CrossFadeIcon = ({ color, size, icon }: Props) => {
                         transform: [{ rotate: rotateNext }],
                     },
                 ]}
+                testID="icon_fade_animated_view"
             >
                 <Icon icon={currentIcon} size={size} color={color} />
             </Animated.View>

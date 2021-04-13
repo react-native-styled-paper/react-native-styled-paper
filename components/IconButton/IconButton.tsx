@@ -134,7 +134,7 @@ const IconButton = ({
             }
             {...rest}
         >
-            <View>
+            <View testID="icon_view">
                 <IconComponent color={iconColor} icon={icon} size={size} />
             </View>
         </TouchableRipple>

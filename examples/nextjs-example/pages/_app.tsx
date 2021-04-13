@@ -9,6 +9,7 @@ import type { AppProps /*, AppContext */ } from 'next/app';
 import { Viewport } from "react-native-styled-paper/components/Container";
 import { useStore } from "../store";
 import { createGlobalStyle, ThemeProvider as StyledProvider } from "styled-components";
+import { useRouter } from "next/router";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -58,6 +59,7 @@ const theme = {
 }
 
 const App =({ Component, pageProps }: AppProps) => {
+    const router = useRouter();
     const store = useStore(pageProps.initialReduxState);
     // const [theme] = React.useState(CustomDefaultTheme);
     // const [rtl, setRtl] = React.useState(I18nManager.isRTL);
@@ -77,6 +79,24 @@ const App =({ Component, pageProps }: AppProps) => {
     //     [rtl, theme]
     // );
 
+    React.useEffect(() => {
+        const handleRouteChange = (url, opts) => {
+            console.log(
+              `App is changing to ${url} ${
+                opts?.shallow ? 'with' : 'without'
+              } shallow routing`
+            )
+          }
+
+          router.events.on('routeChangeStart', handleRouteChange)
+
+          // If the component is unmounted, unsubscribe
+          // from the event with the `off` method:
+          return () => {
+            router.events.off('routeChangeStart', handleRouteChange)
+          }
+    }, [])
+
     return (
         <Provider store={store}>
             <GlobalStyle />
@@ -94,11 +114,13 @@ const App =({ Component, pageProps }: AppProps) => {
                     `}</style>
                 ) : null}
             </Head>
-            <StyledProvider theme={theme}>
-                <Viewport>
-                    <Component {...pageProps} />
-                </Viewport>
-            </StyledProvider>
+            <PaperProviver>
+                <StyledProvider theme={theme}>
+                    <Viewport>
+                        <Component {...pageProps} />
+                    </Viewport>
+                </StyledProvider>
+            </PaperProviver>
         </Provider>
     );
 }

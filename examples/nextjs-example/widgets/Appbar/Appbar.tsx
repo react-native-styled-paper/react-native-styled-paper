@@ -11,6 +11,10 @@ const StyledRNSPAppbar = styled(RNSPAppbar)({
     zIndex: 1,
 });
 
+const MiddleContainer = styled.div({
+    flexGrow: 1,
+});
+
 const DesktopAppbar = (props) => {
     const [visible, setVisible] = React.useState(false);
     const openMenu = () => setVisible(true);
@@ -18,16 +22,19 @@ const DesktopAppbar = (props) => {
 
     return (
         <StyledRNSPAppbar>
-            <RNSPAppbar.Action
-                icon={MenuIcon}
-                color="black"
-                onPress={() => console.log('Pressed archive')}
-            />
+            <Text>Appbar</Text>
+            <MiddleContainer>
+                <RNSPAppbar.Action
+                    icon={MenuIcon}
+                    color="black"
+                    onPress={() => console.log('Pressed archive')}
+                />
+            </MiddleContainer>
             <Menu
                 visible={visible}
                 onDismiss={closeMenu}
                 anchor={
-                    <RNSPAppbar.Action icon={MenuIcon} color="white" onPress={openMenu} />
+                    <RNSPAppbar.Action icon={MenuIcon} color="white" size={24} onPress={openMenu} />
                 }>
                 <Menu.Item onPress={() => {console.log('Option 1 was pressed')}} title="Option 1" />
                 <Menu.Item onPress={() => {console.log('Option 2 was pressed')}} title="Option 2" />
@@ -47,9 +54,10 @@ const MobileAppbar = (props) => {
 
 
 export const Appbar = (props) => {
-    const { isMobileView } = useWindowSize()
+    const { isMobileView } = useWindowSize();
+    const { children } = props;
 
     return isMobileView ?
-        <MobileAppbar {...props} /> :
-        <DesktopAppbar {...props} />;
+        <MobileAppbar {...props}>{children}</MobileAppbar> :
+        <DesktopAppbar {...props}>{children}</DesktopAppbar>;
 }
