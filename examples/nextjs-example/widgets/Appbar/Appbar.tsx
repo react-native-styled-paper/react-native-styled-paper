@@ -1,4 +1,5 @@
 import * as React from "react";
+import styled from "styled-components";
 import { default as RNSPAppbar } from "react-native-styled-paper/components/Appbar";
 import { Menu } from "react-native-styled-paper/components/Menu";
 import MenuIcon from "@mdi/svg/svg/menu.svg";
@@ -6,13 +7,17 @@ import { Text } from "react-native-styled-paper/components/Typography";
 
 import { useWindowSize } from "../../hooks/useWindowSize";
 
+const StyledRNSPAppbar = styled(RNSPAppbar)({
+    zIndex: 1,
+});
+
 const DesktopAppbar = (props) => {
     const [visible, setVisible] = React.useState(false);
     const openMenu = () => setVisible(true);
     const closeMenu = () => setVisible(false);
 
     return (
-        <RNSPAppbar>
+        <StyledRNSPAppbar>
             <RNSPAppbar.Action
                 icon={MenuIcon}
                 color="black"
@@ -28,7 +33,7 @@ const DesktopAppbar = (props) => {
                 <Menu.Item onPress={() => {console.log('Option 2 was pressed')}} title="Option 2" />
                 <Menu.Item onPress={() => {console.log('Option 3 was pressed')}} title="Option 3" disabled />
             </Menu>
-        </RNSPAppbar>
+        </StyledRNSPAppbar>
     )
 }
 

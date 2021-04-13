@@ -23,7 +23,9 @@ export default function Home() {
             </Appbar>
             <LeftNav
             />
-            <CustomViewport>
+            <CustomViewport
+                paddingLeft={[ "0px", "240px" ]}
+            >
                 <Title>My page</Title>
                 <Text>Text</Text>
                 <Avatar.Icon size={24} icon={FolderIcon} />

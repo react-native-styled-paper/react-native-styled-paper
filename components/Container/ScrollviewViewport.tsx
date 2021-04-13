@@ -1,17 +1,23 @@
 import * as React from "react";
 import { useWindowDimensions } from "react-native";
 import styled from "styled-components/native";
-import { layout, LayoutProps } from "styled-system";
+import { layout, LayoutProps, space, SpaceProps } from "styled-system";
 import Viewport from "./Viewport";
 
-const DefaultScrollview = styled.ScrollView<LayoutProps>(
+const DefaultScrollview = styled.ScrollView<LayoutProps & SpaceProps>(
     layout,
+    space,
 );
+
+DefaultScrollview.defaultProps = {
+    overflowY: 'scroll',
+}
 
 function ScrollviewViewport(props) {
     const { height } = useWindowDimensions();
     const {
         children,
+        paddingTop,
         ...rest
     } = props;
 
@@ -19,11 +25,16 @@ function ScrollviewViewport(props) {
         <Viewport {...rest}>
             <DefaultScrollview
                 height={height}
+                paddingTop={paddingTop}
             >
                 {children}
             </DefaultScrollview>
         </Viewport>
     );
+}
+
+ScrollviewViewport.defaultProps = {
+    paddingTop: 0,
 }
 
 export default ScrollviewViewport;

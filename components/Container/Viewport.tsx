@@ -1,9 +1,10 @@
 import styled from "styled-components/native";
-import { position, PositionProps } from "styled-system";
+import { position, PositionProps, space, SpaceProps, compose } from "styled-system";
 
-const Viewport = styled.View<PositionProps>(
+const Viewport = styled.View<PositionProps & SpaceProps>(compose(
     position,
-);
+    space,
+));
 
 Viewport.defaultProps = {
     // position
