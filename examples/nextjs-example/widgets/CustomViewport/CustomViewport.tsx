@@ -1,10 +1,16 @@
-import styled from "styled-components";
-import { space, SpaceProps } from "styled-system";
 import { ScrollviewViewport } from "react-native-styled-paper/components/Container";
 
-const CustomViewport = styled(ScrollviewViewport)<SpaceProps>(
-    space,
-);
+const CustomViewport = (props) => {
+    const { children, ...rest } = props;
+
+    return (
+        <ScrollviewViewport
+            {...rest}
+        >
+            {children}
+        </ScrollviewViewport>
+    )
+}
 
 CustomViewport.defaultProps = {
     paddingTop: "56px",

@@ -5,6 +5,7 @@ import { Section, Accordion, Item, Icon } from "react-native-styled-paper/compon
 import { useRouter } from "next/router";
 
 const Container = styled.div({
+    position: "absolute",
     width: "240px",
     zIndex: 2,
 });

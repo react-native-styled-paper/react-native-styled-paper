@@ -8,6 +8,15 @@ import Head from "next/head";
 import type { AppProps /*, AppContext */ } from 'next/app';
 import { Viewport } from "react-native-styled-paper/components/Container";
 import { useStore } from "../store";
+import { createGlobalStyle, ThemeProvider as StyledProvider } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+`
 
 // const PERSISTENCE_KEY = "NAVIGATION_STATE";
 // const PREFERENCES_KEY = "APP_PREFERENCES";
@@ -43,6 +52,11 @@ import { useStore } from "../store";
 
 // const PreferencesContext = React.createContext(null);
 
+const theme = {
+    ...LightTheme,
+    // breakpoints: ['40em', '52em', '64em'],
+}
+
 const App =({ Component, pageProps }: AppProps) => {
     const store = useStore(pageProps.initialReduxState);
     // const [theme] = React.useState(CustomDefaultTheme);
@@ -65,6 +79,7 @@ const App =({ Component, pageProps }: AppProps) => {
 
     return (
         <Provider store={store}>
+            <GlobalStyle />
             <Head>
                 <meta
                     name="viewport"
@@ -79,11 +94,11 @@ const App =({ Component, pageProps }: AppProps) => {
                     `}</style>
                 ) : null}
             </Head>
-            <PaperProviver theme={LightTheme}>
+            <StyledProvider theme={theme}>
                 <Viewport>
                     <Component {...pageProps} />
                 </Viewport>
-            </PaperProviver>
+            </StyledProvider>
         </Provider>
     );
 }
