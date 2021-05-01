@@ -6,3 +6,5 @@
 **/examples/*
 **/types/*
 types.d.ts
+
+dist
