@@ -1,5 +1,5 @@
 const path = require("path");
-const { addWebpackModuleRule, addWebpackResolve, override, babelInclude } = require('customize-cra');
+const { addWebpackModuleRule, addWebpackResolve, override, babelInclude, addBabelPlugin } = require('customize-cra');
 
 // override
 module.exports = {
@@ -25,28 +25,37 @@ module.exports = {
                     plugins: [
                         "@babel/plugin-proposal-class-properties",
                         "@babel/plugin-proposal-object-rest-spread",
+                        "@babel/plugin-transform-modules-commonjs",
+                        "inline-react-svg",
                         ['module-resolver', {
                             "root": ["."],
                             "alias": {
                                 "^react-native$": "react-native-web",
-                                "src": "./src",
+                                'react-native-linear-gradient': 'react-native-web-linear-gradient',
+                                "components": "./components",
                             }
                         }]
                     ]
                 }
             }
         }),
-        // addWebpackModuleRule({
-        //     test: /\.svg$/,
-        //     use: ['@svgr/webpack'],
-        // }),
+        addWebpackModuleRule({
+            test: /\.svg$/,
+            use: ['@svgr/webpack'],
+        }),
         addWebpackResolve({alias: {
             'react-native$': require.resolve('react-native-web'),
         }}),
+        // addWebpackExternals({
+        //     react: "React",
+        //     "react-dom": "ReactDom"
+        // }),
         babelInclude([
-            path.resolve("."), // make sure you link your own source
-            path.resolve("node_modules/react-native-styled-paper"),
+            path.resolve("./src"), // make sure you link your own source
+            path.resolve("./node_modules/react-native-styled-paper"),
+            // path.resolve("../../"),
         ]),
+        addBabelPlugin('@babel/plugin-transform-modules-commonjs'),
         (config) => {
             return config;
         },

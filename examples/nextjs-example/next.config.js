@@ -3,7 +3,7 @@ const withTM = require("next-transpile-modules")([
     // "react-native-paper",
     // "react-native-safe-area-view",
     "react-native-vector-icons",
-    "react-native-styled-paper",
+    // "react-native-styled-paper",
     "styled-components",
 ]);
 const nextEnv = require("next-env");
@@ -15,20 +15,35 @@ const withNextEnv = nextEnv();
 module.exports = withPlugins([withTM, withNextEnv], {
     webpack: (config) => {
         config.module.rules.push({
-            test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
+            // test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
+            test: /\.(jpg|png|woff|woff2|eot|ttf)$/,
             loader: "file-loader",
         });
+
+        config.module.rules.push({
+            test: /\.(jsx|ts|tsx)$/,
+            use: ['babel-loader'],
+            exclude: /(node_modules\/(?!(react-native-styled-paper)\/).*|dist|.stoybook)/,
+        });
+
+        config.module.rules.push({
+            test: /\.svg$/,
+            use: ['@svgr/webpack'],
+        });
+
+        // config.module.rules.push({
+        //     test: /\.(jsx|ts|tsx)$/, // Just `tsx?` file only
+        //     use: [
+        //         "babel-loader"
+        //     ],
+        // });
+
         // config.module.rules.push({
         //     test: /\.(ts|js)x?$/, // Just `tsx?` file only
+        //     exclude: /node_modules[/\\](?!react-native-styled-paper|react-native-safe-area-view)/,
         //     use: [
-        //         // options.defaultLoaders.babel, I don't think it's necessary to have this loader too
         //         {
-        //             loader: "ts-loader",
-        //             options: {
-        //                 transpileOnly: true,
-        //                 experimentalWatchApi: true,
-        //                 onlyCompileBundledFiles: true,
-        //             },
+        //             loader: "babel-loader",
         //         },
         //     ],
         // });
@@ -36,8 +51,10 @@ module.exports = withPlugins([withTM, withNextEnv], {
         config.resolve.alias = {
             ...(config.resolve.alias || {}),
             // Transform all direct `react-native` imports to `react-native-web`
-            "react-native$": "react-native-web",
+            "^react-native$": "react-native-web",
             "react-native-vector-icons": "@ovaeasy/react-native-vector-icons",
+            "react-native-styled-paper": "./react-native-styled-paper",
+            "widgets": "./widgets",
         };
         config.resolve.extensions = [
             ".web.js",

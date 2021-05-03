@@ -1,9 +1,9 @@
-import { Children } from "react";
+import * as ReactJS from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { AppRegistry } from "react-native-web";
 import { ServerStyleSheet } from "styled-components";
 
-import config from "../app.json";
+import * as config from "../app.json";
 
 // Force Next-generated DOM elements to fill their parent's height
 const normalizeNextElements = `
@@ -39,7 +39,7 @@ export default class MyDocument extends Document {
                 styles: (
                     <>
                         {initialProps.styles}
-                        {Children.toArray(styles)}
+                        {ReactJS.Children.toArray(styles)}
                         {sheet.getStyleElement()}
                     </>
                 ),

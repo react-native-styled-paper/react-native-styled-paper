@@ -1,9 +1,23 @@
 import * as React from "react";
 import { Platform } from "react-native";
+import { Provider } from "react-redux";
 // import { I18nManager, Platform } from "react-native";
-import {ThemeProvider} from "styled-components";
-import { LightTheme } from "react-native-styled-paper";
+import { default as PaperProviver } from 'react-native-styled-paper/components/theme/Provider';
+import LightTheme from "react-native-styled-paper/components/theme/LightTheme";
 import Head from "next/head";
+import type { AppProps /*, AppContext */ } from 'next/app';
+import { Viewport } from "react-native-styled-paper/components/Container";
+import { useStore } from "../store";
+import { createGlobalStyle, ThemeProvider as StyledProvider } from "styled-components";
+import { useRouter } from "next/router";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+`
 
 // const PERSISTENCE_KEY = "NAVIGATION_STATE";
 // const PREFERENCES_KEY = "APP_PREFERENCES";
@@ -39,7 +53,14 @@ import Head from "next/head";
 
 // const PreferencesContext = React.createContext(null);
 
-export default function App({ Component, pageProps }) {
+const theme = {
+    ...LightTheme,
+    // breakpoints: ['40em', '52em', '64em'],
+}
+
+const App =({ Component, pageProps }: AppProps) => {
+    const router = useRouter();
+    const store = useStore(pageProps.initialReduxState);
     // const [theme] = React.useState(CustomDefaultTheme);
     // const [rtl, setRtl] = React.useState(I18nManager.isRTL);
 
@@ -58,8 +79,27 @@ export default function App({ Component, pageProps }) {
     //     [rtl, theme]
     // );
 
+    React.useEffect(() => {
+        const handleRouteChange = (url, opts) => {
+            console.log(
+              `App is changing to ${url} ${
+                opts?.shallow ? 'with' : 'without'
+              } shallow routing`
+            )
+          }
+
+          router.events.on('routeChangeStart', handleRouteChange)
+
+          // If the component is unmounted, unsubscribe
+          // from the event with the `off` method:
+          return () => {
+            router.events.off('routeChangeStart', handleRouteChange)
+          }
+    }, [])
+
     return (
-        <>
+        <Provider store={store}>
+            <GlobalStyle />
             <Head>
                 <meta
                     name="viewport"
@@ -74,9 +114,27 @@ export default function App({ Component, pageProps }) {
                     `}</style>
                 ) : null}
             </Head>
-            <ThemeProvider theme={LightTheme}>
-                <Component {...pageProps} />
-            </ThemeProvider>
-        </>
+            <PaperProviver>
+                <StyledProvider theme={theme}>
+                    <Viewport>
+                        <Component {...pageProps} />
+                    </Viewport>
+                </StyledProvider>
+            </PaperProviver>
+        </Provider>
     );
 }
+
+// Only uncomment this method if you have blocking data requirements for
+// every single page in your application. This disables the ability to
+// perform automatic static optimization, causing every page in your app to
+// be server-side rendered.
+//
+// MyApp.getInitialProps = async (appContext: AppContext) => {
+//   // calls page's `getInitialProps` and fills `appProps.pageProps`
+//   const appProps = await App.getInitialProps(appContext);
+
+//   return { ...appProps }
+// }
+
+export default App;
