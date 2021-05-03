@@ -1,6 +1,6 @@
 {
     "name": "react-native-styled-paper",
-    "version": "1.0.0-develop.7",
+    "version": "1.0.0-develop.8",
     "description": "",
     "main": "dist/components/index.ts",
     "types": "dist/types/index.d.ts",
