@@ -10,7 +10,7 @@ import overlay from "../theme/overlay";
 import { DEFAULT_APPBAR_HEIGHT, Appbar } from "./Appbar";
 import shadow from "../theme/shadow";
 import { APPROX_STATUSBAR_HEIGHT } from "../theme/constants";
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = React.ComponentProps<typeof Appbar> & {
     /**
@@ -84,8 +84,9 @@ const AppbarHeader = (props: Props) => {
         dark,
         ...rest
     } = props;
+    const theme = React.useContext(ThemeContext);
 
-    const { dark: isDarkTheme, colors, mode } = rest.theme;
+    const { dark: isDarkTheme, colors, mode } = theme;
     const {
         height = DEFAULT_APPBAR_HEIGHT,
         elevation = 4,
