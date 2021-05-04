@@ -41,5 +41,7 @@ jobs:
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
         github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
         npm_token: ${{ secrets.ACTIONS_DEPLOY_NPM_TOKEN }}
+        NPM_TOKEN: ${{ secrets.ACTIONS_DEPLOY_NPM_TOKEN }}
         repository: ${{ github.repository }}
