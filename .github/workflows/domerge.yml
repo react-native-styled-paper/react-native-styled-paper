@@ -32,15 +32,7 @@ jobs:
     - run: yarn test
     - run: yarn build --if-present
     - name: Deploy
+      uses: codfish/semantic-release-action@v1
       env:
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.ACTIONS_DEPLOY_NPM_TOKEN }}
-        repository: ${{ github.repository }}
-      run: |
-        git config --global user.name $user_name
-        git config --global user.email $user_email
-        git remote set-url origin https://${GITHUB_TOKEN}@github.com/${repository}
-        npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
-        npx semantic-release
