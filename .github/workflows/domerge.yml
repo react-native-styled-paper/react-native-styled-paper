@@ -10,9 +10,6 @@ on:
       release-next,
       master
     ]
-  pull_request:
-    branches: [
-    ]
 
 jobs:
   build:
@@ -36,8 +33,6 @@ jobs:
     - run: yarn build --if-present
     - name: Deploy
       run: |
-        yarn st-install
-        yarn st-build
         git config --global user.name $user_name
         git config --global user.email $user_email
         git remote set-url origin https://${github_token}@github.com/${repository}
