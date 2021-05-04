@@ -2,7 +2,9 @@
 ## Get Started
 
 ### Installation
-
+```shell
+npm install react-native-styled-paper
+```
 ### Usage
 
 ```js
