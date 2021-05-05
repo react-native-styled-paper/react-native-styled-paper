@@ -1,6 +1,6 @@
 # react-native-styled-paper
 
-[Docs](https://github.com/react-native-styled-paper/react-native-styled-paper)
+[Docs](https://react-native-styled-paper.github.io/react-native-styled-paper/)
 ## Get Started
 
 ### Installation
