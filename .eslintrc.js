@@ -35,7 +35,7 @@ module.exports = {
         "no-console": [
             2,
             {
-                "allow": ["warn", "error"]
+                "allow": ["info", "warn", "error"]
             }
         ],
         "indent": [ 2, 4 ],

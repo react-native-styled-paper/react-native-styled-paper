@@ -2,13 +2,12 @@ import * as React from "react";
 import { Platform } from "react-native";
 import { Provider } from "react-redux";
 // import { I18nManager, Platform } from "react-native";
-import { default as PaperProviver } from 'react-native-styled-paper/components/theme/Provider';
-import LightTheme from "react-native-styled-paper/components/theme/LightTheme";
+import { default as PaperProviver } from "react-native-styled-paper/components/theme/Provider";
 import Head from "next/head";
-import type { AppProps /*, AppContext */ } from 'next/app';
+import type { AppProps /*, AppContext */ } from "next/app";
 import { Viewport } from "react-native-styled-paper/components/Container";
 import { useStore } from "../store";
-import { createGlobalStyle, ThemeProvider as StyledProvider } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { useRouter } from "next/router";
 
 const GlobalStyle = createGlobalStyle`
@@ -17,85 +16,29 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-`
-
-// const PERSISTENCE_KEY = "NAVIGATION_STATE";
-// const PREFERENCES_KEY = "APP_PREFERENCES";
-
-// const CustomDarkTheme = {
-//     ...DarkTheme,
-//     colors: {
-//         ...DarkTheme.colors,
-//         customColor: "#BADA55",
-//     },
-//     fonts: {
-//         ...DarkTheme.fonts,
-//         superLight: { ...DarkTheme.fonts["light"] },
-//     },
-//     userDefinedThemeProperty: "",
-//     animation: {
-//         ...DarkTheme.animation,
-//         customProperty: 1,
-//     },
-// };
-
-// const CustomDefaultTheme = {
-//     colors: {
-//         customColor: "#BADA55",
-//     },
-//     fonts: {
-//     },
-//     userDefinedThemeProperty: "",
-//     animation: {
-//         customProperty: 1,
-//     },
-// };
-
-// const PreferencesContext = React.createContext(null);
-
-const theme = {
-    ...LightTheme,
-    // breakpoints: ['40em', '52em', '64em'],
-}
+`;
 
 const App =({ Component, pageProps }: AppProps) => {
     const router = useRouter();
     const store = useStore(pageProps.initialReduxState);
-    // const [theme] = React.useState(CustomDefaultTheme);
-    // const [rtl, setRtl] = React.useState(I18nManager.isRTL);
-
-    // const preferences = React.useMemo(
-    //     () => ({
-    //         toggleTheme: () =>
-    //             setTheme((theme) =>
-    //                 theme === CustomDefaultTheme
-    //                     ? CustomDarkTheme
-    //                     : CustomDefaultTheme
-    //             ),
-    //         toggleRtl: () => setRtl((rtl) => !rtl),
-    //         rtl,
-    //         theme,
-    //     }),
-    //     [rtl, theme]
-    // );
 
     React.useEffect(() => {
         const handleRouteChange = (url, opts) => {
-            console.log(
-              `App is changing to ${url} ${
-                opts?.shallow ? 'with' : 'without'
-              } shallow routing`
-            )
-          }
+            console.info(
+                `App is changing to ${url} ${
+                    opts?.shallow ? "with" : "without"
+                } shallow routing`
+            );
+        };
 
-          router.events.on('routeChangeStart', handleRouteChange)
+        router.events.on("routeChangeStart", handleRouteChange);
 
-          // If the component is unmounted, unsubscribe
-          // from the event with the `off` method:
-          return () => {
-            router.events.off('routeChangeStart', handleRouteChange)
-          }
-    }, [])
+        // If the component is unmounted, unsubscribe
+        // from the event with the `off` method:
+        return () => {
+            router.events.off("routeChangeStart", handleRouteChange);
+        };
+    }, []);
 
     return (
         <Provider store={store}>
@@ -115,15 +58,13 @@ const App =({ Component, pageProps }: AppProps) => {
                 ) : null}
             </Head>
             <PaperProviver>
-                <StyledProvider theme={theme}>
-                    <Viewport>
-                        <Component {...pageProps} />
-                    </Viewport>
-                </StyledProvider>
+                <Viewport>
+                    <Component {...pageProps} />
+                </Viewport>
             </PaperProviver>
         </Provider>
     );
-}
+};
 
 // Only uncomment this method if you have blocking data requirements for
 // every single page in your application. This disables the ability to

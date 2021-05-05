@@ -4,7 +4,7 @@ import { Text } from "react-native-styled-paper/components/Typography";
 import * as Avatar from "react-native-styled-paper/components/Avatar";
 import FolderIcon from "@mdi/svg/svg/folder.svg";
 import { Button } from "react-native-styled-paper/components/Button";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import Layout from "components/layout";
 import { IconButton } from "react-native-styled-paper/components/IconButton";
 
@@ -34,11 +34,11 @@ function Home() {
                 icon={FolderIcon}
                 // color={Colors.red500}
                 size={20}
-                onPress={() => console.log('Pressed')}
+                onPress={() => console.info("Pressed")}
             />
             <Button
                 onPress={() => {
-                    router.push(`/profile`);
+                    router.push("/profile");
                 }}
             >
                 Go to profile
