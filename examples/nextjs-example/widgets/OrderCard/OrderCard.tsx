@@ -6,5 +6,5 @@ export function OrderCard(props) {
     return (
         <Card>
         </Card>
-    )
+    );
 }

@@ -11,7 +11,7 @@ const Container = styled.div<LayoutProps & SpaceProps>({
 
 Container.defaultProps = {
     height: "100%",
-}
+};
 
 const ViewportScrollView = styled(ScrollView)<SpaceProps>({
 
@@ -40,7 +40,7 @@ function Layout(props: Props) {
                 <ViewportScrollView>{children}</ViewportScrollView>
             </Container>
         </>
-    )
+    );
 }
 
 export default Layout;

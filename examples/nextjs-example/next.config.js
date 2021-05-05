@@ -22,13 +22,13 @@ module.exports = withPlugins([withTM, withNextEnv], {
 
         config.module.rules.push({
             test: /\.(jsx|ts|tsx)$/,
-            use: ['babel-loader'],
+            use: ["babel-loader"],
             exclude: /(node_modules\/(?!(react-native-styled-paper)\/).*|dist|.stoybook)/,
         });
 
         config.module.rules.push({
             test: /\.svg$/,
-            use: ['@svgr/webpack'],
+            use: ["@svgr/webpack"],
         });
 
         // config.module.rules.push({
