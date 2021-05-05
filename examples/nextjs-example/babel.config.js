@@ -1,7 +1,9 @@
 module.exports = {
-    presets: ["next/babel", "@babel/preset-flow", "@babel/preset-typescript"],
-    plugins: [
-        ["react-native-web", { commonjs: true }],
+    "presets": [
+        "next/babel"
+    ],
+    "plugins": [
+        ["react-native-web", { "commonjs": true }],
         ["styled-components", { "ssr": true }],
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-proposal-object-rest-spread",
@@ -9,13 +11,14 @@ module.exports = {
         [
             "module-resolver",
             {
-                alias: {
+                "alias": {
                     "^react-native$": "react-native-web",
                     "react-native-vector-icons":
                         "@ovaeasy/react-native-vector-icons",
-                    components: "./components",
-                },
-            },
-        ],
-    ],
-};
+                    "react-native-styled-paper": "./react-native-styled-paper",
+                    "widgets": "./widgets",
+                }
+            }
+        ]
+    ]
+}

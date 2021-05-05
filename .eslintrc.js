@@ -41,6 +41,8 @@ module.exports = {
         "indent": [ 2, 4 ],
         "semi": [ 2, "always" ],
         "quotes": [ 2, "double" ],
-        "@typescript-eslint/ban-ts-comment": 1,
+        "@typescript-eslint/explicit-module-boundary-types": 0,
+        "@typescript-eslint/ban-ts-comment": 0,
+        "@typescript-eslint/no-unused-vars": [ 1, { "args": "none" } ],
     }
 };

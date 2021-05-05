@@ -5,5 +5,11 @@ node_modules
 
 # dist
 /dist
+/types
 
 .eslintcache
+.npmrc
+.githubtoken
+.env
+
+README-BK.md
