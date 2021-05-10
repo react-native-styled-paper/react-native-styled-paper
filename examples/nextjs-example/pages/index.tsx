@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import Layout from "components/layout";
 import { IconButton } from "react-native-styled-paper/components/IconButton";
 import Image from "react-native-styled-paper/components/Image/Image";
+import SegmentedControl from '@react-native-community/segmented-control';
 
 const Title = styled.h1`
   color: red;
@@ -16,6 +17,7 @@ const Title = styled.h1`
 
 function Home() {
     const router = useRouter();
+    const [ selectedSegmentIndex, setSelectedSegmentIndex ] = React.useState(-1);
 
     return (
         <Layout>
@@ -47,6 +49,13 @@ function Home() {
             <Image
                 source={{ uri: "https://via.placeholder.com/350x150.png" }}
                 style={{ width: "300px", height: "150px" }}
+            />
+            <SegmentedControl
+                values={['One', 'Two']}
+                selectedIndex={selectedSegmentIndex}
+                onChange={(event) => {
+                    setSelectedSegmentIndex(event.nativeEvent.selectedSegmentIndex);
+                }}
             />
         </Layout>
     );
