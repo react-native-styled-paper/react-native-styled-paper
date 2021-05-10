@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Platform, useWindowDimensions } from "react-native";
+import { Platform, Appearance, useWindowDimensions, ColorSchemeName } from "react-native";
 import { Provider } from "react-redux";
 // import { I18nManager, Platform } from "react-native";
 import { default as PaperProviver } from "react-native-styled-paper/components/theme/Provider";
@@ -20,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const App =({ Component, pageProps }: AppProps) => {
+    const colorSchemeName = Appearance?.getColorScheme() || "light";
+    const [colorScheme, setColorScheme] = React.useState<ColorSchemeName>(
+        colorSchemeName
+    );
     const router = useRouter();
     const store = useStore(pageProps.initialReduxState);
     const { width: wWidth, height: wHeight } = useWindowDimensions();
@@ -42,6 +46,20 @@ const App =({ Component, pageProps }: AppProps) => {
         };
     }, []);
 
+    React.useEffect(() => {
+        const handleAppearanceChange = (
+            preferences: Appearance.AppearancePreferences
+        ) => {
+            const { colorScheme } = preferences;
+            setColorScheme(colorScheme);
+        };
+
+        Appearance?.addChangeListener(handleAppearanceChange);
+        return () => {
+            Appearance?.removeChangeListener(handleAppearanceChange);
+        };
+    }, [colorScheme]);
+
     return (
         <Provider store={store}>
             <GlobalStyle />
@@ -59,7 +77,7 @@ const App =({ Component, pageProps }: AppProps) => {
                     `}</style>
                 ) : null}
             </Head>
-            <PaperProviver>
+            <PaperProviver colorSchemeName={colorScheme}>
                 <AppContext.Provider value={{
                     wWidth,
                     wHeight,
