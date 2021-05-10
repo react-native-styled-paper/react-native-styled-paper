@@ -7,6 +7,7 @@ import { Button } from "react-native-styled-paper/components/Button";
 import { useRouter } from "next/router";
 import Layout from "components/layout";
 import { IconButton } from "react-native-styled-paper/components/IconButton";
+import Image from "react-native-styled-paper/components/Image/Image";
 
 const Title = styled.h1`
   color: red;
@@ -43,6 +44,10 @@ function Home() {
             >
                 Go to profile
             </Button>
+            <Image
+                source={{ uri: "https://via.placeholder.com/350x150.png" }}
+                style={{ width: "300px", height: "150px" }}
+            />
         </Layout>
     );
 }
