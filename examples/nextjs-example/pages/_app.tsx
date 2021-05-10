@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Platform } from "react-native";
+import { Platform, useWindowDimensions } from "react-native";
 import { Provider } from "react-redux";
 // import { I18nManager, Platform } from "react-native";
 import { default as PaperProviver } from "react-native-styled-paper/components/theme/Provider";
@@ -9,6 +9,7 @@ import { Viewport } from "react-native-styled-paper/components/Container";
 import { useStore } from "../store";
 import { createGlobalStyle } from "styled-components";
 import { useRouter } from "next/router";
+import AppContext from "components/appContext";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -21,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
 const App =({ Component, pageProps }: AppProps) => {
     const router = useRouter();
     const store = useStore(pageProps.initialReduxState);
+    const { width: wWidth, height: wHeight } = useWindowDimensions();
 
     React.useEffect(() => {
         const handleRouteChange = (url, opts) => {
@@ -58,9 +60,14 @@ const App =({ Component, pageProps }: AppProps) => {
                 ) : null}
             </Head>
             <PaperProviver>
-                <Viewport>
-                    <Component {...pageProps} />
-                </Viewport>
+                <AppContext.Provider value={{
+                    wWidth,
+                    wHeight,
+                }}>
+                    <Viewport>
+                        <Component {...pageProps} />
+                    </Viewport>
+                </AppContext.Provider>
             </PaperProviver>
         </Provider>
     );
