@@ -1,6 +1,7 @@
 module.exports = {
     "presets": [
-        "next/babel"
+        "next/babel",
+        "@babel/preset-flow"
     ],
     "plugins": [
         ["react-native-web", { "commonjs": true }],
