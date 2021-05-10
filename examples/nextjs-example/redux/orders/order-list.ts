@@ -6,11 +6,11 @@ const initialState = {
 
 export default function orderListReducer(state = initialState, action) {
     switch (action.type) {
-        case orderList_findMany.toString():
-            return {
-                ...state,
-            }
-        default:
-            return state;
+    case orderList_findMany.toString():
+        return {
+            ...state,
+        };
+    default:
+        return state;
     }
 }

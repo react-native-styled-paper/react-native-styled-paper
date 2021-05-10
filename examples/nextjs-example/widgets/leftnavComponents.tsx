@@ -8,7 +8,7 @@ const accordion00 = {
         { title: "Button" },
         { title: "TextInput" },
     ],
-}
+};
 
 const accordion01 = {
     title: "Card",
@@ -16,7 +16,7 @@ const accordion01 = {
     items: [
         { title: "Card", pathname: "/cards/card" },
     ],
-}
+};
 
 const accordion02 = {
     title: "Modal",
@@ -24,7 +24,7 @@ const accordion02 = {
     items: [
         { title: "Modal", pathname: "/modals/modal" },
     ],
-}
+};
 
 const section0 = {
     accordions: [

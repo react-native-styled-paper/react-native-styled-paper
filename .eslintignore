@@ -3,7 +3,7 @@
 **/.next/*
 **/dist/*
 
-**/examples/*
+**/examples/**/*
 **/types/*
 types.d.ts
 

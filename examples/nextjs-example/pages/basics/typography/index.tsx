@@ -25,14 +25,14 @@ export default function TypographyPage(props) {
             </Button>
             {(Array.isArray(orders) && orders.length > 0) &&
                 orders
-                .map((order, index) => {
-                    return (
-                        <OrderCard
-                            key={index}
-                        />
-                    )
-                })
+                    .map((order, index) => {
+                        return (
+                            <OrderCard
+                                key={index}
+                            />
+                        );
+                    })
             }
         </Layout>
-    )
+    );
 }

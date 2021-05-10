@@ -9,8 +9,8 @@ const CustomViewport = (props) => {
         >
             {children}
         </ScrollviewViewport>
-    )
-}
+    );
+};
 
 CustomViewport.defaultProps = {
     paddingTop: "56px",
