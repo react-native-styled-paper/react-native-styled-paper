@@ -7,7 +7,6 @@ const Viewport = styled.View<PositionProps & SpaceProps>(compose(
 ));
 
 Viewport.defaultProps = {
-    // position
     position: "absolute",
     top: 0,
     right: 0,
