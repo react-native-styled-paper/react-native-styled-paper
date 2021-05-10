@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-const mobileBreakPoint = parseInt("992px".replace('px', ''));
+const mobileBreakPoint = parseInt("992px".replace("px", ""));
 
 export const useWindowSize = () => {
     const [width, setWidth] = useState(0);
@@ -13,9 +13,9 @@ export const useWindowSize = () => {
             setHeight(window.innerHeight);
             setMobileView(window.innerWidth < mobileBreakPoint);
         }
-        window.addEventListener('resize', updateSize);
+        window.addEventListener("resize", updateSize);
         updateSize();
-        return () => window.removeEventListener('resize', updateSize);
+        return () => window.removeEventListener("resize", updateSize);
     }, []);
     return { width, height, isMobileView };
 };

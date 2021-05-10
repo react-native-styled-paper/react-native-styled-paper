@@ -1,4 +1,6 @@
 # react-native-styled-paper
+
+[Docs](https://react-native-styled-paper.github.io/react-native-styled-paper/)
 ## Get Started
 
 ### Installation
@@ -8,7 +10,7 @@ npm install react-native-styled-paper
 ### Usage
 
 ```js
-import { Button } from 'react-native-styled-paper';
+import { Button } from 'react-native-styled-paper/components/Button';
 
 <Button />;
 ```
@@ -24,17 +26,12 @@ import { Button } from 'react-native-styled-paper';
 - [x] [CheckBox](https://reactnativestyledpaper.com/docs/checkbox)
 - [x] [Divider](https://reactnativestyledpaper.com/docs/divider)
 - [x] [Header](https://reactnativestyledpaper.com/docs/header)
-- [x] [HTML style headings](https://reactnativestyledpaper.com/docs/text)
 - [x] [Icon](https://reactnativestyledpaper.com/docs/icon)
 - [x] [Image](https://reactnativestyledpaper.com/docs/image)
 - [x] [Input](https://reactnativestyledpaper.com/docs/input)
 - [x] [ListItem](https://reactnativestyledpaper.com/docs/listitem)
-- [x] [Overlay](https://reactnativestyledpaper.com/docs/overlay)
-- [x] [Pricing](https://reactnativestyledpaper.com/docs/pricing)
-- [x] [Rating](https://reactnativestyledpaper.com/docs/rating)
 - [x] [SearchBar](https://reactnativestyledpaper.com/docs/searchbar)
 - [x] [Slider](https://reactnativestyledpaper.com/docs/slider)
-- [x] [Social Icons / Social Icon Buttons](https://reactnativestyledpaper.com/docs/social_icon)
 - [x] [Tile](https://reactnativestyledpaper.com/docs/tile)
 - [x] [Tooltip](https://reactnativestyledpaper.com/docs/tooltip)
 

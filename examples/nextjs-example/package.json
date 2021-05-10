@@ -4,7 +4,9 @@
     "scripts": {
         "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
         "build": "next build",
-        "start": "next start"
+        "start": "next start",
+        "lint": "eslint . --ext ts --ext tsx --ext js",
+        "test": "jest --passWithNoTests"
     },
     "dependencies": {
         "@babel/runtime": "^7.12.5",
@@ -36,6 +38,8 @@
         "@types/react": "16.8.23",
         "@types/react-dom": "16.8.4",
         "@types/styled-components": "5.0.1",
+        "@typescript-eslint/eslint-plugin": "^4.22.1",
+        "@typescript-eslint/parser": "^4.22.1",
         "babel-loader": "^8.2.2",
         "babel-plugin-inline-react-svg": "^1.1.2",
         "babel-plugin-module-resolver": "^4.1.0",
@@ -43,6 +47,7 @@
         "babel-plugin-styled-components": "^1.10.0",
         "chrome-launcher": "^0.13.4",
         "cross-env": "^7.0.3",
+        "eslint": "^7.25.0",
         "file-loader": "^6.2.0",
         "next-compose-plugins": "^2.2.1",
         "next-transpile-modules": "^6.0.0",

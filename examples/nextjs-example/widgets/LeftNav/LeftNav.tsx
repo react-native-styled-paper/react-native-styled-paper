@@ -16,16 +16,16 @@ const LeftNav = (props) => {
     const router = useRouter();
 
     const [ expandedId, setExpandedId ] = React.useState("");
-    const [ activeItemId, setActiveItemId ] = React.useState("");
+    // const [ activeItemId, setActiveItemId ] = React.useState("");
 
     const handlePress = (accordionIndex) => {
         setExpandedId(expandedId === accordionIndex ? "" : accordionIndex);
-    }
+    };
 
     const handleItemPress = (item, itemIndex?) => {
         // setActiveItemId(activeItemId === itemIndex ? "" : itemIndex);
         router.push(item.pathname);
-    }
+    };
 
     const renderItem = (item, iIndex, aIndex, sIndex) => {
         const { title } = item;
@@ -33,8 +33,8 @@ const LeftNav = (props) => {
 
         return (
             <Item title={title} key={itemIndex} onPress={() => handleItemPress(item, itemIndex)}/>
-        )
-    }
+        );
+    };
 
     const renderAccordion = (accordion, aIndex, sIndex) => {
 
@@ -56,8 +56,8 @@ const LeftNav = (props) => {
                         .map((item, iIndex) => renderItem(item, iIndex, aIndex, sIndex))
                 }
             </Accordion>
-        )
-    }
+        );
+    };
 
     const renderSection = (section, sIndex) => {
         const { accordions } = section;
@@ -69,8 +69,8 @@ const LeftNav = (props) => {
                         .map((accordion, aIndex) => renderAccordion(accordion, aIndex, sIndex))
                 }
             </Section>
-        )
-    }
+        );
+    };
 
     return (
         <Container paddingTop={[ "0", "56px" ]}>
@@ -79,8 +79,8 @@ const LeftNav = (props) => {
                     .map((section, sIndex) => renderSection(section, sIndex))
             }
         </Container>
-    )
-}
+    );
+};
 
 LeftNav.propTypes = {
 

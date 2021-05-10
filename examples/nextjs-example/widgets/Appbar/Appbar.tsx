@@ -27,7 +27,7 @@ const DesktopAppbar = (props) => {
                 <RNSPAppbar.Action
                     icon={MenuIcon}
                     color="black"
-                    onPress={() => console.log('Pressed archive')}
+                    onPress={() => console.info("Pressed archive")}
                 />
             </MiddleContainer>
             <Menu
@@ -36,21 +36,21 @@ const DesktopAppbar = (props) => {
                 anchor={
                     <RNSPAppbar.Action icon={MenuIcon} color="white" size={24} onPress={openMenu} />
                 }>
-                <Menu.Item onPress={() => {console.log('Option 1 was pressed')}} title="Option 1" />
-                <Menu.Item onPress={() => {console.log('Option 2 was pressed')}} title="Option 2" />
-                <Menu.Item onPress={() => {console.log('Option 3 was pressed')}} title="Option 3" disabled />
+                <Menu.Item onPress={() => {console.info("Option 1 was pressed");}} title="Option 1" />
+                <Menu.Item onPress={() => {console.info("Option 2 was pressed");}} title="Option 2" />
+                <Menu.Item onPress={() => {console.info("Option 3 was pressed");}} title="Option 3" disabled />
             </Menu>
         </StyledRNSPAppbar>
-    )
-}
+    );
+};
 
 const MobileAppbar = (props) => {
     return (
         <RNSPAppbar>
             <Text>Appbar</Text>
         </RNSPAppbar>
-    )
-}
+    );
+};
 
 
 export const Appbar = (props) => {
@@ -60,4 +60,4 @@ export const Appbar = (props) => {
     return isMobileView ?
         <MobileAppbar {...props}>{children}</MobileAppbar> :
         <DesktopAppbar {...props}>{children}</DesktopAppbar>;
-}
+};

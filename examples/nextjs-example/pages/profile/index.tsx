@@ -10,14 +10,14 @@ export default function ProfilePage(props) {
 
     return (
         <Layout>
-                <Text>Profile Page</Text>
-                <Button
-                    onPress={() => {
-                        router.back();
-                    }}
-                >
+            <Text>Profile Page</Text>
+            <Button
+                onPress={() => {
+                    router.back();
+                }}
+            >
                     Go Back
-                </Button>
-                </Layout>
-    )
+            </Button>
+        </Layout>
+    );
 }
