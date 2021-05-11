@@ -9,21 +9,16 @@ import {
 import color from "color";
 
 import TouchableRipple from "../TouchableRipple/TouchableRipple";
-import Icon from "../Icon/SvgIcon";
-import CrossFadeIcon from "../Icon/CrossFadeIcon";
 
 import type { $RemoveChildren } from "../types";
-import { DefaultTheme, ThemeContext } from "styled-components";
+import { DefaultTheme } from "styled-components";
+import Image from "../../components/Image/ImageComponent";
 
 type Props = $RemoveChildren<typeof TouchableRipple> & {
     /**
      * Icon to display.
      */
-    icon: React.ReactElement;
-    /**
-     * Color of the icon.
-     */
-    color?: string;
+    source: Record<string, any>;
     /**
      * Size of the icon.
      */
@@ -70,12 +65,12 @@ type Props = $RemoveChildren<typeof TouchableRipple> & {
  * ## Usage
  * ```js
  * import * as React from 'react';
- * import { IconButton, Colors } from 'react-native-paper';
+ * import { ImageButton, Colors } from 'react-native-paper';
  * import CameraIcon from "@mdi/svg/svg/camera.svg";
  *
  * const MyComponent = () => (
- *   <IconButton
- *     icon={CameraIcon}
+ *   <ImageButton
+ *     source={CameraIcon}
  *     color={Colors.red500}
  *     size={20}
  *     onPress={() => console.log('Pressed')}
@@ -87,9 +82,8 @@ type Props = $RemoveChildren<typeof TouchableRipple> & {
  *
  * @extends TouchableRipple props https://callstack.github.io/react-native-paper/touchable-ripple.html
  */
-const IconButton = ({
-    icon,
-    color: customColor,
+const ImageButton = ({
+    source,
     size = 24,
     accessibilityLabel,
     disabled,
@@ -98,11 +92,7 @@ const IconButton = ({
     style,
     ...rest
 }: Props) => {
-    const theme = React.useContext(ThemeContext);
-    const iconColor =
-        typeof customColor !== "undefined" ? customColor : theme.colors.text;
-    const rippleColor = color(iconColor).alpha(0.32).rgb().string();
-    const IconComponent = animated ? CrossFadeIcon : Icon;
+    const rippleColor = color("#000000").alpha(0.32).rgb().string();
     const buttonSize = size * 1.5;
     return (
         <TouchableRipple
@@ -136,10 +126,14 @@ const IconButton = ({
             {...rest}
         >
             <View testID="icon_view">
-                <IconComponent color={iconColor} icon={icon} size={size} />
+                <Image
+                    source={source}
+                    resizeMode="cover"
+                    style={{ width: size, height: size }}
+                />
             </View>
         </TouchableRipple>
     );
 };
 
-export default IconButton;
+export default ImageButton;

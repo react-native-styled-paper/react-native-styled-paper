@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import Layout from "components/layout";
 import { IconButton } from "react-native-styled-paper/components/IconButton";
 import Image from "react-native-styled-paper/components/Image/Image";
+import ImageButton from "react-native-styled-paper/components/ImageButton";
 import SegmentedControl from '@react-native-community/segmented-control';
 
 const Title = styled.h1`
@@ -49,6 +50,11 @@ function Home() {
             <Image
                 source={{ uri: "https://via.placeholder.com/350x150.png" }}
                 style={{ width: "300px", height: "150px" }}
+            />
+            <ImageButton
+                source={{ uri: "https://via.placeholder.com/350x150.png" }}
+                size={300}
+                onPress={() => alert("Hello")}
             />
             <SegmentedControl
                 values={['One', 'Two']}
