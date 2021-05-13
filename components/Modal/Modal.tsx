@@ -119,6 +119,7 @@ class Modal extends React.Component<Props, State> {
     }
 
     static contextType = ThemeContext;
+    context!: React.ContextType<typeof ThemeContext>;
 
     state = {
         opacity: new Animated.Value(this.props.visible ? 1 : 0),
