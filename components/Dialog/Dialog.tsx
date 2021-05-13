@@ -1,7 +1,7 @@
 
 import * as React from "react";
 import { StyleProp, ViewStyle } from "react-native";
-import { Modal } from "../Modal";
+import Modal from "../Modal";
 import DialogContent from "./DialogContent";
 import DialogActions from "./DialogActions";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -92,7 +92,7 @@ const Dialog = ({
         <Modal
             // dismissable={dismissable}
             onDismiss={onDismiss}
-            isVisible={visible}
+            visible={visible}
             // contentContainerStyle={[
             //     {
             //         borderRadius: theme.roundness,

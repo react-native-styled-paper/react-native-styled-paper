@@ -1,6 +1,6 @@
 import * as React from "react";
 import { LayoutAnimation, LayoutAnimationConfig, UIManager } from "react-native";
-import { getStatusBarHeight } from "react-native-status-bar-height";
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
 import Box from "../Box";
 import Toast, { ToastConfig } from "../Toast";
 import { ToastInternalConfig } from "../Toast/index";

@@ -7,6 +7,7 @@ import { LeftNav } from "widgets/LeftNav";
 import { ProfileDropdown } from "widgets/ProfileDropdown";
 import { Viewport } from "react-native-styled-paper/components/Container";
 import useScrollInfo from "react-native-styled-paper/components/hooks/useScrollInfo";
+import ViewportBg from "react-native-styled-paper/components/Container/ViewportBg";
 
 const PageContainer = styled.div<LayoutProps & SpaceProps>({
     maxWidth: "100%",
@@ -71,32 +72,36 @@ function Layout(props: Props) {
     }
 
     return (
-        <Viewport>
-            <Appbar>
-                <ProfileDropdown
-                />
-            </Appbar>
-            <LeftNav
+        <>
+            <ViewportBg
             />
-            <PageContainer
-                data-testid="RNSP__viewport_container"
-                height={wHeight}
-                paddingLeft={[ "0", "240px" ]}
-            >
-                <ScrollView
-                    ref={scrollViewRef}
-                    onScroll={_handleScroll}
-                    style={{
-                        height: "100%",
-                    }}
+            <Viewport>
+                <Appbar>
+                    <ProfileDropdown
+                    />
+                </Appbar>
+                <LeftNav
+                />
+                <PageContainer
+                    data-testid="RNSP__viewport_container"
+                    height={wHeight}
+                    paddingLeft={[ "0", "240px" ]}
                 >
-                    {children}
-                    <View ref={myViewRef}>
-                        <Text>{"Hello"}</Text>
-                    </View>
-                </ScrollView>
-            </PageContainer>
-        </Viewport>
+                    <ScrollView
+                        ref={scrollViewRef}
+                        onScroll={_handleScroll}
+                        style={{
+                            height: "100%",
+                        }}
+                    >
+                        {children}
+                        <View ref={myViewRef}>
+                            <Text>{"Hello"}</Text>
+                        </View>
+                    </ScrollView>
+                </PageContainer>
+            </Viewport>
+        </>
     );
 }
 

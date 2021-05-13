@@ -10,6 +10,7 @@ import { IconButton } from "react-native-styled-paper/components/IconButton";
 import Image from "react-native-styled-paper/components/Image/Image";
 import ImageButton from "react-native-styled-paper/components/ImageButton";
 import SegmentedControl from '@react-native-community/segmented-control';
+import Modal from "react-native-styled-paper/components/Modal";
 
 const Title = styled.h1`
   color: red;
@@ -19,6 +20,8 @@ const Title = styled.h1`
 function Home() {
     const router = useRouter();
     const [ selectedSegmentIndex, setSelectedSegmentIndex ] = React.useState(-1);
+
+    const [ isModalOpen, setIsModalOpen ] = React.useState(false);
 
     return (
         <Layout>
@@ -42,7 +45,8 @@ function Home() {
             />
             <Button
                 onPress={() => {
-                    router.push("/profile");
+                    setIsModalOpen(true);
+                    // router.push("/profile");
                 }}
             >
                 Go to profile
@@ -63,6 +67,11 @@ function Home() {
                     setSelectedSegmentIndex(event.nativeEvent.selectedSegmentIndex);
                 }}
             />
+            <Modal
+                visible={isModalOpen}
+            >
+                <Text>Hello</Text>
+            </Modal>
         </Layout>
     );
 }
