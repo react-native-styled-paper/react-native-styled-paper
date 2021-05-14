@@ -51,15 +51,6 @@ function Home() {
             >
                 Go to profile
             </Button>
-            <Image
-                source={{ uri: "https://via.placeholder.com/350x150.png" }}
-                style={{ width: "300px", height: "150px" }}
-            />
-            <ImageButton
-                source={{ uri: "https://via.placeholder.com/350x150.png" }}
-                size={300}
-                onPress={() => alert("Hello")}
-            />
             <SegmentedControl
                 values={['One', 'Two']}
                 selectedIndex={selectedSegmentIndex}
@@ -72,6 +63,20 @@ function Home() {
             >
                 <Text>Hello</Text>
             </Modal>
+            <Image
+                source={{ uri: "https://via.placeholder.com/350x150.png" }}
+                style={{ width: "300px", height: "150px" }}
+            />
+            <ImageButton
+                source={{ uri: "https://via.placeholder.com/350x150.png" }}
+                size={300}
+                onPress={() => alert("Hello")}
+            />
+            <ImageButton
+                source={{ uri: "https://via.placeholder.com/350x150.png" }}
+                size={300}
+                onPress={() => alert("Hello")}
+            />
         </Layout>
     );
 }
