@@ -28,6 +28,8 @@ const App =({ Component, pageProps }: AppProps) => {
     const store = useStore(pageProps.initialReduxState);
     const { width: wWidth, height: wHeight } = useWindowDimensions();
 
+    const [ leftnavIsOpen, setLeftnavIsOpen ] = React.useState(false);
+
     React.useEffect(() => {
         const handleRouteChange = (url, opts) => {
             console.info(
@@ -81,6 +83,8 @@ const App =({ Component, pageProps }: AppProps) => {
                 <AppContext.Provider value={{
                     wWidth,
                     wHeight,
+                    leftnavIsOpen: leftnavIsOpen,
+                    setLeftnavIsOpen: setLeftnavIsOpen,
                 }}>
                     <Viewport>
                         <Component {...pageProps} />

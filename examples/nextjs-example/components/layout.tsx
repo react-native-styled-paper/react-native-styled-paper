@@ -1,8 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
+import nativeStyled from "styled-components/native";
 import { ScrollView, View, Text, useWindowDimensions } from "react-native";
 import { compose, layout, LayoutProps, space, SpaceProps } from "styled-system";
-import { Appbar } from "widgets/Appbar/Appbar";
+import { Header } from "widgets/Appbar";
 import { LeftNav } from "widgets/LeftNav";
 import { ProfileDropdown } from "widgets/ProfileDropdown";
 import { Viewport } from "react-native-styled-paper/components/Container";
@@ -10,14 +11,22 @@ import useScrollInfo from "react-native-styled-paper/components/hooks/useScrollI
 import ViewportBg from "react-native-styled-paper/components/Container/ViewportBg";
 
 const PageContainer = styled.div<LayoutProps & SpaceProps>({
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
     maxWidth: "100%",
     flex: 1,
-    overflowY: "auto",
 }, compose(layout, space));
 
 PageContainer.defaultProps = {
     height: "100vh",
 };
+
+const StyledScrollView = nativeStyled(ScrollView)<LayoutProps & SpaceProps>({
+
+}, compose(layout, space));
 
 type Props = {
     children?: React.ReactNode,
@@ -72,36 +81,38 @@ function Layout(props: Props) {
     }
 
     return (
-        <>
+        <Viewport style={{ flex: 1 }}>
             <ViewportBg
             />
-            <Viewport>
-                <Appbar>
-                    <ProfileDropdown
-                    />
-                </Appbar>
-                <LeftNav
+            <Header>
+                <ProfileDropdown
                 />
-                <PageContainer
-                    data-testid="RNSP__viewport_container"
-                    height={wHeight}
-                    paddingLeft={[ "0", "240px" ]}
-                >
-                    <ScrollView
-                        ref={scrollViewRef}
-                        onScroll={_handleScroll}
-                        style={{
-                            height: "100%",
-                        }}
-                    >
-                        {children}
-                        <View ref={myViewRef}>
-                            <Text>{"Hello"}</Text>
-                        </View>
-                    </ScrollView>
-                </PageContainer>
-            </Viewport>
-        </>
+            </Header>
+            <LeftNav
+            />
+            {/* <PageContainer
+                data-testid="RNSP__viewport_container"
+                height={wHeight}
+                paddingTop={"56px"}
+                paddingLeft={[ "0", "240px" ]}
+            > */}
+            <StyledScrollView
+                ref={scrollViewRef}
+                onScroll={_handleScroll}
+                height={wHeight}
+                style={{
+                    height: wHeight,
+                }}
+                paddingTop={"56px"}
+                paddingLeft={"240px"}
+            >
+                {children}
+                <View ref={myViewRef}>
+                    <Text>{"Hello"}</Text>
+                </View>
+            </StyledScrollView>
+            {/* </PageContainer> */}
+        </Viewport>
     );
 }
 
