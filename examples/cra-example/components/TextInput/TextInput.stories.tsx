@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View } from "react-native";
 import { storiesOf } from "@storybook/react";
-import { TextInput } from "react-native-styled-paper/components/TextInput";
+import TextInput from "react-native-styled-paper/components/TextInput";
 
 const TextInputExample = () => {
     const [text, setText] = React.useState('');

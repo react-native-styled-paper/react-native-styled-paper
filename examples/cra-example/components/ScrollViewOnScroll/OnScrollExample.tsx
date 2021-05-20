@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ScrollView } from "react-native";
 import { action } from "@storybook/addon-actions";
-import { Card } from "react-native-styled-paper/components/Card";
+import Card from "react-native-styled-paper/components/Card";
 
 const testData = [
     {},

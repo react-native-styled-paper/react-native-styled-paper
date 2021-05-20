@@ -1,9 +1,9 @@
 import * as React from "react";
 import { View } from "react-native";
 import { storiesOf } from "@storybook/react";
-import { Menu } from "react-native-styled-paper/components/Menu";
-import { Button } from "react-native-styled-paper/components/Button";
-import { Divider } from "react-native-styled-paper/components/Divider";
+import Menu from "react-native-styled-paper/components/Menu";
+import Button from "react-native-styled-paper/components/Button";
+import Divider from "react-native-styled-paper/components/Divider";
 
 const MenuExample = () => {
     const [visible, setVisible] = React.useState(false);

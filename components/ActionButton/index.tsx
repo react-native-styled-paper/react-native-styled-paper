@@ -1,5 +1,5 @@
 import ActionButton from "./ActionButton";
 
 export {
-    ActionButton,
+    ActionButton as default,
 };

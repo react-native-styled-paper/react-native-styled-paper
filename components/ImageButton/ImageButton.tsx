@@ -12,7 +12,7 @@ import TouchableRipple from "../TouchableRipple/TouchableRipple";
 
 import type { $RemoveChildren } from "../types";
 import { DefaultTheme } from "styled-components";
-import Image from "../../components/Image/ImageComponent";
+import Image from "../Image/Image";
 
 type Props = $RemoveChildren<typeof TouchableRipple> & {
     /**

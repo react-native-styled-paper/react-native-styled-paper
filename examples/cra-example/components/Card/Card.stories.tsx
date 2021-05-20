@@ -4,9 +4,9 @@ import { Text } from "react-native";
 import { storiesOf } from '@storybook/react';
 // import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
-import { Card } from 'react-native-styled-paper/components/Card';
+import Card from 'react-native-styled-paper/components/Card';
 import { Title, Paragraph } from 'react-native-styled-paper/components/Typography';
-import { Button } from 'react-native-styled-paper/components/Button';
+import Button from 'react-native-styled-paper/components/Button';
 import * as Avatar from 'react-native-styled-paper/components/Avatar';
 
 // const LeftContent = props => <Avatar.Icon {...props} icon="folder" />

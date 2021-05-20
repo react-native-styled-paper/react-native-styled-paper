@@ -24,7 +24,7 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "jsx": "preserve",
-        "allowSyntheticDefaultImports": false
+        "allowSyntheticDefaultImports": true
     },
     "exclude": [
         "node_modules",
@@ -34,6 +34,7 @@
     ],
     "include": [
         "next-env.d.ts",
+        "node_modules/react-native-styled-paper",
         "**/*.ts",
         "**/*.tsx",
         "**/*.js"

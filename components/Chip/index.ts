@@ -1,5 +1,5 @@
 import Chip from "./Chip";
 
 export {
-    Chip,
+    Chip as default,
 };

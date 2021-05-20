@@ -1,6 +1,6 @@
 import * as React from "react";
 import MenuIcon from "@mdi/svg/svg/menu.svg";
-import { Menu } from "react-native-styled-paper/components/Menu";
+import Menu from "react-native-styled-paper/components/Menu";
 import Appbar from "react-native-styled-paper/components/Appbar";
 
 const ProfileDropdown = (props) => {
