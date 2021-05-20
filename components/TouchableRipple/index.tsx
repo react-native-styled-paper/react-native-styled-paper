@@ -1,5 +1,5 @@
 import TouchableRipple from "./TouchableRipple";
 
 export {
-    TouchableRipple,
+    TouchableRipple as default,
 };

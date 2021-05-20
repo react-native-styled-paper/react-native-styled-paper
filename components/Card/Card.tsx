@@ -13,7 +13,7 @@ import CardActions from "./CardActions";
 import CardCover, { CardCover as _CardCover } from "./CardCover";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import CardTitle, { CardTitle as _CardTitle } from "./CardTitle";
-import { Surface } from "../Surface";
+import Surface from "../Surface";
 import { DefaultTheme, ThemeContext } from "styled-components";
 
 type Props = React.ComponentProps<typeof Surface> & {

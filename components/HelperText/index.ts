@@ -1,5 +1,5 @@
 import HelperText from "./HelperText";
 
 export {
-    HelperText,
+    HelperText as default,
 };

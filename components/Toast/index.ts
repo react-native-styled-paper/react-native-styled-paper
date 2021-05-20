@@ -1,1 +1,7 @@
-export { default as ToastProvider, ToastContext, useToast } from "./Context";
+import ToastProvider, { ToastContext, useToast } from "./Context";
+
+export {
+    ToastProvider as default,
+    ToastContext,
+    useToast,
+};

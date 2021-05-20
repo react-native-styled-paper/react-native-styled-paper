@@ -3,6 +3,7 @@ const withTM = require("next-transpile-modules")([
     // "react-native-paper",
     // "react-native-safe-area-view",
     "react-native-vector-icons",
+    "@react-native-community/segmented-control",
     // "react-native-styled-paper",
     "styled-components",
 ]);

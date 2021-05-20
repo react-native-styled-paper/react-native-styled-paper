@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { View } from 'react-native';
 import { storiesOf } from "@storybook/react-native";
-import { TextInput } from 'react-native-styled-paper/components/TextInput';
-import { HelperText } from 'react-native-styled-paper/components/HelperText';
+import TextInput from 'react-native-styled-paper/components/TextInput';
+import HelperText from 'react-native-styled-paper/components/HelperText';
 
 const HelperTextExample = () => {
     const [text, setText] = React.useState('');

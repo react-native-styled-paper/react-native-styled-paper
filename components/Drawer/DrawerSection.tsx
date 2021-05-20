@@ -3,7 +3,7 @@ import color from "color";
 import * as React from "react";
 import { View, ViewStyle, StyleProp } from "react-native";
 import Text from "../Typography/Text";
-import { Divider } from "../Divider";
+import Divider from "../Divider";
 import { DefaultTheme } from "styled-components";
 import styled from "styled-components/native";
 

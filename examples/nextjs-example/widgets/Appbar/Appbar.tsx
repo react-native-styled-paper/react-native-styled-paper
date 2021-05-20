@@ -1,63 +1,48 @@
 import * as React from "react";
 import styled from "styled-components";
-import { default as RNSPAppbar } from "react-native-styled-paper/components/Appbar";
-import { Menu } from "react-native-styled-paper/components/Menu";
-import MenuIcon from "@mdi/svg/svg/menu.svg";
-import { Text } from "react-native-styled-paper/components/Typography";
+import { space, SpaceProps } from "styled-system";
+import { useScrollbarSize } from "react-scrollbar-size";
+import HomeIcon from "@mdi/svg/svg/home.svg";
+import Appbar from "react-native-styled-paper/components/Appbar";
+import ProfileDropdown from "./ProfileDropdown";
+import AppContext from "components/appContext";
 
-import { useWindowSize } from "../../hooks/useWindowSize";
+const HeaderContainer = styled.div<SpaceProps>({
+    position: "absolute",
+    top: 0,
+    right: 0,
+    left: 0,
+    zIndex: 3,
+}, space);
 
-const StyledRNSPAppbar = styled(RNSPAppbar)({
-    zIndex: 1,
+const ContentContainer = styled.div({
+    marginRight: "auto",
 });
 
-const MiddleContainer = styled.div({
-    flexGrow: 1,
-});
-
-const DesktopAppbar = (props) => {
-    const [visible, setVisible] = React.useState(false);
-    const openMenu = () => setVisible(true);
-    const closeMenu = () => setVisible(false);
-
-    return (
-        <StyledRNSPAppbar>
-            <Text>Appbar</Text>
-            <MiddleContainer>
-                <RNSPAppbar.Action
-                    icon={MenuIcon}
-                    color="black"
-                    onPress={() => console.info("Pressed archive")}
-                />
-            </MiddleContainer>
-            <Menu
-                visible={visible}
-                onDismiss={closeMenu}
-                anchor={
-                    <RNSPAppbar.Action icon={MenuIcon} color="white" size={24} onPress={openMenu} />
-                }>
-                <Menu.Item onPress={() => {console.info("Option 1 was pressed");}} title="Option 1" />
-                <Menu.Item onPress={() => {console.info("Option 2 was pressed");}} title="Option 2" />
-                <Menu.Item onPress={() => {console.info("Option 3 was pressed");}} title="Option 3" disabled />
-            </Menu>
-        </StyledRNSPAppbar>
-    );
+type Props = {
+    children?: React.ReactNode;
 };
 
-const MobileAppbar = (props) => {
-    return (
-        <RNSPAppbar>
-            <Text>Appbar</Text>
-        </RNSPAppbar>
-    );
-};
-
-
-export const Appbar = (props) => {
-    const { isMobileView } = useWindowSize();
+export default function Header(props: Props) {
     const { children } = props;
+    const { leftnavIsOpen, setLeftnavIsOpen } = React.useContext(AppContext);
 
-    return isMobileView ?
-        <MobileAppbar {...props}>{children}</MobileAppbar> :
-        <DesktopAppbar {...props}>{children}</DesktopAppbar>;
-};
+    const { width } = useScrollbarSize();
+
+    const _handleBackActionPress = () => {
+        setLeftnavIsOpen(!leftnavIsOpen);
+    };
+
+    return (
+        <HeaderContainer
+            marginRight={[ "0", width ]}
+        >
+            <Appbar.Header>
+                <Appbar.BackAction onPress={_handleBackActionPress} />
+                <ContentContainer>{children}</ContentContainer>
+                <Appbar.Action icon={HomeIcon} />
+                <ProfileDropdown />
+            </Appbar.Header>
+        </HeaderContainer>
+    );
+}

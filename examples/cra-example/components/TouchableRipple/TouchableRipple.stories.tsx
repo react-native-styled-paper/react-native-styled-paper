@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text } from "react-native";
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { TouchableRipple } from 'react-native-styled-paper/components/TouchableRipple';
+import TouchableRipple from 'react-native-styled-paper/components/TouchableRipple';
 
 const onPress = action("onPress");
 

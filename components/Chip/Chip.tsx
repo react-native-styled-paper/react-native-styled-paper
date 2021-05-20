@@ -12,9 +12,9 @@ import {
 } from "react-native";
 import color from "color";
 import { SvgIcon } from "../Icon";
-import { Surface } from "../Surface";
+import Surface from "../Surface";
 import { Text } from "../Typography";
-import { TouchableRipple } from "../TouchableRipple";
+import TouchableRipple from "../TouchableRipple";
 import { black, white } from "../theme/colors";
 import type { EllipsizeProp } from "../types";
 import { DefaultTheme, ThemeContext } from "styled-components";

@@ -2,7 +2,7 @@ import * as React from "react";
 import { View } from "react-native";
 import { storiesOf } from "@storybook/react";
 import Appbar from "react-native-styled-paper/components/Appbar";
-import { Menu } from "react-native-styled-paper/components/Menu";
+import Menu from "react-native-styled-paper/components/Menu";
 import MenuIcon from "@mdi/svg/svg/menu.svg";
 import ArchiveIcon from "@mdi/svg/svg/archive.svg";
 import MailIcon from "@mdi/svg/svg/mail.svg";

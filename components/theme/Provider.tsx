@@ -11,11 +11,12 @@ type Props = {
     children: React.ReactNode;
     theme?: DefaultTheme;
     settings?: Settings;
+    colorSchemeName?: ColorSchemeName;
 };
 
 const Provider = ({ ...props }: Props) => {
     const colorSchemeName =
-        (!props.theme && Appearance?.getColorScheme()) || "light";
+        (!props.theme && Appearance?.getColorScheme()) || (props.colorSchemeName || "light");
 
     const [reduceMotionEnabled, setReduceMotionEnabled] = React.useState<boolean>(
         false
