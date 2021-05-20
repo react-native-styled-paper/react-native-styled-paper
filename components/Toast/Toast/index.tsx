@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Animated, TouchableOpacity, Vibration } from "react-native";
-import { getStatusBarHeight } from "react-native-status-bar-height";
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
 import CheckCircleIcon from "@mdi/svg/svg/account.svg";
 import AlertCircleIcon from "@mdi/svg/svg/account.svg";
 import XCircleIcon from "@mdi/svg/svg/account.svg";

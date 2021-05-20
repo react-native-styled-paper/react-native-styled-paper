@@ -1,5 +1,5 @@
 import Badge from "./Badge";
 
 export {
-    Badge,
+    Badge as default,
 };

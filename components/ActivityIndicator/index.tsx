@@ -1,5 +1,5 @@
 import ActivityIndicator from "./ActivityIndicator";
 
 export {
-    ActivityIndicator,
+    ActivityIndicator as default,
 };

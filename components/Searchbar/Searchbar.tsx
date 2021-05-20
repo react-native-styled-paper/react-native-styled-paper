@@ -8,8 +8,8 @@ import {
     TextStyle,
 } from "react-native";
 import color from "color";
-import { IconButton } from "../IconButton";
-import { Surface } from "../Surface";
+import IconButton from "../IconButton";
+import Surface from "../Surface";
 import { DefaultTheme } from "styled-components";
 import MagnifyIcon from "@mdi/svg/svg/magnify.svg";
 import CloseIcon from "@mdi/svg/svg/close.svg";

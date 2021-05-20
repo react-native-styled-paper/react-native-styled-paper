@@ -20,5 +20,5 @@ const RadioButton = Object.assign(
 );
 
 export {
-    RadioButton,
+    RadioButton as default,
 };

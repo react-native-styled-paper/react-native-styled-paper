@@ -1,5 +1,5 @@
 import Surface from "./Surface";
 
 export {
-    Surface,
+    Surface as default,
 };

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Text } from "react-native";
 import { storiesOf } from "@storybook/react";
-import { BottomNavigation } from "react-native-styled-paper/components/BottomNavigation";
+import BottomNavigation from "react-native-styled-paper/components/BottomNavigation";
 
 const MusicRoute = () => <Text>Music</Text>;
 

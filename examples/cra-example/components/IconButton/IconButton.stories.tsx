@@ -2,7 +2,7 @@ import * as React from "react";
 import { View } from "react-native";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { IconButton } from "react-native-styled-paper/components/IconButton";
+import IconButton from "react-native-styled-paper/components/IconButton";
 import CameraIcon from "@mdi/svg/svg/camera.svg";
 
 const pressFn = action("Pressed");

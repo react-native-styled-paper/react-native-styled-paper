@@ -1,8 +1,8 @@
 import color from "color";
 import * as React from "react";
 import { Animated, View, ViewStyle, StyleSheet, StyleProp } from "react-native";
-import { ActivityIndicator } from "../ActivityIndicator";
-import { Surface } from "../Surface";
+import ActivityIndicator from "../ActivityIndicator";
+import Surface from "../Surface";
 import { CrossFadeIcon } from "../Icon";
 import { SvgIcon } from "../Icon";
 import Text from "../Typography/Text";

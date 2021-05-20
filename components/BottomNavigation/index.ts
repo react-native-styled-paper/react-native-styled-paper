@@ -1,5 +1,5 @@
 import BottomNavigation from "./BottomNavigation";
 
 export {
-    BottomNavigation,
+    BottomNavigation as default,
 };

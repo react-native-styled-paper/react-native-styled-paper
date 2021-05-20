@@ -3,7 +3,7 @@ import { View, Button, Text } from "react-native";
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Modal } from 'react-native-styled-paper/components/Modal';
+import Modal from 'react-native-styled-paper/components/Modal';
 
 const onPressFn = action("onPress");
 
@@ -21,8 +21,8 @@ const ModalExample = () => {
                 onPress={() => toggleModal()}
             />
             <Modal
-                isVisible={isModalVisible}
-                onBackdropPress={() => setIsModalVisible(false)}
+                visible={isModalVisible}
+                // onBackdropPress={() => setIsModalVisible(false)}
                 // onSwipeComplete={() => setIsModalVisible(false)}
                 // swipeDirection="left"
             >

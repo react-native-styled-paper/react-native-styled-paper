@@ -1,5 +1,5 @@
 import TextInput from "./TextInput";
 
 export {
-    TextInput,
+    TextInput as default,
 };

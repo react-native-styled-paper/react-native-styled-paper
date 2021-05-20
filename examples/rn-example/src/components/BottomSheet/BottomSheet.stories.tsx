@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button, Text, View } from "react-native";
 import { storiesOf } from '@storybook/react-native';
-import { BottomSheet } from 'react-native-styled-paper';
+import BottomSheet from 'react-native-styled-paper/components/BottomSheet';
 
 storiesOf('BottomSheet', module).add('Default', () => {
     const _standardRef = React.createRef<BottomSheet>();

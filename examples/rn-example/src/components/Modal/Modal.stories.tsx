@@ -3,7 +3,7 @@ import { View, Button, Text } from "react-native";
 import { storiesOf } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Modal } from 'react-native-styled-paper/components/Modal';
+import Modal from 'react-native-styled-paper/components/Modal';
 
 const onPressFn = action("onPress");
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, StyleProp, ViewStyle } from "react-native";
 
-import { IconButton } from "../../IconButton";
+import IconButton from "../../IconButton";
 import { $Omit } from "../../types";
 import { DefaultTheme } from "styled-components";
 

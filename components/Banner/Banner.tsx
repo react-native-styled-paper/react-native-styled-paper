@@ -1,8 +1,8 @@
 import * as React from "react";
 import { View, ViewStyle, StyleSheet, StyleProp, Animated } from "react-native";
-import { Surface } from "../Surface";
+import Surface from "../Surface";
 import { Text } from "../Typography";
-import { Button } from "../Button";
+import Button from "../Button";
 import { SvgIcon } from "../Icon";
 import type { $RemoveChildren } from "../types";
 import shadow from "../theme/shadow";

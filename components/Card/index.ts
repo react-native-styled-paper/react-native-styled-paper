@@ -5,7 +5,7 @@ import CardCover from "./CardCover";
 import CardTitle from "./CardTitle";
 
 export {
-    Card,
+    Card as default,
     CardActions,
     CardContent,
     CardCover,

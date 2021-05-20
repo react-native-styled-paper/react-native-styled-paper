@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import color from "color";
 import { DefaultTheme, ThemeContext } from "styled-components";
-import { IconButton } from "../IconButton";
+import IconButton from "../IconButton";
 import { ToggleButtonGroupContext } from "./ToggleButtonGroup";
 import { black, white } from "../theme/colors";
 
