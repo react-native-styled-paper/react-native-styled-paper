@@ -1,5 +1,5 @@
 import Switch from "./Switch";
 
 export {
-    Switch,
+    Switch as default,
 };

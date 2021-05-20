@@ -1,5 +1,5 @@
 import IconButton from "./IconButton";
 
 export {
-    IconButton,
+    IconButton as default,
 };

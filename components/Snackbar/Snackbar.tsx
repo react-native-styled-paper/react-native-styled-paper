@@ -8,8 +8,8 @@ import {
     View,
 } from "react-native";
 import { DefaultTheme, ThemeContext } from "styled-components";
-import { Button } from "../Button";
-import { Surface } from "../Surface";
+import Button from "../Button";
+import Surface from "../Surface";
 import { Text } from "../Typography";
 
 type Props = React.ComponentProps<typeof Surface> & {
