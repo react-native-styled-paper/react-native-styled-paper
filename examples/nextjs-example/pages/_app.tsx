@@ -2,7 +2,7 @@ import * as React from "react";
 import { Platform, Appearance, useWindowDimensions, ColorSchemeName } from "react-native";
 import { Provider } from "react-redux";
 // import { I18nManager, Platform } from "react-native";
-import { default as PaperProviver } from "react-native-styled-paper/components/theme/Provider";
+import PaperProviver from "react-native-styled-paper/components/theme/Provider";
 import Head from "next/head";
 import type { AppProps /*, AppContext */ } from "next/app";
 import { Viewport } from "react-native-styled-paper/components/Container";
