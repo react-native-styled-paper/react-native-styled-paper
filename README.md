@@ -10,9 +10,16 @@ npm install react-native-styled-paper
 ### Usage
 
 ```js
-import { Button } from 'react-native-styled-paper/components/Button';
+import PaperProviver from "react-native-styled-paper/components/theme/Provider";
+import Button from 'react-native-styled-paper/components/Button';
 
-<Button />;
+<PaperProviver>
+    <Button
+        onPress={() => console.log("Hello")}
+    >
+        Press Me
+    </Button>
+</PaperProviver>
 ```
 
 ## Components included:
