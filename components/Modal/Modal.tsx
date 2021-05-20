@@ -118,6 +118,7 @@ class Modal extends React.Component<Props, State> {
         return null;
     }
 
+    // @ts-ignore
     static contextType = ThemeContext;
     context!: React.ContextType<typeof ThemeContext>;
 
