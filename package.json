@@ -26,7 +26,7 @@
         "lint": "eslint . --ext ts --ext tsx --ext js",
         "test": "jest --passWithNoTests"
     },
-    "homepage": "https://react-native-styled-paper.github.io/examples/cra-example/storybook-static",
+    "homepage": "https://react-native-styled-paper.github.io/react-native-styled-paper/examples/cra-example/storybook-static",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/react-native-styled-paper/react-native-styled-paper.git"
