@@ -10,7 +10,7 @@
 
 # production
 /build
-/storybook-static
+# /storybook-static
 
 /react-native-styled-paper/
 
