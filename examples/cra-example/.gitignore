@@ -12,6 +12,8 @@
 /build
 /storybook-static
 
+/react-native-styled-paper/
+
 # misc
 .DS_Store
 .env.local
