@@ -3,7 +3,7 @@ import { RouteProp } from '@react-navigation/native';
 import { useParams } from "react-router-dom";
 import { RootStackParamList } from "src/types";
 import { ScrollviewViewport } from "react-native-styled-paper/components/Container";
-import { Card } from "react-native-styled-paper/components/Card";
+import Card from "react-native-styled-paper/components/Card";
 
 const testData = [
     {},
