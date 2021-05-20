@@ -1,6 +1,6 @@
 # react-native-styled-paper
 
-[Docs](https://react-native-styled-paper.github.io/react-native-styled-paper/)
+[Docs](https://react-native-styled-paper.github.io/react-native-styled-paper/examples/cra-example/storybook-static)
 ## Get Started
 
 ### Installation
