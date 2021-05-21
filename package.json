@@ -15,6 +15,7 @@
         "postcompile": "node --experimental-json-modules buildScripts/postCompile.js",
         "copy:src": "node ./CopyAndSyncSrcFolder.js",
         "copy:src-exam": "node ./CopyAndSyncSrcToExam.js",
+        "copy:docs": "node ./CopyAndSyncDocs.js",
         "start:deploy-st": "http-server examples/cra-example/storybook-static",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
         "st-install": "yarn cra-example install",
@@ -26,7 +27,7 @@
         "lint": "eslint . --ext ts --ext tsx --ext js",
         "test": "jest --passWithNoTests"
     },
-    "homepage": "https://react-native-styled-paper.github.io/react-native-styled-paper/examples/cra-example/storybook-static",
+    "homepage": "https://react-native-styled-paper.github.io/react-native-styled-paper",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/react-native-styled-paper/react-native-styled-paper.git"
