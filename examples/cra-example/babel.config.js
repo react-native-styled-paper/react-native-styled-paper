@@ -17,7 +17,6 @@ module.exports = {
                     "react-native-vector-icons":
                         "@ovaeasy/react-native-vector-icons",
                     'react-native-linear-gradient': 'react-native-web-linear-gradient',
-                    "react-native-styled-paper": "./react-native-styled-paper",
                     "components": "./components"
                 }
             }
