@@ -17,6 +17,7 @@ const copyDirSync = (srcFolders, rootSrc, rootDest, option = {}) => {
 
 const snapCoreFolders = [""];
 
+fs.unlinkSync("./docs");
 fs.ensureDirSync("./docs");
 copyDirSync(
     snapCoreFolders,
