@@ -25,6 +25,7 @@
     "include": [
         "src",
         "components",
+        "node_modules/react-native-styled-paper",
         "**/*.ts",
         "**/*.tsx"
     ]
