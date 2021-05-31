@@ -1,7 +1,8 @@
 import styled from "styled-components/native";
-import { layout, LayoutProps, flexbox, FlexboxProps } from "styled-system";
+import { position, PositionProps, layout, LayoutProps, flexbox, FlexboxProps } from "styled-system";
 
-const Container = styled.View<LayoutProps & FlexboxProps>`
+const Container = styled.View<PositionProps & LayoutProps & FlexboxProps>`
+    ${position}
     ${layout}
     ${flexbox}
 `;
