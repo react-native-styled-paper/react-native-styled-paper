@@ -6,6 +6,7 @@ import { Provider as SettingsProvider, Settings } from "./settings";
 import PortalHost from "../Portal/PortalHost";
 import LightTheme from "./LightTheme";
 import DarkTheme from "./DarkTheme";
+import DrawerContext from "../Drawer/DrawerContext";
 
 type Props = {
     children: React.ReactNode;
@@ -31,6 +32,8 @@ const Provider = ({ ...props }: Props) => {
         const { colorScheme } = preferences;
         setColorScheme(colorScheme);
     };
+
+    const [ drawerIsOpen, setDrawerIsOpen ] = React.useState(false);
 
     React.useEffect(() => {
         if (!props.theme) {
@@ -81,9 +84,14 @@ const Provider = ({ ...props }: Props) => {
     return (
         <PortalHost>
             <SettingsProvider value={settings || { }}>
-                <ThemeProvider theme={getTheme()}>
-                    {children}
-                </ThemeProvider>
+                <DrawerContext.Provider value={{
+                    drawerIsOpen,
+                    setDrawerIsOpen,
+                }}>
+                    <ThemeProvider theme={getTheme()}>
+                        {children}
+                    </ThemeProvider>
+                </DrawerContext.Provider>
             </SettingsProvider>
         </PortalHost>
     );
