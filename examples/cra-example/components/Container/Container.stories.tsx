@@ -86,3 +86,29 @@ storiesOf("Container", module)
             </View>
         )
     })
+    .add("Row", () => {
+
+        return (
+            <>
+                <Row>
+                    <Text>Hello from row 1</Text>
+                </Row>
+                <Row>
+                    <Text>Hello from row 2</Text>
+                </Row>
+            </>
+        )
+    })
+    .add("Column", () => {
+
+        return (
+            <Row>
+                <Column lg={6}>
+                    <Text>Hello from Column 1</Text>
+                </Column>
+                <Column lg={6}>
+                    <Text>Hello from Column 2</Text>
+                </Column>
+            </Row>
+        )
+    })

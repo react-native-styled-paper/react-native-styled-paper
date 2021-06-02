@@ -54,8 +54,10 @@ const Column = (props: Props) => {
                 {...rest}
                 style={[
                     props.style, {
+                        display: "flex",
                         width: getComponentWidth(screenSize, gridProps),
                         flexDirection: "column",
+                        backgroundColor: "transparent",
                         marginLeft: getComponentOffset(screenSize, gridProps)
                     }]}>
                 {rest.children}
