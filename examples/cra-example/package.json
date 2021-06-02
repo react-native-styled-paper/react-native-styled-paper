@@ -10,6 +10,7 @@
         "@react-native-community/masked-view": "^0.1.10",
         "@react-navigation/native": "^5.9.2",
         "@react-navigation/stack": "^5.14.2",
+        "@storybook/addon-storysource": "^6.2.9",
         "@testing-library/jest-dom": "^5.11.4",
         "@testing-library/react": "^11.1.0",
         "@testing-library/user-event": "^12.1.10",
