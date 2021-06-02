@@ -32,10 +32,12 @@ const Row = (props: Props) => {
             <View {...props}
                 style={[props.style,
                     {
+                        display: "flex",
                         flexDirection: "row",
                         flexWrap: props.nowrap ? "nowrap" : "wrap",
                         alignItems: props.alignItems,
                         justifyContent: props.justifyContent,
+                        backgroundColor: "transparent",
                     }]}>
                 {cloneElements(props)}
             </View>
