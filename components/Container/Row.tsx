@@ -29,7 +29,8 @@ const Row = (props: Props) => {
         return null;
     } else {
         return (
-            <View {...props}
+            <View 
+                {...props}
                 style={[props.style,
                     {
                         display: "flex",
@@ -38,7 +39,10 @@ const Row = (props: Props) => {
                         alignItems: props.alignItems,
                         justifyContent: props.justifyContent,
                         backgroundColor: "transparent",
-                    }]}>
+                    }]
+                }
+                testID="row"
+            >
                 {cloneElements(props)}
             </View>
         );
