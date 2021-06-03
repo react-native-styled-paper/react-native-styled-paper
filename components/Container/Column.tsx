@@ -59,7 +59,10 @@ const Column = (props: Props) => {
                         flexDirection: "column",
                         backgroundColor: "transparent",
                         marginLeft: getComponentOffset(screenSize, gridProps)
-                    }]}>
+                    }]
+                }
+                testID="column"
+            >
                 {rest.children}
             </View>
         );

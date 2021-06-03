@@ -89,14 +89,18 @@ storiesOf("Container", module)
     .add("Row", () => {
 
         return (
-            <>
+            <ContainerFluid>
                 <Row>
-                    <Text>Hello from row 1</Text>
+                    <Column sm={12}>
+                        <Text>Hello from row 1</Text>
+                    </Column>
                 </Row>
                 <Row>
-                    <Text>Hello from row 2</Text>
+                    <Column sm={12}>
+                        <Text>Hello from row 2</Text>
+                    </Column>
                 </Row>
-            </>
+            </ContainerFluid>
         )
     })
     .add("Column", () => {

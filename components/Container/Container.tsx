@@ -10,7 +10,7 @@ const Container = styled.View<PositionProps & LayoutProps & FlexboxProps & Color
 
 Container.defaultProps = {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
     flexWrap: "nowrap",
     width: "992px",
     maxWidth: "100%",
