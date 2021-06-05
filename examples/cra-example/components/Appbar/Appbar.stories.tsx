@@ -22,17 +22,17 @@ const AppbarHeaderExample = () => {
                 right: 0,
                 top: 0,
             }}>
-                <Appbar.Action
-                    icon={ArchiveIcon}
+                <Appbar.BackAction
+                    icon={MenuIcon}
                     onPress={() => console.log('Pressed archive')}
                 />
+                <Appbar.Content title="Title" />
                 <Appbar.Action icon={MailIcon} onPress={() => console.log('Pressed mail')} />
                 <Appbar.Action icon={LabelIcon} onPress={() => console.log('Pressed label')} />
                 <Appbar.Action
                     icon={DeleteIcon}
                     onPress={() => console.log('Pressed delete')}
                 />
-                <Appbar.Content title="Title" />
                 <Menu
                     visible={visible}
                     onDismiss={closeMenu}
