@@ -4,7 +4,7 @@ import * as React from "react";
 import { View, ViewStyle, StyleProp } from "react-native";
 import Text from "../Typography/Text";
 import Divider from "../Divider";
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme, ThemeContext } from "styled-components";
 import styled from "styled-components/native";
 
 const DrawerSectionContainer = styled.View`
@@ -73,7 +73,8 @@ type Props = React.ComponentPropsWithRef<typeof View> & {
  * export default MyComponent;
  * ```
  */
-const DrawerSection = ({ children, title, theme, style, ...rest }: Props) => {
+const DrawerSection = ({ children, title, style, ...rest }: Props) => {
+    const theme = React.useContext(ThemeContext);
     const { colors, fonts } = theme;
     const titleColor = color(colors.text).alpha(0.54).rgb().string();
     const font = fonts.medium;
