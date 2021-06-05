@@ -4,7 +4,7 @@ import { View, StyleProp, ViewStyle } from "react-native";
 import Text from "../Typography/Text";
 import { SvgIcon } from "../Icon";
 import TouchableRipple from "../TouchableRipple/TouchableRipple";
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme, ThemeContext } from "styled-components";
 import styled from "styled-components/native";
 
 const DrawerItemContainer = styled.View`
@@ -81,12 +81,12 @@ const DrawerItem = ({
     icon,
     label,
     active,
-    theme,
     style,
     onPress,
     accessibilityLabel,
     ...rest
 }: Props) => {
+    const theme = React.useContext(ThemeContext);
     const { colors, roundness } = theme;
     const backgroundColor = active
         ? color(colors.primary).alpha(0.12).rgb().string()
