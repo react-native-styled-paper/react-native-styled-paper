@@ -94,7 +94,7 @@ class Image extends React.Component<
                             width: width,
                             height: height,
                         } as StyleProp<ImageStyle>,
-                        styleProps,
+                        styleProps as any,
                     ])}
                 />
 
