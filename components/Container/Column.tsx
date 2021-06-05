@@ -53,7 +53,8 @@ const Column = (props: Props) => {
             <View
                 {...rest}
                 style={[
-                    props.style, {
+                    props.style,
+                    {
                         display: "flex",
                         width: getComponentWidth(screenSize, gridProps),
                         flexDirection: "column",
