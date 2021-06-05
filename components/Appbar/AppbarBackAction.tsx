@@ -16,6 +16,9 @@ type Props = $Omit<
      * Optional icon size.
      */
     size?: number;
+
+    icon?: React.ReactElement,
+
     /**
      * Whether the button is disabled. A disabled button is greyed out and `onPress` is not called on touch.
      */
@@ -64,14 +67,22 @@ type Props = $Omit<
  * export default MyComponent;
  * ```
  */
-const AppbarBackAction = ({ accessibilityLabel = "Back", ...rest }: Props) => (
-    <AppbarAction
-        accessibilityLabel={accessibilityLabel}
-        {...rest}
-        // @ts-ignore
-        icon={AppbarBackIcon}
-    />
-);
+const AppbarBackAction = (props: Props) => {
+    const { 
+        accessibilityLabel = "Back",
+        icon,
+        ...rest 
+    } = props;
+
+    return (
+        <AppbarAction
+            accessibilityLabel={accessibilityLabel}
+            {...rest}
+            // @ts-ignore
+            icon={icon ? icon : AppbarBackIcon}
+        />
+    );
+};
 
 AppbarBackAction.displayName = "Appbar.BackAction";
 
