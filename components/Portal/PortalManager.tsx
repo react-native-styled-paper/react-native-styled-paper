@@ -49,7 +49,13 @@ export default class PortalManager extends React.PureComponent<Props, State> {
                     false /* Need collapsable=false here to clip the elevations, otherwise they appear above sibling components */
                 }
                 pointerEvents="box-none"
-                style={StyleSheet.absoluteFill}
+                style={[
+                    StyleSheet.absoluteFill,
+                    { 
+                        overflowX: "hidden"
+                    } as any
+                ]}
+                testID="portal_manager"
             >
                 {children}
             </View>

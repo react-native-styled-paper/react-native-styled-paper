@@ -2,7 +2,6 @@ import * as React from "react";
 import { useWindowDimensions } from "react-native";
 import styled from "styled-components/native";
 import { layout, LayoutProps, space, SpaceProps } from "styled-system";
-import Viewport from "./Viewport";
 
 const DefaultScrollview = styled.ScrollView<LayoutProps & SpaceProps>(
     layout,
@@ -18,18 +17,21 @@ function ScrollviewViewport(props) {
     const {
         children,
         paddingTop,
-        ...rest
     } = props;
 
     return (
-        <Viewport {...rest}>
-            <DefaultScrollview
-                height={height}
-                paddingTop={paddingTop}
-            >
-                {children}
-            </DefaultScrollview>
-        </Viewport>
+        <DefaultScrollview
+            height={height}
+            paddingTop={paddingTop}
+            style={{
+                position: "absolute",
+                top: 0,
+                right: 0,
+                left: 0,
+            }}
+        >
+            {children}
+        </DefaultScrollview>
     );
 }
 

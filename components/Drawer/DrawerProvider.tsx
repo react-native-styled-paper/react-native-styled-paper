@@ -38,7 +38,6 @@ DrawerPanel.defaultProps = {
     top: 0,
     left: 0,
     height: "100vh",
-    paddingTop: "56px",
     flexWrap: "nowrap",
     overflow: "hidden",
     flex: 1,
@@ -47,6 +46,7 @@ DrawerPanel.defaultProps = {
 
 const Drawer = (props) => {
     const {
+        drawerPaddingTop,
         children,
     } = props;
     const { drawerIsOpen, setDrawerIsOpen } = React.useContext(DrawerContext);
@@ -102,6 +102,7 @@ const Drawer = (props) => {
                     // height: "100vh",
                     position: "absolute",
                 }}
+                paddingTop={drawerPaddingTop ?? "0"}
             >
                 {children}
             </DrawerPanel>
