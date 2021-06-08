@@ -83,6 +83,7 @@ const ToastProvider: React.FC<Omit<ToastContextType, "toast">> = ({
                 pt={position === "BOTTOM" ? 0 : offset}
                 pb={position === "BOTTOM" ? offset : 0}
                 style={position === "BOTTOM" ? { bottom: 0 } : { top: 0 }}
+                testID="toast_box"
             >
                 {toasts.map((config: ToastConfig & ToastInternalConfig) => {
                     return <Toast position={position} key={config.id} onClose={(id) => hideToast(id)} {...config} />;

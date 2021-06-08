@@ -1,4 +1,4 @@
-import { Animated, TouchableOpacity } from "react-native";
+import { Animated } from "react-native";
 import styled from "styled-components/native";
 import {
     background,
@@ -47,14 +47,14 @@ export type StyledToastProps = SpaceProps &
         accentColor?: string
     }
 
-const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
+// const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
-export const StyledToast = styled(AnimatedTouchable)<StyledToastProps>(systemProps);
+export const StyledToast = Animated.createAnimatedComponent(styled.TouchableOpacity<StyledToastProps>(systemProps));
 
 StyledToast.defaultProps = {
     py: 2,
     mb: 4,
-    flex: 1,
+    flex: "1 1 auto",
     zIndex: 1000,
     width: "100%",
     bg: "background",
