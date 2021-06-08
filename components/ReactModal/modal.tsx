@@ -20,7 +20,7 @@ import * as animatable from "react-native-animatable";
 import { Animation, CustomAnimation } from "react-native-animatable";
 
 import {
-    initializeAnimations,
+    // initializeAnimations,
     buildAnimations,
     reversePercentage,
 } from "./utils";
@@ -35,7 +35,7 @@ import {
 } from "./types";
 
 // Override default react-native-animatable animations
-initializeAnimations();
+// initializeAnimations();
 
 export type OnSwipeCompleteParams = {
     swipingDirection: Direction;

@@ -21,6 +21,7 @@
         "st": "yarn cra-example storybook",
         "st-install": "yarn cra-example install",
         "st-build": "yarn cra-example build-storybook",
+        "st-update": "yarn cra-example install",
         "st-upgrade": "yarn cra-example upgrade react-native-styled-paper",
         "st-build-all": "yarn copy:src-exam && yarn st-install && yarn st-upgrade && yarn st-build && rimraf ./docs && yarn copy:docs",
         "deploy": "gh-pages -d examples/cra-example/storybook-static",

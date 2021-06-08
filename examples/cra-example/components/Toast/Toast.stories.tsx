@@ -16,7 +16,10 @@ const ToastExample = () => {
                 title="Toast"
                 onPress={() => {
                     onPressFn();
-                    toast({ message: "Hello" })
+                    toast({ 
+                        message: "Hello",
+                        duration: 0,
+                    })
                 }}
             />
         </>

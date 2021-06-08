@@ -46,6 +46,7 @@ const Box = styled.View<BoxProps>(systemProps);
 export default Box;
 
 Box.defaultProps = {
+    display: "flex",
     justifyContent: "center",
     position: "relative"
 };
