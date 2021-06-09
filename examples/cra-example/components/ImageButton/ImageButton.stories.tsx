@@ -14,3 +14,14 @@ storiesOf("ImageButton", module)
             </>
         )
     })
+    .add("Circle", () => {
+        return (
+            <>
+                <ImageButton
+                    source={{ uri: "https://via.placeholder.com/350x150.png" }}
+                    size={48}
+                    circle={true}
+                />
+            </>
+        )
+    })
