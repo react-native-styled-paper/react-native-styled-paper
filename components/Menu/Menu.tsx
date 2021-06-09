@@ -283,6 +283,7 @@ class Menu extends React.Component<Props, State> {
             () => ({
                 left: anchorLayout.x,
                 top: anchorLayout.y,
+                // top: anchorLayout.y + anchorLayout.height,
                 anchorLayout: {
                     height: anchorLayout.height,
                     width: anchorLayout.width,

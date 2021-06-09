@@ -1,14 +1,11 @@
 import * as React from 'react';
 import { ThemeProvider } from "styled-components";
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import LightTheme from "react-native-styled-paper/components/theme/LightTheme";
 import ToastProvider from 'react-native-styled-paper/components/Toast';
 import { Viewport } from "react-native-styled-paper/components/Container";
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
-import { useWindowDimensions } from 'react-native';
 import { HomePage } from './pages/home/HomePage';
 import { ProfilePage } from './pages/profile/ProfilePage';
 import { SettingPage } from './pages/setting/SettingPage';
@@ -32,10 +29,7 @@ const linking = {
     },
 };
 
-const Stack = createStackNavigator();
-
 function App() {
-    const { height, scale, width } = useWindowDimensions();
 
     return (
         <ThemeProvider theme={LightTheme}>
