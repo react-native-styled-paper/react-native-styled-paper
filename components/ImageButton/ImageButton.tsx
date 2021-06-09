@@ -31,6 +31,9 @@ type Props = $RemoveChildren<typeof TouchableRipple> & {
      * Whether an icon change is animated.
      */
     animated?: boolean;
+
+    circle?: boolean;
+
     /**
      * Accessibility label for the button. This is read by the screen reader when the user taps the button.
      */
@@ -39,7 +42,9 @@ type Props = $RemoveChildren<typeof TouchableRipple> & {
      * Function to execute on press.
      */
     onPress?: (e: GestureResponderEvent) => void;
+
     style?: StyleProp<ViewStyle>;
+
     ref?: React.RefObject<TouchableWithoutFeedback>;
     /**
      * @optional
@@ -89,11 +94,15 @@ const ImageButton = ({
     disabled,
     onPress,
     animated = false,
+    circle = false,
     style,
     ...rest
 }: Props) => {
     const rippleColor = color("#000000").alpha(0.32).rgb().string();
     const buttonSize = size * 1.5;
+    const containerBorderRadius = circle ? buttonSize / 2 : 0;
+    const iconBorderRadius = circle ? size / 2 : 0;
+
     return (
         <TouchableRipple
             borderless
@@ -106,8 +115,9 @@ const ImageButton = ({
                     justifyContent: "center",
                     overflow: "hidden",
                     margin: 6,
+                    borderRadius: buttonSize / 2,
                 },
-                { width: buttonSize, height: buttonSize, borderRadius: buttonSize / 2 },
+                { width: buttonSize, height: buttonSize, borderRadius: containerBorderRadius },
                 disabled && { opacity: 0.32 },
                 style,
             ]}
@@ -125,11 +135,11 @@ const ImageButton = ({
             }
             {...rest}
         >
-            <View testID="icon_view">
+            <View testID="icon_view" style={{ borderRadius: iconBorderRadius }}>
                 <Image
                     source={source}
                     resizeMode="cover"
-                    style={{ width: size, height: size }}
+                    style={{ width: size, height: size, borderRadius: iconBorderRadius }}
                 />
             </View>
         </TouchableRipple>
