@@ -8,7 +8,9 @@ const RightArrowView = styled.View`
     top: 0;
     right: 0;
     bottom: 0;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    background-color: transparent;
     z-index: 1;
 `;
 
