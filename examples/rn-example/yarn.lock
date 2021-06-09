@@ -10491,6 +10491,9 @@ react-native-storybook-loader@^2.0.2:
     prettier "^2.0.5"
     yargs "^15.4.1"
 
+"react-native-styled-paper@file:./react-native-styled-paper":
+  version "0.0.0"
+
 react-native-svg-transformer@^0.14.3:
   version "0.14.3"
   resolved "https://registry.yarnpkg.com/react-native-svg-transformer/-/react-native-svg-transformer-0.14.3.tgz#43c8e176f5a11f16f39b87a64018e0ac090ffbdb"

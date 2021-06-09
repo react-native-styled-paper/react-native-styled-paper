@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useWindowDimensions } from "react-native";
 import styled from "styled-components/native";
 import { layout, LayoutProps, space, SpaceProps } from "styled-system";
 
@@ -13,7 +12,6 @@ DefaultScrollview.defaultProps = {
 };
 
 function ScrollviewViewport(props) {
-    const { height } = useWindowDimensions();
     const {
         children,
         paddingTop,
@@ -21,7 +19,7 @@ function ScrollviewViewport(props) {
 
     return (
         <DefaultScrollview
-            height={height}
+            height={"100%"}
             paddingTop={paddingTop}
             style={{
                 position: "absolute",
