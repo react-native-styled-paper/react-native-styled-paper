@@ -107,10 +107,10 @@ storiesOf("Container", module)
 
         return (
             <Row>
-                <Column lg={6}>
+                <Column sm={12} md={6} lg={6}>
                     <Text>Hello from Column 1</Text>
                 </Column>
-                <Column lg={6}>
+                <Column sm={12} md={6} lg={6}>
                     <Text>Hello from Column 2</Text>
                 </Column>
             </Row>

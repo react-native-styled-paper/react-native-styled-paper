@@ -1,5 +1,5 @@
 import * as React from "react";
-import { screenSize } from "./utils/ScreenSize";
+import useScreenSize from "./utils/useScreenSize";
 import { isHidden, getComponentWidth, getComponentOffset } from "./utils/helpers";
 import { View } from "react-native";
 
@@ -46,7 +46,9 @@ const Column = (props: Props) => {
         rowSize
     };
 
-    if (isHidden(screenSize, gridProps)) {
+    const { screenSizeType } = useScreenSize();
+
+    if (isHidden(screenSizeType, gridProps)) {
         return null;
     } else {
         return (
@@ -56,10 +58,10 @@ const Column = (props: Props) => {
                     props.style,
                     {
                         display: "flex",
-                        width: getComponentWidth(screenSize, gridProps),
+                        width: getComponentWidth(screenSizeType, gridProps),
                         flexDirection: "column",
                         backgroundColor: "transparent",
-                        marginLeft: getComponentOffset(screenSize, gridProps)
+                        marginLeft: getComponentOffset(screenSizeType, gridProps)
                     }]
                 }
                 testID="column"
